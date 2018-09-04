@@ -1,0 +1,8 @@
+{*
+only edit the src/nunjucks/js_footer.njk file
+NOT the templates/es/generated_js_footer.tpl (it is overwritten durring the webpack build)
+*}
+
+{% include 'nomodule-shim.njk' %}
+<script nomodule src="{$theme_relative_url}/js/es6/{{ 'runtime.es5.js' | revision }}"></script>
+<script nomodule src="{$theme_relative_url}/js/es6/{{ 'main-legacy.es5.js' | revision }}"></script>

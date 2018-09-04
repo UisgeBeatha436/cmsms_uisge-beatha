@@ -1,0 +1,43 @@
+{
+    "name": "cmsms_starter",
+    "description": "FrontEndStudio/cmsms_themes",
+    "version": "0.0.1",
+    "type": "cmsms-theme",
+    "keywords": ["cmsms", "theme", "front-end", "css", "js"],
+    "homepage": "https://github.com/FrontEndStudio/cmsms_themes",
+    "license": "GPL-3.0",
+    "config": {
+        "vendor-dir": "assets_composer",
+        "sort-packages": true,
+        "minimum-stability": "dev"
+    },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://asset-packagist.org"
+        }
+    ],
+    "require-dev": {
+        "oomphinc/composer-installers-extender": "^1.1"
+    },
+    "require": {
+        "npm-asset/jquery": "^3.3.1"
+    },
+    "authors": [
+        {
+            "name": "Arnoud van Susteren",
+            "homepage": "https://frontendstudio.com",
+            "role": "Core Developer"
+        }
+    ],
+    "extra": {
+        "installer-types": [
+          "npm-asset",
+          "bower-asset"
+        ],
+        "installer-paths": {
+          "assets_npm/{$name}": ["type:npm-asset"],
+          "assets_bower/{$name}": ["type:bower-asset"]
+        }
+      }
+}

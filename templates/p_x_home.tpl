@@ -1,4 +1,4 @@
-{config_load file='theme.ini' scope='global' section='cmsms_sandbox'}
+{config_load file='theme.ini' scope='global' section='cmsms_uisge-beatha'}  {* changed it to the right theme *}
 {extends file="{#theme_resource#}page_base.tpl"}
 
 {block name='open_content' append}

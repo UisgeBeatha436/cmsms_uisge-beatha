@@ -1,1 +1,0 @@
-{include file="theme_file:p_x_two_col_left_sidebar.tpl"}

@@ -10,7 +10,7 @@
   {$global_js_header}
 {/if}
 
-{apture assign='es6'}
+{capture assign='es6'}
   {include file="{#theme_resource#}generated/generated_js_header.tpl"}
 {/capture}
 

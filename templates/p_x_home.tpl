@@ -9,6 +9,14 @@
 {block name='body_content'}
 
   <div class="l-full">
+    <div class="parallax"> {* Create text in the center of the homepage *}
+      <svg>
+        <text x="50%" y="50%" dy=".3em">
+          {sitename}
+        </text>
+      </svg>
+    </div>
+
     <div class="l-hero" data-visible="on" id="js_hero">
       {if isset($content_02) && $content_02 != ''}
         {$src_in=$content_02|replace:"{root_url}/":''}

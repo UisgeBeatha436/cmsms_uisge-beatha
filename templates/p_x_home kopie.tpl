@@ -19,7 +19,7 @@
     {$content_image_01}
     <div class="l-hero" data-visible="on" id="js_hero">
       {if isset($content_image_01) && $content_image_01 != ''}
-        {$src_in=$content_image_01} {*|replace:"{root_url}/":''*}
+        {$src_in=$content_image_01|replace:"{root_url}/":''}
         {$src_in}
         {picture_element
           src=$src_in

@@ -5,7 +5,7 @@
 {* turn on by setting $_browser_sync='true' *}
 {* turn off by setting $_browser_sync='' or remove the code *}
 
-{$_browser_sync = ''}
+{$_browser_sync = 'true'}
 
 {if $_browser_sync != ''}
   {literal}

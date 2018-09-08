@@ -16,10 +16,10 @@
         </text>
       </svg>
     </div>
-{$content_image_01}
+    {$content_image_01}
     <div class="l-hero" data-visible="on" id="js_hero">
       {if isset($content_image_01) && $content_image_01 != ''}
-        {$src_in=$content_image_01} {*|replace:"{root_url}/":''}
+        {$src_in=$content_image_01|replace:"{root_url}/":''}
         {picture_element
           src=$src_in
           scales='304, 305, 465, 705, 945, 1137, 1425'

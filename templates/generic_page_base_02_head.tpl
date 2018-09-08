@@ -45,8 +45,7 @@
   {assign var=_unique_css_id value=10|mt_rand:3000000}
   <link rel="stylesheet" href="{$theme_relative_url}/css/main.css?fes{$_unique_css_id}">
 
-  {* 03sep18: added on Arnoud's advice *}
-  {* working to bootstrap as a package 
+  {* 03sep18: added on Arnoud's advice * }
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"> *}
 </head>
 {* <!-- /parsed: 3 of 3 --> *}

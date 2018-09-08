@@ -8,6 +8,8 @@
 
 {block name='body_content'}
 
+<span class="border border-primary">Home page bootstrap border to see if bootstrap is loaded</span>
+
   <div class="l-full">
     <div class="parallax"> {* Create text in the center of the homepage *}
       <svg>

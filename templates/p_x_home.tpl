@@ -26,7 +26,7 @@
           scales='304, 305, 465, 705, 945, 1137, 1425'
         }
       {else} 
-        <img data-image="0" src="//placehold.it/1500x541" alt="placehold.it" class="cover">
+        <img data-image="0" src="//localhost/install/uploads/images/cms/40MijlvanBru-02.jpg" alt="placehold.it" class="cover"> {*placehold.it/1500x541*}
       {/if}
     </div>
   </div>

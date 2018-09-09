@@ -5,17 +5,17 @@
 
 @charset 'UTF-8';
 
-$color-font: #ff0000;
+/* $color-font: #ff0000;
 $color-bg: silver;
 
-body::before {
+  body::before {
   width: 100%;
   content: 'add your styles to assets/themes/YOUR_THEME/sass/main.scss';
   font-size: 2em;
   color: $color-font;
   text-align: center;
   background-color: $color-bg;
-}
+} */
 /* custom stylsheets */
 
 html {
@@ -28,12 +28,12 @@ html {
 
   /* Scales by 0.5px for every 100px from 1000px to 2000px */
   @media (min-width: 1000px) {
-    font-size: calc(137.5% + 5 * (100vw - 1000px) / 1000)
+    font-size: calc(1117.5% + 5 * (100vw - 1000px) / 1000)
   }
 }
 
 
-.parallax {
+parallax {
     /* The image used */
     background-image: url([[CGSmartImage src='https://develop.uisge-beatha.eu/www/uploads/images/site/IMG_0167.jpg' notag=1 noresponsive=1 noembed=0]]);
     /* Full height */

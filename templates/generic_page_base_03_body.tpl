@@ -15,7 +15,7 @@
 {/block}
 
 {block name='body_nav'}
-  <nav class="" data-visible="on" id="js_nav">{Navigator action='default' template="{#theme_resource#}navigator_navigation.tpl"}</nav>
+  <nav class="" data-visible="on" id="js_nav">{Navigator action='default' template="{#theme_resource#}navigator_navigator_multilevel_menu.tpl"}</nav>
 {/block}
 
 {block name='body_content'}

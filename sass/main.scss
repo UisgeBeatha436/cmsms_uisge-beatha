@@ -19,20 +19,22 @@ $color-bg: silver;
 /* custom stylsheets */
 
 @import './bootstrap/scss/bootstrap';
+@import './bootstrap/scss/reboot';
+// @import './bootstrap/scss/utilities/display';
 
-html {
+/* html {
   font-size: 100%;
 
-  /* Scales by 1px for every 100px from 600px to 1000px */
+  / * Scales by 1px for every 100px from 600px to 1000px * /
   @media (min-width: 600px) {
     font-size: calc(112.5% + 4 * (100vw - 600px) / 400)
   }
 
-  /* Scales by 0.5px for every 100px from 1000px to 2000px */
+  / * Scales by 0.5px for every 100px from 1000px to 2000px * /
   @media (min-width: 1000px) {
     font-size: calc(1117.5% + 5 * (100vw - 1000px) / 1000)
   }
-}
+} */
 
 
 .parallax {

@@ -1,6 +1,12 @@
 {
   "files": [
     {
+      "outputFileName": "now-ui-kit.js",
+      "dependencies":[
+        "node_modules/now-ui-kit/assets/js/now-ui-kit.js"
+      ]
+    },
+    {
       "outputFileName": "picturefill.js",
       "dependencies": [
         "node_modules/picturefill/dist/picturefill.js"

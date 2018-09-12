@@ -8,47 +8,22 @@
 
 {block name='body_content'}
 
-  <div class="l-full">
-    <div class="parallax"> {* Create text in the center of the homepage *}
-      <svg>
-        <text x="50%" y="50%" dy=".3em">
-          {sitename}
-        </text>
-      </svg>
-    </div>
-    {$content_image_01}
-    <div class="l-hero" data-visible="on" id="js_hero">
-      {if isset($content_image_01) && $content_image_01 != ''}
-        {$src_in=$content_image_01} {*|replace:"{root_url}/":''*}
-        {$src_in}
-        {picture_element
-          src=$src_in
-          scales='304, 305, 465, 705, 945, 1137, 1425'
-        }
-      {else} 
-        <img data-image="0" src="//localhost/install/uploads/images/cms/40MijlvanBru-02.jpg" alt="placehold.it" class="cover"> {*placehold.it/1500x541*}
-      {/if}
-    </div>
-  </div>
+  
 
   <a id="a-content"></a>
-
-  <div class="l-full">
-    <div class="l-content" data-visible="on" id="js_content">
-      {$content_01}
-      <hr>
-      <h2 class="text-center">Logboek berichten</h2>
-      <hr>
-      <div class="row">
-          {*CGBlog summarytemplate="blogSummaryHome" number="3" detailpage="{if isset($blog_page)}{$blog_page}{/if}"*}
+  <div class="wrapper">
+      <div class="page-header">
+          <div class="page-header-image" data-parallax="true" style="background-image: url('//localhost/install/uploads/images/cms/40MijlvanBru-02.jpg');">
+          </div>
+          <div class="container">
+            <div class="content-center">
+                <h1 class="title text-center">Components Documentation</h1>
+                <h3 class="description text-center">Elements description - v1.0.0</h3>
+            </div>
+        </div>
       </div>
-      {* example }
-      {foreach from='1'|@range:'3' item='item' name='loop'}
-        <p>{lipsum out='paragraphs' nr=$item}</p>
-      {/foreach}
-      { /example *}
-
     </div>
   </div>
+  
 
 {/block}

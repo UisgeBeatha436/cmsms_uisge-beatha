@@ -15,7 +15,22 @@
 {/block}
 
 {block name='body_nav'}
-  <nav class="" data-visible="on" id="js_nav">{Navigator action='default' template="{#theme_resource#}navigator_navigator_multilevel_menu.tpl"}</nav>
+  {*<nav class="" data-visible="on" id="js_nav">{Navigator action='default' template="{#theme_resource#}navigator_navigator_multilevel_menu.tpl"}</nav>*}
+  
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Uisge Beatha</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      {Navigator action='default' template="{#theme_resource#}navigator_navigation_multilevel_bootstrap_menu.tpl"}
+      <form class="form-inline ml-auto" data-background-color>
+          <div class="form-group has-white">
+            <input type="text" class="form-control" placeholder="Ik zoek">
+          </div>
+      </form>
+    </div>
+  </nav>
 {/block}
 
 {block name='body_content'}

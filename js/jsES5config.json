@@ -2,7 +2,7 @@
   "files": [
     {
       "outputFileName": "now-ui-kit.js",
-      "dependencies":[
+      "dependencies": [
         "node_modules/now-ui-kit/assets/js/now-ui-kit.js"
       ]
     },

@@ -20,7 +20,7 @@ $color-bg: silver;
 
 @import './bootstrap/scss/bootstrap';
 @import './bootstrap/scss/reboot';
-// @import './bootstrap/scss/utilities/display';
+@import './now-ui-kit/assets/sass/now-ui-kit';
 
 /* html {
   font-size: 100%;
@@ -36,6 +36,10 @@ $color-bg: silver;
   }
 } */
 
+/* ----------- define footer color ------------- */
+.footer[data-background-color="grijs"] {
+  background-color: #bbc2c2;
+}
 
 
 

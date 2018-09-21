@@ -9,16 +9,18 @@
 
 {block name='body_content'}
 	{include file="{#theme_resource#}generic_p_titlebar.tpl"}
-	<div class="l-full">
-		<div class="l-content" data-visible="on" id="js_content">
-
-			<div class="l-two-col-left-bar-one">
+	<div class="container">
+		{* <div class="l-content" data-visible="on" id="js_content"> *}
+		<div class="row">
+			<div class="col-md-3 ml-auto mr-auto">
 				<a id="a-content"></a>
 				{$content_01}
 			</div>
 
-			<div class="l-two-col-left-bar-two">
-				{$content_02}
+			<div class="col-md-9 ml-auto mr-auto">
+				<div id="loader">
+					{$content_02}
+				</div>
 			</div>
 
 		</div>

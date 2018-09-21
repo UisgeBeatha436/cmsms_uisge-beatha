@@ -14,14 +14,34 @@
   </header>
 {/block *}
 
-<div class="wrapper">
-  {block name='body_nav'}
-    {*<nav class="" data-visible="on" id="js_nav">{Navigator action='default' template="{#theme_resource#}navigator_navigator_multilevel_menu.tpl"}</nav>*}
-    
-    <nav class="navbar fixed-top navbar-expand-lg bg-white navbar-dark" color-on-scroll="500">
+{*
+A) <img src="my-navbar-image.png" class="img-fluid" alt="My responsive image.">
+B) https://stackoverflow.com/questions/42460930/how-to-resize-navbar-logo-on-scroll-down
+
+*}
+
+{block name='body_nav'}
+   {* <nav class="navbar fixed-top navbar-expand-lg navbar-transparent bg-white navbar-absolute" color-on-scroll="400">
+    <div class="container">
+      <a class="navbar-brand" href="#" title="{sitename}"><img id="header-logo" class="logo"  alt="{sitename}" src="//uisge-beatha.eu/uploads/images/cms/Dehler%20-%20logo%20transparant%20lunarpic.png" height="150vh"/></a> { * https://www.freeiconspng.com/uploads/sailing-boat-png-29.png src="//uisge-beatha.eu/uploads/images/cms/Dehler%20-%20logo%20transparant%20lunarpic.png"/> * }
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        {Navigator action='default' template="{#theme_resource#}navigator_navigation_multilevel_bootstrap_menu.tpl"}
+        <form class="form-inline ml-auto" data-background-color>
+          <div class="form-group has-white">
+            <input type="text" class="form-control" placeholder="Ik zoek">
+          </div>
+        </form>
+      </div>
+    </div>
+  </nav> *}
+  <div class="container">
+    <nav class="navbar fixed-top navbar-expand-lg bg-white navbar-light navbar-transparant navbar-absolute" color-on-scroll="400">
       {* <a class="navbar-brand" href="#">Uisge Beatha</a> *}
-      <a class="navbar-brand" href="{root_url}" title="{sitename}"><img id="header-logo" class="logo"  alt="{sitename}"/> {* https://www.freeiconspng.com/uploads/sailing-boat-png-29.png src="//uisge-beatha.eu/uploads/images/cms/Dehler%20-%20logo%20transparant%20lunarpic.png"/> *}
-            </a>
+      <a class="navbar-brand" href="{root_url}" title="{sitename}"><img id="header-logo" class="logo"  alt="{sitename}" src="//uisge-beatha.eu/uploads/images/cms/Dehler%20-%20logo%20transparant%20lunarpic.png" height="150vh"/> {* https://www.freeiconspng.com/uploads/sailing-boat-png-29.png src="//uisge-beatha.eu/uploads/images/cms/Dehler%20-%20logo%20transparant%20lunarpic.png"/> *}
+      </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -34,8 +54,9 @@
         </form>
       </div>
     </nav>
-  {/block}
-
+  </div>
+{/block}
+<div class="wrapper">
   {block name='body_content'}
     <div class="container">
       <div class="row">
@@ -51,14 +72,14 @@
     {* <footer  data-visible="on" id="js_footer"> *}
     <footer class="footer footer-big" data-background-color="grijs">
    
-      <div class="container">
+      <div class="container-fluid">
         <div class="content">
           <div class="row">
             <div class="col-md-3"> {* l-three-col-one *}
               Made with <a href="https://www.cmsmadesimple.org/">CMS Made Simple</a> {custom_copyright}<br><br>
               <a href="{get_current_url}#a-content" class="shape-link"><span>TOP</span></a>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-5">
               <h3>Waar bevindt Uisge Beatha zich?</h3>
               <script> 
                 width='100%';	// the width of the embedded map in pixels or percentage 
@@ -73,7 +94,7 @@
                 fleet='';	// the registered email address of a user-defined fleet (user's default fleet is used) 
                 // Read more at http://www.marinetraffic.com/en/p/embed-map#6YXCVvOUaBxYHgoT.99
               </script> 
-              <script type="text/javascript" src="//www.marinetraffic.com/js/embed.js"></script>
+              <!-- script type="text/javascript" src="//www.marinetraffic.com/js/embed.js"></script -->
             </div>
             <div class="col-md-3">
               <h3>Nieuwtjes ontvangen?</h3>

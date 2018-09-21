@@ -36,11 +36,82 @@ $color-bg: silver;
   }
 } */
 
+
+/* ----------- define color variables -----------*/
+:root {
+	
+  --fill-color-facebook: #3b5998;
+  --fill-color-twitter: #4da7de;
+  --fill-color-pinterest: #b51205;
+  --fill-color-linkedin: #3371b7;
+  --fill-color-google-plus: #c93725;
+  --fill-color-rss: #f26109;
+  --fill-color-boat: #013E75;
+  --fill-color-boat-light: #5f8bb2;
+  --Font-Size: 20px;
+}
+.navbar-custom .navbar-brand, .navbar-custom .navbar-text {
+  color: #5f8bb2;
+}
+
+/* ----------- define margin for jumbotron -----------*/
+.mt-md-8 {
+  margin-top: 8rem !important;
+}
+
+/* ----------- define text color navbar --------- */
+.navbar.bg-white:not(.navbar-transparent) a:not(.dropdown-item), .dropdown-menu .dropdown-item {
+  color: var(--fill-color-boat);
+}
+
+
 /* ----------- define footer color ------------- */
 .footer[data-background-color="grijs"] {
   background-color: #bbc2c2;
 }
 
+/* ----------- styling needed for endless scrolling -----------*/
+.jscroll-loading {
+    height: 36px;
+    text-align: center;
+    padding-top: 5px;
+    opacity: 0.7;
+}
+
+/* ----------- CSS for floatbox image in CGBlog ------------ */
+.floatbox_left,
+.floatbox_right {
+    
+    position:relative;
+    text-align:center;
+    top:3px
+}
+
+.floatbox_left {
+    float: left !important;
+    margin-right: 10px
+}
+
+.floatbox_right {
+    float: right !important;
+    margin-left: 10px
+}
+
+.cgblog_image_title,
+.cgblog_image_c2e {
+   font-size: 9px;
+   font-style: italic;
+   display: block;
+   line-height: 12px;
+   height: 15px;
+}
+
+.cgblog_image_title {
+    font-size:12px;
+    font-style:normal;
+    font-weight:400;
+    line-height:16px;
+}
 
 
 /* ----------- to align text vertical on home page ----------- */

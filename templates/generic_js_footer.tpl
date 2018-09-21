@@ -34,3 +34,20 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/now-ui-kit@1.0.1/assets/js/now-ui-kit.js"></script>
+
+{* 14jun17 script for endeless scrolling of blog articles - https://www.cmscanbesimple.org/blog/cmsms-modules-and-endless-scrolling
+   *}
+<script src="//unpkg.com/jscroll/dist/jquery.jscroll.min.js"></script>
+<script>
+$(function() {
+    $('div.jscroll').jscroll( {
+    contentSelector: '.jscroll',
+    nextSelector: 'a.jscroll-link:last',
+    autoTrigger: true,
+    debug: true
+    // loadingHtml: '<i class="icon-spinner3"></i>'
+    } );
+} );
+</script>
+
+{* CSS for endless scrolling is put in buddy011-Main stylesheet ++++++ end script endless scrolling *}

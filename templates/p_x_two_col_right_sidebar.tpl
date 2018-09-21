@@ -14,15 +14,13 @@
 			<div class="row">
 				{* <div class="l-content" data-visible="on" id="js_content"> *}
 				
-					<div class="col-md-8 ml-auto mr-auto">
+					<div class="col-md-9 ml-auto mr-auto">
 						<a id="a-content"></a>
 						{$content_01}
 					</div>
-
-					<div class="col-md-3 ml-auto mr-auto">
+					<div class="col-sm-3 ml-aut mr-auto">
 						{$content_02}
-					</div>
-
+					</div> {* class sidebar right *}
 				{* </div> *}
 			</div>
 		</div>

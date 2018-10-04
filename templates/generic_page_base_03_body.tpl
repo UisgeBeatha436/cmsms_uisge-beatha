@@ -38,7 +38,7 @@ B) https://stackoverflow.com/questions/42460930/how-to-resize-navbar-logo-on-scr
     </div>
   </nav> *}
   <div class="container">
-    <nav class="navbar fixed-top navbar-expand-lg bg-white navbar-light navbar-transparant navbar-absolute" color-on-scroll="400">
+    <nav class="navbar fixed-top navbar-expand-lg navbar-light  navbar-absolute" color-on-scroll="400">
       {* <a class="navbar-brand" href="#">Uisge Beatha</a> *}
       <a class="navbar-brand" href="{root_url}" title="{sitename}"><img id="header-logo" class="logo"  alt="{sitename}" src="//uisge-beatha.eu/uploads/images/cms/Dehler%20-%20logo%20transparant%20lunarpic.png" height="150vh"/> {* https://www.freeiconspng.com/uploads/sailing-boat-png-29.png src="//uisge-beatha.eu/uploads/images/cms/Dehler%20-%20logo%20transparant%20lunarpic.png"/> *}
       </a>
@@ -94,7 +94,7 @@ B) https://stackoverflow.com/questions/42460930/how-to-resize-navbar-logo-on-scr
                 fleet='';	// the registered email address of a user-defined fleet (user's default fleet is used) 
                 // Read more at http://www.marinetraffic.com/en/p/embed-map#6YXCVvOUaBxYHgoT.99
               </script> 
-              <!-- script type="text/javascript" src="//www.marinetraffic.com/js/embed.js"></script -->
+              <script type="text/javascript" src="//www.marinetraffic.com/js/embed.js"></script>
             </div>
             <div class="col-md-3">
               <h3>Nieuwtjes ontvangen?</h3>
@@ -117,6 +117,24 @@ B) https://stackoverflow.com/questions/42460930/how-to-resize-navbar-logo-on-scr
           <button class="btn btn-twitter">
             <i class="fab fa-twitter"></i> Connect with Twitter
           </button>
+          <button class="btn btn-icon btn-neutral btn-twitter">
+						<i class="fab fa-twitter"></i>
+					</button>
+          <a href="#pablo" class="btn btn-primary btn-icon btn-round">
+              <i class="fab fa-twitter"></i>
+          </a>
+          <div class="col-md-4 col-sm-5">
+            <p class="category">Default</p>
+            <button class="btn btn-twitter">
+              <i class="fab fa-twitter"></i> Connect with Twitter
+            </button>
+          </div>
+          <div class="col-md-1 col-sm-1">
+            <p class="category">&nbsp;</p>
+            <button class="btn btn-icon btn-twitter">
+              <i class="fab fa-twitter"></i>
+            </button>
+          </div>
       </div>
     </div>
 

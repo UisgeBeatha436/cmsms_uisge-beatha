@@ -40,9 +40,16 @@
           Uisge Beatha
         {/if}
       </p>
+      <div class="row">
+        <div class="col-md-11">
+          <nav aria-label="breadcrumb" role="navigation">
+            {Navigator action='breadcrumbs' template="{#theme_resource#}navigator_breadcrumbs.tpl"}
+          </nav>
+        </div>
+      </div>
     </div>
   </div>  
-  <div class="section">
+  {* <div class="section">
     <div class="features-2 section-image" style="background-image: url('//localhost/install/uploads/images/cms/40MijlvanBru-02.jpg')">
       <div class="container">
         <div class="row">
@@ -72,5 +79,5 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> *}
 </div>

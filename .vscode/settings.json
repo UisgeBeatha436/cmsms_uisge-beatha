@@ -1,2 +1,10 @@
 {
+"editor.quickSuggestions": {
+    "other": true,
+    "comments": false,
+    "strings": true
+  },
+"search.exclude": {
+    "**/node_modules": false
+}
 }

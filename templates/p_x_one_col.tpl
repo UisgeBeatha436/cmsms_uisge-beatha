@@ -7,11 +7,14 @@
 
 {block name='body_content'}
   {include file="{#theme_resource#}generic_p_titlebar.tpl"}
-  <div class="l-full">
-    <a id="a-content"></a>
-    <div class="l-content" data-visible="on" id="js_content">
-      {include file="{#theme_resource#}generic_p_titlebar.tpl"}
-      {$content_01}
+  <div class="section">
+    <div class="container">
+      <a id="a-content"></a>
+      <div class="row" data-visible="on" id="js_content">
+        <div class="col-md-12"> 
+          {$content_01}
+        </div>
+      </div>
     </div>
   </div>
 {/block}

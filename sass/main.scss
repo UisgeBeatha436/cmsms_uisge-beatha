@@ -20,7 +20,8 @@ $color-bg: silver;
 
 @import './bootstrap/scss/bootstrap';
 @import './bootstrap/scss/reboot';
-@import './now-ui-kit/assets/sass/now-ui-kit';
+/* @import './now-ui-kit/assets/sass/now-ui-kit'; */
+@import './now-ui-kit-pro/assets/scss/now-ui-kit';
 
 /* html {
   font-size: 100%;
@@ -54,10 +55,22 @@ $color-bg: silver;
   color: #5f8bb2;
 }
 
+/* ----------- define float ------------- */
+.float-center {
+    text-align: center;
+}
+
 /* ----------- define margin for jumbotron -----------*/
 .mt-md-8 {
   margin-top: 8rem !important;
 }
+
+/* ----------- GPS Track styling ----------- */
+.gps-track li {
+    margin-left: 30px;
+}
+
+/* -----------End GPS Track ----------- */
 
 /* ----------- define text color navbar --------- */
 .navbar.bg-white:not(.navbar-transparent) a:not(.dropdown-item), .dropdown-menu .dropdown-item {
@@ -126,6 +139,106 @@ text {
 	font-size: 4vw;  /* vw makes the size responsive */
 	color:white;
 }
+
+
+/* ---------- Gbook - Gastenboek -------------- */
+.gbook_form label {
+    display:inline-block;
+    width:100%;
+    margin-top:10px;
+}
+
+.gbook_form input {
+    width:100%;
+    padding:3px;
+    border:2px solid #ccc;
+	border-radius:5px;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+}
+
+.gbook_form input.cms_checkbox { width:auto }
+
+.gbook_form input.cms_submit {
+    width:auto;
+    margin-bottom:30px;
+    padding:2px 30px;
+    background-color:#ddd;
+}
+
+.gbook_form input.cms_submit:hover { background-color: #bbb }
+
+.gbook_form textarea {
+    width:100%;
+    height:140px;
+    padding:2px;
+    border:2px solid #ccc;
+	border-radius:5px;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+    vertical-align:middle;
+}
+
+.gbook_field_error input, .gbook_field_error textarea { background:#fdd url("[[root_url]]/modules/Gbook/images/error.png") no-repeat center right }
+
+.gbook_form .gbook_smileys { margin: 4px 0 0 0 }
+
+.gbook_pagelinks {
+    height:20px;
+    text-align:right;
+}
+
+.gbook_pagelinks a {
+    padding:1px 3px;
+    border:2px solid #ccc;
+	border-radius:5px;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+    background-color:#ddd;
+    color:#999;
+    text-decoration:none;
+}
+
+.gbook_pagelinks a.gbook_active_page {
+    font-weight:bold;
+    color:#333;
+}
+
+.gbook_pagelinks a:hover {
+    color:#555;
+    background-color:#bbb;
+}
+
+.gbook .gbook_entry { margin-top:20px }
+
+.gbook .gbook_entry_name {
+    padding-left:10px;
+    font-weight:bold;
+}
+
+.gbook .gbook_entry_date {
+    float:right;
+    padding-right:10px;
+    font-weight:bold;
+}
+
+.gbook .gbook_entry_title {
+    padding:2px 10px;
+    border-radius:5px;
+    -moz-border-radius:5px;
+    -webkit-border-radius:5px;
+    background-color:#ddd;
+}
+
+.gbook .gbook_entry_message {
+    margin:4px 0;
+    padding:0px 10px;
+    border-radius:5px;
+    -moz-border-radius:5px;
+    -webkit-border-radius:5px;
+    background-color:#eee;
+} 
+div.naamveldgregor input { border-color: rgb(53, 12, 235); }
 
 //
 // EOF

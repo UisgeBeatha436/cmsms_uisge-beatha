@@ -25,9 +25,10 @@
       <div class="page-header-image" data-parallax="true" style="background-image: url('//localhost/install/uploads/images/cms/40MijlvanBru-02.jpg'); transform: translate3d(0px, 0px, 0px);">
       </div>
   </div>*}
-  <div class="jumbotron jumbotron-fluid mt-md-8">
+  
+  {*<div class="jumbotron jumbotron-fluid mt-5" style="margin-top:80px;">
     <div class="container">
-      <h2 class="title">{menu_text}</h2> {*class display-4*}
+      <h2 class="display-4 text-center">{menu_text}</h2> { *class display-4* }
       <p class="lead">
         {$_description={description}}
         {if $_description != '' || $global_description != ''}
@@ -40,23 +41,20 @@
           Uisge Beatha
         {/if}
       </p>
-      <div class="row">
-        <div class="col-md-11">
-          <nav aria-label="breadcrumb" role="navigation">
-            {Navigator action='breadcrumbs' template="{#theme_resource#}navigator_breadcrumbs.tpl"}
-          </nav>
-        </div>
-      </div>
+      <nav aria-label="breadcrumb" role="navigation">
+        {Navigator action='breadcrumbs' template="{#theme_resource#}navigator_breadcrumbs.tpl"}
+      </nav>
     </div>
-  </div>  
-  {* <div class="section">
+  </div>*}
+
+  <div class="section">
     <div class="features-2 section-image" style="background-image: url('//localhost/install/uploads/images/cms/40MijlvanBru-02.jpg')">
       <div class="container">
         <div class="row">
             <div class="col-md-8 mr-auto ml-auto">
                 <h2 class="title">{menu_text}</h2>
                 {$_description={description}}
-                <h5>
+                <h5 class="title">
                   {if $_description != '' || $global_description != ''}
                     {if $global_description != ''}
                       {$global_description}
@@ -79,5 +77,4 @@
         </div>
       </div>
     </div>
-  </div> *}
-</div>
+  </div> 

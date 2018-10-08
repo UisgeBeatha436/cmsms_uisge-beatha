@@ -9,13 +9,15 @@
 {block name='body_content'}
   <a id="a-content"></a>
   <div class="wrapper">
-    <div class="page-header">
+    <div class="page-header clear-filter" filter-color="orange">
       <div class="page-header-image" data-parallax="true" style="background-image: url('//localhost/install/uploads/images/cms/40MijlvanBru-02.jpg');">
       </div>
-      <div class="container">
-        <div class="content-center">
-          <h1 class="title text-center">{sitename}</h1>
-          <h3 class="description text-center">Dehler 36 JV</h3>
+      <div class="content-center">
+        <div class="container">
+          <div class="content-center">
+            <h1 class="h1-seo text-center">{sitename}</h1>
+            <h2 class="description text-center">Dehler 36 JV</h2>
+          </div>
         </div>
       </div>
     </div>

@@ -1,64 +1,18 @@
 <!-- parsed: 2 of 3 --> 
-<body> {* class="{$addClass}"> *}
+<!-- body class="{$addClass}" -->
+<body
 {* include svg/shape.svg once *}
 {*svgdata inline=1 assetsbase=1 file='svg/shape.svg' tpl="{#theme_resource#}txt_svg.tpl"*}
 
 {include file="{#theme_resource#}generic_nojs_google_tag_manager.tpl"}
 
-{block name='body_header'}
+{* block name='body_header'}
   <header data-visible="on" id="js_header">
-    {*<div class="header-content">
+    <div class="header-content">
       {cms_selflink dir='start' text="{sitename}"}
-    </div>*}
-    
-    {block name='body_nav'}
-      <nav class="navbar navbar-expand-lg bg-white fixed-top navbar-transparent" color-on-scroll="100"> {* navbar-custom *}
-        <div class="container-fluid">
-          
-          <div class="navbar-translate">
-            <a class="navbar-brand" href="{root_url}" title="{sitename}" data-placement="bottom"><img id="header-logo" class="logo"  alt="{sitename}" src="//uisge-beatha.eu/uploads/images/cms/Dehler%20-%20logo%20transparant%20lunarpic.png" height="150vh"/>
-            </a>
-          </div>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            {Navigator action='default' template="{#theme_resource#}navigator_navigation_multilevel_bootstrap_menu.tpl"}
-            {include file='cms_template:socialFollowButtons'}
-            <form class="form-inline ml-auto text-dark" data-background-color="#990000">
-              <div class="form-group">
-                <input type="text" class="form-control" placeholder="Ik zoek" style="color:blue;">
-              </div>
-            </form>
-          </div>
-        </div>
-      </nav>
-
-
-
-      {* <nav class="navbar navbar-expand-lg fixed-top navbar-dark danger-color">
-        <div class="container-fluid">
-          <div class="navbar-translate">
-            <a class="navbar-brand" href="{root_url}" title="{sitename}" data-placement="bottom"><img id="header-logo" class="logo"  alt="{sitename}" src="//uisge-beatha.eu/uploads/images/cms/Dehler%20-%20logo%20transparant%20lunarpic.png" height="150vh"/>
-            </a>
-          </div>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse text-dark" id="navbarSupportedContent">
-            {Navigator action='default' template="{#theme_resource#}navigator_navigation_multilevel_bootstrap_menu.tpl"}
-            <form class="form-inline ml-auto text-dark" data-background-color="#990000">
-              <div class="form-group">
-                <input type="text" class="form-control" placeholder="Ik zoek" style="color:blue;">
-              </div>
-            </form>
-          </div>
-        </div>
-      </nav> *}
-    {/block}
-
+    </div>
   </header>
-{/block}
+{/block *}
 
 {*
 A) <img src="my-navbar-image.png" class="img-fluid" alt="My responsive image.">
@@ -66,6 +20,64 @@ B) https://stackoverflow.com/questions/42460930/how-to-resize-navbar-logo-on-scr
 
 *}
 
+{block name='body_nav'}
+   {* <nav class="navbar fixed-top navbar-expand-lg navbar-transparent bg-white navbar-absolute" color-on-scroll="400">
+    <div class="container">
+      <a class="navbar-brand" href="#" title="{sitename}"><img id="header-logo" class="logo"  alt="{sitename}" src="//uisge-beatha.eu/uploads/images/cms/Dehler%20-%20logo%20transparant%20lunarpic.png" height="150vh"/></a> { * https://www.freeiconspng.com/uploads/sailing-boat-png-29.png src="//uisge-beatha.eu/uploads/images/cms/Dehler%20-%20logo%20transparant%20lunarpic.png"/> * }
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        {Navigator action='default' template="{#theme_resource#}navigator_navigation_multilevel_bootstrap_menu.tpl"}
+        <form class="form-inline ml-auto" data-background-color>
+          <div class="form-group has-white">
+            <input type="text" class="form-control" placeholder="Ik zoek">
+          </div>
+        </form>
+      </div>
+    </div>
+  </nav> *}
+
+  <nav class="navbar navbar-expand-lg fixed-top navbar-dark danger-color">
+    <div class="container-fluid">
+      <div class="navbar-translate">
+        <a class="navbar-brand" href="{root_url}" title="{sitename}" data-placement="bottom"><img id="header-logo" class="logo"  alt="{sitename}" src="//uisge-beatha.eu/uploads/images/cms/Dehler%20-%20logo%20transparant%20lunarpic.png" height="150vh"/> {* https://www.freeiconspng.com/uploads/sailing-boat-png-29.png src="//uisge-beatha.eu/uploads/images/cms/Dehler%20-%20logo%20transparant%20lunarpic.png"/> *}
+        </a>
+      </div>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse text-dark" id="navbarSupportedContent">
+        {Navigator action='default' template="{#theme_resource#}navigator_navigation_multilevel_bootstrap_menu.tpl"}
+        <form class="form-inline ml-auto text-dark" data-background-color="#990000">
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Ik zoek" style="color:blue;">
+          </div>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+
+  {* <div class="container">
+    <nav class="navbar fixed-top navbar-expand-lg navbar-light  navbar-absolute" color-on-scroll="400">
+      { * <a class="navbar-brand" href="#">Uisge Beatha</a> * }
+      <a class="navbar-brand" href="{root_url}" title="{sitename}"><img id="header-logo" class="logo"  alt="{sitename}" src="//uisge-beatha.eu/uploads/images/cms/Dehler%20-%20logo%20transparant%20lunarpic.png" height="150vh"/> { * https://www.freeiconspng.com/uploads/sailing-boat-png-29.png src="//uisge-beatha.eu/uploads/images/cms/Dehler%20-%20logo%20transparant%20lunarpic.png"/> * }
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        {Navigator action='default' template="{#theme_resource#}navigator_navigation_multilevel_bootstrap_menu.tpl"}
+        <form class="form-inline ml-auto" data-background-color>
+          <div class="form-group has-white">
+            <input type="text" class="form-control" placeholder="Ik zoek">
+          </div>
+        </form>
+      </div>
+    </nav>
+  </div> *}
+{/block}
 <div class="wrapper">
   {block name='body_content'}
     <div class="container">
@@ -155,5 +167,4 @@ B) https://stackoverflow.com/questions/42460930/how-to-resize-navbar-logo-on-scr
 {/if}
 
 </body>
-
 {* <!-- /parsed 2 of 3 --> *}

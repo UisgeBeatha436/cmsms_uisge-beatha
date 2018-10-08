@@ -51,9 +51,27 @@ $color-bg: silver;
   --fill-color-boat-light: #5f8bb2;
   --Font-Size: 20px;
 }
-.navbar-custom .navbar-brand, .navbar-custom .navbar-text {
+
+.navbar-custom {
+    background-color: #013E75;
+}
+
+#Logo {
+  transition: all 0.3s;
+  }
+    .largeLogo{width: 260px;}
+    .smallLogo  {
+        width: 12.125rem;
+        height: 10vh;
+    }
+
+/* .navbar-custom .navbar-brand, .navbar-custom .navbar-text {
   color: #5f8bb2;
 }
+
+.navbar a:not(.btn):not(.dropdown-item) {
+	color: #013E75;
+} */
 
 /* ----------- define float ------------- */
 .float-center {
@@ -72,10 +90,10 @@ $color-bg: silver;
 
 /* -----------End GPS Track ----------- */
 
-/* ----------- define text color navbar --------- */
+/* ----------- define text color navbar --------- * /
 .navbar.bg-white:not(.navbar-transparent) a:not(.dropdown-item), .dropdown-menu .dropdown-item {
   color: var(--fill-color-boat);
-}
+} */
 
 
 /* ----------- define footer color ------------- */

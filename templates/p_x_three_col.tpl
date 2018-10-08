@@ -18,22 +18,10 @@
 					<a id="a-content"></a>
 					{$content_01}
 				</div>
-			</div>
-		</div>
-	</div>
-	<div class="section section-content">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-8 ml-auto mr-auto">
+				<div class="col-12 col-md-8 ml-auto mr-auto">
 					<a id="a-content"></a>
 					{$content_02}
 				</div>
-			</div>
-		</div>
-	</div>
-	<div class="section section-content">
-		<div class="container">
-			<div class="row">
 				<div class="col-md-2 ml-auto mr-auto">
 					<a id="a-content"></a>
 					{$content_03}

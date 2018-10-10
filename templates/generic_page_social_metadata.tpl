@@ -19,11 +19,16 @@
   <meta property="fb:admins" content="">
 *}
 
-    {if isset($og_updated_time)}
-      <meta property="og:updated_time" content="{$og_updated_time}">
-    {else}
-      <meta property="og:updated_time" content="{modified_date format='%Y-%m-%dT%H:%M:%S%z'}">
-    {/if}
+{if isset($og_updated_time)}
+  <meta property="og:updated_time" content="{$og_updated_time}">
+{else}
+  <meta property="og:updated_time" content="{modified_date format='%a, %d %b %Y %H:%M:%S %z'}">
+{/if}
+
+{if isset($og_postdate)}
+  <meta property="" content="{$og_postdate}">
+{/if}
+
 {if isset($og_image) && $og_image != ''}
   <meta property="og:image" content="{$og_image}">
   <meta property="og:image:width" content="{$og_image_width}">

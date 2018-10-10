@@ -65,6 +65,17 @@ $color-bg: silver;
         height: 10vh;
     }
 
+/*------------------- icon alignment -------------- */
+.btn i.fas, .btn i.far {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-12px,-12px);
+    line-height: 1.5rem;
+    width: 23px;
+}
+
+
 /* .navbar-custom .navbar-brand, .navbar-custom .navbar-text {
   color: #5f8bb2;
 }

@@ -12,7 +12,7 @@
     </div>*}
     
     {block name='body_nav'}
-      <nav class="navbar navbar-expand-lg bg-white fixed-top navbar-transparent" color-on-scroll="100"> {* navbar-custom *}
+      <nav class="navbar navbar-expand-lg bg-white fixed-top navbar-light" color-on-scroll="100"> {* navbar-custom *}
         <div class="container-fluid">
           
           <div class="navbar-translate">
@@ -20,7 +20,7 @@
             </a>
           </div>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+            <span class="navbar-toggler-icon navbar-dark"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarNav">
             {Navigator action='default' template="{#theme_resource#}navigator_navigation_multilevel_bootstrap_menu.tpl"}
@@ -104,9 +104,9 @@ B) https://stackoverflow.com/questions/42460930/how-to-resize-navbar-logo-on-scr
                 fleet='';	// the registered email address of a user-defined fleet (user's default fleet is used) 
                 // Read more at http://www.marinetraffic.com/en/p/embed-map#6YXCVvOUaBxYHgoT.99
               </script> 
-              <script type="text/javascript" src="//www.marinetraffic.com/js/embed.js"></script>
+              <script type="text/javascript" src="https://www.marinetraffic.com/js/embed.js"></script>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-3 ml-md-3 ml-sm-1">
               <h3>Nieuwtjes ontvangen?</h3>
               {CGBetterForms form="mailingForm"}
             </div>

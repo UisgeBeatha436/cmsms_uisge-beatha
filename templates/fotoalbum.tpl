@@ -19,14 +19,14 @@ https://www.uisge-beatha.eu/uploads/images/Gallery/Winter1617/Kajuitramen
 </div>
 {assign var='files' value="{$album_no_spaces}/*.jpg"|glob}
 {if count($files)}
-    <div class="floatbox" data-fb-options="doSlideshow:`true` group:`cgblog` caption:`href` header:`#socialmediashare1-20` type:`image`">
+    <div id="{$alt_id}-{$x}" class="floatbox" data-fb-options="doSlideshow:`true` group:`cgblog` caption:`{$alt}` header:`#socialmediashare1-20` type:`image`">
         <a id="{$alt_id}-{$x}" data-rel="fotoalbum" title="{$alt}" href="{$first_photo|cms_escape:'urlpathinfo'}">{CGSmartImage src="{$first_photo}" width="250" alt="Uisge Beatha, Zeilen, {$alt}" title="{$alt}" noresponsive=1}</a>
         {foreach from=$files item='file'}
             {if !$file|contains:"thumb_"}
                 {$x = {$x+1}}
                 {assign var='fotos' value="{root_url}/{$file|cms_escape:'urlpathinfo'}"}
                 {* <a id="{$alt_id}-{$x}" data-rel="fotoalbum" title="{$alt}" href="{CGSmartImage src={$file} alt="Uisge Beatha, Zeilen, {$alt}" title="{$alt}" noresponsive=1 notag=1 noembed=1}"></a> *}
-                <a id="{$alt_id}-{$x}" data-rel="fotoalbum" title="{$alt}" href="{CGSmartImage src={$fotos} alt="Uisge Beatha, Zeilen, {$alt}" title="{$alt}" noresponsive=1 notag=1 noembed=0}"></a>
+                <a id="A" data-rel="fotoalbum" class="lazy" title="{$alt}" href="{CGSmartImage src={$fotos} alt="Uisge Beatha, Zeilen, {$alt}" title="{$alt}" noresponsive=1 notag=1 noembed=0}"></a>
                 {* <a id="{$alt_id}-{$x}" data-rel="fotoalbum" title="{$alt}" href="{$file|cms_escape:'urlpathinfo'}">
                     <img src="{CGSmartImage src="{$fotos}" noresponsive='1' alt='{$alt}' title="Uisge Beatha, Zeilen, {$alt}" notag=1 noembed=1}"/> 
                 </a> *}

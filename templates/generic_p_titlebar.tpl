@@ -48,7 +48,9 @@
   </div>*}
 
   <div class="section">
-    <div class="features-2 section-image" style="background-image: url('//localhost/install/uploads/images/cms/40MijlvanBru-02.jpg')">
+    {cgsi_convert}
+      <div class="features-2 section-image" style="background-image: url('//localhost/install/uploads/images/cms/40MijlvanBru-02.jpg')">
+    {/cgsi_convert}
       <div class="container">
         <div class="row">
             <div class="col-md-8 mr-auto ml-auto">

@@ -84,6 +84,10 @@ $color-bg: silver;
 	color: #013E75;
 } */
 
+
+[data-background-color="boat_color"] {
+    background-color: #013E75; }
+
 /* ----------- define float ------------- */
 .float-center {
     text-align: center;
@@ -154,6 +158,28 @@ $color-bg: silver;
     font-weight:400;
     line-height:16px;
 }
+
+/* ---------- list items horizontal -----------*/
+.list-group-horizontal {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: separate;
+    &>.list-group-item {
+      border: 1px solid grey;
+      display: table-cell;
+      float: none;
+      text-align: center;
+      width: 1%;
+      border-radius: 0;
+      &:first-child {
+        border-bottom-left-radius: 3px;
+      }
+      &:last-child {
+        border-bottom-right-radius: 3px;
+      } 
+    }
+  }
 
 
 /* ----------- to align text vertical on home page ----------- */

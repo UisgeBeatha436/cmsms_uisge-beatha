@@ -12,11 +12,12 @@
     </div>*}
     
     {block name='body_nav'}
+      {cgsi_convert}
       <nav class="navbar navbar-expand-lg bg-white fixed-top navbar-light" color-on-scroll="100"> {* navbar-custom *}
         <div class="container-fluid">
           
           <div class="navbar-translate">
-            <a class="navbar-brand" href="{root_url}" title="{sitename}" data-placement="bottom"><img id="header-logo" class="logo"  alt="{sitename}" src="//uisge-beatha.eu/uploads/images/cms/Dehler%20-%20logo%20transparant%20lunarpic.png" height="150vh"/>
+            <a class="navbar-brand" href="{root_url}" title="{sitename}" data-placement="bottom"><img id="header-logo" class="logo"  alt="{sitename}" src="https://uisge-beatha.eu/uploads/images/cms/Dehler%20-%20logo%20transparant%20lunarpic.png" height="150vh"/>
             </a>
           </div>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -24,7 +25,7 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarNav">
             {Navigator action='default' template="{#theme_resource#}navigator_navigation_multilevel_bootstrap_menu.tpl"}
-            {include file='cms_template:socialFollowButtons'}
+            {global_content name='socialFollowButtons' shape='round' navbar='1'}
             <form class="form-inline ml-auto text-dark" data-background-color="#990000">
               <div class="form-group">
                 <input type="text" class="form-control" placeholder="Ik zoek" style="color:blue;">
@@ -33,8 +34,7 @@
           </div>
         </div>
       </nav>
-
-
+      {/cgsi_convert}
 
       {* <nav class="navbar navbar-expand-lg fixed-top navbar-dark danger-color">
         <div class="container-fluid">
@@ -115,16 +115,25 @@ B) https://stackoverflow.com/questions/42460930/how-to-resize-navbar-logo-on-scr
       </div>
     </footer>
     
-    <div class="container">
-      <div class="row">
+    {* <div class="container">
+      <div class="row ">
         <div class="col-md-6">
-          <div calss="pull-center">FrontEndStudio &copy;
+          <div class="pull-center copyright" id="copyright" >FrontEndStudio &copy;
           </div>
         </div>
         <div class="col-md-6">
           <h4>Leuk als dit wordt gedeeld</h4>
       </div>
-    </div>
+    </div> *}
+
+    <footer class="footer" data-background-color="boat_color">
+      <div class="container">
+        <a class="footer-brand" href="#uisge-beatha">{sitename}</a>
+        {*<ul class="pull-center"></ul>*}
+        {Navigator action='default' template="{#theme_resource#}navigator_navigation.tpl"}
+        {global_content name='socialFollowButtons' shape='neutral' link='1'}
+      </div>
+    </footer>
 
     {capture}
       <div class="scroll" data-visible="off" id="js_scroll">
@@ -142,7 +151,7 @@ B) https://stackoverflow.com/questions/42460930/how-to-resize-navbar-logo-on-scr
         </a>
       </div>
     {/capture}
-  {/block}
+  {/block} 
 </div>
 
 {block name='js_footer'}
@@ -153,6 +162,27 @@ B) https://stackoverflow.com/questions/42460930/how-to-resize-navbar-logo-on-scr
 {if isset($page_js_footer) && $page_js_footer != ''}
   {$page_js_footer}
 {/if}
+
+<script>
+  //var elem = document.querySelector('.container');
+  // var infScroll = new InfiniteScroll( elem, {
+  // options
+  //  path: '.pagination__next',
+  //  append: 'true',
+  // });
+
+  // element argument can be a selector string
+  //   for an individual element
+  // var infScroll = new InfiniteScroll( '.container', {
+    // options
+    // init Infinite Scroll
+// $('.article-feed').infiniteScroll({
+ // path: '.pagination__next',
+ //  debug: 'true',
+  //elementScroll: 'true',
+ // });
+  // });
+</script>
 
 </body>
 

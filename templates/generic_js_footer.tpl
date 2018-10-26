@@ -19,9 +19,9 @@
   <script src="{$theme_relative_url}/js/es5/scripts.js?fes={$_unique_js_id}"></script>
 {/capture}
 
-{capture assign='es6'}
+{* capture assign='es6'}
   {include file="{#theme_resource#}generated/generated_js_footer.tpl"}
-{/capture}
+{/capture *}
 
 {*$es5*}
 {$es6}
@@ -38,22 +38,11 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/now-ui-kit@1.0.1/assets/js/now-ui-kit.js"></script>
-<!--script src="assets/js/now-ui-kit-pro.js?v=1.2.2" type="text/javascript"></script-->
+<!--script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@10.19.0/dist/lazyload.min.js"></script-->
+<script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@8.17.0/dist/lazyload.min.js"></script>
 
-
-{* 14jun17 script for endeless scrolling of blog articles - https://www.cmscanbesimple.org/blog/cmsms-modules-and-endless-scrolling
-  // contentSelector: '.jscroll', // loadingHtml: '<i class="icon-spinner3"></i>' *}
-{* <script src="//unpkg.com/jscroll/dist/jquery.jscroll.min.js"></script>
-<script>
-$(function() {
-    $('div.jscroll').jscroll( {
-    nextSelector: 'a.jscroll-link:last',
-    autoTrigger: true,
-    debug: true
-    
-    } );
-} );
-</script>*}
+{* script for endeless scrolling of blog articles *}
+<script src="https://unpkg.com/infinite-scroll@3/dist/infinite-scroll.pkgd.min.js"></script>
 
 {* Resize logo and header *}
 <script>
@@ -77,4 +66,10 @@ var scroll = window.pageYOffset || document.documentElement.scrollTop || documen
   }
 }
 
+</script>
+
+<script>
+var myLazyLoad = new LazyLoad({
+    elements_selector: ".lazy"
+});
 </script>

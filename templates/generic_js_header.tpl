@@ -10,9 +10,9 @@
   {$global_js_header}
 {/if}
 
-{capture assign='es6'}
+{* capture assign='es6'}
   {include file="{#theme_resource#}generated/generated_js_header.tpl"}
-{/capture}
+{/capture *}
 
 {capture assign='es5'}
   {assign var=_unique_js_id value=10|mt_rand:30}

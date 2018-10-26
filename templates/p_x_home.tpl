@@ -10,8 +10,11 @@
   <a id="a-content"></a>
   <div class="wrapper">
     <div class="page-header clear-filter" filter-color="orange">
-      <div class="page-header-image" data-parallax="true" style="background-image: url('//localhost/install/uploads/images/cms/40MijlvanBru-02.jpg');">
-      </div>
+      {cgsi_convert}
+        {assign var='parallax_img' value="//localhost/install/uploads/images/cms/40MijlvanBru-02.jpg"}
+        <div class="page-header-image" data-parallax="true" style="background-image: url({$parallax_img});">
+        </div>
+      {/cgsi_convert}
       <div class="content-center">
         <div class="container">
           <div class="content-center">

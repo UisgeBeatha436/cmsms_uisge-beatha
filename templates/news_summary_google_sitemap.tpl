@@ -1,4 +1,4 @@
-{if isset($items)}{$now = $smary.now}
+{if isset($items)}{$now = $smarty.now}
   {foreach from=$items item='entry' name='loop'}<url>
   <loc>{$entry->moreurl}</loc>
   <lastmod>{$entry->modified_date|date_format:'%Y-%m-%d'}</lastmod>

@@ -102,9 +102,11 @@ B) https://stackoverflow.com/questions/42460930/how-to-resize-navbar-logo-on-scr
                 maptype='0';	// use 0 for Normal Map, 1 for Satellite, 2 for OpenStreetMap 
                 trackvessel='' //244770624';	 MMSI of a vessel (note: vessel will be displayed only if within range of the system) - overrides "zoom" option 
                 fleet='';	// the registered email address of a user-defined fleet (user's default fleet is used) 
-                // Read more at http://www.marinetraffic.com/en/p/embed-map#6YXCVvOUaBxYHgoT.99
+                 Read more at http://www.marinetraffic.com/en/p/embed-map#6YXCVvOUaBxYHgoT.99
               </script> 
               <script type="text/javascript" src="https://www.marinetraffic.com/js/embed.js"></script>
+              {* /Users/gjdegraaf/Sites/assets/src/cmsms_uisge-beatha/js/marineTraffic.js
+              <script type="text/javascript" src="http://localhost/assets/src/cmsms_uisge-beatha/js/marineTraffic.js"></script> *}
             </div>
             <div class="col-md-3 ml-md-3 ml-sm-1">
               <h3>Nieuwtjes ontvangen?</h3>
@@ -164,12 +166,13 @@ B) https://stackoverflow.com/questions/42460930/how-to-resize-navbar-logo-on-scr
 {/if}
 
 <script>
-  //var elem = document.querySelector('.container');
-  // var infScroll = new InfiniteScroll( elem, {
+  var elem = document.querySelector('.container');
+  var infScroll = new InfiniteScroll( elem, {
   // options
-  //  path: '.pagination__next',
-  //  append: 'true',
-  // });
+    path: '.pagination__next',
+    // append: '.post',
+    debug: 'true',
+  });
 
   // element argument can be a selector string
   //   for an individual element

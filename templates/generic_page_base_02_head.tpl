@@ -98,5 +98,7 @@
   {* remove $_unique_css_id when not developing, otherwise the css file won't be cached *}
   {assign var=_unique_css_id value=10|mt_rand:3000000}
   <link rel="stylesheet" href="{$theme_relative_url}/css/main.css?fes{$_unique_css_id}">
+  <!--link rel="stylesheet" href="{$theme_relative_url}/css/now-ui-kit.css?fes{$_unique_css_id}"-->
+
 </head>
 {* <!-- /parsed: 3 of 3 --> *}

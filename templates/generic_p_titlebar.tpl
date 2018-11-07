@@ -48,9 +48,8 @@
   </div>*}
 
   <div class="section">
-    {cgsi_convert}
-      <div class="features-2 section-image" style="background-image: url('//localhost/install/uploads/images/cms/40MijlvanBru-02.jpg')">
-    {/cgsi_convert}
+      {assign var='header_image' value={CGSmartImage src='http://localhost/install/uploads/images/cms/40MijlvanBru-02.jpg' notag=1}}
+      <div class="features-2 section-image" style="background-image: url('{$header_image}');">
       <div class="container">
         <div class="row">
             <div class="col-md-8 mr-auto ml-auto">

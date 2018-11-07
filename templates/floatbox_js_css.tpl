@@ -6,5 +6,5 @@
 
 <!--script src="https://static.uisge-beatha.eu/_Javascripts/floatbox_752/floatbox.js"></script>
 <link rel="stylesheet" href="https://static.uisge-beatha.eu/_Javascripts/floatbox_752/floatbox.css"></link-->
-<!--link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet"-->
+<link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet"/>
 <!--link href="./assets/demo/demo.css" rel="stylesheet" /-->

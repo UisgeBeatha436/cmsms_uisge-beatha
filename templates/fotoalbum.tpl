@@ -26,7 +26,7 @@ https://www.uisge-beatha.eu/uploads/images/Gallery/Winter1617/Kajuitramen
                 {$x = {$x+1}}
                 {assign var='fotos' value="{root_url}/{$file|cms_escape:'urlpathinfo'}"}
                 {* <a id="{$alt_id}-{$x}" data-rel="fotoalbum" title="{$alt}" href="{CGSmartImage src={$file} alt="Uisge Beatha, Zeilen, {$alt}" title="{$alt}" noresponsive=1 notag=1 noembed=1}"></a> *}
-                <a id="A" data-rel="fotoalbum" class="lazy" title="{$alt}" href="{CGSmartImage src={$fotos} alt="Uisge Beatha, Zeilen, {$alt}" title="{$alt}" noresponsive=1 notag=1 noembed=0}"></a>
+                <a id="{$alt_id}-{$x}" data-rel="fotoalbum" class="lazy" title="{$alt}" href="{CGSmartImage src={$fotos} alt="Uisge Beatha, Zeilen, {$alt}" title="{$alt}" noresponsive=1 notag=1 noembed=0}"></a>
                 {* <a id="{$alt_id}-{$x}" data-rel="fotoalbum" title="{$alt}" href="{$file|cms_escape:'urlpathinfo'}">
                     <img src="{CGSmartImage src="{$fotos}" noresponsive='1' alt='{$alt}' title="Uisge Beatha, Zeilen, {$alt}" notag=1 noembed=1}"/> 
                 </a> *}

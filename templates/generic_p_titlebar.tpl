@@ -47,30 +47,55 @@
     </div>
   </div>*}
 
-  <div class="section">
+{*<div class="page-header page-header-small">
+  {assign var='header_image' value={CGSmartImage src='http://localhost/install/uploads/images/cms/40MijlvanBru-02.jpg' notag=1}}
+  <div class="page-header-image" data-parallax="true" style="background-image: url('{$header_image}');">
+  </div>
+  <div class="content-center">
+    <div class="row">
+      <div class="col-md-8 mr-auto ml-auto">
+        <h1 class="title rellax" data-rellax-speed="-1">{menu_text}</h1>
+        {$_description={description}}
+        <h4 class="h3-description rellax" data-rellax-speed="-3">
+          {if $_description != '' || $global_description != ''}
+            {if $global_description != ''}
+              {$global_description}
+            {else}
+              {description}
+            {/if}
+          {else}
+            Uisge Beatha
+          {/if}
+        </h4>
+        <nav aria-label="breadcrumb" role="navigation">
+          {Navigator action='breadcrumbs' template="{#theme_resource#}navigator_breadcrumbs.tpl"}
+        </nav>
+      </div>
+    </div>
+  </div>
+</div>*}
+<div class="page-header page-header-small">
       {assign var='header_image' value={CGSmartImage src='http://localhost/install/uploads/images/cms/40MijlvanBru-02.jpg' notag=1}}
-      <div class="features-2 section-image" style="background-image: url('{$header_image}');">
-      <div class="container">
+      {$_description={description}}
+      <div class="page-header-image"  style="background-image: url('{$header_image}');">
+      </div>
+      <div class="content-center">
         <div class="row">
-            <div class="col-md-8 mr-auto ml-auto">
-                <h2 class="title">{menu_text}</h2>
-                {$_description={description}}
-                <h5 class="title">
-                  {if $_description != '' || $global_description != ''}
-                    {if $global_description != ''}
-                      {$global_description}
-                    {else}
-                      {description}
-                    {/if}
-                  {else}
-                    Uisge Beatha
-                  {/if}
-                </h5>
+          <div class="col-md-8 ml-auto mr-auto">
+            <div class="rellax" data-rellax-speed="-3">
+              <h1 class="title"  >{menu_text}</h1>
             </div>
-        </div>
-
-        <div class="row">
-          <div class="col-md-11">
+            <h4>
+              {if $_description != '' || $global_description != ''}
+                {if $global_description != ''}
+                  {$global_description}
+                {else}
+                  {description}
+                {/if}
+              {else}
+                  Uisge Beatha
+              {/if}
+            </h4>
             <nav aria-label="breadcrumb" role="navigation">
               {Navigator action='breadcrumbs' template="{#theme_resource#}navigator_breadcrumbs.tpl"}
             </nav>
@@ -78,4 +103,3 @@
         </div>
       </div>
     </div>
-  </div> 

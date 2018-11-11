@@ -1,40 +1,29 @@
 <!-- parsed: 2 of 3 generic page base 03 --> 
-<body class="profile-page"> {*$addClass}"> profile-page*}
+<body> {* class="{$addClass}"> *}
 {* include svg/shape.svg once *}
 {*svgdata inline=1 assetsbase=1 file='svg/shape.svg' tpl="{#theme_resource#}txt_svg.tpl"*}
 
 {include file="{#theme_resource#}generic_nojs_google_tag_manager.tpl"}
 
 {block name='body_header'}
-  {*<header data-visible="on" id="js_header"> *}
+  <header data-visible="on" id="js_header">
     {*<div class="header-content">
       {cms_selflink dir='start' text="{sitename}"}
     </div>*}
     
     {block name='body_nav'}
-      <nav class="navbar navbar-expand-lg bgdefault fixed-top navbar-transparent" color-on-scroll="500"> {* navbar-custom *}
+      <nav class="navbar navbar-expand-lg bg-white fixed-top navbar-transparant" color-on-scroll="100"> {* navbar-custom *}
         <div class="container-fluid">
           <div class="navbar-header">
-            
-          </div>
-          <div class="navbar-translate">
-            {cgsi_convert} {* requires popper.js  rel="tooltip" *}
-              <a class="navbar-brand" href="{root_url}"  title="{sitename} | Design based on Now_UI-Kit. Coded by Gregor" data-placement="bottom" target="_blank"><img id="header-logo" class="logo"  alt="{sitename}" src="https://uisge-beatha.eu/uploads/images/cms/Dehler%20-%20logo%20transparant%20lunarpic.png" height="150vh"/>
+            {cgsi_convert}
+              <a class="navbar-brand" href="{root_url}" title="{sitename}" data-placement="bottom"><img id="header-logo" class="logo"  alt="{sitename}" src="https://uisge-beatha.eu/uploads/images/cms/Dehler%20-%20logo%20transparant%20lunarpic.png" height="150vh"/>
               </a>
             {/cgsi_convert}
-            {*<a class="navbar-brand" href="{root_url}" rel="tooltip" title="Design based on Now_UI-Kit. Coded by Gregor" data-placement="bottom" target="_blank">
-              Now Ui Kit Pro
-            </a>*}
-            {*<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-bar top-bar"></span>
-              <span class="navbar-toggler-bar middle-bar"></span>
-              <span class="navbar-toggler-bar bottom-bar"></span>
-            </button>*}
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon navbar-dark"></span>
-            </button>
           </div>
-          <div class="collapse navbar-collapse" id="navbarNav" data-nav-image="ttps://uisge-beatha.eu/uploads/images/cms/Dehler%20-%20logo%20transparant%20lunarpic.png" data-color="orange">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon navbar-dark"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
             {Navigator action='default' template="{#theme_resource#}navigator_navigation_multilevel_bootstrap_menu.tpl"}
             {global_content name='socialFollowButtons' shape='round' navbar='1'}
             <form class="form-inline ml-auto text-dark" data-background-color="#990000">
@@ -45,7 +34,7 @@
           </div>
         </div>
       </nav>
-    {*  <nav class="navbar navbar-expand-lg fixed-top navbar-dark danger-color">
+      {* <nav class="navbar navbar-expand-lg fixed-top navbar-dark danger-color">
         <div class="container-fluid">
           <div class="navbar-translate">
             <a class="navbar-brand" href="{root_url}" title="{sitename}" data-placement="bottom"><img id="header-logo" class="logo"  alt="{sitename}" src="//uisge-beatha.eu/uploads/images/cms/Dehler%20-%20logo%20transparant%20lunarpic.png" height="150vh"/>
@@ -66,7 +55,7 @@
       </nav> *}
     {/block}
 
-  {*</header>*}
+  </header>
 {/block}
 
 {*
@@ -76,7 +65,7 @@ B) https://stackoverflow.com/questions/42460930/how-to-resize-navbar-logo-on-scr
 *}
 
 <div class="wrapper">
-  {block name='body_content'} {* this block displays the actual content *}
+  {block name='body_content'}
     <div class="container">
       <div class="row">
         <a id="a-content"></a>
@@ -91,7 +80,7 @@ B) https://stackoverflow.com/questions/42460930/how-to-resize-navbar-logo-on-scr
     {* <footer  data-visible="on" id="js_footer"> *}
     <footer class="footer footer-big" data-background-color="grijs">   
       <div class="container-fluid">
-        {*<div class="content">*}
+        <div class="content">
           <div class="row">
             <div class="col-md-3"> {* l-three-col-one *}
               Made with <a href="https://www.cmsmadesimple.org/">CMS Made Simple</a> {custom_copyright}<br><br>
@@ -134,7 +123,7 @@ else window.onload = downloadJSAtOnload;
               {CGBetterForms form="mailingForm"}
             </div>
           </div>
-        {* </div> *}
+        </div>
       </div>
     </footer>
     

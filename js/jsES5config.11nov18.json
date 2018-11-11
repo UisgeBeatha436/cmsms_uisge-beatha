@@ -7,6 +7,12 @@
       ]
     },
     {
+      "outputFileName": "picturefill.js",
+      "dependencies": [
+        "node_modules/picturefill/dist/picturefill.js"
+      ]
+    },
+    {
       "outputFileName": "scripts.js",
       "dependencies": [
         "es5/footer/scripts/*.js"

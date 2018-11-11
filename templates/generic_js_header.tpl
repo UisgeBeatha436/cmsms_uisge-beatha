@@ -10,15 +10,12 @@
   {$global_js_header}
 {/if}
 
-{* capture assign='es6'}
+{if "{#es6ModusModern#}" == 'on'}
   {include file="{#theme_resource#}generated/generated_js_header.tpl"}
-{/capture *}
+{/if}
 
-{capture assign='es5'}
+{if "{#es5Modus#}" == 'on'}
   {assign var=_unique_js_id value=10|mt_rand:30}
   <script src="{$theme_relative_url}/js/es5/modernizr.js?fes={$_unique_js_id}"></script>
   <script src="{$theme_relative_url}/js/es5/picturefill.js?fes={$_unique_js_id}"></script>
-{/capture}
-
-{*$es5*}
-{$es6}
+{/if}

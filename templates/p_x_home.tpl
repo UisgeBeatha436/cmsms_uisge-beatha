@@ -8,34 +8,34 @@
 
 {block name='body_content'}
   {assign var='parallax_img' value={CGSmartImage src='http://localhost/install/uploads/images/cms/40MijlvanBru-02.jpg' notag=1}}
-  {*assign var='parallax_img' value='http://localhost/install/uploads/images/cms/40MijlvanBru-02.jpg'*}
-
   <a id="a-content"></a>
   <div class="wrapper">
     <div class="page-header clear-filter" filter-color="orange">
-      <div class="page-header-image" data-parallax="true" style="background-image: url({$parallax_img});">
+      <div class="page-header-image rellax" data-rellax-speed="-4" data-rellax-percentage="0.5" > {*style="background-image: url({$parallax_img});"> { * data-parallax="true" *}
       </div>
       <div class="content-center">
         <div class="container">
           <div class="content-center">
-            <h1 class="h1-seo text-center">{sitename}</h1>
-            <h2 class="description text-center">Dehler 36 JV</h2>
+            <h1 class="h1-seo text-center rellax" data-rellax-speed="-4">{sitename} </h1>
+            <h2 class="description text-center rellax" data-rellax-speed="-1">Dehler 36 JV</h2>
           </div>
         </div>
       </div>
     </div>
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          {$content_01}
+    <div class="section section-basic-components">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            {$content_01}
+          </div>
         </div>
       </div>
-    </div>
-    <div class="section">
-      <div class="container">
-        <hr>
-        <h2 class="title">Logboek berichten</h2>
-          {CGBlog summarytemplate="blogSummaryHome" number="3" detailpage="{if isset($blog_page)}{$blog_page}{/if}"} 
+      <div class="section">
+        <div class="container">
+          <hr>
+          <h2 class="title">Logboek berichten</h2>
+            {CGBlog summarytemplate="blogSummaryHome" number="3" detailpage="{if isset($blog_page)}{$blog_page}{/if}"} 
+        </div>
       </div>
     </div>
   </div>

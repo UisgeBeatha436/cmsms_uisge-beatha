@@ -1,5 +1,20 @@
 <!-- parsed: 2 of 3 generic page base 03 --> 
 <body class="profile-page"> {*$addClass}"> profile-page*}
+  <div class="container">
+    <div class="row alert alert-info text-center fixed-bottom" role="alert" id="cookies-eu-banner" style="display: none;">
+      <div class="col-12 ml-auto mr-auto">
+        <p>By continuing your visit to this site, you accept the use of cookies by Google Analytics to make visits statistics.</p>
+      </div>
+      <div class="col-12">
+        <div class="text-center">
+          <a class="btn btn-info pull-center btn-round" type="button" href="./read-more.html" id="cookies-eu-more">Meer info</a>
+          <button type="button" class="btn btn-warning btn-round pull-center" id="cookies-eu-reject">Afwijzen</button>
+          <button type="button" class="btn btn-succes btn-round pull-center" id="cookies-eu-accept">Accepteren</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
 {* include svg/shape.svg once *}
 {*svgdata inline=1 assetsbase=1 file='svg/shape.svg' tpl="{#theme_resource#}txt_svg.tpl"*}
 
@@ -8,18 +23,23 @@
 {block name='body_header'}
   {*<header data-visible="on" id="js_header"> *}
     {*<div class="header-content">
-      {cms_selflink dir='start' text="{sitename}"}
+      {cms_selflink dir='start' text="{$sitename}"}
     </div>*}
     
     {block name='body_nav'}
-      <nav class="navbar navbar-expand-lg bgdefault fixed-top navbar-transparent" color-on-scroll="500"> {* navbar-custom *}
+      <nav class="navbar navbar-color-on-scroll navbar-expand-lg fixed-top navbar-transparent" color-on-scroll="170"> {* bgdefault navbar-custom *}
         <div class="container-fluid">
           <div class="navbar-header">
             
           </div>
           <div class="navbar-translate">
             {cgsi_convert} {* requires popper.js  rel="tooltip" *}
-              <a class="navbar-brand" href="{root_url}"  title="{sitename} | Design based on Now_UI-Kit. Coded by Gregor" data-placement="bottom" target="_blank"><img id="header-logo" class="logo"  alt="{sitename}" src="https://uisge-beatha.eu/uploads/images/cms/Dehler%20-%20logo%20transparant%20lunarpic.png" height="150vh"/>
+            {if $page_alias == 'hanse_311'}
+              <a class="navbar-brand" href="{root_url}"  title="{$sitename} | Design based on Now_UI-Kit. Coded by Gregor" data-placement="bottom" target="_blank"><img id="header-logo" class="logo"  alt="{$sitename}" src="{root_url}/uploads/images/cms/Logo_Hanse_UisgeBeatha.png" height="150vh"/>
+            {else}
+              <a class="navbar-brand" href="{root_url}"  title="{$sitename} | Design based on Now_UI-Kit. Coded by Gregor" data-placement="bottom" target="_blank"><img id="header-logo" class="logo"  alt="{$sitename}" src="{root_url}/uploads/images/cms/Logo_Dehler_UisgeBeatha.png" height="150vh"/>
+            {/if}
+              
               </a>
             {/cgsi_convert}
             {*<a class="navbar-brand" href="{root_url}" rel="tooltip" title="Design based on Now_UI-Kit. Coded by Gregor" data-placement="bottom" target="_blank">
@@ -37,9 +57,26 @@
           <div class="collapse navbar-collapse" id="navbarNav" data-nav-image="ttps://uisge-beatha.eu/uploads/images/cms/Dehler%20-%20logo%20transparant%20lunarpic.png" data-color="orange">
             {Navigator action='default' template="{#theme_resource#}navigator_navigation_multilevel_bootstrap_menu.tpl"}
             {global_content name='socialFollowButtons' shape='round' navbar='1'}
-            <form class="form-inline ml-auto text-dark" data-background-color="#990000">
-              <div class="form-group">
-                <input type="text" class="form-control" placeholder="Ik zoek" style="color:blue;">
+            <form class="form ml-auto text-dark" data-background-color="#990000">
+              {if $browser_lang != 'nl'}
+                <div class="form-group">
+                  {include file='cms_template:google_Translate'}
+                </div>
+                </div>
+              {/if}
+              <div class="input-group" style="width: 9vw;">
+                <div class="input-group-prepend">
+                  <div class="input-group-text"><i class="fas fa-search" style="margin-right: 10px;margin-left: -5px;"></i></div>
+                </div>
+                  
+                  {*<input type="text" class="form-control" placeholder="Ik zoek" style="color:white;"/> 
+                  If you want a more sophisticated solution read about Google's reCAPTCHA service *}
+                  <form formaction="zoeken" formenctype="multipart/form-data" formmethod="get" style="color:white;"/>
+                      <input class="form-control"  type="text" id="zoekForm" name="q" placeholder="Zoek" required>
+                      <input type="submit" value="Ga" formaction="/zoeken" id="submit" style="position: absolute; left: -9999px; width: 1px; height: 1px;"
+       tabindex="-1">
+                  </form>
+
               </div>
             </form>
           </div>
@@ -48,7 +85,7 @@
     {*  <nav class="navbar navbar-expand-lg fixed-top navbar-dark danger-color">
         <div class="container-fluid">
           <div class="navbar-translate">
-            <a class="navbar-brand" href="{root_url}" title="{sitename}" data-placement="bottom"><img id="header-logo" class="logo"  alt="{sitename}" src="//uisge-beatha.eu/uploads/images/cms/Dehler%20-%20logo%20transparant%20lunarpic.png" height="150vh"/>
+            <a class="navbar-brand" href="{root_url}" title="{$sitename}" data-placement="bottom"><img id="header-logo" class="logo"  alt="{$sitename}" src="//uisge-beatha.eu/uploads/images/cms/Dehler%20-%20logo%20transparant%20lunarpic.png" height="150vh"/>
             </a>
           </div>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -93,41 +130,55 @@ B) https://stackoverflow.com/questions/42460930/how-to-resize-navbar-logo-on-scr
       <div class="container-fluid">
         {*<div class="content">*}
           <div class="row">
-            <div class="col-md-3"> {* l-three-col-one *}
+            <div class="col-md-3 d-none d-sm-block float-left"> {* l-three-col-one *}
               Made with <a href="https://www.cmsmadesimple.org/">CMS Made Simple</a> {custom_copyright}<br><br>
-              <a href="{get_current_url}#a-content" class="shape-link"><span>TOP</span></a>
+              <svg><use xlink:href="{$theme_relative_url}/svg/shape.svg#envelope-open-o"/></svg>
+              {*<a href="{get_current_url}#a-content" class="shape-link"><span>TOP</span></a>
+              <h4>Laatst gewijzigde pagina's</h4>
+              {recently_updated number='3' css_class='text-left h6 small' *}
             </div>
-            <div class="col-md-5">
+            <div class="col-md-5 d-none d-sm-block" id="marinetraffic">
               <h3>Waar bevindt Uisge Beatha zich?</h3>
+              {*<input type="button" class="button-class" onclick="function(click)">*}
+ <script>
+    	var width='100%';   // the width of the embedded map in pixels or percentage 
+    	var height='300';   // the height of the embedded map in pixels or percentage 
+    	var border='1'; // the width of the border around the map (zero means no border) 
+    	var shownames='true';   // to display ship names on the map (true or false) 
+    	var latitude='51.7143'; // the latitude of the center of the map, in decimal degrees 
+    	var longitude='04.0889';    // the longitude of the center of the map, in decimal degrees 
+    	var zoom='11';  // the zoom level of the map (values between 2 and 17) 
+    	var maptype='0';    // use 0 for Normal Map, 1 for Satellite, 2 for OpenStreetMap 
+    	var trackvessel='' //244770624';     MMSI of a vessel (note: vessel will be displayed only if within range of the system) - overrides "zoom" option 
+    	var fleet='';   // the registered email address of a user-defined fleet (user's default fleet is used) 
+    	// Read more at http://www.marinetraffic.com/en/p/embed-map#6YXCVvOUaBxYHgoT.99
+    </script>
+    <script>
+        var resource = document.createElement('script'); 
+        resource.async = "true";
+        resource.src = "http://www.marinetraffic.com/js/embed.js";
+        var script = document.getElementsByTagName('script')[0];
+        script.parentNode.insertBefore(resource, script);
+    </script>
+              {*<script type="text/javascript">
+                //function myFunc(e) {
+                  // var script = document.createElement('script');
+                  ///script.src = 'http://localhost/assets/src/cmsms_uisge-beatha/js/marineTraffic.js';
+                  ///script.type = 'text/javascript';
+                  // $('head')[0].appendChild(script);
+                  // }
+                  // src="{root_url}/assets/src/cmsms_uisge-beatha/js/marineTraffic.js";
+                //window.onload = init();
+                 //   var script = document.createElement("script");
+                  //  script.type = "text/javascript";
+                  //  script.src = "http://localhost/assets/src/cmsms_uisge-beatha/js/marineTraffic.js";
+                 //   script.onclick = function(e){
+                 //       alert("Script is ready!");
+                  //  };
+                 //   document.body.appendChild(script);
+               // }
 
-             
-              
-              
-              <!--script type="text/javascript">
-              / / https://varvy.com/pagespeed/defer-loading-javascript.html
-function downloadJSAtOnload() {
-var element = document.createElement("script");
-element.src = "http://www.marinetraffic.com/js/embed.js";
-/ / document.body.appendChild(element);
-document.getElementsByTagName('body')[0].appendChild(element);
-}
-if (window.addEventListener)
-window.addEventListener("load", downloadJSAtOnload, false);
-else if (window.attachEvent)
-window.attachEvent("onload", downloadJSAtOnload);
-else window.onload = downloadJSAtOnload;
-</script -->
-
-  <!--script type="text/javascript" src="http://www.marinetraffic.com/js/embed.js"></script-->
-  <script type="text/javascript">
-    window.onload = function() {
-    var tag = document.createElement('script');
-    tag.src = 'http://www.marinetraffic.com/js/embed.js';
-    document.body.appendChild(tag);
-    }
-  </script>
-              {* /Users/gjdegraaf/Sites/assets/src/cmsms_uisge-beatha/js/marineTraffic.js *}
-              {* <script type="text/javascript" src="http://localhost/assets/src/cmsms_uisge-beatha/js/marineTraffic.js"></script> *}
+             </script>*}
             </div>
             <div class="col-md-3 ml-md-3 ml-sm-1">
               <h3>Nieuwtjes ontvangen?</h3>
@@ -151,7 +202,7 @@ else window.onload = downloadJSAtOnload;
 
     <footer class="footer" data-footer-background-color="blue_gradient">
       <div class="container">
-        <a class="footer-brand" href="#uisge-beatha">{sitename}</a>
+        <a class="footer-brand" href="#uisge-beatha">{$sitename}</a>
         {*<ul class="pull-center"></ul>*}
         {Navigator action='default' template="{#theme_resource#}navigator_navigation.tpl"}
         {global_content name='socialFollowButtons' shape='neutral' link='1'}
@@ -177,14 +228,54 @@ else window.onload = downloadJSAtOnload;
   {/block} 
 </div>
 
-{block name='js_footer'}
-  {include file="{#theme_resource#}generic_js_footer.tpl"}
-  {include file="{#theme_resource#}generic_js_google_analytics.tpl"}
-{/block}
+  {block name='js_footer'}
+    {include file="{#theme_resource#}generic_js_footer.tpl"}
+    {include file="{#theme_resource#}generic_js_google_analytics.tpl"}
+    {include file="{#theme_resource#}generic_js_footer_google_tag_manager.tpl"}
+  {/block}
 
-{if isset($page_js_footer) && $page_js_footer != ''}
-  {$page_js_footer}
-{/if}
+  {if isset($page_js_footer) && $page_js_footer != ''}
+    {$page_js_footer}
+  {/if}
+  <script>
+    $(document).ready(function() {
+      /******************************
+          BOTTOM SCROLL TOP BUTTON
+      ******************************/
+      // declare variable
+      var scrollTop = $(".scrollTop");
+      $(window).scroll(function() {
+        // declare variable
+        var topPos = $(this).scrollTop();
+        // if user scrolls down - show scroll to top button
+        if (topPos > 100) {
+          $(scrollTop).css("opacity", "1");
+        } else {
+          $(scrollTop).css("opacity", "0");
+        }
+      }); // scroll END
+      //Click event to scroll to top
+      $(scrollTop).click(function() {
+        $('html, body').animate({
+          scrollTop: 0
+        }, 800);
+        return false;
+      }); // click() scroll top EMD
+    }); // ready() END
+  </script>
+
+  <script> // Content with blockquotes is missing a class. Script to add it otherwise Bootstrap wouldn't understand it
+    $( "blockquote" ).last().addClass( "blockquote" );
+  </script>
+  <div id="stop" class="scrollTop"> {* used to scroll to the top of the page *}
+    <span><a href=""><i class="fas fa-angle-up" style="color: white;"></i></a></span>
+  </div>
+  <div id="fb-root"></div> {* requireed to enable Facebook plugins *}
+  <script>
+    new CookiesEuBanner(function(){
+        // Your code to launch when user accept cookies
+    }, true);
+  </script>
 </body>
 
 {* <!-- /parsed 2 of 3 --> *}

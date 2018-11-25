@@ -1,15 +1,45 @@
 {
   "files": [
     {
+      "outputFileName": "jquery.slim.js",
+      "dependencies": [
+        "node_modules/jquery/dist/jquery.slim.js"
+      ]
+    },
+    {
+      "outputFileName": "bootstrap.js",
+      "dependencies": [
+        "node_modules/bootstrap/dist/js/bootstrap.js"
+      ]
+    },
+    {
       "outputFileName": "now-ui-kit.js",
       "dependencies": [
-        "node_modules/now-ui-kit-pro/assets/js/now-ui-kit.js"
+        "node_modules/now-ui-kit/assets/js/now-ui-kit.js"
+      ]
+    },
+    {
+      "outputFileName": "fontawesome.js",
+      "dependencies": [
+        "node_modules/@fortawesome/fontawesome-free/js/all.js"
+      ]
+    },
+    {
+      "outputFileName": "rellax.js",
+      "dependencies": [
+        "node_modules/rellax/rellax.js"
+      ]
+    },
+    {
+      "outputFileName": "cookies-eu-banner.js",
+      "dependencies": [
+        "node_modules/cookies-eu-banner/dist/cookies-eu-banner.js"
       ]
     },
     {
       "outputFileName": "scripts.js",
       "dependencies": [
-        "es5/footer/scripts/*.js"
+        "node_modules/scripts/*.js"
       ]
     },
     {
@@ -23,10 +53,6 @@
       "dependencies": [
         "es5/footer/vendor/*.js"
       ]
-    },
-    {
-      "outputFileName": "jquery.slim.js",
-      "dependencies": ["assets_npm/jquery/dist/jquery.slim.js"]
     }
   ]
 }

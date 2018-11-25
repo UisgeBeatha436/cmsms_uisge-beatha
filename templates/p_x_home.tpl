@@ -7,20 +7,25 @@
 {/block}
 
 {block name='body_content'}
-  {assign var='parallax_img' value={CGSmartImage src='http://localhost/install/uploads/images/cms/40MijlvanBru-02.jpg' notag=1}}
+  {assign var='parallax_img' value={CGSmartImage src="{root_url}/uploads/images/cms/40MijlvanBru-02.jpg" notag=1}}
   <a id="a-content"></a>
   <div class="wrapper">
     <div class="page-header clear-filter" filter-color="orange">
-      <div class="page-header-image rellax" data-rellax-speed="-4" data-rellax-percentage="0.5" > {*style="background-image: url({$parallax_img});"> { * data-parallax="true" *}
+      <div class="page-header-image rellax" data-rellax-speed="-4" data-rellax-percentage="0.5" style="background-image: url({$parallax_img});"> {* data-parallax="true" *}
       </div>
       <div class="content-center">
-        <div class="container">
-          <div class="content-center">
-            <h1 class="h1-seo text-center rellax" data-rellax-speed="-4">{sitename} </h1>
-            <h2 class="description text-center rellax" data-rellax-speed="-1">Dehler 36 JV</h2>
-          </div>
+        <div class="content-center">
+          <h1 class="h1-seo text-center rellax" data-rellax-speed="-1">{$sitename} </h1> {*data-rellax-speed="-4"*}
+          <h2 class="description text-center rellax" data-rellax-speed="1">Dehler 36 JV</h2> {*data-rellax-speed="-1"*}
         </div>
       </div>
+      {*<div class="row">
+        <div class="col-md-5">
+          <div class="iframe-container">
+            <iframe src="https://www.youtube.com/embed/RcmrbNRK-jY?modestbranding=1&autohide=1&showinfo=0" frameborder="0" allowfullscreen height="250"></iframe>
+          </div>
+        </div>
+      </div>*}
     </div>
     <div class="section section-basic-components">
       <div class="container">

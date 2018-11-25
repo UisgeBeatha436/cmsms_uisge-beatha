@@ -12,7 +12,7 @@
     <div class="parallax"> {* Create text in the center of the homepage *}
       <svg>
         <text x="50%" y="50%" dy=".3em">
-          {sitename}
+          {$sitename}
         </text>
       </svg>
     </div>

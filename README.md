@@ -74,7 +74,7 @@ html {
     
     /*  background-image: url(/CGSmartImage src='https://develop.uisge-beatha.eu/www/uploads/images/site/IMG_0167.jpg' notag=1 noresponsive=1 noembed=0/); */
         
-    /* background-image: url("http://localhost/install/uploads/images/cms/40MijlvanBru-02.jpg"); */
+    /* background-image: url("{root_url}/uploads/images/cms/40MijlvanBru-02.jpg"); */
     background-size: cover;
     /* background-color: rgb(250,228, 216); */
 } }

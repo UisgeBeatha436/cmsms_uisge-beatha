@@ -9,7 +9,7 @@
 {* block name='body_header'}
   <header data-visible="on" id="js_header">
     <div class="header-content">
-      {cms_selflink dir='start' text="{sitename}"}
+      {cms_selflink dir='start' text="{$sitename}"}
     </div>
   </header>
 {/block *}
@@ -23,7 +23,7 @@ B) https://stackoverflow.com/questions/42460930/how-to-resize-navbar-logo-on-scr
 {block name='body_nav'}
    {* <nav class="navbar fixed-top navbar-expand-lg navbar-transparent bg-white navbar-absolute" color-on-scroll="400">
     <div class="container">
-      <a class="navbar-brand" href="#" title="{sitename}"><img id="header-logo" class="logo"  alt="{sitename}" src="//uisge-beatha.eu/uploads/images/cms/Dehler%20-%20logo%20transparant%20lunarpic.png" height="150vh"/></a> { * https://www.freeiconspng.com/uploads/sailing-boat-png-29.png src="//uisge-beatha.eu/uploads/images/cms/Dehler%20-%20logo%20transparant%20lunarpic.png"/> * }
+      <a class="navbar-brand" href="#" title="{$sitename}"><img id="header-logo" class="logo"  alt="{$sitename}" src="//uisge-beatha.eu/uploads/images/cms/Dehler%20-%20logo%20transparant%20lunarpic.png" height="150vh"/></a> { * https://www.freeiconspng.com/uploads/sailing-boat-png-29.png src="//uisge-beatha.eu/uploads/images/cms/Dehler%20-%20logo%20transparant%20lunarpic.png"/> * }
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -41,7 +41,7 @@ B) https://stackoverflow.com/questions/42460930/how-to-resize-navbar-logo-on-scr
   <nav class="navbar navbar-expand-lg fixed-top navbar-dark danger-color">
     <div class="container-fluid">
       <div class="navbar-translate">
-        <a class="navbar-brand" href="{root_url}" title="{sitename}" data-placement="bottom"><img id="header-logo" class="logo"  alt="{sitename}" src="//uisge-beatha.eu/uploads/images/cms/Dehler%20-%20logo%20transparant%20lunarpic.png" height="150vh"/> {* https://www.freeiconspng.com/uploads/sailing-boat-png-29.png src="//uisge-beatha.eu/uploads/images/cms/Dehler%20-%20logo%20transparant%20lunarpic.png"/> *}
+        <a class="navbar-brand" href="{root_url}" title="{$sitename}" data-placement="bottom"><img id="header-logo" class="logo"  alt="{$sitename}" src="//uisge-beatha.eu/uploads/images/cms/Dehler%20-%20logo%20transparant%20lunarpic.png" height="150vh"/> {* https://www.freeiconspng.com/uploads/sailing-boat-png-29.png src="//uisge-beatha.eu/uploads/images/cms/Dehler%20-%20logo%20transparant%20lunarpic.png"/> *}
         </a>
       </div>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -62,7 +62,7 @@ B) https://stackoverflow.com/questions/42460930/how-to-resize-navbar-logo-on-scr
   {* <div class="container">
     <nav class="navbar fixed-top navbar-expand-lg navbar-light  navbar-absolute" color-on-scroll="400">
       { * <a class="navbar-brand" href="#">Uisge Beatha</a> * }
-      <a class="navbar-brand" href="{root_url}" title="{sitename}"><img id="header-logo" class="logo"  alt="{sitename}" src="//uisge-beatha.eu/uploads/images/cms/Dehler%20-%20logo%20transparant%20lunarpic.png" height="150vh"/> { * https://www.freeiconspng.com/uploads/sailing-boat-png-29.png src="//uisge-beatha.eu/uploads/images/cms/Dehler%20-%20logo%20transparant%20lunarpic.png"/> * }
+      <a class="navbar-brand" href="{root_url}" title="{$sitename}"><img id="header-logo" class="logo"  alt="{$sitename}" src="//uisge-beatha.eu/uploads/images/cms/Dehler%20-%20logo%20transparant%20lunarpic.png" height="150vh"/> { * https://www.freeiconspng.com/uploads/sailing-boat-png-29.png src="//uisge-beatha.eu/uploads/images/cms/Dehler%20-%20logo%20transparant%20lunarpic.png"/> * }
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>

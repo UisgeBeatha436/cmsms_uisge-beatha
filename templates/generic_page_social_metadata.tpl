@@ -7,7 +7,7 @@
 {elseif isset($content_obj)}
   <meta property="og:url" content="{$content_obj->GetURL()}">
 {/if}
-  <meta property="og:site_name" content="{sitename}">
+  <meta property="og:site_name" content="{$sitename}">
 {if isset($og_type)}
   <meta property="og:type" content="{$og_type}">
 {else}
@@ -38,12 +38,12 @@
   <meta property="og:image" content="{$theme_absolute_url}/images/og_image.png">
   <meta property="og:image:width" content="280">
   <meta property="og:image:height" content="280">
-  <meta property="og:image:alt" content="{sitename} logo">
+  <meta property="og:image:alt" content="{$sitename} logo">
 {/if}
 {if isset($content_obj->TitleAttribute()) && $content_obj->TitleAttribute() != ''}
   <meta property="og:description" content="{$content_obj->TitleAttribute()|regex_replace:"/^[\s]*(.*?)[\s]*$/":"$1"}">
 {else}
-  <meta property="og:description" content="{title} - {sitename}">
+  <meta property="og:description" content="{title} - {$sitename}">
 {/if}
 {* /facebook metadata *}
 

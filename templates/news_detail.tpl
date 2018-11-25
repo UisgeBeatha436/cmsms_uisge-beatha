@@ -60,7 +60,7 @@
   {$_sociallinks_description = ''}
 {/if}
 
-{$_sociallinks_title = "{title} - {sitename}"}
+{$_sociallinks_title = "{title} - {$sitename}"}
 {capture assign='_sociallinks_title'}{$_sociallinks_title|cms_escape:htmlall|truncate:80}{/capture}
 
 {if isset($canonical_global)}

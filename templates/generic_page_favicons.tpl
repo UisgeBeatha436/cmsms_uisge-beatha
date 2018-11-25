@@ -17,14 +17,14 @@
 
 {* add to homescreen for chrome on android *}
 <meta name="mobile-web-app-capable" content="yes">
-<meta name="application-name" content="{sitename}">
+<meta name="application-name" content="{$sitename}">
 <link rel="icon" type="image/png" sizes="192x192" href="{CGSmartImage src="{$theme_relative_url}/favicons/android-chrome-192x192.png" noresponsive=1 notag=1 force_ext=1 noembed=1 filter_resizetofit='192,192,#ff000,126'}">
 <link rel="apple-touch-icon" href="{CGSmartImage src="{$theme_relative_url}/favicons/android-icon-192x192.png" noresponsive=1 notag=1 force_ext=1 noembed=1 filter_resizetofit='192,192,#ff000,126'}">
 {* add to homescreen for safari on ios *}
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black">
-<meta name="apple-mobile-web-app-title" content="{sitename}">
-{* <meta name="application-name" content="{sitename}"> *}
+<meta name="apple-mobile-web-app-title" content="{$sitename}">
+{* <meta name="application-name" content="{$sitename}"> *}
 {* <link rel="apple-touch-icon" href="{$theme_relative_url}/favicons/apple-touch-icon-120x120.png">
 <link rel="apple-touch-icon" sizes="57x57" href="{$theme_relative_url}/favicons/apple-touch-icon-57x57.png">
 <link rel="apple-touch-icon" sizes="60x60" href="{$theme_relative_url}/favicons/apple-touch-icon-60x60.png">

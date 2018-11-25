@@ -18,7 +18,7 @@
 					{*<a id="a-content"></a>*}
 					{$content_01}
 				</div>
-				<div class="col-md-3 ml-auto mr-auto">
+				<div class="col-md-3 d-none d-sm-block ml-auto mr-auto">
 					{$content_02}
 				</div> {* class sidebar right *}
 			</div>

@@ -1,0 +1,233 @@
+/* ############################################################################
+ * # typo-font-face
+ * ############################################################################ */
+
+// taken from: https://github.com/thoughtbot/bourbon/blob/bourbon-v5.0.0/core/bourbon/settings/_global-font-file-formats.scss
+
+/// A global setting for font file formats for the `font-face` mixin.
+///
+/// @see {mixin} font-face
+///
+/// @example scss
+///   $global-font-file-formats: woff2 woff;
+///
+/// @type list | string
+
+$global-font-file-formats: local ttf woff2 woff !default;
+
+/// A global setting for font file formats for the `font-face` mixin.
+///
+/// @see {mixin} font-face
+///
+/// @example scss
+///   $global-font-display: auto|block|swap|fallback|optional;
+///
+/// @type string
+
+$global-font-display: auto !default;
+
+// taken from: https://github.com/thoughtbot/bourbon/blob/bourbon-v5.0.0/core/bourbon/settings/_asset-pipeline.scss
+
+/// A global setting to enable or disable the `$asset-pipeline` variable for all functions that accept it.
+///
+/// @type boolean
+
+$asset-pipeline: false !default;
+
+// taken from: https://github.com/thoughtbot/bourbon/blob/bourbon-v5.0.0/core/bourbon/functions/_contains.scss
+
+/// Checks if a list contains a value(s).
+///
+/// @access private
+///
+/// @param {list} $list
+/// The list to check against.
+///
+/// @param {list} $values
+/// A single value or list of values to check for.
+///
+/// @return {boolean}
+
+@function contains($list, $values...) {
+  @each $value in $values {
+    @if type-of(index($list, $value)) != 'number' {
+      @return false;
+    }
+  }
+
+  @return true;
+}
+
+
+// taken from: https://raw.githubusercontent.com/thoughtbot/bourbon/bourbon-v5.0.0/core/bourbon/helpers/_font-source-declaration.scss
+
+// Used for creating the source string for fonts using @font-face
+// Reference: http://goo.gl/Ru1bKP
+
+/// font-url-prefixer
+/// @access private
+/// @param {string} $asset-pipeline
+/// @return {string} url
+
+@function font-url-prefixer($asset-pipeline) {
+  @if $asset-pipeline == true {
+    @return font-url;
+  } @else {
+    @return url;
+  }
+}
+
+/// font-source-declaration
+/// @access private
+/// @param {string} $font-family
+/// @param {string} $file-path
+/// @param {string} $asset-pipeline
+/// @param {list} $file-formats
+/// @param {string} $font-url
+/// @return {string} src
+/// @link https://davidkpiano.github.io/sassdash/sassdoc/index.html
+
+@function font-source-declaration(
+  $font-family,
+  $file-path,
+  $asset-pipeline,
+  $file-formats,
+  $font-url) {
+
+  $src: ();
+
+  $formats-map: (
+    local: '#{$file-path}' format(''),
+    eot:   '#{$file-path}.eot?#iefix' format('embedded-opentype'),
+    woff2: '#{$file-path}.woff2' format('woff2'),
+    woff:  '#{$file-path}.woff' format('woff'),
+    ttf:   '#{$file-path}.ttf' format('truetype'),
+    svg:   '#{$file-path}.svg##{$font-family}' format('svg')
+  );
+
+  @each $key, $values in $formats-map {
+    @if contains($file-formats, $key) {
+      $file-path: nth($values, 1);
+      $font-format: nth($values, 2);
+
+      @if $asset-pipeline == true {
+        @if $key != local {
+          $src: append($src, font-url($file-path) $font-format, comma);
+        }
+      } @else {
+        @if $key == local {
+          $file-path-parts: _split($file-path, '/');
+          $file: nth($file-path-parts, -1);
+          $file-two: _start-case($file);
+          $src: append($src, local($file), comma);
+          $src: append($src, local($file-two), comma);
+        } @else {
+          $src: append($src, url($file-path) $font-format, comma);
+        }
+      }
+    }
+  }
+
+  @return $src;
+}
+
+/// font-display-declaration
+/// @access private
+/// @param {string} $font-display-in
+/// @return {string} font-display-out
+
+@function font-display-declaration($font-display-in) {
+
+  $font-display-out: auto;
+
+  $font-display-map: (
+    auto: auto,
+    block: block,
+    swap: swap,
+    fallback: fallback,
+    optional: optional,
+    null: null
+  );
+
+  @each $key, $values in $font-display-map {
+    @if contains($font-display-in, $key) {
+      $font-display-out: nth($values, 1);
+    }
+  }
+
+  @return $font-display-out;
+
+}
+
+// taken from: https://raw.githubusercontent.com/thoughtbot/bourbon/bourbon-v5.0.0/core/bourbon/css3/_font-face.scss
+
+/// Generates a font-face declaration. Accepts arugments for weight, style, usage with the Rails Asset Pipeline and file formats.
+/// @param {string} $font-family
+/// @param {string} $file-path
+/// @param {string} $weight [normal]
+/// @param {string} $style [normal]
+/// @param {string} $asset-pipeline [$asset-pipeline]
+/// `$asset-pipeline` is set to `false` by default. You can pass in `true` to use the Rails Asset Pipeline (place the fonts in `app/assets/fonts/').
+/// @param {list} $file-formats [$global-font-file-formats]
+/// `$global-font-file-formats` is set to `ttf woff2 woff` by default. Pass a list of file formats to support. E.g. `eot woff2 woff ttf svg`.
+/// @param {string} $font-display [auto|block|swap|fallback|optional|null]
+/// `$font-display` is set to 'auto' by default, if you pass null font-display: is not added to output
+///
+/// @example scss
+///   @include font-face("saira-medium", "/assets/dst/webfont/Saira-Medium", normal, $asset-pipeline: true, $file-formats: eot woff ttf, $font-display: auto);
+///   @include font-face('saira-medium', '/assets/dst/webfont/Saira-Medium', 500, $font-display: fallback);
+///
+/// /* $base-font-family should be set globally before this file is loaded and used */
+/// .saira-medium {
+///   font-family: 'saira-medium', $base-font-family;
+///   color: red;
+/// }
+///
+/// @example css
+/// \@font-face {
+///   font-family: "iconfont";
+///   font-style: normal;
+///   font-weight: normal;
+///   src: url("/assets/dst/webfont/iconfont.woff2") format("woff2"), url("/assets/dst/webfont/iconfont.woff") format("woff"), url("/assets/dst/webfont/iconfont.ttf") format("truetype");
+///   font-display: fallback; }
+///
+/// @require {function} font-url-prefixer
+/// @require {function} font-source-declaration
+/// @require {function} font-display-declaration
+
+@mixin font-face(
+  $font-family,
+  $file-path,
+  $weight: normal,
+  $style: normal,
+  $asset-pipeline: $asset-pipeline,
+  $file-formats: $global-font-file-formats,
+  $font-display: $global-font-display) {
+
+  $font-url-prefix: font-url-prefixer($asset-pipeline);
+
+  @font-face {
+    font-family: $font-family;
+    font-style: $style;
+    font-weight: $weight;
+
+    src: font-source-declaration(
+      $font-family,
+      $file-path,
+      $asset-pipeline,
+      $file-formats,
+      $font-url-prefix
+    );
+
+    @if ($font-display != null) {
+      font-display: font-display-declaration(
+        $font-display
+      );
+    }
+
+  }
+}
+
+//
+// EOF
+//

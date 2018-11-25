@@ -8,7 +8,7 @@
 {block name='body_header'}
   <header data-visible="on" id="js_header">
     {*<div class="header-content">
-      {cms_selflink dir='start' text="{sitename}"}
+      {cms_selflink dir='start' text="{$sitename}"}
     </div>*}
     
     {block name='body_nav'}
@@ -16,7 +16,7 @@
         <div class="container-fluid">
           <div class="navbar-header">
             {cgsi_convert}
-              <a class="navbar-brand" href="{root_url}" title="{sitename}" data-placement="bottom"><img id="header-logo" class="logo"  alt="{sitename}" src="https://uisge-beatha.eu/uploads/images/cms/Dehler%20-%20logo%20transparant%20lunarpic.png" height="150vh"/>
+              <a class="navbar-brand" href="{root_url}" title="{$sitename}" data-placement="bottom"><img id="header-logo" class="logo"  alt="{$sitename}" src="https://uisge-beatha.eu/uploads/images/cms/Dehler%20-%20logo%20transparant%20lunarpic.png" height="150vh"/>
               </a>
             {/cgsi_convert}
           </div>
@@ -37,7 +37,7 @@
       {* <nav class="navbar navbar-expand-lg fixed-top navbar-dark danger-color">
         <div class="container-fluid">
           <div class="navbar-translate">
-            <a class="navbar-brand" href="{root_url}" title="{sitename}" data-placement="bottom"><img id="header-logo" class="logo"  alt="{sitename}" src="//uisge-beatha.eu/uploads/images/cms/Dehler%20-%20logo%20transparant%20lunarpic.png" height="150vh"/>
+            <a class="navbar-brand" href="{root_url}" title="{$sitename}" data-placement="bottom"><img id="header-logo" class="logo"  alt="{$sitename}" src="//uisge-beatha.eu/uploads/images/cms/Dehler%20-%20logo%20transparant%20lunarpic.png" height="150vh"/>
             </a>
           </div>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -140,7 +140,7 @@ else window.onload = downloadJSAtOnload;
 
     <footer class="footer" data-footer-background-color="blue_gradient">
       <div class="container">
-        <a class="footer-brand" href="#uisge-beatha">{sitename}</a>
+        <a class="footer-brand" href="#uisge-beatha">{$sitename}</a>
         {*<ul class="pull-center"></ul>*}
         {Navigator action='default' template="{#theme_resource#}navigator_navigation.tpl"}
         {global_content name='socialFollowButtons' shape='neutral' link='1'}

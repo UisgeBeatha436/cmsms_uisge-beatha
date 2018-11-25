@@ -39,7 +39,16 @@
   <meta name="MobileOptimized" content="320">
   <meta name="owner" content="Gregor de Graaf">
   <meta name="publisher" content="Gregor de Graaf">
-
+  {if isset($boat_date)}
+    {if $boat_date|date_format:'YYYY-MM-DD' > '2016-03-10'}
+      {$sitename = "{sitename}"} <!-- Dehler title -->
+    {else}
+      {assign var=sitename value='Uisge Beatha | De Hanse 311, mijn vorige boot'} <!-- Hanse title -->
+    {/if}
+  {else}
+    {$sitename = {sitename}}
+  {/if}
+ 
   {if isset($taglist)}
     {autometa key_add="{$taglist}, Dehler 36 JV" key_density=3 description=0}
   {else}
@@ -54,7 +63,7 @@
     {assign var='description_global' value=$page_description}
   {/if}
   <meta name="description" content="{$description_global}">
-  {$_full_title = "{title} - {sitename}"}
+  {$_full_title = "{title} - {$sitename}"}
   {$_full_title = "{$_full_title|cms_escape:htmlall|truncate:80}" scope='global'}
   <title>{$_full_title|cms_escape:htmlall|truncate:80}</title>
 
@@ -63,7 +72,7 @@
   {elseif isset($content_obj)}
     {$canonical_real_global = $content_obj->GetURL() scope='global'}
   {/if}
-
+  {$canonical = $canonical_real_global scope='global'} {* to make sure no other canonical setting is missed *}
   <link rel="canonical" href="{$canonical_real_global}">
 
   {include file="{#theme_resource#}generic_page_favicons.tpl"}
@@ -89,7 +98,6 @@
   {assign var="facebook" value='https://www.facebook.com/uisgebeatha.eu' scope=global}
   {assign var="google" value='https://plus.google.com/+GregordeGraaf' scope=global}
   {assign var="pinterest" value='https://nl.pinterest.com/gjdgraaf/uisge-beatha/' scope=global}
-  {assign var="feed" value='{root_url}/rssfeeed.rrs' scope=global}
   {assign var="linkedin" value='https://www.linkedin/gregordegraaf' scope=global}
 
   {nocache}
@@ -99,6 +107,6 @@
   {assign var=_unique_css_id value=10|mt_rand:3000000}
   <link rel="stylesheet" href="{$theme_relative_url}/css/main.css?fes{$_unique_css_id}">
   <!--link rel="stylesheet" href="{$theme_relative_url}/css/now-ui-kit.css?fes{$_unique_css_id}"-->
-
+  {browser_lang accepted='nl' assign='browser_lang' scope=global} {* used for Google Translate to check if translation is needed. Doesn't work too well because in NL it gives en... *}
 </head>
 {* <!-- /parsed: 3 of 3 --> *}

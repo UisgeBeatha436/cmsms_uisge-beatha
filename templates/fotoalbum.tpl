@@ -12,7 +12,7 @@ https://www.uisge-beatha.eu/uploads/images/Gallery/Winter1617/Kajuitramen
 {assign var="x" value=314}
 {assign var="first_photo" value="uploads/images/Gallery/{$gcb_params.album}/{$gcb_params.foto}.jpg"}
 
-<div class="row clearfix">
+<div class="row">
     <div class="col-auto">
         <h4>{svg use="camera"}&nbsp;Meer foto's in het album</h4>
     </div>

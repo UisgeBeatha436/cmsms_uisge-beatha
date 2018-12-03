@@ -13,5 +13,5 @@
 <!doctype html>
 {* has-no-js will be removed when using modernizr *}
 <html class="has-no-js" lang="{cms_get_language|truncate:2:"":true}">
-{* <!-- /parsed: 1 of 3 -->} *}
+{* <!-- /parsed: 1 of 3 --> *}
 {/strip}

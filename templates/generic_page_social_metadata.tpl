@@ -14,10 +14,9 @@
   <meta property="og:type" content="website">
 {/if}
 {*
-  <meta property="fb:app_id" content="">
-  <meta property="fb:admins" content="">
-  <meta property="fb:admins" content="">
-*}
+  <meta property="fb:app_id" content="175931732519501">
+  {* <meta property="fb:admins" content=""> 01dec18 still in use? *}
+  <meta property="fb:pages" content="419992328194645">
 
 {if isset($og_updated_time)}
   <meta property="og:updated_time" content="{$og_updated_time}">
@@ -68,3 +67,6 @@
   {* do not re-use title *}
 {/if}
 {* /twitter metadata *}
+
+{* Google Plus *}
+<link href="https://plus.google.com/116890025813489569543" rel="publisher">

@@ -92,6 +92,14 @@
     {include file="{#theme_resource#}generic_js_header.tpl"}
   {/block}
 
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-3514636835854223",
+          enable_page_level_ads: true
+     });
+</script>
+
   {* Define social links *}
   {assign var="feed" value='{root_url}/rssfeeed.rrs' scope=global}
   {assign var="twitter" value='https://www.twitter.com/GJdeGraaf' scope=global}
@@ -99,6 +107,9 @@
   {assign var="google" value='https://plus.google.com/+GregordeGraaf' scope=global}
   {assign var="pinterest" value='https://nl.pinterest.com/gjdgraaf/uisge-beatha/' scope=global}
   {assign var="linkedin" value='https://www.linkedin/gregordegraaf' scope=global}
+
+  {cms_selflink dir='prev' rellink=1}
+  {cms_selflink dir='next' rellink=1}
 
   {nocache}
     {*cms_stylesheet*}

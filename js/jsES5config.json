@@ -19,12 +19,6 @@
       ]
     },
     {
-      "outputFileName": "fontawesome.js",
-      "dependencies": [
-        "node_modules/@fortawesome/fontawesome-free/js/all.js"
-      ]
-    },
-    {
       "outputFileName": "rellax.js",
       "dependencies": [
         "node_modules/rellax/rellax.js"
@@ -37,9 +31,9 @@
       ]
     },
     {
-      "outputFileName": "scripts.js",
+      "outputFileName": "social.js",
       "dependencies": [
-        "node_modules/scripts/*.js"
+        "node_modules/social/social.js"
       ]
     },
     {

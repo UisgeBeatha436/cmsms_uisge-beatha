@@ -15,8 +15,8 @@
     </div>
   </div>
 
-{* include svg/shape.svg once *}
-{*svgdata inline=1 assetsbase=1 file='svg/shape.svg' tpl="{#theme_resource#}txt_svg.tpl"*}
+  {* include svg/shape.svg once *}
+  {*svgdata inline=1 assetsbase=1 file='svg/shape.svg' tpl="{#theme_resource#}txt_svg.tpl"*}
 
 {include file="{#theme_resource#}generic_nojs_google_tag_manager.tpl"}
 
@@ -34,12 +34,11 @@
           </div>
           <div class="navbar-translate">
             {cgsi_convert} {* requires popper.js  rel="tooltip" *}
-            {if $page_alias == 'hanse_311'}
-              <a class="navbar-brand" href="{root_url}"  title="{$sitename} | Design based on Now_UI-Kit. Coded by Gregor" data-placement="bottom" target="_blank"><img id="header-logo" class="logo"  alt="{$sitename}" src="{root_url}/uploads/images/cms/Logo_Hanse_UisgeBeatha.png" height="150vh"/>
-            {else}
-              <a class="navbar-brand" href="{root_url}"  title="{$sitename} | Design based on Now_UI-Kit. Coded by Gregor" data-placement="bottom" target="_blank"><img id="header-logo" class="logo"  alt="{$sitename}" src="{root_url}/uploads/images/cms/Logo_Dehler_UisgeBeatha.png" height="150vh"/>
-            {/if}
-              
+              {if $page_alias == 'hanse_311'}
+                <a class="navbar-brand" href="{root_url}"  title="{$sitename} | Design based on Now_UI-Kit. Coded by Gregor" data-placement="bottom" target="_blank"><img id="header-logo" class="logo"  alt="{$sitename}" src="{uploads_url}/images/cms/Logo_Hanse_UisgeBeatha.png" height="90vh"/>
+              {else}
+                <a class="navbar-brand" href="{root_url}"  title="{$sitename} | Design based on Now_UI-Kit. Coded by Gregor" data-placement="bottom" target="_blank"><img id="header-logo" class="logo"  alt="{$sitename}" src="{uploads_url}/images/cms/Logo_Dehler_UisgeBeatha.png" height="90vh"/>
+              {/if}
               </a>
             {/cgsi_convert}
             {*<a class="navbar-brand" href="{root_url}" rel="tooltip" title="Design based on Now_UI-Kit. Coded by Gregor" data-placement="bottom" target="_blank">
@@ -66,17 +65,16 @@
               {/if}
               <div class="input-group" style="width: 9vw;">
                 <div class="input-group-prepend">
-                  <div class="input-group-text"><i class="fas fa-search" style="margin-right: 10px;margin-left: -5px;"></i></div>
+                  <div class="input-group-text">{svg use="search"}</div>
                 </div>
                   
-                  {*<input type="text" class="form-control" placeholder="Ik zoek" style="color:white;"/> 
-                  If you want a more sophisticated solution read about Google's reCAPTCHA service *}
-                  <form formaction="zoeken" formenctype="multipart/form-data" formmethod="get" style="color:white;"/>
-                      <input class="form-control"  type="text" id="zoekForm" name="q" placeholder="Zoek" required>
-                      <input type="submit" value="Ga" formaction="/zoeken" id="submit" style="position: absolute; left: -9999px; width: 1px; height: 1px;"
-       tabindex="-1">
-                  </form>
-
+                {*<input type="text" class="form-control" placeholder="Ik zoek" style="color:white;"/> 
+                If you want a more sophisticated solution read about Google's reCAPTCHA service *}
+                <form formaction="zoeken" formenctype="multipart/form-data" formmethod="get" style="color:white;"/>
+                    <input class="form-control"  type="text" id="zoekForm" name="q" placeholder="Zoek" required>
+                    <input type="submit" value="Ga" formaction="/zoeken" id="submit" style="position: absolute; left: -9999px; width: 1px; height: 1px;"
+      tabindex="-1">
+                </form>
               </div>
             </form>
           </div>
@@ -131,8 +129,8 @@ B) https://stackoverflow.com/questions/42460930/how-to-resize-navbar-logo-on-scr
         {*<div class="content">*}
           <div class="row">
             <div class="col-md-3 d-none d-sm-block float-left"> {* l-three-col-one *}
-              Made with <a href="https://www.cmsmadesimple.org/">CMS Made Simple</a> {custom_copyright}<br><br>
-              <svg><use xlink:href="{$theme_relative_url}/svg/shape.svg#envelope-open-o"/></svg>
+              Made with <a href="https://www.cmsmadesimple.org/">CMS Made Simple</a> &copy; {custom_copyright}<br>
+
               {*<a href="{get_current_url}#a-content" class="shape-link"><span>TOP</span></a>
               <h4>Laatst gewijzigde pagina's</h4>
               {recently_updated number='3' css_class='text-left h6 small' *}
@@ -209,9 +207,9 @@ B) https://stackoverflow.com/questions/42460930/how-to-resize-navbar-logo-on-scr
       </div>
     </footer>
 
-    {capture}
+    {*capture}
       <div class="scroll" data-visible="off" id="js_scroll">
-        { * $svg_file = "$theme_relative_url/svg/shape.svg" * }
+        {$svg_file = "$theme_relative_url/svg/shape.svg"}
         {$svg_file = "/svg.svg"}
         {svgdata assetsbase=1 file='svg/shape.svg' assign='svgdata'}
         {$key = 'angle-up'}
@@ -219,12 +217,12 @@ B) https://stackoverflow.com/questions/42460930/how-to-resize-navbar-logo-on-scr
         {math assign="_h" format='%.0f' equation=((1000 - $svgdata[$key]->h) / 2) + (($svgdata[$key]->w * 0.30) / 2)}
         <a data-scroll href="{get_current_url}#a-content">
           <svg class="icon" viewBox="0 0 1000 1000" preserveAspectRatio="xMidYMid meet">
-            { * <use class="custom-{$key}" xlink:href="{$svg_file}#custom-circle" transform="translate(50 50) scale(0.90)"/> * }
+            <use class="custom-{$key}" xlink:href="{$svg_file}#custom-circle" transform="translate(50 50) scale(0.90)"/>
             <use class="shape-{$key}" transform="translate({$_w} {$_h}) scale(0.70)" xlink:href="{$svg_file}#shape-{$key}"/>
           </svg>
         </a>
       </div>
-    {/capture}
+    {/capture*}
   {/block} 
 </div>
 
@@ -237,45 +235,11 @@ B) https://stackoverflow.com/questions/42460930/how-to-resize-navbar-logo-on-scr
   {if isset($page_js_footer) && $page_js_footer != ''}
     {$page_js_footer}
   {/if}
-  <script>
-    $(document).ready(function() {
-      /******************************
-          BOTTOM SCROLL TOP BUTTON
-      ******************************/
-      // declare variable
-      var scrollTop = $(".scrollTop");
-      $(window).scroll(function() {
-        // declare variable
-        var topPos = $(this).scrollTop();
-        // if user scrolls down - show scroll to top button
-        if (topPos > 100) {
-          $(scrollTop).css("opacity", "1");
-        } else {
-          $(scrollTop).css("opacity", "0");
-        }
-      }); // scroll END
-      //Click event to scroll to top
-      $(scrollTop).click(function() {
-        $('html, body').animate({
-          scrollTop: 0
-        }, 800);
-        return false;
-      }); // click() scroll top EMD
-    }); // ready() END
-  </script>
-
-  <script> // Content with blockquotes is missing a class. Script to add it otherwise Bootstrap wouldn't understand it
-    $( "blockquote" ).last().addClass( "blockquote" );
-  </script>
   <div id="stop" class="scrollTop"> {* used to scroll to the top of the page *}
-    <span><a href=""><i class="fas fa-angle-up" style="color: white;"></i></a></span>
+    {svg use="up-hand"}
   </div>
-  <div id="fb-root"></div> {* requireed to enable Facebook plugins *}
-  <script>
-    new CookiesEuBanner(function(){
-        // Your code to launch when user accept cookies
-    }, true);
-  </script>
+
+  {include file='cms_template:svgIcons'}
 </body>
 
 {* <!-- /parsed 2 of 3 --> *}

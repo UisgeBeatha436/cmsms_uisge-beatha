@@ -215,6 +215,9 @@ html {
   $colDefault     : #ecf0f1;
   $colHighlight   : #ffbbbc;
   $dropDown       : false;
+  .navbar a:not(.btn):not(.dropdown-item) {
+    color: floralwhite; // make text a bit brighter when on the transparent navbar
+}
 
   /* .navbar {
     @include bg-gradient();
@@ -320,7 +323,7 @@ html {
     .largeLogo{width: 260px;}
     .smallLogo  {
         width: 12.125rem;
-        height: 10vh;
+        height: 8vh;
     }
 /*------------------- define footer color  ------------------*/
 [data-background-color="grijs"] {
@@ -463,17 +466,17 @@ a.footer-brand {
 
 
 /* ----------- to align text vertical on home page ----------- */
-svg {
-	width: 100%; height: 100%;
-	pointer-events: none; /* so that you can resize the element */
-}
-text {
-	text-anchor: middle;
-	pointer-events: auto; /* Cancel the svg’s pointer-events */
-	fill: currentColor;
-	font-size: 4vw;  /* vw makes the size responsive */
-	color:white;
-}
+// svg {
+// 	width: 100%; height: 100%;
+// 	pointer-events: none; /* so that you can resize the element */
+// }
+// text {
+// 	text-anchor: middle;
+// 	pointer-events: auto; /* Cancel the svg’s pointer-events */
+// 	fill: currentColor;
+// 	font-size: 4vw;  /* vw makes the size responsive */
+// 	color:white;
+// }
 
 /* -------------- Layout, custom social buttons ------------ */
 .wrapper {
@@ -574,7 +577,7 @@ div#google_translate_element div.goog-te-gadget-simple a.goog-te-menu-value span
 body {
   top: 0px !important;
 }}
-/* OVERRIDE GOOGLE TRANSLATE WIDGET CSS END */
+/* ------------- OVERRIDE GOOGLE TRANSLATE WIDGET CSS END ---------------- */
 
 /* .goog-te-gadget-simple {
   background-color: rgba(255,255,255,0.20)!important;
@@ -676,6 +679,34 @@ body {
 //   background: #222;
 //   color: #fff;
 // }
+
+svg {
+	fill: white;
+	// position: relative;
+	// margin-left: 26%;
+	// margin-top: 15%;
+}
+// .btn-facebook svg {
+//   width: 1em;
+//   margin-top: 8%;
+// }
+// .btn-twitter svg {
+//   margin-top: 8%;
+//   width: 2.0em;
+//   height: 2em;
+// }
+// .btn-google svg {
+//   margin-top: 6%;
+//   margin-left: 8%;
+// }
+// .btn-pinterest svg {
+//   margin-left: 18%;
+//   margin-top: 10%;
+// }
+// .btn-rss svg {
+//   margin-left: 15%;
+//   margin-top: 9%;
+// }
 .icon {
   display: inline-block;
   width: 1em;
@@ -684,70 +715,67 @@ body {
   stroke: currentColor;
   fill: currentColor;
 }
-
-/* ==========================================
-Single-colored icons can be modified like so:
-.icon-name {
-  font-size: 32px;
-  color: red;
+.icon-rss {
+    fill: white;
+    width: 1em;
 }
-========================================== */
-
-.icon-tag {
-  width: 0.8454285714285714em;
+.icon-facebook {
+  fill: white;
+  width: 1em;
 }
-
-.icon-tags {
-  width: 1.0597142857142856em;
+.btn-facebook .icon.icon-facebook {
+  font-size: 2em;
+  margin-top: 5px;
 }
-
-.icon-camera {
-  width: 1.0714285714285714em;
+.btn-twitter .icon.icon-twitter {
+  font-size: 2em;
+  margin-top: 5px;
 }
-
-.icon-calendar {
-  width: 0.9285714285714285em;
+.btn-google .icon.icon-gplus {
+  font-size: 2em;
+  margin-top: 5px;
 }
-
-.icon-feed {
-  width: 0.7862857142857141em;
+.btn-google .icon.icon-gplus-1 {
+  font-size: 2em;
+  margin-top: 5px;
 }
-
-.icon-hand-o-up {
-  width: 0.8571428571428571em;
+.btn-pinterest .icon.icon-pinterest {
+  font-size: 2em;
+  margin-top: 0.313rem;
+  margin-left: 0rem;
 }
-
-.icon-hand-o-down {
-  width: 0.8571428571428571em;
+.btn-pinterest .icon.icon-pinterest-1 {
+  font-size: 2em;
+  margin-top: 0.313rem;
+  margin-left: 0rem;
 }
-
-.icon-arrow-circle-left {
-  width: 0.8571428571428571em;
+.btn-envelope .icon.icon-mail {
+	font-size: 1.7em;
+	margin-top: .3rem;
 }
-
-.icon-arrow-circle-right {
-  width: 0.8571428571428571em;
+.btn-rss .icon.icon-rss {
+  font-size: 2em;
+  margin-top: 5px;
+  margin-left: 0;
 }
-
-.icon-arrow-circle-up {
-  width: 0.8571428571428571em;
+.icon.icon-tags {
+	fill: var(--fill-color-boat);
+	font-size: 1.5rem;
 }
-
-.icon-arrow-circle-down {
-  width: 0.8571428571428571em;
+.scrollTop .icon.icon-up-hand {
+  fill: white;
+  font-size: 2em;
 }
-
-.icon-pinterest1 {
-  width: 0.8571428571428571em;
+.icon.icon-left-hand, .icon.icon-right-hand {
+	font-size: 1rem;
 }
-
-.icon-pinterest-square {
-  width: 0.8571428571428571em;
+.icon.icon-search {
+  font-size: 1rem;
+  color: var(--fill-color-boat);
+  margin-right: 10px
 }
+/* ---------------- End ICON Styling ---------------- */
 
-.icon-google-plus-square {
-  width: 0.8571428571428571em;
-}
 //
 // EOF
 //

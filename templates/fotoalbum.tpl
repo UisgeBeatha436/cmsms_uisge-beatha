@@ -14,7 +14,7 @@ https://www.uisge-beatha.eu/uploads/images/Gallery/Winter1617/Kajuitramen
 
 <div class="row">
     <div class="col-auto">
-        <h4>{svg use="camera"}&nbsp;Meer foto's in het album</h4>
+        <h4>{svg use="camera"}&nbsp;Meer foto's in het album {$gcb_params.album}</h4>
     </div>
 </div>
 {assign var='files' value="{$album_no_spaces}/*.jpg"|glob}

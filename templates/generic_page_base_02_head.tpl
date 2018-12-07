@@ -119,5 +119,9 @@
   <link rel="stylesheet" href="{$theme_relative_url}/css/main.css?fes{$_unique_css_id}">
   <!--link rel="stylesheet" href="{$theme_relative_url}/css/now-ui-kit.css?fes{$_unique_css_id}"-->
   {browser_lang accepted='nl' assign='browser_lang' scope=global} {* used for Google Translate to check if translation is needed. Doesn't work too well because in NL it gives en... *}
+
+
+
+
 </head>
 {* <!-- /parsed: 3 of 3 --> *}

@@ -43,6 +43,12 @@
       ]
     },
     {
+      "outputFileName": "scripts.js",
+      "dependencies": [
+        "node_modules/scripts/*.js"
+      ]
+    },
+    {
       "outputFileName": "vendor.js",
       "dependencies": [
         "es5/footer/vendor/*.js"

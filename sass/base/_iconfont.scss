@@ -69,9 +69,71 @@ Example:
 
 Example:
 
-<% _.each(glyphs, function(glyph) { %>
-  <i class="icon-<%= glyph.name %>"><%= glyph.name %></i><br>
-<% }); %>
+
+  <i class="icon-angle-up">angle-up</i><br>
+
+  <i class="icon-arrow-circle-down">arrow-circle-down</i><br>
+
+  <i class="icon-arrow-circle-left">arrow-circle-left</i><br>
+
+  <i class="icon-arrow-circle-right">arrow-circle-right</i><br>
+
+  <i class="icon-arrow-circle-up">arrow-circle-up</i><br>
+
+  <i class="icon-calendar-o">calendar-o</i><br>
+
+  <i class="icon-calendar">calendar</i><br>
+
+  <i class="icon-camera">camera</i><br>
+
+  <i class="icon-comments">comments</i><br>
+
+  <i class="icon-envelope-open-o">envelope-open-o</i><br>
+
+  <i class="icon-envelope">envelope</i><br>
+
+  <i class="icon-facebook2">facebook2</i><br>
+
+  <i class="icon-feed">feed</i><br>
+
+  <i class="icon-google-plus-square">google-plus-square</i><br>
+
+  <i class="icon-google-plus">google-plus</i><br>
+
+  <i class="icon-google-plus2">google-plus2</i><br>
+
+  <i class="icon-google-plus3">google-plus3</i><br>
+
+  <i class="icon-hand-o-down">hand-o-down</i><br>
+
+  <i class="icon-hand-o-left">hand-o-left</i><br>
+
+  <i class="icon-hand-o-right">hand-o-right</i><br>
+
+  <i class="icon-hand-o-up">hand-o-up</i><br>
+
+  <i class="icon-linkedin">linkedin</i><br>
+
+  <i class="icon-linkedin1">linkedin1</i><br>
+
+  <i class="icon-pinterest-square">pinterest-square</i><br>
+
+  <i class="icon-pinterest">pinterest</i><br>
+
+  <i class="icon-pinterest1">pinterest1</i><br>
+
+  <i class="icon-rss2">rss2</i><br>
+
+  <i class="icon-tag">tag</i><br>
+
+  <i class="icon-tags">tags</i><br>
+
+  <i class="icon-twitter">twitter</i><br>
+
+  <i class="icon-youtube">youtube</i><br>
+
+  <i class="icon-youtube1">youtube1</i><br>
+
 
 */
 
@@ -126,9 +188,71 @@ $icon-margin: .25em;
 /// @type List
 /// @group config-icons
 $icons: (
-<% _.each(glyphs, function(glyph) { %>
-  icon-<%= glyph.name %>: '\<%= glyph.unicode[0].charCodeAt(0).toString(16).toUpperCase() %>',
-<% }); %>
+
+  icon-angle-up: '\EA01',
+
+  icon-arrow-circle-down: '\EA02',
+
+  icon-arrow-circle-left: '\EA03',
+
+  icon-arrow-circle-right: '\EA04',
+
+  icon-arrow-circle-up: '\EA05',
+
+  icon-calendar-o: '\EA06',
+
+  icon-calendar: '\EA07',
+
+  icon-camera: '\EA08',
+
+  icon-comments: '\EA09',
+
+  icon-envelope-open-o: '\EA0A',
+
+  icon-envelope: '\EA0B',
+
+  icon-facebook2: '\EA0C',
+
+  icon-feed: '\EA0D',
+
+  icon-google-plus-square: '\EA0E',
+
+  icon-google-plus: '\EA0F',
+
+  icon-google-plus2: '\EA10',
+
+  icon-google-plus3: '\EA11',
+
+  icon-hand-o-down: '\EA12',
+
+  icon-hand-o-left: '\EA13',
+
+  icon-hand-o-right: '\EA14',
+
+  icon-hand-o-up: '\EA15',
+
+  icon-linkedin: '\EA16',
+
+  icon-linkedin1: '\EA17',
+
+  icon-pinterest-square: '\EA18',
+
+  icon-pinterest: '\EA19',
+
+  icon-pinterest1: '\EA1A',
+
+  icon-rss2: '\EA1B',
+
+  icon-tag: '\EA1C',
+
+  icon-tags: '\EA1D',
+
+  icon-twitter: '\EA1E',
+
+  icon-youtube: '\EA1F',
+
+  icon-youtube1: '\EA20',
+
 );
 
 /* ////////////////////////////////////////////////////////////////////////////
@@ -274,6 +398,3 @@ $icons: (
 //
 // EOF
 //
-<%
-// preserve newline
-%>

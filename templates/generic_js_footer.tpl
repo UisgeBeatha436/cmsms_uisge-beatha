@@ -14,7 +14,7 @@
   {include file="{#theme_resource#}generic_js_browser_sync.tpl"}
 {/if}
 
-<script src="http://localhost/assets/src/cmsms_uisge-beatha/node_modules/social/social.js"></script>
+<script src="{root_url}/assets/src/node_modules/social/social.js"></script>
 
 {if "{#es5Modus#}" == 'on'}
   {* https://frontendstudio.github.io/docs/javascript.html#templating-method-1 *}
@@ -26,7 +26,7 @@
 
   {* <script src="{$theme_dst_path}/assets/dst/js/es5/jquery.slim.js"></script>*}
 
-  {*<script type="text/javascript" src="http://localhost/assets/src/cmsms_uisge-beatha/node_modules/jquery_lazyscript/jquery.lazyscript.min.js"></script>
+  {*<script type="text/javascript" src="{root_url}/assets/src/node_modules/jquery_lazyscript/jquery.lazyscript.min.js"></script>
   <script>window.jQuery || document.write('<script src="{$theme_dst_path}/js/es5/jquery.slim.js?fes={$_unique_js_id}"><\/script>')</script> *}
 
   <script src="{$theme_dst_path}/assets/dst/js/es5/bootstrap.js"></script> 
@@ -121,6 +121,19 @@
       lazy.removeAttr("data-src");
     });
   });
+
+  function load_ad() {
+    // put here the code to load your ads
+    (adsbygoogle = window.adsbygoogle || []).push({
+        google_ad_client: "ca-pub-3514636835854223",
+        enable_page_level_ads: true
+    });
+  }
+
+  new LazyLoad({
+    elements_selector: "#google_ad",
+    callback_enter: load_ad
+  });
 </script>
 <script>
     $(document).ready(function() {
@@ -154,7 +167,7 @@
   </script>
 
   <div id="fb-root"></div>  {* required to enable Facebook plugins *}
-   {*<script src="http://localhost/assets/src/cmsms_uisge-beatha/node_modules/social/social.js"></script>
+   {*<script src="{root_url}/assets/src/node_modules/social/social.js"></script>
 
      <script>(function(d, s, id) {
     var js, fjs = d.getElementsByTagName(s)[0];

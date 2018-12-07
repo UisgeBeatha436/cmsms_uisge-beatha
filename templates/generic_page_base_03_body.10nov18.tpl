@@ -115,8 +115,8 @@ else window.onload = downloadJSAtOnload;
     document.body.appendChild(tag);
     }
   </script>
-              {* /Users/gjdegraaf/Sites/assets/src/cmsms_uisge-beatha/js/marineTraffic.js *}
-              {* <script type="text/javascript" src="http://localhost/assets/src/cmsms_uisge-beatha/js/marineTraffic.js"></script> *}
+              {* /Users/gjdegraaf/Sites/assets/src/js/marineTraffic.js *}
+              {* <script type="text/javascript" src="{root_url}/assets/src/js/marineTraffic.js"></script> *}
             </div>
             <div class="col-md-3 ml-md-3 ml-sm-1">
               <h3>Nieuwtjes ontvangen?</h3>

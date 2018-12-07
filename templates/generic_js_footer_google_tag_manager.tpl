@@ -1,5 +1,5 @@
 {* Google Tag Manager (noscript) *}
-{if $smarty.server.SERVER_NAME|lower eq 'localhost'}
+{if $smarty.server.SERVER_NAME|lower eq 'localuisge-beatha.eu'}
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M95RWP"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     {if !(isset($created_date))}

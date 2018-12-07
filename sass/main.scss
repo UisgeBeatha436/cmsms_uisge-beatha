@@ -382,7 +382,7 @@ a.footer-brand {
 
 .scrollTop a {
   font-size: 18px;
-  color: #fff;
+  color: rgb(153, 6, 6);
 }
 
 /* ----------- define float ------------- */
@@ -413,17 +413,17 @@ a.footer-brand {
     
     position:relative;
     text-align:center;
-    top:3px
+    top:3px;
 }
 
 .floatbox_left {
     float: left !important;
-    margin-right: 10px
+    margin-right: 10px;
 }
 
 .floatbox_right {
     float: right !important;
-    margin-left: 10px
+    margin-left: 10px;
 }
 
 .cgblog_image_title,
@@ -776,6 +776,9 @@ svg {
 }
 /* ---------------- End ICON Styling ---------------- */
 
+#google_ad {
+  min-height: 1px;
+}
 //
 // EOF
 //

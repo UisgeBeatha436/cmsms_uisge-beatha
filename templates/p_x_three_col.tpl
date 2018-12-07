@@ -14,15 +14,15 @@
 	<div class="section section-content">
 		<div class="container">
 			<div class="row">
-				<div class="col-md-2 ml-auto mr-auto text-center">
+				<div class="section col-md-2 ml-auto mr-auto text-center">
 					<a id="a-content"></a>
 					{$content_01}
 				</div>
-				<div class="col-12 col-md-8 ml-auto mr-auto">
+				<div class="section col-12 col-md-8 ml-auto mr-auto">
 					<a id="a-content"></a>
 					{$content_02}
 				</div>
-				<div class="col-md-2 ml-auto mr-auto">
+				<div class="section col-md-2 ml-auto mr-auto">
 					<a id="a-content"></a>
 					{$content_03}
 				</div>

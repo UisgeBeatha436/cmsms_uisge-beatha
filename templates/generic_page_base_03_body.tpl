@@ -49,11 +49,16 @@
               <span class="navbar-toggler-bar middle-bar"></span>
               <span class="navbar-toggler-bar bottom-bar"></span>
             </button>*}
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon navbar-dark"></span>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-bar top-bar"></span>
+              <span class="navbar-toggler-bar middle-bar"></span>
+              <span class="navbar-toggler-bar bottom-bar"></span>
             </button>
+            {*<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon navbar-light"></span>
+            </button>*}
           </div>
-          <div class="collapse navbar-collapse" id="navbarNav" data-nav-image="ttps://uisge-beatha.eu/uploads/images/cms/Dehler%20-%20logo%20transparant%20lunarpic.png" data-color="orange">
+          <div class="collapse navbar-collapse" id="navbarNav" data-nav-image="{root_url}/uploads/images/cms/Dehler%20-%20logo%20transparant%20lunarpic.png" data-color="orange">
             {Navigator action='default' template="{#theme_resource#}navigator_navigation_multilevel_bootstrap_menu.tpl"}
             {global_content name='socialFollowButtons' shape='round' navbar='1'}
             <form class="form ml-auto text-dark" data-background-color="#990000">
@@ -63,18 +68,35 @@
                 </div>
                 </div>
               {/if}
-              <div class="input-group" style="width: 9vw;">
-                <div class="input-group-prepend">
-                  <div class="input-group-text">{svg use="search"}</div>
-                </div>
-                  
-                {*<input type="text" class="form-control" placeholder="Ik zoek" style="color:white;"/> 
-                If you want a more sophisticated solution read about Google's reCAPTCHA service *}
-                <form formaction="zoeken" formenctype="multipart/form-data" formmethod="get" style="color:white;"/>
-                    <input class="form-control"  type="text" id="zoekForm" name="q" placeholder="Zoek" required>
-                    <input type="submit" value="Ga" formaction="/zoeken" id="submit" style="position: absolute; left: -9999px; width: 1px; height: 1px;"
-      tabindex="-1">
-                </form>
+              <div class="row">
+              <div class="col-md-12">
+                
+
+                  {* <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text bg-transparent border-right-0">{svg use="search"}</span>
+                    </div>
+                    <input class="form-control py-0 border-left-0 border" type="text" value="..." id="zoekForm" name="q" required>
+                    <div class="input-group-append">
+                      <button class="btn btn-outline-secondary border-left-0 border" type="button">
+                          Zoek
+                      </button>
+                    </div>
+                  </div> *}
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">{svg use="search"}</div>
+                    </div>
+                    
+                    {*<input type="text" class="form-control" placeholder="Ik zoek" style="color:white;"/> 
+                    If you want a more sophisticated solution read about Google's reCAPTCHA service *}
+                    
+                    <form formaction="zoeken" formenctype="multipart/form-data" formmethod="get" style="color:white;"/>
+                        <input class="form-control"  type="text" id="zoekForm" name="q" placeholder="Zoek" required>
+                        <input type="submit" value="Ga" formaction="/zoeken" id="submit" style="position: absolute; left: -9999px; width: 1px; height: 1px; "tabindex="-1">
+                    </form>
+                  </div>
+              </div>
               </div>
             </form>
           </div>
@@ -129,7 +151,10 @@ B) https://stackoverflow.com/questions/42460930/how-to-resize-navbar-logo-on-scr
         {*<div class="content">*}
           <div class="row">
             <div class="col-md-3 d-none d-sm-block float-left"> {* l-three-col-one *}
-              Made with <a href="https://www.cmsmadesimple.org/">CMS Made Simple</a> &copy; {custom_copyright}<br>
+              <p>Made with <a href="https://www.cmsmadesimple.org/">CMS Made Simple</a> &copy; {custom_copyright}</p>
+              <p>Deze pagina is {* HitCounter *} keer bekeken. Op dit moment {visitors}.</p><br />
+
+
 
               {*<a href="{get_current_url}#a-content" class="shape-link"><span>TOP</span></a>
               <h4>Laatst gewijzigde pagina's</h4>
@@ -138,38 +163,40 @@ B) https://stackoverflow.com/questions/42460930/how-to-resize-navbar-logo-on-scr
             <div class="col-md-5 d-none d-sm-block" id="marinetraffic">
               <h3>Waar bevindt Uisge Beatha zich?</h3>
               {*<input type="button" class="button-class" onclick="function(click)">*}
- <script>
-    	var width='100%';   // the width of the embedded map in pixels or percentage 
-    	var height='300';   // the height of the embedded map in pixels or percentage 
-    	var border='1'; // the width of the border around the map (zero means no border) 
-    	var shownames='true';   // to display ship names on the map (true or false) 
-    	var latitude='51.7143'; // the latitude of the center of the map, in decimal degrees 
-    	var longitude='04.0889';    // the longitude of the center of the map, in decimal degrees 
-    	var zoom='11';  // the zoom level of the map (values between 2 and 17) 
-    	var maptype='0';    // use 0 for Normal Map, 1 for Satellite, 2 for OpenStreetMap 
-    	var trackvessel='' //244770624';     MMSI of a vessel (note: vessel will be displayed only if within range of the system) - overrides "zoom" option 
-    	var fleet='';   // the registered email address of a user-defined fleet (user's default fleet is used) 
-    	// Read more at http://www.marinetraffic.com/en/p/embed-map#6YXCVvOUaBxYHgoT.99
-    </script>
-    <script>
+              <script>
+                var width='100%';   // the width of the embedded map in pixels or percentage 
+                var height='300';   // the height of the embedded map in pixels or percentage 
+                var border='1'; // the width of the border around the map (zero means no border) 
+                var shownames='true';   // to display ship names on the map (true or false) 
+                var latitude='51.7143'; // the latitude of the center of the map, in decimal degrees 
+                var longitude='04.0889';    // the longitude of the center of the map, in decimal degrees 
+                var zoom='11';  // the zoom level of the map (values between 2 and 17) 
+                var maptype='0';    // use 0 for Normal Map, 1 for Satellite, 2 for OpenStreetMap 
+                var trackvessel='' //244770624';     MMSI of a vessel (note: vessel will be displayed only if within range of the system) - overrides "zoom" option 
+                var fleet='';   // the registered email address of a user-defined fleet (user's default fleet is used) 
+                // Read more at http://www.marinetraffic.com/en/p/embed-map#6YXCVvOUaBxYHgoT.99
+              </script>
+              <script src="http://www.marinetraffic.com/js/embed.js"></script>
+    
+    {* <script>
         var resource = document.createElement('script'); 
         resource.async = "true";
         resource.src = "http://www.marinetraffic.com/js/embed.js";
         var script = document.getElementsByTagName('script')[0];
         script.parentNode.insertBefore(resource, script);
-    </script>
+    </script> *}
               {*<script type="text/javascript">
                 //function myFunc(e) {
                   // var script = document.createElement('script');
-                  ///script.src = 'http://localhost/assets/src/cmsms_uisge-beatha/js/marineTraffic.js';
+                  ///script.src = '{root_url}/assets/src/js/marineTraffic.js';
                   ///script.type = 'text/javascript';
                   // $('head')[0].appendChild(script);
                   // }
-                  // src="{root_url}/assets/src/cmsms_uisge-beatha/js/marineTraffic.js";
+                  // src="{root_url}/assets/src/js/marineTraffic.js";
                 //window.onload = init();
                  //   var script = document.createElement("script");
                   //  script.type = "text/javascript";
-                  //  script.src = "http://localhost/assets/src/cmsms_uisge-beatha/js/marineTraffic.js";
+                  //  script.src = "{root_url}/assets/src/js/marineTraffic.js";
                  //   script.onclick = function(e){
                  //       alert("Script is ready!");
                   //  };

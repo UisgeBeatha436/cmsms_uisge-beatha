@@ -200,7 +200,7 @@ html {
   @mixin bg-gradient(){
     transition: all .5s;
     background: rgb(187,194,194);
-    background: linear-gradient(90deg, rgba(187,194,194,1) 0%, rgba(1,72,136,1) 55%, rgba(26,26,63,1) 100%); 
+    background: linear-gradient(90deg, rgba(187,194,194,1) 0%, rgba(1,72,136,1) 35%, rgba(26,26,63,1) 100%); 
   }
   .bg-gradient { 
     @include bg-gradient;
@@ -217,6 +217,7 @@ html {
   $dropDown       : false;
   .navbar a:not(.btn):not(.dropdown-item) {
     color: floralwhite; // make text a bit brighter when on the transparent navbar
+    font-size: 1.1rem;
 }
 
   /* .navbar {
@@ -633,7 +634,7 @@ body {
   // background: #444;
   position: fixed;
   
-  z-index: 1099;
+  z-index: 1040;
   // color: #fff;
   // padding: 6px;
   // font-size: 13px;
@@ -763,22 +764,24 @@ svg {
 	font-size: 1.5rem;
 }
 .scrollTop .icon.icon-up-hand {
-  fill: white;
+  fill: antiquewhite;
   font-size: 2em;
 }
 .icon.icon-left-hand, .icon.icon-right-hand {
 	font-size: 1rem;
 }
 .icon.icon-search {
-  font-size: 1rem;
-  color: var(--fill-color-boat);
-  margin-right: 10px
+  font-size: 2rem;
+  fill: antiquewhite;
+  margin-bottom: 0.3rem;
 }
 /* ---------------- End ICON Styling ---------------- */
 
 #google_ad {
   min-height: 1px;
 }
+
+
 //
 // EOF
 //

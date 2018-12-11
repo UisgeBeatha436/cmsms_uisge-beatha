@@ -7,18 +7,22 @@
 
 {if isset($global_js_footer) && $global_js_footer != ''}
   {$global_js_footer}
-  
 {/if}
 
 {if "{#browsersyncModus#}" == 'on'}
   {include file="{#theme_resource#}generic_js_browser_sync.tpl"}
 {/if}
 
-<script src="{root_url}/assets/src/node_modules/social/social.js"></script>
+<script src="{$theme_dst_path}/assets/dst/js/es5/social.js"></script>
 
 {if "{#es5Modus#}" == 'on'}
   {* https://frontendstudio.github.io/docs/javascript.html#templating-method-1 *}
-  {assign var=_unique_js_id value=10|mt_rand:30}
+  {* cache buster *}
+  {if "{#browsersyncModus#}" == 'on'}
+    {assign var=_unique_js_id value=10|mt_rand:3000000}
+  {else}
+    {assign var=_unique_js_id value=1}
+  {/if}
    
   <!-- b: third party .js libs -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -42,7 +46,7 @@
 
   {*<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>*}
   <script type="text/javascript" src="{$theme_dst_path}/assets/dst/js/es5/rellax.js"></script> {* Script for parallax Rellax *}
-  <script src="{$theme_dst_path}/assets/dst/js/es5/cookies-eu-banner.js"></script>
+  <script defer src="{$theme_dst_path}/assets/dst/js/es5/cookies-eu-banner.js"></script>
 
   <!-- c: plug-ins that have dependencies on b: >>> plugins.js -->  
   {* <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script> * }
@@ -54,7 +58,7 @@
   {* theme path: {$theme_dst_path *}
   {*  <script>window.jQuery || document.write('<script src="{$theme_relative_url}/js/es5/jquery.slim.js?fes={$_unique_js_id}"><\/script>')</script>
       <script src="{$theme_relative_url}/js/es5/plugins.js?fes={$_unique_js_id}"></script> *}
-  <script src="{$theme_dst_path}/assets/dst/js/es5/scripts.js?fes={$_unique_js_id}"></script>
+  <script defer src="{$theme_dst_path}/assets/dst/js/es5/scripts.js?fes={$_unique_js_id}"></script>
 
 {/if}
 
@@ -169,7 +173,7 @@
   <div id="fb-root"></div>  {* required to enable Facebook plugins *}
    {*<script src="{root_url}/assets/src/node_modules/social/social.js"></script>
 
-     <script>(function(d, s, id) {
+  <script>(function(d, s, id) {
     var js, fjs = d.getElementsByTagName(s)[0];
     if (d.getElementById(id)) return;
     js = d.createElement(s); js.id = id;

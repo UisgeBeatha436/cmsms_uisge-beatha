@@ -1,1 +1,0 @@
-{include file="theme_file:fotoalbum.tpl"}

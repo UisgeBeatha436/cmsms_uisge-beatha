@@ -15,7 +15,12 @@
 {/if}
 
 {if "{#es5Modus#}" == 'on'}
-  {assign var=_unique_js_id value=10|mt_rand:30}
+  {* cache buster *}
+  {if "{#browsersyncModus#}" == 'on'}
+    {assign var=_unique_js_id value=10|mt_rand:3000000}
+  {else}
+    {assign var=_unique_js_id value=1}
+  {/if}
   {*<script src="{$theme_relative_url}/js/es5/modernizr.js?fes={$_unique_js_id}"></script>
   <script src="{$theme_relative_url}/js/es5/picturefill.js?fes={$_unique_js_id}"></script>*}
 {/if}

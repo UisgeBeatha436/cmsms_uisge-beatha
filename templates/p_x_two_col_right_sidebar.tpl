@@ -1,7 +1,7 @@
 <!-- p x col right -->
 {config_load file='theme.ini' scope='global' section='cmsms_uisge-beatha'}
 {extends file="{#theme_resource#}page_base.tpl"}
-{assign var='addClass' value="product-page"}
+{*assign var='addClass' value="product-page"*}
 
 {block name='open_content' append}
 	{$content_01="{content label='Content 01'}" scope='global'}

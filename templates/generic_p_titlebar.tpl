@@ -84,7 +84,7 @@
   {elseif $page_alias == 'downloads'}
     {assign var='header_image' value={CGSmartImage src="{uploads_url}/images/cms/Breskens.jpg" filter_crop2size="4500,950,bc" alt="{$sitename} - Breskens - Uisge Beatha" notag=1}}
   {elseif $page_alias == 'gastenboek'}
-    {assign var='header_image' value={CGSmartImage src="{uploads_url}/images/cms/40MijlvanBru-27.jpg" filter_crop2size="4500,700,bc" alt="{$sitename} - Breskens - Uisge Beatha" notag=1}}
+    {assign var='header_image' value={CGSmartImage src="{uploads_url}/images/cms/40MijlvanBru-27.jpg" filter_crop2size="4500,700,bc" alt="{$sitename} - 40 Mijlvan Bru - Uisge Beatha" notag=1}}
   {elseif $page_alias == 'gps-tracks'}
     {assign var='header_image' value={CGSmartImage src="{uploads_url}/images/cms/Week aug17 - 10.jpg" filter_crop2size="4500,1200,bc" alt="{$sitename} - Breskens - Uisge Beatha" notag=1}}
   {else}

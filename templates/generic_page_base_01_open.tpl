@@ -5,6 +5,7 @@
 {$theme_absolute_url = "{root_url}/assets{#theme_dst_path#}" scope='global'}
 {$theme_relative_url = "./assets{#theme_dst_path#}" scope='global'}
 {process_pagedata}
+{$environment = "develop.uisge-beatha.eu" scope=global} {* used to set if some scripts either or not need to run *}
 
 {block name='open_content'}
 	{*$content_01="{content label='Content 01'}" scope='global'*}

@@ -25,6 +25,7 @@
   <link rel="dns-prefetch" href="//platform.linkedin.com">
   <!-- Twitter -->
   <link rel="dns-prefetch" href="//platform.twitter.com">
+  <meta name="copyright" content="Copyright © Gregor de Graaf, All Rights Reserved">
   <meta name="google-site-verification" content="ZELEPW5SSIsv1PqdZrX91yXfEsjCNmJEHG50F7vVri4" />
   {* 23may18 Verificatie Daisycon *}
   <meta name="baf0efcf61df286" content="3453aede4510b730471f07b6ca7bd7c2" />
@@ -33,8 +34,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   {metadata showbase='true'}
-  <meta name="robots" content="index,follow">
+  {if $smarty.server.SERVER_NAME|lower eq {$environment}}
+    <meta name="robots" content="index,follow">
+  {else}
+    <meta name="robots" content="noindex,nofollow">
+  {/if}
   <meta name="HandheldFriendly" content="true">
+  {if isset($taglist)}
+    {autometa key_add="{$taglist} Dehler 36 JV" key_density=3 description=0}
+  {else}
+    {autometa key_add="Dehler 36 JV, saildrive 130s, volvo penta, md2030, lewmar, zeilen, urenteller" key_density=3 description=0}
+  {/if}
   {* <meta name="keywords" content="{search action="keywords" count="20"}"> *}
   <meta name="MobileOptimized" content="320">
   <meta name="owner" content="Gregor de Graaf">
@@ -77,9 +87,9 @@
 
   {include file="{#theme_resource#}generic_page_favicons.tpl"}
 
-  {if isset($images_all_global) && $images_all_global|@count >=1}
+  {*if isset($images_all_global) && $images_all_global|@count >=1}
     {include file="{#theme_resource#}generic_page_social_images.tpl"}
-  {/if}
+  {/if*}
 
   {include file="{#theme_resource#}generic_page_social_metadata.tpl"}
 
@@ -101,7 +111,7 @@
 </script>
 
   {* Define social links *}
-  {assign var="feed" value='{root_url}/rssfeeed.rrs' scope=global}
+  {assign var="feed" value='/rssfeed.rss' scope=global}
   {assign var="twitter" value='https://www.twitter.com/GJdeGraaf' scope=global}
   {assign var="facebook" value='https://www.facebook.com/uisgebeatha.eu' scope=global}
   {assign var="google" value='https://plus.google.com/+GregordeGraaf' scope=global}
@@ -115,13 +125,55 @@
     {*cms_stylesheet*}
   {/nocache}
   {* remove $_unique_css_id when not developing, otherwise the css file won't be cached *}
-  {assign var=_unique_css_id value=10|mt_rand:3000000}
+  {if "{#browsersyncModus#}" == 'on'}
+    {assign var=_unique_css_id value=10|mt_rand:3000000}
+  {else}
+    {assign var=_unique_css_id value=1}
+  {/if}
   <link rel="stylesheet" href="{$theme_relative_url}/css/main.css?fes{$_unique_css_id}">
   <!--link rel="stylesheet" href="{$theme_relative_url}/css/now-ui-kit.css?fes{$_unique_css_id}"-->
   {browser_lang accepted='nl' assign='browser_lang' scope=global} {* used for Google Translate to check if translation is needed. Doesn't work too well because in NL it gives en... *}
 
 
-
+  <!-- Search Modal -->
+  <div id="modalSearch" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="modalSearchTitle"  aria-hidden="true">
+    <div class="modal-dialog modal-dialog-center" role="document">
+      <!-- Modal content / modal needs to be on a different place than the section it's been called from -->
+      <div class="modal-content" style="background: var(--fill-color-boat-light);">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <h4 class="modal-title text-white">Zoek binnen Uisge Beatha</h4>
+        </div>
+        <div class="modal-body">
+          <!-- Replace the following with your own search script from https://www.google.com/cse. -->
+          {* <script>
+              (function ()
+              {
+                  var cx = '008246143810435871214:nr0bhziz1xo';
+                  var gcse = document.createElement('script');
+                  gcse.type = 'text/javascript';
+                  gcse.async = true;
+                  gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+                      '//cse.google.com/cse.js?cx=' + cx;
+                  var s = document.getElementsByTagName('script')[0];
+                  s.parentNode.insertBefore(gcse, s);
+              })();
+          </script> *}
+          <!--gcse:search></gcse:search-->
+          <form formaction="zoeken" formenctype="multipart/form-data" formmethod="get" style="color:white;"/>
+            <input class="form-control"  type="text" id="zoekForm" name="q" placeholder="Geef zoekterm in" required>
+            <input type="submit" value="Ga" formaction="/zoeken" id="submit" style="position: absolute; left: -9999px; width: 1px; height: 1px; "tabindex="-1">
+        </form>
+        </div>
+        <div class="modal-footer">
+          <button class="btn" data-dismiss="modal" aria-hidden="true">Sluit</button>
+          <button class="btn btn-primary" id="modalSearchSubmit" type="submit">Zoeken</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
 </head>
 {* <!-- /parsed: 3 of 3 --> *}

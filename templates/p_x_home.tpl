@@ -38,7 +38,7 @@
       <div class="section">
         <div class="container">
           <hr>
-          <h2 class="title">Logboek berichten</h2>
+          <h2 class="title text-center">Logboek berichten</h2>
             {CGBlog summarytemplate="blogSummaryHome" number="3" detailpage="{if isset($blog_page)}{$blog_page}{/if}"} 
         </div>
       </div>

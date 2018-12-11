@@ -1,5 +1,6 @@
 <!-- parsed: 2 of 3 generic page base 03 --> 
-<body class="profile-page"> {*$addClass}"> profile-page*}
+
+<body class="{page_attr key='extra1'}">
   <div class="container">
     <div class="row alert alert-info text-center fixed-bottom" role="alert" id="cookies-eu-banner" style="display: none;">
       <div class="col-12 ml-auto mr-auto">
@@ -58,9 +59,9 @@
               <span class="navbar-toggler-icon navbar-light"></span>
             </button>*}
           </div>
-          <div class="collapse navbar-collapse" id="navbarNav" data-nav-image="{root_url}/uploads/images/cms/Dehler%20-%20logo%20transparant%20lunarpic.png" data-color="orange">
+          <div class="collapse navbar-collapse" id="navbarNav" data-nav-image="{root_url}/uploads/images/cms/Dehler%20-%20logo%20transparant%20lunarpic.svg" data-color="orange">
             {Navigator action='default' template="{#theme_resource#}navigator_navigation_multilevel_bootstrap_menu.tpl"}
-            {global_content name='socialFollowButtons' shape='round' navbar='1'}
+            {*global_content name='socialFollowButtons' shape='round' navbar='1'*}
             <form class="form ml-auto text-dark" data-background-color="#990000">
               {if $browser_lang != 'nl'}
                 <div class="form-group">
@@ -84,17 +85,20 @@
                     </div>
                   </div> *}
                   <div class="input-group">
-                    <div class="input-group-prepend">
-                      <div class="input-group-text">{svg use="search"}</div>
-                    </div>
-                    
+                    {*<div class="input-group-prepend">
+                      <div class="input-group-text">{svg use="search"}</div>*}
+                            <a href="#modalSearch" data-toggle="modal" data-target="#modalSearch" role="button" aria-disabled="true">{svg use="search"}</a>
+                            
+                    <!--/div-->
+                    <!-- Button trigger modal -->
+
                     {*<input type="text" class="form-control" placeholder="Ik zoek" style="color:white;"/> 
                     If you want a more sophisticated solution read about Google's reCAPTCHA service *}
                     
-                    <form formaction="zoeken" formenctype="multipart/form-data" formmethod="get" style="color:white;"/>
+                    {*<form formaction="zoeken" formenctype="multipart/form-data" formmethod="get" style="color:white;"/>
                         <input class="form-control"  type="text" id="zoekForm" name="q" placeholder="Zoek" required>
                         <input type="submit" value="Ga" formaction="/zoeken" id="submit" style="position: absolute; left: -9999px; width: 1px; height: 1px; "tabindex="-1">
-                    </form>
+                    </form>*}
                   </div>
               </div>
               </div>
@@ -161,7 +165,7 @@ B) https://stackoverflow.com/questions/42460930/how-to-resize-navbar-logo-on-scr
               {recently_updated number='3' css_class='text-left h6 small' *}
             </div>
             <div class="col-md-5 d-none d-sm-block" id="marinetraffic">
-              <h3>Waar bevindt Uisge Beatha zich?</h3>
+              <h3 class="font-weight-bold">Waar bevindt Uisge Beatha zich?</h3>
               {*<input type="button" class="button-class" onclick="function(click)">*}
               <script>
                 var width='100%';   // the width of the embedded map in pixels or percentage 
@@ -181,7 +185,7 @@ B) https://stackoverflow.com/questions/42460930/how-to-resize-navbar-logo-on-scr
     {* <script>
         var resource = document.createElement('script'); 
         resource.async = "true";
-        resource.src = "http://www.marinetraffic.com/js/embed.js";
+        resource.src = "//www.marinetraffic.com/js/embed.js";
         var script = document.getElementsByTagName('script')[0];
         script.parentNode.insertBefore(resource, script);
     </script> *}
@@ -205,8 +209,8 @@ B) https://stackoverflow.com/questions/42460930/how-to-resize-navbar-logo-on-scr
 
              </script>*}
             </div>
-            <div class="col-md-3 ml-md-3 ml-sm-1">
-              <h3>Nieuwtjes ontvangen?</h3>
+            <div class="col-md-3 ml-md-3 ml-sm-1 font-weight-bold">
+              <h3 class="font-weight-bold">Nieuwtjes ontvangen?</h3>
               {CGBetterForms form="mailingForm"}
             </div>
           </div>
@@ -267,6 +271,7 @@ B) https://stackoverflow.com/questions/42460930/how-to-resize-navbar-logo-on-scr
   </div>
 
   {include file='cms_template:svgIcons'}
+ 
 </body>
 
 {* <!-- /parsed 2 of 3 --> *}

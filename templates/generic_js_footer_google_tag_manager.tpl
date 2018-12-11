@@ -1,5 +1,8 @@
-{* Google Tag Manager (noscript) *}
-{if $smarty.server.SERVER_NAME|lower eq 'localuisge-beatha.eu'}
+{* Google Tag Manager (noscript) 
+    prod: GTM-M95RWP
+    develop: GTM-W56XLX5
+*}
+{if $smarty.server.SERVER_NAME|lower eq {$environment}}
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M95RWP"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     {if !(isset($created_date))}

@@ -1,4 +1,4 @@
-{if $smarty.server.SERVER_NAME|lower eq 'uisge-beatha.eu'}
+{if $smarty.server.SERVER_NAME|lower eq {$environment}}
   {* Please:
      - Fill in yourdomain
      - Add UA-code

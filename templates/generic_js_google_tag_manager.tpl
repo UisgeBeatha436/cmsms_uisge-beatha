@@ -16,15 +16,15 @@
         'valueName': 'value',
       }];
 
-      dataLayer.push(
-        'valueName': 'value',
-      );
+      dataLayer.push({
+        'valueName' :  'value'
+      });
 
     {/literal}
   {/capture}
 
   <script>
-    {$datalayer}
+    {*$datalayer*}
     {literal}
       (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
       new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],

@@ -19,7 +19,7 @@
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="application-name" content="{$sitename}">
 <link rel="icon" type="image/png" sizes="192x192" href="{CGSmartImage src="{$theme_relative_url}/favicons/android-chrome-192x192.png" noresponsive=1 notag=1 force_ext=1 noembed=1 filter_resizetofit='192,192,#ff000,126'}">
-<link rel="apple-touch-icon" href="{CGSmartImage src="{$theme_relative_url}/favicons/android-icon-192x192.png" noresponsive=1 notag=1 force_ext=1 noembed=1 filter_resizetofit='192,192,#ff000,126'}">
+{*<link rel="apple-touch-icon" href="{CGSmartImage src="{$theme_relative_url}/favicons/android-icon-192x192.png" noresponsive=1 notag=1 force_ext=1 noembed=1 filter_resizetofit='192,192,#ff000,126'}">*}
 {* add to homescreen for safari on ios *}
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black">
@@ -50,8 +50,8 @@
 <link rel="apple-touch-icon" sizes="152x152" href="{CGSmartImage src="{$theme_relative_url}/favicons/apple-touch-icon-152x152.png" noresponsive=1 notag=1 force_ext=1 noembed=1 filter_resizetofit='152,152,#ff000,126'}">
 <link rel="apple-touch-icon" sizes="167x167" href="{CGSmartImage src="{$theme_relative_url}/favicons/apple-touch-icon.png" noresponsive=1 notag=1 force_ext=1 noembed=1 filter_resizetofit='167,167,#ff000,126'}">
 <link rel="apple-touch-icon" sizes="180x180" href="{CGSmartImage src="{$theme_relative_url}/favicons/apple-touch-icon-180x180.png" noresponsive=1 notag=1 force_ext=1 noembed=1 filter_resizetofit='180,180,#ff000,126'}">
-<link rel="mask-icon" href="{CGSmartImage src="{$theme_relative_url}/favicons/safari-pinned-tab.svg" force_ext=1 noresponsive=1 notag=1 noembed=1}" color="#ffffff">
-
+{*<link rel="mask-icon" href="{CGSmartImage src="{$theme_relative_url}/favicons/safari-pinned-tab.svg" force_ext=1 noresponsive=1 notag=1 noembed=1}" color="#ffffff"> *}
+<link rel="mask-icon" href="{$theme_relative_url}/favicons/safari-pinned-tab.svg" color="#ffffff">
 
 {* 
  tile icon for win8 (144x144 + tile color)

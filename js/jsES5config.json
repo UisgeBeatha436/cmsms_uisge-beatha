@@ -1,9 +1,9 @@
 {
   "files": [
     {
-      "outputFileName": "jquery.slim.js",
+      "outputFileName": "jquery.js",
       "dependencies": [
-        "node_modules/jquery/dist/jquery.slim.js"
+        "node_modules/jquery/dist/jquery.js"
       ]
     },
     {
@@ -19,7 +19,7 @@
       ]
     },
     {
-      "outputFileName": "rellax.js",
+      "outputFileName": "parallax.js",
       "dependencies": [
         "node_modules/rellax/rellax.js"
       ]
@@ -31,9 +31,9 @@
       ]
     },
     {
-      "outputFileName": "social.js",
+      "outputFileName": "defer.js",
       "dependencies": [
-        "node_modules/social/social.js"
+        "node_modules/social/defer.js"
       ]
     },
     {
@@ -46,6 +46,12 @@
       "outputFileName": "scripts.js",
       "dependencies": [
         "node_modules/scripts/*.js"
+      ]
+    },
+    {
+      "outputFileName": "resize_header_logo.js",
+      "dependencies": [
+        "node_modules/resize_header/resize_header_logo.js"
       ]
     },
     {

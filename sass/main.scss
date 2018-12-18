@@ -768,13 +768,15 @@ svg {
   font-size: 2em;
 }
 .icon.icon-left-hand, .icon.icon-right-hand {
-	font-size: 1rem;
+  font-size: 1rem;
+  fill: var(--fill-color-boat)
 }
 .icon.icon-search {
   font-size: 2rem;
   fill: antiquewhite;
   margin-bottom: 0.3rem;
 }
+
 /* ---------------- End ICON Styling ---------------- */
 
 #google_ad {

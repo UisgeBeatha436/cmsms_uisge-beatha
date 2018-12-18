@@ -97,7 +97,7 @@
     <div class="row">
       <div class="col-md-8 ml-auto mr-auto">
         <div class="rellax" data-rellax-speed="-3">
-          <h1 class="title"  >{menu_text}</h1>
+          <h1 class="title">{menu_text}</h1>
         </div>
         <h4>
           {if $_description != '' || $global_description != ''}

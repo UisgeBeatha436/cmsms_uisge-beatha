@@ -41,7 +41,7 @@ B) https://stackoverflow.com/questions/42460930/how-to-resize-navbar-logo-on-scr
   <nav class="navbar navbar-expand-lg fixed-top navbar-dark danger-color">
     <div class="container-fluid">
       <div class="navbar-translate">
-        <a class="navbar-brand" href="{root_url}" title="{$sitename}" data-placement="bottom"><img id="header-logo" class="logo"  alt="{$sitename}" src="//uisge-beatha.eu/uploads/images/cms/Dehler%20-%20logo%20transparant%20lunarpic.png" height="150vh"/> {* https://www.freeiconspng.com/uploads/sailing-boat-png-29.png src="//uisge-beatha.eu/uploads/images/cms/Dehler%20-%20logo%20transparant%20lunarpic.png"/> *}
+        <a class="navbar-brand" href="{root_url}" title="{$sitename}" data-placement="bottom"><img id="header-logo" class="logo"  alt="{$sitename}" src="//localhost/uploads/images/cms/logo.svg" height="150vh"/> {* src="//uisge-beatha.eu/uploads/images/cms/Dehler%20-%20logo%20transparant%20lunarpic.png" https://www.freeiconspng.com/uploads/sailing-boat-png-29.png src="//uisge-beatha.eu/uploads/images/cms/Dehler%20-%20logo%20transparant%20lunarpic.png"/> *}
         </a>
       </div>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

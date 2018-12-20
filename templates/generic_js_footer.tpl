@@ -14,7 +14,7 @@
 {/if}
 
 {cgsi_convert}
-  <!-- script src="{$theme_dst_path}/assets/dst/js/es5/social.js"></script -->
+  {* <!-- script src="{$theme_dst_path}/assets/dst/js/es5/social.js"></script --> *}
 {/cgsi_convert}
 
 {if "{#es5Modus#}" == 'on'}
@@ -26,7 +26,7 @@
     {assign var=_unique_js_id value=1}
   {/if}
    
-  <!-- b: third party .js libs -->
+  {* <!-- b: third party .js libs --> *}
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script>window.jQuery || document.write('<script src="{$theme_dst_path}/js/es5/jquery.js?fes={$_unique_js_id}"><\/script>')</script> {* slim-version lacks getScript *}
 
@@ -35,8 +35,8 @@
   {*<script type="text/javascript" src="{root_url}/assets/src/node_modules/jquery_lazyscript/jquery.lazyscript.min.js"></script>
   <script>window.jQuery || document.write('<script src="{$theme_dst_path}/js/es5/jquery.slim.js?fes={$_unique_js_id}"><\/script>')</script> *}
 
-  <script async src="{$theme_dst_path}/assets/dst/js/es5/bootstrap.js"></script> 
-  <script async src="{$theme_dst_path}/assets/dst/js/es5/now-ui-kit.js"></script>
+  <script defer src="{$theme_dst_path}/assets/dst/js/es5/bootstrap.js"></script> 
+  <script defer src="{$theme_dst_path}/assets/dst/js/es5/now-ui-kit.js"></script>
   
   {* <script src="{$theme_dst_path}/assets/dst/js/es5/fontawesome.js"></script> 
     {
@@ -51,11 +51,11 @@
   <script type="text/javascript" src="{$theme_dst_path}/assets/dst/js/es5/parallax.js"></script>  {* Script for parallax Rellax *}
   <script src="{$theme_dst_path}/assets/dst/js/es5/cookies-eu-banner.js"></script>
 
-  <!-- c: plug-ins that have dependencies on b: >>> plugins.js -->  
+  {* <!-- c: plug-ins that have dependencies on b: >>> plugins.js --> *}
   {* <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script> * }
   <script type="text/javascript" src="https://unpkg.com/now-ui-kit@1.0.1/assets/js/now-ui-kit.js"></script>*}
   
-  <!-- d: custom scripts >>> scripts.js -->
+  {* <!-- d: custom scripts >>> scripts.js --> *}
   {*<script src="{$theme_dst_path}/assets/dst/js/es5/social.js"</script>
   <script>window.jQuery || document.write('<script src="{$theme_dst_path}/assets/dst/js/es5/social.js?fes={$_unique_js_id}"><\/script>')</script> *}
   {* theme path: {$theme_dst_path *}
@@ -65,7 +65,7 @@
   <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@8.17.0/dist/lazyload.min.js"></script>
   <script src="{$theme_dst_path}/assets/dst/js/es5/scripts.js?fes={$_unique_js_id}"></script>
 {/if}
-<!-- script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@10.19.0/dist/lazyload.min.js"></script -->
+{* <!-- script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@10.19.0/dist/lazyload.min.js"></script --> *}
 
 
 {if "{#es6ModusLegacy#}" == 'on'}
@@ -96,7 +96,21 @@
     });
   });
 </script>
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!--script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script-->
+<!--noptimize  |  https: / /gulshankumar.net/setup-lazy-loading-google-adsense-ad-units/ -->
+<script type="text/javascript">
+  function downloadJSAtOnload() {
+  var element = document.createElement("script");
+  element.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js";
+  document.body.appendChild(element);
+  }
+  if (window.addEventListener)
+    window.addEventListener("load", downloadJSAtOnload, false);
+  else if (window.attachEvent)
+    window.attachEvent("onload", downloadJSAtOnload);
+  else window.onload = downloadJSAtOnload;
+</script>
+<!--/noptimize-->
 <script>
   {jsmin}
   (adsbygoogle = window.adsbygoogle || []).push({
@@ -147,7 +161,7 @@
     }, true);
   </script>
 
-  {* https://varvy.com/pagespeed/defer-many-javascripts.html *}
+  {* https://varvy.com/pagespeed/defer-many-javascripts.html * }
   <script type="text/javascript">
     function downloadJSAtOnload() {
     var element = document.createElement("script");
@@ -159,7 +173,7 @@
     else if (window.attachEvent)
     window.attachEvent("onload", downloadJSAtOnload);
     else window.onload = downloadJSAtOnload;
-  </script>
+  </script> *}
 {/jsmin}
 
   {block name='floatbox'}

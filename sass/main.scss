@@ -318,14 +318,34 @@ html {
     background-color: #013E75;
 }*/
 
-#Logo {
-  transition: all .5s;
-  }
-    .largeLogo{width: 260px;}
-    .smallLogo  {
-        width: 12.125rem;
-        height: 8vh;
+@media only screen and (min-width: 320px) {
+  /* For mobile phones: */
+  #Logo {
+    transition: all .5s;
     }
+      .largeLogo { 
+        width: 130px;
+        max-height: 8vh;
+      }
+      .smallLogo  {
+          width: 6.125rem;
+          height: 4vh;
+      }
+}
+@media only screen and (min-width: 720px) {
+  /* For larger phones and screens: */
+  #Logo {
+    transition: all .5s;
+    }
+      .largeLogo {
+        width: 260px;
+        max-height: 18vh;
+      }
+      .smallLogo  {
+          width: 12.125rem;
+          height: 6vh;
+      }
+}
 /*------------------- define footer color  ------------------*/
 [data-background-color="grijs"] {
     background-color: #bbc2c2;
@@ -749,6 +769,9 @@ svg {
   font-size: 2em;
   margin-top: 0.313rem;
   margin-left: 0rem;
+}
+.icon.icon-pinterest-1 {
+  fill: white;
 }
 .btn-envelope .icon.icon-mail {
 	font-size: 1.7em;

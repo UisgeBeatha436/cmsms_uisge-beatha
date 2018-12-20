@@ -38,7 +38,7 @@
     {if $smarty.server.SERVER_NAME|lower eq {$environment}}
       <meta name="robots" content="index,follow">
     {else}
-      <meta name="robots" content="index,follow">
+      <meta name="robots" content="noindex,nofollow">
     {/if}
     <meta name="HandheldFriendly" content="true">
     {if isset($taglist)}

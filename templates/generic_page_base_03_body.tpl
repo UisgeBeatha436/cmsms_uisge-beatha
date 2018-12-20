@@ -28,10 +28,9 @@
       </div>*}
       
       {block name='body_nav'}
-        <nav class="navbar navbar-color-on-scroll navbar-expand-lg fixed-top navbar-transparent" color-on-scroll="170"> {* bgdefault navbar-custom *}
+        <nav class="navbar navbar-color-on-scroll navbar-expand-lg fixed-top scrolling-navbar navbar-transparent" color-on-scroll="170"> {* bgdefault navbar-custom *}
           <div class="container-fluid">
             <div class="navbar-header">
-              
             </div>
             <div class="navbar-translate">
               {* requires popper.js  rel="tooltip" *}
@@ -49,32 +48,32 @@
             </div>
             <div class="collapse navbar-collapse" id="navbarNav" data-nav-image="{CGSmartImage src="{uploads_url}/images/cms/Dehler-logo.png" alt="{$sitename}" title="{$sitename}" noresponsive='1' notag=1 noembed=0}" data-color="orange"> {* {CGSmartImage src="{uploads_url}/images/cms/Dehler-logo.png" alt="{$sitename}" title="{$sitename}" noresponsive='1' notag=1 noembed=0}" {root_url}/uploads/images/cms/Dehler%20-%20logo%20transparant%20lunarpic.svg" *}
               {Navigator action='default' template="{#theme_resource#}navigator_navigation_multilevel_bootstrap_menu.tpl"}
+
               {*global_content name='socialFollowButtons' shape='round' navbar='1'*}
-              <form class="form ml-auto text-dark" data-background-color="#990000">
+              <form class="form-inline ml-auto text-dark" data-background-color="#990000">
                 {if $browser_lang != 'nl'}
-                  <div class="form-group">
+                  <div class="form-group my-md-2 col-sm-9">
                     {include file='cms_template:google_Translate'}
                   </div>
-                  </div>
                 {/if}
-                <div class="row">
-                  <div class="col-md-12">
-                    <div class="input-group">
-                      <a href="#modalSearch" data-toggle="modal" data-target="#modalSearch" role="button" aria-disabled="true">&nbsp;{svg use="search"}</a>  
-                      <!--/div-->
-                      <!-- Button trigger modal -->
-                      {*<input type="text" class="form-control" placeholder="Ik zoek" style="color:white;"/> 
-                      If you want a more sophisticated solution read about Google's reCAPTCHA service *}
-                      {*<form formaction="zoeken" formenctype="multipart/form-data" formmethod="get" style="color:white;"/>
-                          <input class="form-control"  type="text" id="zoekForm" name="q" placeholder="Zoek" required>
-                          <input type="submit" value="Ga" formaction="/zoeken" id="submit" style="position: absolute; left: -9999px; width: 1px; height: 1px; "tabindex="-1">
-                      </form>*}
-                    </div>
-                </div>
+                <div class="form-group col-sm-3">
+                  <a href="#modalSearch" data-toggle="modal" data-target="#modalSearch" role="button" aria-disabled="true">{svg use="search"}</a>  
                 </div>
               </form>
             </div>
           </div>
+          {*<div class="navbar-header navbar-search">
+            <div class="form-inline">
+              {if $browser_lang != 'nl'}
+                <div class="form-group my-md-2 col-sm-9">
+                  {include file='cms_template:google_Translate'}
+                </div>
+              {/if}
+              <div class="form-group col-sm-3">
+                <a href="#modalSearch" data-toggle="modal" data-target="#modalSearch" role="button" aria-disabled="true">{svg use="search"}</a>  
+              </div>            
+            </div>
+          </div>*}
         </nav>
       {/block}
     </header>
@@ -104,7 +103,7 @@
             <div class="row">
               <div class="col-md-3 d-none d-sm-block float-left"> {* l-three-col-one *}
                 <p>Made with <a href="https://www.cmsmadesimple.org/">CMS Made Simple</a> &copy; {custom_copyright}</p>
-                <p>Deze pagina is {* HitCounter *} keer bekeken. Op dit moment {visitors}.</p><br />
+                <p>Op dit moment {visitors}.</p> {* Deze pagina is { HitCounter } keer bekeken.  *}
                 {*<a href="{get_current_url}#a-content" class="shape-link"><span>TOP</span></a>
                 <h4>Laatst gewijzigde pagina's</h4>
                 {recently_updated number='3' css_class='text-left h6 small' *}
@@ -112,7 +111,7 @@
               <div class="col-md-5 d-none d-sm-block" id="marinetraffic">
                 <h3 class="font-weight-bold">Waar bevindt Uisge Beatha zich?</h3>
                 {*<input type="button" class="button-class" onclick="function(click)">*}
-                {*<script>
+                <script>
                   var width='100%';   // the width of the embedded map in pixels or percentage 
                   var height='300';   // the height of the embedded map in pixels or percentage 
                   var border='1'; // the width of the border around the map (zero means no border) 
@@ -125,7 +124,7 @@
                   var fleet='';   // the registered email address of a user-defined fleet (user's default fleet is used) 
                   // Read more at http://www.marinetraffic.com/en/p/embed-map#6YXCVvOUaBxYHgoT.99
                 </script>
-                <script src="//www.marinetraffic.com/js/embed.js"></script>*}
+                <script src="//www.marinetraffic.com/js/embed.js"></script>
       
                 {* <script>
                     var resource = document.createElement('script'); 

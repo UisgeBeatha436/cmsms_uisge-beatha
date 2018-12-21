@@ -111,7 +111,7 @@
               <div class="col-md-5 d-none d-sm-block" id="marinetraffic">
                 <h3 class="font-weight-bold">Waar bevindt Uisge Beatha zich?</h3>
                 {*<input type="button" class="button-class" onclick="function(click)">*}
-                <script>
+                <!--script>
                   var width='100%';   // the width of the embedded map in pixels or percentage 
                   var height='300';   // the height of the embedded map in pixels or percentage 
                   var border='1'; // the width of the border around the map (zero means no border) 
@@ -122,9 +122,9 @@
                   var maptype='0';    // use 0 for Normal Map, 1 for Satellite, 2 for OpenStreetMap 
                   var trackvessel='' //244770624';     MMSI of a vessel (note: vessel will be displayed only if within range of the system) - overrides "zoom" option 
                   var fleet='';   // the registered email address of a user-defined fleet (user's default fleet is used) 
-                  // Read more at http://www.marinetraffic.com/en/p/embed-map#6YXCVvOUaBxYHgoT.99
+                  / / Read more at http://www.marinetraffic.com/en/p/embed-map#6YXCVvOUaBxYHgoT.99
                 </script>
-                <script src="//www.marinetraffic.com/js/embed.js"></script>
+                <script src="//www.marinetraffic.com/js/embed.js"></script-->
       
                 {* <script>
                     var resource = document.createElement('script'); 
@@ -152,7 +152,7 @@
                 // }
 
                 </script>*}
-                {*cgsi_convert}
+                {cgsi_convert}
                 {cge_cache_block expires=240}
                   {jsmin}
                     <script type="text/javascript">
@@ -166,10 +166,10 @@
                       var imo="244770624";      // display latest position (by IMO, overrides MMSI)
                       var show_track=true;      // display track line (last 24 hours)
                     </script>
-                    < !-- script type="text/javascript" src="https://www.vesselfinder.com/aismap.js"></script -->
+                    <script type="text/javascript" src="https://www.vesselfinder.com/aismap.js"></script>
                   {/jsmin}
                 {/cge_cache_block}
-                {/cgsi_convert*}
+                {/cgsi_convert}
               </div>
               <div class="col-md-3 ml-md-3 ml-sm-1 font-weight-bold">
                 <h3 class="font-weight-bold">Nieuwtjes ontvangen?</h3>

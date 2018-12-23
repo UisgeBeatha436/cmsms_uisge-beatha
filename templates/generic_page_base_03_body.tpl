@@ -159,7 +159,7 @@
                       // Map appearance
                       var width="100%";         // width in pixels or percentage
                       var height="200";         // height in pixels
-                      var names=true;           // always show ship names (defaults to false)
+                      var names=false;           // always show ship names (defaults to false)
 
                       // Single ship tracking
                       var mmsi="244770624";     // display latest position (by MMSI)

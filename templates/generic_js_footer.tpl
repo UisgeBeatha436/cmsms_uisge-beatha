@@ -49,7 +49,7 @@
 
   {*<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>*}
   <script type="text/javascript" src="{$theme_dst_path}/assets/dst/js/es5/parallax.js"></script>  {* Script for parallax Rellax *}
-  <script src="{$theme_dst_path}/assets/dst/js/es5/cookies-eu-banner.js"></script>
+  {*<script src="{$theme_dst_path}/assets/dst/js/es5/cookies-eu-banner.js"></script>*}
 
   {* <!-- c: plug-ins that have dependencies on b: >>> plugins.js --> *}
   {* <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script> * }

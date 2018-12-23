@@ -25,12 +25,6 @@
       ]
     },
     {
-      "outputFileName": "cookies-eu-banner.js",
-      "dependencies": [
-        "node_modules/cookies-eu-banner/dist/cookies-eu-banner.js"
-      ]
-    },
-    {
       "outputFileName": "defer.js",
       "dependencies": [
         "node_modules/social/defer.js"
@@ -45,6 +39,7 @@
     {
       "outputFileName": "scripts.js",
       "dependencies": [
+        "node_modules/cookies-eu-banner/dist/cookies-eu-banner.js",
         "node_modules/scripts/*.js"
       ]
     },

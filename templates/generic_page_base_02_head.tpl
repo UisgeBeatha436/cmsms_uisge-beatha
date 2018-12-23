@@ -84,6 +84,7 @@
       {$canonical_real_global = $content_obj->GetURL() scope='global'}
     {/if}
     {$canonical = $canonical_real_global scope='global'} {* to make sure no other canonical setting is missed *}
+    {$canonical_global = $canonical_real_global scope='global'} {* to make sure no other canonical setting is missed *}
     <link rel="canonical" href="{$canonical_real_global}">
 
     {include file="{#theme_resource#}generic_page_favicons.tpl"}

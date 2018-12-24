@@ -1,4 +1,4 @@
-{* <!-- parsed: 3 of 3 --> *}
+<!-- parsed: 3 of 3 -->
 <head>
   {strip}
     <!-- Amazon S3 -->
@@ -170,6 +170,6 @@
     </div>
   {/strip}
   <!-- cgjs_render on the next line -->
-  {cgjs_render}
+  <!-- {cgjs_render} -->
 </head>
 <!-- /parsed: 3 of 3 -->

@@ -86,7 +86,8 @@
     {$canonical = $canonical_real_global scope='global'} {* to make sure no other canonical setting is missed *}
     {$canonical_global = $canonical_real_global scope='global'} {* to make sure no other canonical setting is missed *}
     <link rel="canonical" href="{$canonical_real_global}">
-
+  {/strip}
+  {strip}
     {include file="{#theme_resource#}generic_page_favicons.tpl"}
 
     {*if isset($images_all_global) && $images_all_global|@count >=1}
@@ -127,7 +128,7 @@
     <link rel="stylesheet" href="{$theme_relative_url}/css/main.css?fes{$_unique_css_id}">
     <!--link rel="stylesheet" href="{$theme_relative_url}/css/now-ui-kit.css?fes{$_unique_css_id}"-->
     {browser_lang accepted='nl' assign='browser_lang' scope=global} {* used for Google Translate to check if translation is needed. Doesn't work too well because in NL it gives en... *}
-
+    
     <!-- Search Modal -->
     <div id="modalSearch" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="modalSearchTitle"  aria-hidden="true">
       <div class="modal-dialog modal-dialog-center" role="document">
@@ -168,6 +169,7 @@
       </div>
     </div>
   {/strip}
+  <!-- cgjs_render on the next line -->
   {cgjs_render}
 </head>
-{* <!-- /parsed: 3 of 3 --> *}
+<!-- /parsed: 3 of 3 -->

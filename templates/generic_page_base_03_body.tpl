@@ -231,5 +231,4 @@
   {include file='cms_template:svgIcons'}
 {/strip}
 </body>
-
-{* <!-- /parsed 2 of 3 --> *}
+<!-- /parsed 2 of 3 -->

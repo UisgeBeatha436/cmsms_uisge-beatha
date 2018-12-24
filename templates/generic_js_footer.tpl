@@ -35,9 +35,20 @@
   {*<script type="text/javascript" src="{root_url}/assets/src/node_modules/jquery_lazyscript/jquery.lazyscript.min.js"></script>
   <script>window.jQuery || document.write('<script src="{$theme_dst_path}/js/es5/jquery.slim.js?fes={$_unique_js_id}"><\/script>')</script> *}
 
-  <script defer src="{$theme_dst_path}/assets/dst/js/es5/bootstrap.js"></script> 
+  {*<script defer src="{$theme_dst_path}/assets/dst/js/es5/bootstrap.js"></script> 
   <script defer src="{$theme_dst_path}/assets/dst/js/es5/now-ui-kit.js"></script>
   
+    {
+      "outputFileName": "now-ui-kit.js",
+      "dependencies": [
+        "node_modules/now-ui-kit/assets/js/now-ui-kit.js"
+      ]
+    },
+  
+  *}
+  <script defer src="{$theme_dst_path}/assets/dst/js/es5/uisge-beatha.js"></script>
+
+
   {* <script src="{$theme_dst_path}/assets/dst/js/es5/fontawesome.js"></script> 
     {
       "outputFileName": "fontawesome.js",
@@ -48,7 +59,7 @@
   *}
 
   {*<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>*}
-  <script type="text/javascript" src="{$theme_dst_path}/assets/dst/js/es5/parallax.js"></script>  {* Script for parallax Rellax *}
+  <script type="text/javascript" src="{$theme_dst_path}/assets/dst/js/es5/parallax.js"></script>  {* Script for parallax Rellax  *}
   {*<script src="{$theme_dst_path}/assets/dst/js/es5/cookies-eu-banner.js"></script>*}
 
   {* <!-- c: plug-ins that have dependencies on b: >>> plugins.js --> *}
@@ -82,33 +93,37 @@
 
 {* lazy load *}
 <script>
-  var myLazyLoad = new LazyLoad({
-      elements_selector: ".lazy"
-  });
-
-  // lazyload used in the Bootstrap carousel
-  $(function() {
-    return $(".carousel.lazy").on("slide.bs.carousel", function(ev) {
-      var lazy;
-      lazy = $(ev.relatedTarget).find("img[data-src]");
-      lazy.attr("src", lazy.data('src'));
-      lazy.removeAttr("data-src");
+  {jsmin}
+    var myLazyLoad = new LazyLoad({
+        elements_selector: ".lazy"
     });
-  });
+
+    // lazyload used in the Bootstrap carousel
+    $(function() {
+      return $(".carousel.lazy").on("slide.bs.carousel", function(ev) {
+        var lazy;
+        lazy = $(ev.relatedTarget).find("img[data-src]");
+        lazy.attr("src", lazy.data('src'));
+        lazy.removeAttr("data-src");
+      });
+    });
+  {/jsmin}
 </script>
 <!--script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script-->
 <!--noptimize  |  https: / /gulshankumar.net/setup-lazy-loading-google-adsense-ad-units/ -->
 <script type="text/javascript">
-  function downloadJSAtOnload() {
-  var element = document.createElement("script");
-  element.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js";
-  document.body.appendChild(element);
-  }
-  if (window.addEventListener)
-    window.addEventListener("load", downloadJSAtOnload, false);
-  else if (window.attachEvent)
-    window.attachEvent("onload", downloadJSAtOnload);
-  else window.onload = downloadJSAtOnload;
+  {jsmin}
+    function downloadJSAtOnload() {
+    var element = document.createElement("script");
+    element.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js";
+    document.body.appendChild(element);
+    }
+    if (window.addEventListener)
+      window.addEventListener("load", downloadJSAtOnload, false);
+    else if (window.attachEvent)
+      window.attachEvent("onload", downloadJSAtOnload);
+    else window.onload = downloadJSAtOnload;
+  {/jsmin}
 </script>
 <!--/noptimize-->
 <script>

@@ -1,3 +1,4 @@
+{strip}
 {if {$smarty.server.SERVER_NAME|lower} eq {$environment}}
   {* Please:
      - this template should be added to the head of your template
@@ -38,3 +39,4 @@
 {else}
   <!-- generic_js_google_tag_manager is turned off for: ({$smarty.server.SERVER_NAME|lower}) -->
 {/if}
+{/strip}

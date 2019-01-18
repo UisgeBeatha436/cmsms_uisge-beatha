@@ -1,3 +1,4 @@
+{strip}
 {*
 
 == This template can be used for navigations with multiple levels ==
@@ -45,30 +46,30 @@ without an open/close div tag.
 {foreach $data as $node name='sub_loop'}
 
 	{if $smarty.foreach.sub_loop.first}
-	{if $node->depth <= 2}
-		<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-	{/if}
+		{if $node->depth <= 2}
+			<div class="dropdown-menu" aria-label="navbarDropdownMenuLink"> {* changed from aria-labelledby *}
+		{/if}
 	{/if}
 
 	{if $node->type == 'sectionheader'}
-	<strong>{$node->menutext}</strong>
-	{if isset($node->children)}
-		{sub_level_markup data=$node->children depth=$depth+1}
-	{/if}
+		<strong>{$node->menutext}</strong>
+		{if isset($node->children)}
+			{sub_level_markup data=$node->children depth=$depth+1}
+		{/if}
 	{else if $node->type == 'separator'}
-	<div class="dropdown-divider"></div>
+		<div class="dropdown-divider"></div>
 	{else}
-	<a class="dropdown-item" href="{$node->url}">{if $node->target ne ""} target="{$node->target}"{/if}{$node->menutext}</a>
-	{if isset($node->children)}
-		{* <!-- call sub_level again but when depth > 2 it will not print the open/close div --> *}
-		{sub_level_markup data=$node->children depth=$depth+1}
-	{/if}
+		<a class="dropdown-item" href="{$node->url}">{if $node->target ne ""} target="{$node->target}"{/if}{$node->menutext}</a>
+		{if isset($node->children)}
+			{* <!-- call sub_level again but when depth > 2 it will not print the open/close div --> *}
+			{sub_level_markup data=$node->children depth=$depth+1}
+		{/if}
 	{/if}
 
 	{if $smarty.foreach.sub_loop.last}
-	{if $node->depth <= 2}
-		</div>
-	{/if}
+		{if $node->depth <= 2}
+			</div>
+		{/if}
 	{/if}
 
   {/foreach}
@@ -77,10 +78,12 @@ without an open/close div tag.
 {function name=main_level_markup depth=1}
 	{assign var='aclass' value='dropdown-item'}
 	<ul class="navbar-nav mr-auto">
+		{assign var=id value=0}
 		{foreach $data as $node name='loop'}
 		{if $node->type == 'sectionheader'}
 			<li class="nav-item dropdown">
-				<a class="nav-link dropdown-toggle" href="{$node->url}" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{$node->menutext}</a>
+				<a class="nav-link dropdown-toggle" href="{$node->url}" id="navbarDropdown{$id}" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{$node->menutext}</a>
+				{$id = {$id}+1} 
 				{if isset($node->children)}
 					{sub_level_markup data=$node->children depth=$depth+1}
 				{/if}
@@ -92,7 +95,7 @@ without an open/close div tag.
 		{* <a href="{$node->url}"{if $node->target ne ""} target="{$node->target}"{/if}><class="menu{if $node->children_exist}-button{/if}">{$node->menutext}</a> *}
 		{if isset($node->children)}
 			<li class="nav-item dropdown">
-				<a class="nav-link dropdown-toggle" href="{$node->url}" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{$node->menutext}</a>
+				<a class="nav-link dropdown-toggle" href="{$node->url}" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{$node->menutext}</a>
 			</li>
 			{sub_level_markup data=$node->children depth=$depth+1}
 		{else}
@@ -108,3 +111,4 @@ without an open/close div tag.
 {if isset($nodes)}
   {main_level_markup data=$nodes depth=0}
 {/if}
+{/strip}

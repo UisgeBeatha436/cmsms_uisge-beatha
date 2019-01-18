@@ -1,3 +1,4 @@
+{strip}
 {* favicons *}
 {* <link rel="icon" type="image/png" href="{$theme_relative_url}/favicons/favicon.ico">
 <link rel="icon" type="image/png" href="{$theme_relative_url}/favicons/favicon-16x16.png" sizes="16x16">  
@@ -5,9 +6,9 @@
 <link rel="icon" type="image/png" href="{$theme_relative_url}/favicons/android-chrome-192x192.png" sizes="192x192"> *}
 
 <link rel="icon" type="image/png" href="{CGSmartImage src="{$theme_relative_url}/favicons/favicon.ico" noresponsive=1 notag=1 force_ext=1 noembed=1}">
-<link rel="icon" href="{CGSmartImage src="{$theme_relative_url}/favicons/favicon-16x16.png" noresponsive=1 notag=1 force_ext=1 noembed=1 filter_resizetofit='16,16,#ff000,126'}" sizes="16x16">
-<link rel="icon" href="{CGSmartImage src="{$theme_relative_url}/favicons/favicon-32x32.png" noresponsive=1 notag=1 force_ext=1 noembed=1 filter_resizetofit='32,32,#ff000,126'}" sizes="32X32">
-<link rel="icon" href="{CGSmartImage src="{$theme_relative_url}/favicons/android-chrome-192x192.png" noresponsive=1 notag=1 force_ext=1 noembed=1 filter_resizetofit='192,192,#ff000,126'}" sizes="192x192">
+<link rel="icon" type="image/png" href="{CGSmartImage src="{$theme_relative_url}/favicons/favicon-16x16.png" noresponsive=1 notag=1 force_ext=1 noembed=1 filter_resizetofit='16,16,#ff000,126'}" sizes="16x16">
+<link rel="icon" type="image/png" href="{CGSmartImage src="{$theme_relative_url}/favicons/favicon-32x32.png" noresponsive=1 notag=1 force_ext=1 noembed=1 filter_resizetofit='32,32,#ff000,126'}">
+<link rel="icon" type="image/png" href="{CGSmartImage src="{$theme_relative_url}/favicons/android-chrome-192x192.png" noresponsive=1 notag=1 force_ext=1 noembed=1 filter_resizetofit='192,192,#ff000,126'}" sizes="192x192">
 
 {* disable tap highlight on IE *}
 <meta name="msapplication-tap-highlight" content="no">
@@ -38,7 +39,6 @@
 <link rel="apple-touch-icon" sizes="180x180" href="{$theme_relative_url}/favicons/apple-touch-icon-180x180.png">
 <link rel="mask-icon" href="{$theme_relative_url}/favicons/safari-pinned-tab.svg" color="#ffffff"> *}
 
-
 <link rel="apple-touch-icon" href="{CGSmartImage src="{$theme_relative_url}/favicons/apple-touch-icon-120x120.png" noresponsive=1 notag=1 force_ext=1 noembed=1 filter_resizetofit='120,120,#ff000,126'}">
 <link rel="apple-touch-icon" sizes="57x57" href="{CGSmartImage src="{$theme_relative_url}/favicons/apple-touch-icon-57x57.png" noresponsive=1 notag=1 force_ext=1 noembed=1 filter_resizetofit='57,57,#ff000,126'}">
 <link rel="apple-touch-icon" sizes="60x60" href="{CGSmartImage src="{$theme_relative_url}/favicons/apple-touch-icon-60x60.png" noresponsive=1 notag=1 force_ext=1 noembed=1 filter_resizetofit='60,60,#ff000,126'}">
@@ -63,3 +63,4 @@
 
 {* color the status bar on mobile devices *}
 <meta name="theme-color" content="#5f8bb2">
+{/strip}

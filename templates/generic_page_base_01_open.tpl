@@ -1,30 +1,17 @@
-<!-- parsed: 1 of 3 -->
+<!-- area: 1 of 3 -->
 {strip}
 	{$page_js_header = '' scope='global'}
 	{$page_js_footer = '' scope='global'}
 	{$theme_absolute_url = "{root_url}/assets{#theme_dst_path#}" scope='global'}
 	{$theme_relative_url = "./assets{#theme_dst_path#}" scope='global'}
 	{process_pagedata}
-	{$environment = "develop.uisge-beatha.eu" scope=global} {* localhost | develop.uisge-beatha.eu | used to set if some scripts either or not need to run *}
-	{$last_modified = $last_modified|default:"{modified_date format='%e-%m-%Y'}" scope=global}
-	{$page_modified = $page_modified|default:"{modified_date format='%e-%m-%Y'}" scope=global}
-	{$page_image = $page_image|default:"{root_url}/uploads/images/cms/Uisge-Beatha_Main_Image.jpg" scope=global}
-	{$page_title = $page_title|default:"{title}" scope=global}
+	{$environment = "develop.uisge-beatha.eu" scope=global} {* localhost | develop.uisge-beatha.eu | uisge-beatha.eu --->>>> used to set if some scripts either or not need to run *}
 	
-
-    {*
-      "outputFileName": "cookies-eu-banner.js",
-      "dependencies": [
-        "node_modules/cookies-eu-banner/dist/cookies-eu-banner.js"
-      ]
-    }, *}
-
 	{block name='open_content'}
-		{*$content_01="{content label='Content 01'}" scope='global'*}
+		{* all content blocks are set on the page template *}
 	{/block}
 
-	<!doctype html>
+	<!DOCTYPE HTML>
 	{* has-no-js will be removed when using modernizr *}
+	<!-- /area: 1 of 3 -->
 	<html class="has-no-js" lang="{cms_get_language|truncate:2:"":true}">
-{/strip}
-<!-- /parsed: 1 of 3 -->

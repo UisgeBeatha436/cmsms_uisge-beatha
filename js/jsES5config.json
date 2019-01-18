@@ -35,13 +35,8 @@
       "outputFileName": "scripts.js",
       "dependencies": [
         "node_modules/cookies-eu-banner/dist/cookies-eu-banner.js",
+        "node_modules/resize_header/resize_header_logo.js",
         "node_modules/scripts/*.js"
-      ]
-    },
-    {
-      "outputFileName": "resize_header_logo.js",
-      "dependencies": [
-        "node_modules/resize_header/resize_header_logo.js"
       ]
     },
     {

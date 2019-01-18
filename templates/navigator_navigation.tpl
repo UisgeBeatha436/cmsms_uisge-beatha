@@ -1,3 +1,4 @@
+{strip}
 {*
 
   == This template can be used for navigations without any levels ==
@@ -34,3 +35,4 @@
       {main_level_markup data=$nodes depth=0}
   </ul>
 {/if}
+{/strip}

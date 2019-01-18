@@ -1,3 +1,4 @@
+{strip}
 {* <div class="row">
     <div class="col-md-12">
       <div>
@@ -41,7 +42,7 @@
           Uisge Beatha
         {/if}
       </p>
-      <nav aria-label="breadcrumb" role="navigation">
+      <nav aria-label="breadcrumb">
         {Navigator action='breadcrumbs' template="{#theme_resource#}navigator_breadcrumbs.tpl"}
       </nav>
     </div>
@@ -67,7 +68,7 @@
             Uisge Beatha
           {/if}
         </h4>
-        <nav aria-label="breadcrumb" role="navigation">
+        <nav aria-label="breadcrumb">
           {Navigator action='breadcrumbs' template="{#theme_resource#}navigator_breadcrumbs.tpl"}
         </nav>
       </div>
@@ -110,10 +111,11 @@
               Uisge Beatha
           {/if}
         </h4>
-        <nav aria-label="breadcrumb" role="navigation">
+        <nav aria-label="breadcrumb">
           {Navigator action='breadcrumbs' template="{#theme_resource#}navigator_breadcrumbs.tpl"}
         </nav>
       </div>
     </div>
   </div>
 </div>
+{/strip}

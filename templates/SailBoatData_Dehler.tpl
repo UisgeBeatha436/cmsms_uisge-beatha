@@ -1,6 +1,7 @@
-<form>
+{strip}
+{* <form>
     <button type="button"class="btn btn-primary"onclick="history.back()">{svg use="hand-o-left"} terug</button>
-</form>
+</form> *}
 <p><a class="badge badge-primary" href="https://sailboatdata.com/sailboat/dehler-36">Article from Sail Boat data</a></p>
 <h2 class="title"class="title">DEHLER 36 JV</h2>
 <article class="sailboat">
@@ -15,7 +16,7 @@
             <a class="btn btn-default"role="button"href="https://sailboatdata.com/sailboat/dehler-36?units=imperial">imperial</a>
             <a class="btn btn-default  active"role="button"href="https://sailboatdata.com/sailboat/dehler-36?units=metric">metric</a>
         </div>*}
-        <table class="table table-{*1:striped|sm|bordered|hover|inverse*} table-inverse table-responsive">
+        <table class="table table{*-1:striped|sm|bordered|hover|inverse*} table-inverse table-responsive">
             <thead class="thead-inverse|thead-default">
                 <tr>
                     <th>Hull Type</th>
@@ -719,3 +720,4 @@
         </section>
     </section>
 </article>
+{/strip}

@@ -7,10 +7,10 @@
 {/block}
 
 {block name='body_content'}
-  {assign var='parallax_img' value={CGSmartImage src="{root_url}/uploads/images/cms/40MijlvanBru-02.jpg" notag=1}}
+  {assign var='parallax_img' value={CGSmartImage src="{uploads_url}/images/cms/40MijlvanBru-02.jpg" notag=1}}
   <a id="a-content"></a>
   <div class="wrapper">
-    <div class="page-header clear-filter" filter-color="orange">
+    <div class="page-header clear-filter" data-filter-color="orange">
       <div class="page-header-image rellax" data-rellax-speed="-4" data-rellax-percentage="0.5" style="background-image: url({$parallax_img});"> {* data-parallax="true" *}
       </div>
       <div class="content-center">

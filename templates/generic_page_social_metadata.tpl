@@ -1,3 +1,5 @@
+{strip}
+{assign var=page_description value={description} scope='global'}
 {if $page_description|count_words < '6'}
    {capture name='meta_description' assign='metadescription'}{$page_title} | {$page_description}{/capture}
 {else}
@@ -75,7 +77,6 @@
 {else}
   <meta name="twitter:image" content="{$theme_absolute_url}/images/twitter_summary_image.png">
 {/if}
-<meta name="twitter:description" content="{$metadescription}">
 {*if isset($content_obj->TitleAttribute()) && $content_obj->TitleAttribute() != ''}
   <meta name="twitter:description" content="{$content_obj->TitleAttribute()|regex_replace:"/^[\s]*(.*?)[\s]*$/":"$1"}">
 {else}
@@ -90,3 +91,4 @@
 
 {* Google Plus *}
 <link href="https://plus.google.com/116890025813489569543" rel="publisher">
+{/strip}

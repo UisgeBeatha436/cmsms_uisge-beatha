@@ -1,3 +1,4 @@
+{strip}
 {*
   {capture assign='_js_footer'}
     {$global_js_footer}
@@ -32,7 +33,7 @@
 
   {* <script src="{$theme_dst_path}/assets/dst/js/es5/jquery.slim.js"></script>*}
 
-  {*<script type="text/javascript" src="{root_url}/assets/src/node_modules/jquery_lazyscript/jquery.lazyscript.min.js"></script>
+  {*<script src="{root_url}/assets/src/node_modules/jquery_lazyscript/jquery.lazyscript.min.js"></script>
   <script>window.jQuery || document.write('<script src="{$theme_dst_path}/js/es5/jquery.slim.js?fes={$_unique_js_id}"><\/script>')</script> *}
 
   {*<script defer src="{$theme_dst_path}/assets/dst/js/es5/bootstrap.js"></script> 
@@ -48,7 +49,6 @@
   *}
   <script defer src="{$theme_dst_path}/assets/dst/js/es5/uisge-beatha.js"></script>
 
-
   {* <script src="{$theme_dst_path}/assets/dst/js/es5/fontawesome.js"></script> 
     {
       "outputFileName": "fontawesome.js",
@@ -59,12 +59,12 @@
   *}
 
   {*<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>*}
-  <script type="text/javascript" src="{$theme_dst_path}/assets/dst/js/es5/parallax.js"></script>  {* Script for parallax Rellax  *}
+  <script src="{$theme_dst_path}/assets/dst/js/es5/parallax.js"></script>  {* Script for parallax Rellax  *}
   {*<script src="{$theme_dst_path}/assets/dst/js/es5/cookies-eu-banner.js"></script>*}
 
   {* <!-- c: plug-ins that have dependencies on b: >>> plugins.js --> *}
   {* <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script> * }
-  <script type="text/javascript" src="https://unpkg.com/now-ui-kit@1.0.1/assets/js/now-ui-kit.js"></script>*}
+  <script src="https://unpkg.com/now-ui-kit@1.0.1/assets/js/now-ui-kit.js"></script>*}
   
   {* <!-- d: custom scripts >>> scripts.js --> *}
   {*<script src="{$theme_dst_path}/assets/dst/js/es5/social.js"</script>
@@ -78,18 +78,14 @@
 {/if}
 {* <!-- script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@10.19.0/dist/lazyload.min.js"></script --> *}
 
-
 {if "{#es6ModusLegacy#}" == 'on'}
   {include file="{#theme_resource#}generated/generated_js_footer.tpl"}
 {/if}
 
-
-{jsmin}
-
 {* Rellax *}
 
-{* Resize logo and header *}
-<script  src="{$theme_dst_path}/assets/dst/js/es5/resize_header_logo.js"></script>
+{* Resize logo and header * }
+<script  src="{$theme_dst_path}/assets/dst/js/es5/resize_header_logo.js"></script> *}
 
 {* lazy load *}
 <script>
@@ -110,8 +106,8 @@
   {/jsmin}
 </script>
 <!--script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script-->
-<!--noptimize  |  https: / /gulshankumar.net/setup-lazy-loading-google-adsense-ad-units/ -->
-<script type="text/javascript">
+<!--noptimize  |  https://gulshankumar.net/setup-lazy-loading-google-adsense-ad-units/ -->
+<script>
   {jsmin}
     function downloadJSAtOnload() {
     var element = document.createElement("script");
@@ -125,15 +121,13 @@
     else window.onload = downloadJSAtOnload;
   {/jsmin}
 </script>
-<!--/noptimize-->
-<script>
-  {jsmin}
-  (adsbygoogle = window.adsbygoogle || []).push({
-        google_ad_client: "ca-pub-3514636835854223",
-        enable_page_level_ads: true
-  });
-  {/jsmin}
-</script>
+<!--/noptimize -->
+<!--script>
+    (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-3514636835854223",
+          enable_page_level_ads: true
+    });
+</script-->
 
 {* scroll 2 top *}
 
@@ -171,28 +165,27 @@
     });
   </script> *}
   <script>
-    new CookiesEuBanner(function(){
-        // Your code to launch when user accept cookies
-    }, true);
+      new CookiesEuBanner(function(){
+          // Your code to launch when user accept cookies
+      }, true);
   </script>
 
   {* https://varvy.com/pagespeed/defer-many-javascripts.html * }
-  <script type="text/javascript">
-    function downloadJSAtOnload() {
-    var element = document.createElement("script");
-    element.src = "./assets/dst/js/es5/defer.js";
-    document.body.appendChild(element);
-    }
-    if (window.addEventListener)
-    window.addEventListener("load", downloadJSAtOnload, false);
-    else if (window.attachEvent)
-    window.attachEvent("onload", downloadJSAtOnload);
-    else window.onload = downloadJSAtOnload;
+  <script>
+      function downloadJSAtOnload() {
+      var element = document.createElement("script");
+      element.src = "./assets/dst/js/es5/defer.js";
+      document.body.appendChild(element);
+      }
+      if (window.addEventListener)
+      window.addEventListener("load", downloadJSAtOnload, false);
+      else if (window.attachEvent)
+      window.attachEvent("onload", downloadJSAtOnload);
+      else window.onload = downloadJSAtOnload;
   </script> *}
-{/jsmin}
 
   {block name='floatbox'}
-    {include file='cms_template:floatbox_js_css'}
+    {include|strip file='cms_template:floatbox_js_css'}
   {/block}
 
   <!-- script>
@@ -200,4 +193,5 @@
         $.getScript('https://assets.pinterest.com/js/pinit.js', function(){});
     });
   </script -->
-<!--script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script-->
+<!--script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script-->
+{/strip}

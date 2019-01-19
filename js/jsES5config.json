@@ -1,14 +1,9 @@
 {
   "files": [
     {
-      "outputFileName": "jquery.js",
-      "dependencies": [
-        "node_modules/jquery/dist/jquery.slim.js"
-      ]
-    },
-    {
       "outputFileName": "uisge-beatha.js",
       "dependencies": [
+        "node_modules/jquery/dist/jquery.slim.js",
         "node_modules/bootstrap/dist/js/bootstrap.js",
         "node_modules/now-ui-kit/assets/js/now-ui-kit.js"
       ]

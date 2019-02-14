@@ -2,12 +2,13 @@
 {* <form>
     <button type="button"class="btn btn-primary"onclick="history.back()">{svg use="hand-o-left"} terug</button>
 </form> *}
-<p><a class="badge badge-primary" href="https://sailboatdata.com/sailboat/dehler-36">Article from Sail Boat data</a></p>
-<h2 class="title"class="title">DEHLER 36 JV</h2>
+<p><a class="badge badge-info" href="https://sailboatdata.com/sailboat/dehler-36">Article from Sail Boat data</a></p>
+{global_content name='shareSocialMediabuttons' text="Deel op "}
+<h2 class="h2-responsive title my-5"class="title">DEHLER 36 JV</h2>
 <article class="sailboat">
     <section class="sailboat-images row">
         {*<img class="img-responsive center-block"alt="DEHLER 36 photo"src="https://sailboatdata.com/storage/images/sailboat/photo/dehler_36_photo.jpg">*}
-        <img class="img-responsive center-block"alt="DEHLER 36 drawing"src="https://sailboatdata.com/storage/images/sailboat/drawing/dehler_36_drawing.jpg">
+        <img class="img-fluid center-block"alt="DEHLER 36 drawing"src="https://sailboatdata.com/storage/images/sailboat/drawing/dehler_36_drawing.jpg">
     </section>
     <section>
         <h2 class="title">Sailboat Specifications</h2>

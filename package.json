@@ -20,14 +20,23 @@
   "author": "Arnoud van Susteren",
   "license": "GPL-3.0",
   "dependencies": {
-    "bootstrap": "^4.2.1",
+    "@fancyapps/fancybox": "^3.5.6",
+    "bootstrap": "^4.3.1",
     "cookies-eu-banner": "^1.2.14",
+    "dyscrollupjs": "^2.0.0",
     "jquery": "^3.3.1",
+    "lg-fullscreen.js": "^1.0.0",
+    "lg-hash.js": "^1.0.0",
+    "lg-pager.js": "^1.0.0",
+    "lg-share.js": "^1.2.2",
+    "lg-thumbnail.js": "^1.1.0",
+    "lg-zoom.js": "^1.0.1",
+    "lightgallery.js": "^1.1.2",
+    "lozad": "^1.9.0",
+    "mdbootstrap-pro": "file:node_modules/mdbootstrap-pro/jq-pro-master.tar.gz",
     "now-ui-kit": "^1.1.0",
-    "popper.js": "^1.14.6",
+    "popper.js": "^1.14.7",
     "rellax": "^1.7.2"
   },
-  "devDependencies": {
-    "@fortawesome/fontawesome-free": "^5.6.3"
-  }
+  "devDependencies": {}
 }

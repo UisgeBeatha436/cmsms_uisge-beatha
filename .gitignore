@@ -3,3 +3,8 @@
 **/node_modules
 **/templates/_Old versions
 ToDo.txt
+**/node_modules/gregor_ssh-key.pub
+**/node_modules/gregor_ssh-key
+
+MDBootstrap scss opschonen
+webfont folder controleren op wat daadwerkelijk wordt gebruikt

@@ -1,3 +1,4 @@
+{strip}
 {config_load file='theme.ini' scope='global' section='cmsms_uisge-beatha'}
 {extends file="{#theme_resource#}page_base.tpl"}
 {assign var='addClass' value="product-page"}
@@ -9,7 +10,7 @@
 
 {block name='body_content'}
 	{include file="{#theme_resource#}generic_p_titlebar.tpl"}
-	<div class="section section-content">
+	<section class="magazine-section my-5">
 		<div class="container">
 			{* <div class="l-content" data-visible="on" id="js_content"> *}
 			<div class="row">
@@ -22,5 +23,6 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	</section>
 {/block}
+{/strip}

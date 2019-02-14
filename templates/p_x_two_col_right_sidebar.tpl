@@ -1,3 +1,4 @@
+{strip}
 <!-- p x col right -->
 {config_load file='theme.ini' scope='global' section='cmsms_uisge-beatha'}
 {extends file="{#theme_resource#}page_base.tpl"}
@@ -10,7 +11,7 @@
 
 {block name='body_content'}
 	{include file="{#theme_resource#}generic_p_titlebar.tpl"}
-	<div class="section section-content">
+	<main>
 		<div class="container">
 			{* <div class="l-content" data-visible="on" id="js_content"> *}
 			<div class="row">
@@ -23,6 +24,6 @@
 				</div> {* class sidebar right *}
 			</div>
 		</div>
-	</div>
-	</div>
+	</main>
 {/block}
+{/strip}

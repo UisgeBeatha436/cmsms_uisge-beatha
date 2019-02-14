@@ -22,16 +22,26 @@
  * - If you want to target older browsers be sure to have loaded picture.js
  *   in the head of your page: https://github.com/scottjehl/picturefill
  *
- * Parameters
+ * Parameters:
  * @param string $src required [/uploads/images/example.jpg]- image source relative to the root_url
  * @param string $breakpoints optional [at-xxl, at-max] - comma sperated list of breakpoints as specified in $breakpoints_cfg
  * @param string $scales required [1137, 1425] - comma seperated list with widths
- * @param string $alt optional [my alt text] - alt text if none is given the filename of the original image is used
+ * @param string $title optional [my title] : ('') - title text: <img title="my title"> || <caption>my title</caption>
+ * @param string $style optional [float:left;] : ('') - inline style: <img style="float:left;">
+ * @param string $class optional [my_class] : ('') - css class: <img class="my_class">
+ * @param string $alt optional [my alt] - alt text: <img alt="my alt"> - if none is given the filename of the original image is used
+ * @param string $custom_01 optional [custom_01] : ('') - custom parameter to be used inside template
+ * @param string $custom_02 optional [custom_02] : ('') - custom parameter to be used inside template
+ * @param string $custom_03 optional [custom_03] : ('') - custom parameter to be used inside template
  * @param string $tpl optional [cms_template:generic_picture_element] - name of the the template resource
+ * @param string $assign optional - default: picture_element - name of the Smarty variable to assign the variable to (only lower case [a..z_] names are allowed in this param)
  *
  * ! If you do not enter a breakpoint parameter all breakpoints in $breakpoints_cfg are used
  * ! The number of items in the breakpoints param should match the number of items in the scales param
- * ! If you not pass a $tpl parameter the data is given back in a variable: {$picture_element|@print_r}
+ * ! If you not pass a $tpl parameter the data is given back in a variable:
+ *   {$picture_element|@print_r} || {$my_picture_element|@print_r}
+ * ! Parameters passed to this UDT are available inside the template as: {$params_in|@print_r} / {$params_in.style}
+ * ! If you pass a $tpl parameter and a $assign parameter the assign values are only available in the template you are calling.
  *
  * Example:
  *
@@ -41,7 +51,14 @@
  *    src=$in
  *    breakpoints='at-xxl,at-max'
  *    scales='1137, 1425'
+ *    title='A wonderful title'
+ *    style='float: left;'
+ *    class='my_class'
+ *    custom_01='x'
+ *    custom_02='y'
+ *    custom_03='z'
  *    alt='This is my image'
+ *    tpl='cms_template:generic_picture_element'
  *  }
  *
  *  {picture_element
@@ -49,11 +66,17 @@
  *    scales='304, 305, 465, 705, 945, 1137, 1425'
  *  }
  *
+ *  {picture_element
+ *    src=$in
+ *    scales='304, 305, 465, 705, 945, 1137, 1425'
+ *    assign='my_picture_element'
+ *  }
+ *
+ *
  * Development:
  *
  * With this UDT you can not apply CGSmartImage filters yet.
- * The $breakpoints_cfg and template name are hardcoded
- * this might change overtime.
+ * The $breakpoints_cfg are hardcoded this might change overtime.
  * Source sets for retina images (x2) are not implemented yet
  *
  */
@@ -84,8 +107,8 @@ if (! $smartimage) {
 
 $breakpoints_cfg = array(
   'at-xs'   => '(max-width: 19.9em)',
-  'at-s'    => '(min-width: 20em and (max-width: 29.9em)',
-  'at-m'    => '(min-width: 30em) and (max-wdith: 44.9em)',
+  'at-s'    => '(min-width: 20em) and (max-width: 29.9em)',
+  'at-m'    => '(min-width: 30em) and (max-width: 44.9em)',
   'at-l'    => '(min-width: 45em) and (max-width: 59.9em)',
   'at-xl'   => '(min-width: 60em) and (max-width: 71.9em)',
   'at-xxl'  => '(min-width: 72em)',
@@ -146,13 +169,29 @@ if ( count($scales) != count($breakpoints) ) {
   }
 }
 
+$title = isset($params['title']) ? $params['title'] : '';
+$style = isset($params['style']) ? $params['style'] : '';
+$class = isset($params['class']) ? $params['class'] : '';
+$custom_01 = isset($params['custom_01']) ? $params['custom_01'] : '';
+$custom_02 = isset($params['custom_02']) ? $params['custom_02'] : '';
+$custom_03 = isset($params['custom_03']) ? $params['custom_03'] : '';
 $alt = isset($params['alt']) ? $params['alt'] : '';
+
+if ( !empty($params['assign']) ) {
+  $assign = preg_replace("/[^a-z_]/", "", $params['assign']);
+} else {
+  $assign = 'picture_element';
+}
 
 if ($debug) {
   print "<pre>\n";
+  print "breakpoints:\n";
   print_r($breakpoints);
+  print "scales:\n";
   print_r($scales);
+  print "alt:\n";
   print_r($alt);
+  print "assign:|$assign|\n";
   print "</pre>\n";
 }
 
@@ -169,6 +208,13 @@ $params_in['notag'] = '1';
 $params_in['norotate'] = '1';
 $params_in['force_ext'] = '1';
 $params_in['noresponsive'] = '1';
+
+$params_in['title'] = $title;
+$params_in['style'] = $style;
+$params_in['class'] = $class;
+$params_in['custom_01'] = $custom_01;
+$params_in['custom_02'] = $custom_02;
+$params_in['custom_03'] = $custom_03;
 
 if ($alt != '') {
   $params_in['alt'] = $alt;
@@ -200,15 +246,16 @@ if ( count($scales) == count($breakpoints) ) {
 
 if ($debug) {
   print "<pre>\n";
+  print "params_in:\n";
   print_r($params_in);
-  print_r($output);
+  print "output[0] \n";
+  print_r($output[0]);
   print "</pre>\n";
 }
 
 ###############################################################################
 # display
 ###############################################################################
-
 
 if ( isset($params['tpl']) ) {
   $resource = trim($params['tpl']);
@@ -220,11 +267,13 @@ if ( isset($params['tpl']) ) {
   }
 
   $tpl_ob = $smarty->CreateTemplate($resource,null,null);
-  $tpl_ob->assign('picture_element', $output);
+  $tpl_ob->assign('params_in', $params_in);
+  $tpl_ob->assign($assign, $output);
   $tpl_ob->display();
+
 } else {
-  $smarty->assign('picture_element', $output);
-  return;
+  $smarty->assign('params_in', $params_in);
+  $smarty->assign($assign, $output);
 }
 
 return;

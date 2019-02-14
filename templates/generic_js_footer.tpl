@@ -28,39 +28,54 @@
   {/if}
    
   {* <!-- b: third party .js libs --> *}
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script>window.jQuery || document.write('<script src="{$theme_dst_path}/js/es5/jquery.js?fes={$_unique_js_id}"><\/script>')</script> {* slim-version lacks getScript *}
-
+  {* <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>*}
+  <script>window.jQuery || document.write('<script src="{$theme_dst_path}/assets/dst/js/es5/jquery.js?fes={$_unique_js_id}"><\/script>')</script> {* slim-version lacks getScript *}
   {* <script src="{$theme_dst_path}/assets/dst/js/es5/jquery.slim.js"></script>*}
 
   {*<script src="{root_url}/assets/src/node_modules/jquery_lazyscript/jquery.lazyscript.min.js"></script>
   <script>window.jQuery || document.write('<script src="{$theme_dst_path}/js/es5/jquery.slim.js?fes={$_unique_js_id}"><\/script>')</script> *}
 
-  {*<script defer src="{$theme_dst_path}/assets/dst/js/es5/bootstrap.js"></script> 
-  <script defer src="{$theme_dst_path}/assets/dst/js/es5/now-ui-kit.js"></script>
-  
-    {
-      "outputFileName": "now-ui-kit.js",
-      "dependencies": [
-        "node_modules/now-ui-kit/assets/js/now-ui-kit.js"
-      ]
-    },
-  
-  *}
-  <script defer src="{$theme_dst_path}/assets/dst/js/es5/uisge-beatha.js"></script>
+  <script src="{$theme_dst_path}/assets/dst/js/es5/uisge-beatha.js?fes={$_unique_js_id}"></script>
+  <script src="{$theme_dst_path}/assets/dst/js/es5/lozad.js?fes={$_unique_js_id}"></script>
+    
+   {* <script src="//cdn.jsdelivr.net/combine/npm/lightgallery@1.6.11,npm/lightgallery@1.6.11/modules/lg-share.min.js,npm/lightgallery@1.6.11/modules/lg-pager.min.js"></script>
+    <script type="module" src="//cdn.jsdelivr.net/npm/lightgallery.js@1.1.2/src/js/lg-utils.min.js"></script> *}
+    
+    <!-- Lightgallery js-file loaded -->
+    <script src="{$theme_dst_path}/assets/dst/js/es5/lightgallery.js?fes={$_unique_js_id}"></script>
+    <script src="{$theme_dst_path}/assets/dst/js/es5/lg-share.js?fes={$_unique_js_id}"></script>
+    <script>
+      // lightGallery(document.getElementById('lightgallery'));
+      // console.log('lightgallery js loaded');
+    </script>
 
-  {* <script src="{$theme_dst_path}/assets/dst/js/es5/fontawesome.js"></script> 
-    {
-      "outputFileName": "fontawesome.js",
-      "dependencies": [
-        "node_modules/@fortawesome/fontawesome-free/js/all.js"
-      ]
-    },
-  *}
+    <!--script src="{$theme_dst_path}/assets/dst/js/es5/lg-thumbnail.js?fes={$_unique_js_id}"></script-->
+    <!--script type="module" src="{$theme_dst_path}/assets/dst/js/es5/lg-utils.js?fes={$_unique_js_id}"></script-->
+    
+    <!--script src="//cdn.rawgit.com/sachinchoolur/lg-hash.js/master/dist/lg-hash.js"></script>
+    <script src="//cdn.rawgit.com/sachinchoolur/lg-share.js/master/dist/lg-share.js"></script>
+    <script src="//cdn.rawgit.com/sachinchoolur/lg-autoplay.js/master/dist/lg-autoplay.js"></script>
+    <script src="//cdn.rawgit.com/sachinchoolur/lg-fullscreen.js/master/dist/lg-fullscreen.js"></script>
+    <script src="//cdn.rawgit.com/sachinchoolur/lg-pager.js/master/dist/lg-pager.js"></script>
+    <script src="//cdn.rawgit.com/sachinchoolur/lg-zoom.js/master/dist/lg-zoom.js"></script-->
 
-  {*<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>*}
+    <!--script src="//cdn.jsdelivr.net/picturefill/2.3.1/picturefill.min.js"></script>
+    <script src="//sachinchoolur.github.io/lightGallery/external/jquery.mousewheel.min.js"></script-->
+    <!--script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.2.7/js/lg-thumbnail.min.js"></script-->
+    
+    <!-- lightgallery plugins -->
+    <!--script src="{$theme_dst_path}/assets/src/node_modules/lightgallery.js/lib/js/lg-utils.js"></script-->
+    <!-- Lightgallery js-file not loaded --> 
+
+  <!-- Fancybox gallery >
+  <script src="{$theme_dst_path}/assets/dst/js/es5/fancygallery.js?fes={$_unique_js_id}"></script>
+  <script src="{$theme_dst_path}/assets/dst/js/es5/share.js?fes={$_unique_js_id}"></script-->
+
+
+
+  {* <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>*}
   <script src="{$theme_dst_path}/assets/dst/js/es5/parallax.js"></script>  {* Script for parallax Rellax  *}
-  {*<script src="{$theme_dst_path}/assets/dst/js/es5/cookies-eu-banner.js"></script>*}
+  {* <script src="{$theme_dst_path}/assets/dst/js/es5/cookies-eu-banner.js"></script>*}
 
   {* <!-- c: plug-ins that have dependencies on b: >>> plugins.js --> *}
   {* <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script> * }
@@ -72,9 +87,9 @@
   {* theme path: {$theme_dst_path *}
   {*  <script>window.jQuery || document.write('<script src="{$theme_relative_url}/js/es5/jquery.slim.js?fes={$_unique_js_id}"><\/script>')</script>
       <script src="{$theme_relative_url}/js/es5/plugins.js?fes={$_unique_js_id}"></script> *}
-  
-  <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@8.17.0/dist/lazyload.min.js"></script>
+   <script src="//cdn.jsdelivr.net/npm/vanilla-lazyload@8.17.0/dist/lazyload.min.js"></script> 
   <script src="{$theme_dst_path}/assets/dst/js/es5/scripts.js?fes={$_unique_js_id}"></script>
+
 {/if}
 {* <!-- script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@10.19.0/dist/lazyload.min.js"></script --> *}
 
@@ -82,12 +97,21 @@
   {include file="{#theme_resource#}generated/generated_js_footer.tpl"}
 {/if}
 
-{* Rellax *}
+{* Lozad *}
+{* example settings https://codepen.io/ApoorvSaxena/pen/vWmyQg *}
+<script>
+  const observer = lozad(); // lazy loads elements with default selector as '.lozad'
+  const gallerylozad = lozad('.gallery_lozad'); // lazy loads elements with default selector as '.lozad'
+  observer.observe();
+  gallerylozad.observe();
+  console.log('Lozad initiate loaded');
+</script>
 
 {* Resize logo and header * }
-<script  src="{$theme_dst_path}/assets/dst/js/es5/resize_header_logo.js"></script> *}
+<script src="{$theme_dst_path}/assets/dst/js/es5/resize_header_logo.js"></script> *}
+<script src="{$theme_dst_path}/assets/dst/js/es5/dyscrollup.js?fes={$_unique_js_id}"></script>
 
-{* lazy load *}
+{* lazy load * }
 <script>
   {jsmin}
     var myLazyLoad = new LazyLoad({
@@ -103,7 +127,7 @@
         lazy.removeAttr("data-src");
       });
     });
-  {/jsmin}
+  {/jsmin *}
 </script>
 <!--script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script-->
 <!--noptimize  |  https://gulshankumar.net/setup-lazy-loading-google-adsense-ad-units/ -->
@@ -129,7 +153,7 @@
     });
 </script-->
 
-{* scroll 2 top *}
+{* vanilla scroll 2 top *}
 
   <script> // Content with blockquotes is missing a class. Script to add it otherwise Bootstrap wouldn't understand it
     $( "blockquote" ).last().addClass( "blockquote" );
@@ -168,6 +192,7 @@
       new CookiesEuBanner(function(){
           // Your code to launch when user accept cookies
       }, true);
+      console.log('CookieEuBanner accepted and loaded');
   </script>
 
   {* https://varvy.com/pagespeed/defer-many-javascripts.html * }
@@ -184,14 +209,50 @@
       else window.onload = downloadJSAtOnload;
   </script> *}
 
-  {block name='floatbox'}
-    {include|strip file='cms_template:floatbox_js_css'}
-  {/block}
+  {if $page_alias NE ''}
+    {block name='floatbox'}
+      {include|strip file='cms_template:floatbox_js_css'}
+    {/block}
+  {/if}
 
-  <!-- script>
-    $(document).ready(function() {
-        $.getScript('https://assets.pinterest.com/js/pinit.js', function(){});
-    });
-  </script -->
-<!--script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script-->
+<!--script>
+  $('[data-fancybox]').fancybox({
+  buttons : ['share', 'zoom', 'close'],
+  hash : true,
+  share : {
+    url : function( instance, item ) {
+      if (item.type === 'inline' && item.contentType === 'video') {
+        return item.$content.find('source:first').attr('src');
+      }
+      
+      return item.src;
+    }
+  }
+});
+</script-->
+
+    <!-- LightGallery --> 
+    
+    <script type="text/javascript">
+      lightGallery(document.getElementById('lightgallery'), {
+        mode: 'share',
+        facebook: true,
+        //thumbnail: true,
+        //showThumbByDefault: true
+      });
+      console.log('lightgallery initiate loaded');
+      //var galleryBox = document.getElementById('lightgallery');
+      
+    </script>
+
+    <!--script type="text/javascript">
+        $(document).ready(function() {
+            $("#lightgallery").lightGallery({
+              mode: 'lg-fade',
+              zoom: 'true'
+            });
+        });
+
+        console.log('lightgallery initiate loaded');
+    </script-->
 {/strip}

@@ -2,8 +2,8 @@
 https://www.uisge-beatha.eu/uploads/images/Gallery/Winter1617/Kajuitramen
 {global_content name='fotoalbum' album="Winter1617/Kajuitramen" foto="Kajuitramen - 01"}
 *}
-{* 11jun18 for testing purposes Google adsense activated }
-{include file='cms_template:Advertentie' *}
+{* 11jun18 for testing purposes Google adsense activated *}
+{include file='cms_template:Advertentie'}
 <div style="clear:both"></div> {* make sure heading is aligned to the left *}
 {assign var='album_no_spaces' value=str_replace(' ', ' ', "uploads/images/Gallery/{$gcb_params.album}")}
 {assign var="tmp_alt" value={$gcb_params.album}|strpos:"/"}
@@ -26,9 +26,9 @@ https://www.uisge-beatha.eu/uploads/images/Gallery/Winter1617/Kajuitramen
                 {$x = {$x+1}}
                 {assign var='fotos' value="{root_url}/{$file|cms_escape:'urlpathinfo'}"}
                 {* <a id="{$alt_id}-{$x}" data-rel="fotoalbum" title="{$alt}" href="{CGSmartImage src={$file} alt="Uisge Beatha, Zeilen, {$alt}" title="{$alt}" noresponsive=1 notag=1 noembed=1}"></a> *}
-                <a id="a_{$alt_id}-{$x}" data-rel="fotoalbum" class="lazy" title="{$alt}" href="{CGSmartImage src={$file} alt="Uisge Beatha, Zeilen, {$alt}" title="{$alt}" noresponsive=1 notag=1 noembed=0}"></a>
+                <a id="a_{$alt_id}-{$x}" data-rel="fotoalbum" class="lozad" title="{$alt}" href="{CGSmartImage src={$file} alt="Uisge Beatha, Zeilen, {$alt}" title="{$alt}" noresponsive=1 notag=1 noembed=0}"></a>
                 {* <a id="{$alt_id}-{$x}" data-rel="fotoalbum" title="{$alt}" href="{$file|cms_escape:'urlpathinfo'}">
-                    <img src="{CGSmartImage src="{$fotos}" noresponsive='1' alt='{$alt}' title="Uisge Beatha, Zeilen, {$alt}" notag=1 noembed=1}"/> 
+                    <img class="lozad img-fluid" data-src="{CGSmartImage src="{$fotos}" noresponsive='1' alt='{$alt}' title="Uisge Beatha, Zeilen, {$alt}" notag=1 noembed=1}"/> 
                 </a> *}
                 {* href="{$file|cms_escape:'urlpathinfo'} *}
             {/if}

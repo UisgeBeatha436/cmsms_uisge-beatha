@@ -1,0 +1,24 @@
+{
+  "content": [
+    "CMS_PATH.templates",
+    "CMS_PATH.module_custom",
+    "CMS_PATH.cms_modules",
+    "CMS_PATH.externalizer",
+    "SRC_PATH.js",
+    "SRC_PATH.templates"
+  ],
+  "whitelist": [
+    "html",
+    "body"
+  ],
+  "whitelistPatterns": ["^js_"],
+  "whitelistPatternsChildren": [],
+  "rejected": "not implemented",
+  "keyframes": true,
+  "fontFace": true,
+  "extensions": [
+    "tpl",
+    "vue",
+    "html"
+  ]
+}

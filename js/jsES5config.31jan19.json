@@ -1,0 +1,54 @@
+{
+  "files": [
+    {
+      "outputFileName": "jquery.js",
+      "dependencies": [
+        "node_modules/jquery/dist/jquery.js"
+      ]
+    },
+    {
+      "outputFileName": "uisge-beatha.js",
+      "dependencies": [
+        "node_modules/bootstrap/dist/js/bootstrap.js",
+        "node_modules/now-ui-kit/assets/js/now-ui-kit.js"
+      ]
+    },
+    {
+      "outputFileName": "parallax.js",
+      "dependencies": [
+        "node_modules/rellax/rellax.js"
+      ]
+    },
+    {
+      "outputFileName": "defer.js",
+      "dependencies": [
+        "node_modules/social/defer.js"
+      ]
+    },
+    {
+      "outputFileName": "plugins.js",
+      "dependencies": [
+        "es5/footer/plugins/*.js"
+      ]
+    },
+    {
+      "outputFileName": "scripts.js",
+      "dependencies": [
+        "node_modules/cookies-eu-banner/dist/cookies-eu-banner.js",
+        "node_modules/scripts/*.js"
+      ]
+    },
+    {
+      "outputFileName": "dyscrollup.js",
+      "dependencies": [
+        "node_modules/dyscrollupjs/src/js/dyscrollup.js"
+      ]
+    },
+    {
+      "outputFileName": "vendor.js",
+      "dependencies": [
+        "es5/footer/vendor/*.js"
+      ]
+    }
+  ]
+}

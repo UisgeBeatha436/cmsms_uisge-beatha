@@ -7,41 +7,53 @@
 {/block}
 
 {block name='body_content'}
-  {assign var='parallax_img' value={CGSmartImage src="{uploads_url}/images/cms/40MijlvanBru-02.jpg" notag=1}}
+  {assign var='parallax_img' value={CGSmartImage src="{uploads_url}/images/cms/40MijlvanBru-02.jpg" alt={$sitename} notag=1}}
   <a id="a-content"></a>
-  <div class="wrapper">
-    <div class="page-header clear-filter" data-filter-color="orange">
-      <div class="page-header-image rellax" data-rellax-speed="-4" data-rellax-percentage="0.5" style="background-image: url({$parallax_img});"> {* data-parallax="true" *}
-      </div>
-      <div class="content-center">
-        <div class="content-center">
-          <h1 class="h1-seo text-center rellax" data-rellax-speed="-1">{$sitename} </h1> {*data-rellax-speed="-4"*}
-          <h2 class="description text-center rellax" data-rellax-speed="1">Dehler 36 JV</h2> {*data-rellax-speed="-1"*}
+  <main>
+    <div class="wrapper">
+        <div data-speed="100" class="view">
+            <img
+                style="width: 100%; height: 100vh;"
+                class="img-fluid rellax lozad"
+                data-rellax-speed="-3"
+                data-rellax-percentage="0.5"
+                data-src="{$parallax_img}"
+                alt="{$sitename}">
+                <div class="mask rgba-red-slight">
+                    <div class="container flex-center text-center">
+                        <div class="row mt-5">
+                            <div class="col-md-12 wow fadeIn mb-3">
+                                <h1 class="display-2 text-white mb-2 rellax" data-rellax-speed="-1">{$sitename}</h1>
+                                <h2
+                                    class="display-4 text-uppercase text-white-50 mb-3 mt-1 font-weight-bold rellax"
+                                    data-rellax-speed="3">Dehler 36 JV</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="section section-basic-components">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            {$content_01}
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="section">
+                    <div class="container">
+                        <section class="text-center my-5" id="card-decks">
+                            <!-- Section heading -->
+                            <h2 class="h2-responsive font-weight-bold my-5">Logboek berichten</h2>
+                            <!-- Section description -->
+                            <p class="dark-grey-text w-responsive mx-auto mb-5">Artikelen rondom Uisge Beatha over reizen, verblijven, ervaring en onderhoud.</p>
+                            {CGBlog summarytemplate="blogSummaryHome" number="3" detailpage="{if
+                            isset($blog_page)}{$blog_page}{/if}"}
+                        </section>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-      {*<div class="row">
-        <div class="col-md-5">
-          <div class="iframe-container">
-            <iframe src="https://www.youtube.com/embed/RcmrbNRK-jY?modestbranding=1&autohide=1&showinfo=0" frameborder="0" allowfullscreen height="250"></iframe>
-          </div>
-        </div>
-      </div>*}
-    </div>
-    <div class="section section-basic-components">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            {$content_01}
-          </div>
-        </div>
-      </div>
-      <div class="section">
-        <div class="container">
-          <hr>
-          <h2 class="title text-center">Logboek berichten</h2>
-            {CGBlog summarytemplate="blogSummaryHome" number="3" detailpage="{if isset($blog_page)}{$blog_page}{/if}"} 
-        </div>
-      </div>
-    </div>
-  </div>
+    </main>
 {/block}

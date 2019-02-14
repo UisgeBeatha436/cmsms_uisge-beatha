@@ -11,7 +11,7 @@
 {block name='body_content'}
 	{include file="{#theme_resource#}generic_p_titlebar.tpl"}
 	{*<div class="l-content" data-visible="on" id="js_content">*}
-	<div class="section section-content">
+	<section class="magazine-section my-5">
 		<div class="container">
 			<div class="row">
 				<div class="section col-md-2 ml-auto mr-auto text-center">
@@ -28,5 +28,5 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	</section>
 {/block}

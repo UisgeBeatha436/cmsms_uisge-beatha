@@ -5,7 +5,7 @@
 	{$theme_absolute_url = "{root_url}/assets{#theme_dst_path#}" scope='global'}
 	{$theme_relative_url = "./assets{#theme_dst_path#}" scope='global'}
 	{process_pagedata}
-	{$environment = "develop.uisge-beatha.eu" scope=global} {* localhost | develop.uisge-beatha.eu | uisge-beatha.eu --->>>> used to set if some scripts either or not need to run *}
+	{$environment = "localhost" scope=global} {* localhost | www.develop.uisge-beatha.eu | www.uisge-beatha.eu --->>>> used to set if some scripts either or not need to run *}
 	
 	{block name='open_content'}
 		{* all content blocks are set on the page template *}

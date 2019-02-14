@@ -31,10 +31,10 @@
     <link rel="preload" href="//platform.linkedin.com">
     <!-- Twitter -->
     <link rel="preload" href="//platform.twitter.com">
-    <!-- Prefetch DNS for external assets --
+    <!-- Prefetch DNS for external assets 
     <link rel="dns-prefetch" href="//fonts.googleapis.com" -->
     <link rel="dns-prefetch" href="//www.google-analytics.com">
-    <!-- Preconnect for external assets --
+    <!-- Preconnect for external assets 
     <link rel="preconnect" href="//fonts.googleapis.com" crossorigin -->
     <link rel="preconnect" href="//www.google-analytics.com" crossorigin>
     <meta name="copyright" content="Copyright © Gregor de Graaf, All Rights Reserved">
@@ -131,6 +131,12 @@
     {/if}
     {* <link rel="stylesheet" href="{$theme_relative_url}/css/main.css?fes{$_unique_css_id}"> *}
     {* https://github.com/filamentgroup/loadCSS *}
+    {*if $page_alias == 'testpage'}
+      < !-- Lightgallery css loaded -->
+      <link type="text/css" rel="stylesheet" href="./assets/src/node_modules/lightgallery.js/dist/css/lightgallery.css" />
+    {else}
+      < !-- Lightgallery css not loaded -->
+    {/if*}
     <link rel="preload" href="{$theme_relative_url}/css/main.css?fes{$_unique_css_id}" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="{$theme_relative_url}/css/main.css?fes{$_unique_css_id}"></noscript>
     <script>
@@ -246,6 +252,9 @@
           }
         }( typeof global !== "undefined" ? global : this ) );
     </script>
+    <!-- Fancybox ---
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.6/jquery.fancybox.css">
+    <link rel="stylesheet" type="text/css" href="{$theme_relative_url}/css/share.css?fes{$_unique_css_id}" -->
 
     <!-- link rel="stylesheet" href="{$theme_relative_url}/css/now-ui-kit.css?fes{$_unique_css_id}" -->
     {browser_lang accepted='nl' assign='browser_lang' scope=global} {* used for Google Translate to check if translation is needed. Doesn't work too well because in NL it gives en... *}

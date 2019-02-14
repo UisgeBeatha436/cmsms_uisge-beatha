@@ -22,7 +22,7 @@
 
 $html = <<<HTML
 <div class="floatbox" data-fb-options="width:650 height:400 showNewWindow:true showPrint:true enableDragResize:true">
-<a href="/install/uploads/Documenten/GPS-Tracks/$params[name].html">Klik hier voor de gevaren track</a>
+<a href="./uploads/Documenten/GPS-Tracks/$params[name].html">Klik hier voor de gevaren track</a>
 </div>
 HTML;
 

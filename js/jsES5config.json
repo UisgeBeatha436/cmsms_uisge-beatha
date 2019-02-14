@@ -1,11 +1,16 @@
 {
   "files": [
     {
+      "outputFileName": "jquery.js",
+      "dependencies": [
+        "node_modules/jquery/dist/jquery.js"
+      ]
+    },
+    {
       "outputFileName": "uisge-beatha.js",
       "dependencies": [
-        "node_modules/jquery/dist/jquery.slim.js",
         "node_modules/bootstrap/dist/js/bootstrap.js",
-        "node_modules/now-ui-kit/assets/js/now-ui-kit.js"
+        "node_modules/mdbootstrap-pro/js/mdb.js"
       ]
     },
     {
@@ -15,9 +20,28 @@
       ]
     },
     {
+      "outputFileName": "lozad.js",
+      "dependencies": [
+        "node_modules/lozad/dist/lozad.min.js"
+      ]
+    },
+    {
       "outputFileName": "defer.js",
       "dependencies": [
         "node_modules/social/defer.js"
+      ]
+    },
+    {
+      "outputFileName": "lightgallery.js",
+      "dependencies": [
+        "node_modules/lightgallery.js/dist/js/lightgallery.js",
+        "node_modules/lg-zoom.js/dist/lg-zoom.js"     
+      ]
+    },
+    {
+      "outputFileName": "lg-share.js",
+      "dependencies" : [
+        "node_modules/lg-share.js/dist/lg-share.js"
       ]
     },
     {
@@ -30,8 +54,13 @@
       "outputFileName": "scripts.js",
       "dependencies": [
         "node_modules/cookies-eu-banner/dist/cookies-eu-banner.js",
-        "node_modules/resize_header/resize_header_logo.js",
         "node_modules/scripts/*.js"
+      ]
+    },
+    {
+      "outputFileName": "dyscrollup.js",
+      "dependencies": [
+        "node_modules/dyscrollupjs/src/js/dyscrollup.js"
       ]
     },
     {

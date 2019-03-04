@@ -1,0 +1,52 @@
+/* ############################################################################
+* # webfont_roboto
+* ############################################################################ */
+
+$roboto-map: (
+  'thin': 200 Roboto-Thin 'Roboto-thin',
+  'light': 300 Roboto-Light 'Roboto-light',
+  'regular': 400 Roboto-Regular 'Roboto-regular',
+  'medium': 500 Roboto-Medium 'Roboto-medium',
+  'bold': 700 Roboto-Bold 'Roboto-bold',
+);
+
+// include font-face
+
+@each $key, $values in $saira-map {
+  $font-key: $key;
+  $font-weight: nth($values, 1);
+  $font-name: nth($values, 2);
+  $font-alias: nth($values, 3);
+  @include font-face($font-alias, '/assets/dst/webfont/'+ $font-name, $font-weight, $font-display: optional);
+}
+
+// apply font-face
+
+.roboto {
+
+  @each $key, $values in $saira-map {
+    $font-key: $key;
+    $font-weight: nth($values, 1);
+    $font-name: nth($values, 2);
+    $font-alias: nth($values, 3);
+
+    &-#{$font-key} {
+      font-size: 1.5em;
+      color: get-random-color('hex');
+      font-family: $base-font-family;
+      font-weight: #{$font-weight};
+
+      .fonts-loaded & {
+        font-family: '#{$font-alias}', $base-font-family;
+        color: var(--body-color);
+      }
+
+    }
+
+  }
+
+}
+
+//
+// EOF
+//

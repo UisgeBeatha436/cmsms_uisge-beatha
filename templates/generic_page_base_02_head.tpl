@@ -1,6 +1,13 @@
 <!-- area: 2 of 3 -->
 <!-- /area: 3 of 3 -->
-{/strip}<head>{strip}
+  {if "{#minifyHTML#}" == 'on'}
+    {$minify_html_enabled=true}
+  {else}
+    {$minify_html_enabled=false}
+  {/if}
+{/strip}
+{minify_html_block collapse_whitespace='1' enabled=$minify_html_enabled}
+  <head>
   	<meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,25 +25,43 @@
     <link rel="preload" href="//netdna.bootstrapcdn.com">
     <!-- Google Tag Manager -->
     <link rel="preload" href="//www.googletagmanager.com">
-    <!-- Google Analytics -->
+    <!-- Google (Analytics) -->
     <link rel="preload" href="//www.google-analytics.com">
+    <link rel="preconnect" href="https://apis.google.com">
+    <link rel="preconnect" href="https://translate.googleapis.com">
+    <link rel="preconnect" href="https://accounts.google.com">
+    <link rel="preconnect" href="https://adservice.google.nl">
+    <link rel="preconnect" href="https://pagead2.googlesyndication.com">
+    <link rel="preconnect" href="https://pagead2.googlesyndication.com">
+    <link rel="preconnect" href="https://adservice.google.com">
+    <link rel="preconnect" href="https://www.gstatic.com">
     <!-- Google Fonts -->
     <link rel="preload" href="//fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://ajax.googleapis.com">
     <!-- Facebook -->
     <link rel="preload" href="//connect.facebook.net">
     <link rel="preload" href="//connect.facebook.com">
+    <link rel="preconnect" href="https://connect.facebook.com">
     <!-- Google+ -->
     <link rel="preload" href="//apis.google.com">
+    <link rel="preconnect" href="https://apis.google.com">
     <!-- Linkedin -->
     <link rel="preload" href="//platform.linkedin.com">
+    <link rel="preconnect" href="//platform.linkedin.com">
     <!-- Twitter -->
     <link rel="preload" href="//platform.twitter.com">
+    <link rel="preconnect" href="//platform.twitter.com">
     <!-- Prefetch DNS for external assets 
     <link rel="dns-prefetch" href="//fonts.googleapis.com" -->
     <link rel="dns-prefetch" href="//www.google-analytics.com">
-    <!-- Preconnect for external assets 
-    <link rel="preconnect" href="//fonts.googleapis.com" crossorigin -->
+    <!-- Preconnect for external assets -->
+    <link rel="preconnect" href="//static.uisge-beatha.eu">
     <link rel="preconnect" href="//www.google-analytics.com" crossorigin>
+    <link rel="preload" href="{$theme_relative_url}/webfont/Roboto-Light.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="{$theme_relative_url}/webfont/Roboto-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="{$theme_relative_url}/webfont/Roboto-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="{$theme_relative_url}/webfont/Roboto-Medium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
     <meta name="copyright" content="Copyright © Gregor de Graaf, All Rights Reserved">
     {$last_modified = $last_modified|default:"{modified_date format='%e-%m-%Y'}" scope=global}
     {$page_modified = $page_modified|default:"{modified_date format='%e-%m-%Y'}" scope=global}
@@ -45,11 +70,7 @@
     <meta name="google-site-verification" content="ZELEPW5SSIsv1PqdZrX91yXfEsjCNmJEHG50F7vVri4" />
     {* 23may18 Verificatie Daisycon *}
     <meta name="baf0efcf61df286" content="3453aede4510b730471f07b6ca7bd7c2" />
-    {if $smarty.server.SERVER_NAME|lower eq {$environment}}
-      <meta name="robots" content="index,follow">
-    {else}
-      <meta name="robots" content="noindex,nofollow">
-    {/if}
+    <meta name="robots" content="noindex,nofollow">
     <meta name="HandheldFriendly" content="true">
     {if isset($taglist)}
       {autometa key_add="{$taglist} Dehler 36 JV" key_density=3 description=0}
@@ -104,10 +125,10 @@
       {$page_js_header}
     {/if}
 
-    {*block name='js_header'}
+    {block name='js_header'}
       {include|strip file="{#theme_resource#}generic_js_google_tag_manager.tpl"}
       {include|strip file="{#theme_resource#}generic_js_header.tpl"}
-    {/block*}
+    {/block}
 
     {* Define social links *}
     {assign var="feed" value='/rssfeed.rss' scope=global}
@@ -137,8 +158,17 @@
     {else}
       < !-- Lightgallery css not loaded -->
     {/if*}
-    <link rel="preload" href="{$theme_relative_url}/css/main.css?fes{$_unique_css_id}" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="{$theme_relative_url}/css/main.css?fes{$_unique_css_id}"></noscript>
+  {/minify_html_block}
+  {strip}
+  {capture assign='_main'}
+    <link rel="preload" href="{$theme_relative_url}/css/main.css{if $_unique_css_id != 1}?fes{$_unique_css_id}{/if}" as="style" onload="this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="{$theme_relative_url}/css/main.css{if $_unique_css_id != 1}?fes{$_unique_css_id}{/if}"></noscript>
+  {/capture}
+  {$_main}
+    <!--link rel="preload" href="{$theme_relative_url}/css/main.css?fes{$_unique_css_id}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="{$theme_relative_url}/css/main.css?fes{$_unique_css_id}"></noscript-->
+  {/strip}
+    {jsmin}
     <script>
         /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
         /* This file is meant as a standalone workflow for
@@ -252,13 +282,36 @@
           }
         }( typeof global !== "undefined" ? global : this ) );
     </script>
-    <!-- Fancybox ---
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.6/jquery.fancybox.css">
-    <link rel="stylesheet" type="text/css" href="{$theme_relative_url}/css/share.css?fes{$_unique_css_id}" -->
-
-    <!-- link rel="stylesheet" href="{$theme_relative_url}/css/now-ui-kit.css?fes{$_unique_css_id}" -->
+    {/jsmin}
+  {minify_html_block collapse_whitespace='1' enabled=$minify_html_enabled}
     {browser_lang accepted='nl' assign='browser_lang' scope=global} {* used for Google Translate to check if translation is needed. Doesn't work too well because in NL it gives en... *}
     <!-- cgjs_render on the next line -->
     <!-- {cgjs_render} -->
-{/strip}</head>{strip}
+    {* https://stackoverflow.com/questions/3221561/eliminate-flash-of-unstyled-content *}
+    {jsmin}
+      <script type="text/javascript">
+        var elm=document.getElementsByTagName("html")[0];
+        elm.style.display="none";
+        document.addEventListener("DOMContentLoaded",function(event) { elm.style.display="block"; });
+      </script>
+      <script>
+        var mst_width="100%";var mst_height="450px";var mst_border="0";var mst_map_style="terrain";var mst_mmsi="244770624";var mst_show_track="";var mst_show_info="";var mst_fleet="";var mst_lat="";var mst_lng="";var mst_zoom="";var mst_show_names="0";var mst_scroll_wheel="true";var mst_show_menu="true";
+        function loadMap() {
+        var element = document.createElement("script");
+        element.setAttribute("id", "myshiptrackingscript");
+        element.setAttribute("async", "");
+        element.setAttribute("defer", "");
+        element.src = "https://www.myshiptracking.com/js/widgetApi.js";
+        document.getElementById("mapContent").appendChild(element );
+        }      
+          window.onload = loadMap
+        console.log('MyShipTracking loaded')
+      </script>
+    {/jsmin}
+    {if $page_alias == 'logboekpagina' OR $page_alias == 'fotoalbums' OR $page_alias == 'afkomst-naam' OR $page_alias == 'dehler-36-jv'}
+    <script src="https://static.uisge-beatha.eu/_Javascripts/floatbox_813/floatbox/floatbox.js"></script>
+    {/if}
+  </head>
+{/minify_html_block}
+{strip}
 <!-- tmpl: head:end -->

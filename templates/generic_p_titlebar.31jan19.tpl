@@ -49,7 +49,7 @@
   </div>*}
 
 {*<div class="page-header page-header-small">
-  {assign var='header_image' value={CGSmartImage src="{root_url}/uploads/images/cms/40MijlvanBru-02.jpg" notag=1}}
+  {assign var='header_image' value={CGSmartImage src="{root_url}/uploads/images/cms/40MijlvanBru-02.jpg" noembed={$noembed} notag=1}}
   <div class="page-header-image" data-parallax="true" style="background-image: url('{$header_image}');">
   </div>
   <div class="content-center">
@@ -77,19 +77,19 @@
 </div>*}
 <div class="page-header page-header-small">
   {if $page_alias == 'hanse_311'}
-    {assign var='header_image' value={CGSmartImage src="{uploads_url}/images/cms/UisgeBeatha.jpg" filter_crop2size="4500,1500,bc" alt="Hanse 311 - Uisge Beatha" notag=1}}
+    {assign var='header_image' value={CGSmartImage src="{uploads_url}/images/cms/UisgeBeatha.jpg" filter_crop2size="4500,1500,bc" alt="Hanse 311 - Uisge Beatha" noembed={$noembed} notag=1}}
   {elseif $page_alias == 'fotoalbums'}
-    {assign var='header_image' value={CGSmartImage src="{uploads_url}/images/cms/Honfleur - 21.jpg" filter_crop2size="4500,1700,bc" alt="{$sitename} - Honfleur - Uisge Beatha" notag=1}}
+    {assign var='header_image' value={CGSmartImage src="{uploads_url}/images/cms/Honfleur - 21.jpg" filter_crop2size="4500,1700,bc" alt="{$sitename} - Honfleur - Uisge Beatha" noembed={$noembed} notag=1}}
   {elseif $page_alias == 'logboek_artikelen'}
-    {assign var='header_image' value={CGSmartImage src="{uploads_url}/images/cms/Beachy Head.jpg" filter_crop2size="4500,1350,bc" alt="{$sitename} - Beachy Head - Uisge Beatha" notag=1}}
+    {assign var='header_image' value={CGSmartImage src="{uploads_url}/images/cms/Beachy Head.jpg" filter_crop2size="4500,1350,bc" alt="{$sitename} - Beachy Head - Uisge Beatha" noembed={$noembed} notag=1}}
   {elseif $page_alias == 'downloads'}
-    {assign var='header_image' value={CGSmartImage src="{uploads_url}/images/cms/Breskens.jpg" filter_crop2size="4500,950,bc" alt="{$sitename} - Breskens - Uisge Beatha" notag=1}}
+    {assign var='header_image' value={CGSmartImage src="{uploads_url}/images/cms/Breskens.jpg" filter_crop2size="4500,950,bc" alt="{$sitename} - Breskens - Uisge Beatha" noembed={$noembed} notag=1}}
   {elseif $page_alias == 'gastenboek'}
-    {assign var='header_image' value={CGSmartImage src="{uploads_url}/images/cms/40MijlvanBru-27.jpg" filter_crop2size="4500,700,bc" alt="{$sitename} - 40 Mijlvan Bru - Uisge Beatha" notag=1}}
+    {assign var='header_image' value={CGSmartImage src="{uploads_url}/images/cms/40MijlvanBru-27.jpg" filter_crop2size="4500,700,bc" alt="{$sitename} - 40 Mijlvan Bru - Uisge Beatha" noembed={$noembed} notag=1}}
   {elseif $page_alias == 'gps-tracks'}
-    {assign var='header_image' value={CGSmartImage src="{uploads_url}/images/cms/Week aug17 - 10.jpg" filter_crop2size="4500,1200,bc" alt="{$sitename} - Breskens - Uisge Beatha" notag=1}}
+    {assign var='header_image' value={CGSmartImage src="{uploads_url}/images/cms/Week aug17 - 10.jpg" filter_crop2size="4500,1200,bc" alt="{$sitename} - Breskens - Uisge Beatha" noembed={$noembed} notag=1}}
   {else}
-    {assign var='header_image' value={CGSmartImage src="{uploads_url}/images/cms/40MijlvanBru-02.jpg" alt="Dehler 36 JV - Uisge Beatha" notag=1}}
+    {assign var='header_image' value={CGSmartImage src="{uploads_url}/images/cms/40MijlvanBru-02.jpg" alt="Dehler 36 JV - Uisge Beatha" noembed={$noembed} notag=1}}
   {/if}
   {$_description={description}}
   <div class="page-header-image"  style="background-image: url('{$header_image}');">

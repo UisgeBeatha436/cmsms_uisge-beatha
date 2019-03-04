@@ -86,7 +86,7 @@
 		{if $default_navbar_style!=="default"}<div class="container">{/if}
 		{if $navbar_toggler_align=="right"}
 		<a class="navbar-brand" href="#">
-			{CGSmartImage src=$navbar_brand alias1=navbar_logo} {$navbar_brand_text}
+			{CGSmartImage src=$navbar_brand alias1=navbar_logo noembed={$noembed}} {$navbar_brand_text}
 		</a>
 		{/if}
 
@@ -102,7 +102,7 @@
 
 		{if $navbar_toggler_align=="left"}
 		<a class="navbar-brand" href="#">
-			{CGSmartImage src=$navbar_brand alias1=navbar_logo} {$navbar_brand_text}
+			{CGSmartImage src=$navbar_brand alias1=navbar_logo noembed={$noembed}} {$navbar_brand_text}
 		</a>
 		{/if}
 

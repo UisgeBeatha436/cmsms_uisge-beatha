@@ -17,15 +17,18 @@ $color-bg: silver;
   background-color: $color-bg;
 } */
 /* custom stylsheets */
-
+$theme_dst_path: '/assets/dst';
 @import './bootstrap/scss/bootstrap';
-@import './mdbootstrap-pro/scss/mdb';
 @import './bootstrap/scss/reboot';
+@import 'tools/typo-font-face'; // 04mrch19
+@import './mdbootstrap-pro/scss/mdb';
+
 /* @import './now-ui-kit-pro/assets/scss/now-ui-kit'; */ 
 // @import './now-ui-kit/assets/scss/now-ui-kit';
 // @import './_custom.scss'; // 21jan19 added after mail Arnoud (after test, menu bar does change in color
 // @import './@fancyapps/fancybox/src/css/core.css';
-@import './lightgallery.js/src/sass/lightgallery';
+// @import './lightgallery.js/src/sass/lightgallery';
+
 
 :root {
   // Default Font Size
@@ -185,6 +188,8 @@ html {
 // At the Bootstrap md breakpoint, adjust the heading dont sizes.
 @media (min-width: 768px) {
     @include create-heading-type-scale(minor-third);
+
+
 
 /* ----------- define color variables -----------*/
   --fill-color-facebook: #3b5998;
@@ -356,7 +361,7 @@ html {
 [data-footer-background-color="blue_gradient"] {
     background: rgb(26,26,63);
     background: linear-gradient(90deg, rgba(26,26,63,1) 0%, rgba(1,72,136,1) 45%, rgba(187,194,194,1) 100%); 
-    color: white; /* make sure text of main menu in footer has white letter */
+    color: white; /* make sure text of main menu in footer has white letters */
 }
 a.footer-brand {
     color: white;
@@ -408,16 +413,16 @@ a.footer-brand {
   color: rgb(153, 6, 6);
 }
 
-/* ----------- define float ------------- */
+/* ----------- define float ------------- = part of MDBootstrap *
 .float-center {
     text-align: center;
-}
+} */
 
 /* ----------- define margin for jumbotron -----------*/
 .mt-md-8 {
   margin-top: 8rem !important;
 }
-
+/* ----------- End margin for jumbotron -----------*/
 /* ----------- GPS Track styling ----------- */
 .gps-track li {
     margin-left: 30px;
@@ -774,7 +779,7 @@ body {
 .icon.icon-hour-glass, .icon.icon-calendar, .icon.icon-calendar1, .icon.icon-archive, .icon.icon-keyboard .icon.icon-tags, .icon.incon-chat, .icon.icon-left-hand, .icon.icon-right-hand, .icon.icon-share2, .icon.icon-camera {
 	fill: var(--fill-color-boat);
 }
-.icon.icon-hour-glass, .icon.icon-calendar, .icon.icon-calendar1, .icon.icon-archive, .icon.icon-keyboard, .icon.icon-left-hand, .icon.icon-right-hand {
+.icon.icon-hour-glass, .icon.question, .icon.icon-calendar, .icon.icon-calendar1, .icon.icon-archive, .icon.icon-keyboard, .icon.icon-left-hand, .icon.icon-right-hand {
   height: 1rem;
 }
 .icon.icon-camera, .icon.icon-tags, .icon.icon-share2, .icon.icon-chat {
@@ -796,6 +801,7 @@ body {
 #google_ad {
   min-height: 1px;
 }
+
 //
 // EOF
 //

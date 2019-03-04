@@ -32,19 +32,6 @@
       ]
     },
     {
-      "outputFileName": "lightgallery.js",
-      "dependencies": [
-        "node_modules/lightgallery.js/dist/js/lightgallery.js",
-        "node_modules/lg-zoom.js/dist/lg-zoom.js"     
-      ]
-    },
-    {
-      "outputFileName": "lg-share.js",
-      "dependencies" : [
-        "node_modules/lg-share.js/dist/lg-share.js"
-      ]
-    },
-    {
       "outputFileName": "plugins.js",
       "dependencies": [
         "es5/footer/plugins/*.js"
@@ -55,6 +42,12 @@
       "dependencies": [
         "node_modules/cookies-eu-banner/dist/cookies-eu-banner.js",
         "node_modules/scripts/*.js"
+      ]
+    },
+    {
+      "outputFileName": "footerSettings.js",
+      "dependencies": [
+        "node_modules/scripts/footerScripts/footerSettings.js"
       ]
     },
     {

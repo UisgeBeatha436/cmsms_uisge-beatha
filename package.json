@@ -36,7 +36,7 @@
     "mdbootstrap-pro": "file:node_modules/mdbootstrap-pro/jq-pro-master.tar.gz",
     "now-ui-kit": "^1.1.0",
     "popper.js": "^1.14.7",
-    "rellax": "^1.7.2"
+    "rellax": "^1.8.0"
   },
   "devDependencies": {}
 }

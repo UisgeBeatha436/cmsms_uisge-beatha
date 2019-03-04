@@ -1,3 +1,4 @@
+{strip}
 {if $smarty.server.SERVER_NAME|lower eq {$environment}}
   {* Please:
      - Fill in yourdomain
@@ -17,3 +18,4 @@
 {else}
   <!-- generic_js_google_analytics is turned off for: ({$smarty.server.SERVER_NAME|lower}) -->
 {/if}
+{/strip}

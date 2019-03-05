@@ -29,7 +29,15 @@
    
   {* <!-- b: third party .js libs --> *}
   {* <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>*}
-  <script>window.jQuery || document.write('<script src="{$theme_dst_path}/assets/dst/js/es5/jquery.js?fes={$_unique_js_id}"><\/script>')</script> {* slim-version lacks getScript *}
+  {*<script>window.jQuery || document.write('<script src="{$theme_dst_path}/assets/dst/js/es5/jquery.js?fes={$_unique_js_id}"><\/script>')</script> { * slim-version lacks getScript *}
+  <script>
+    var sNew = document.createElement("script");
+    sNew.async = true;
+    sNew.src = "/assets/dst/js/es5/jquery.js";
+    var s0 = document.getElementsByTagName('script')[0];
+    s0.parentNode.insertBefore(sNew, s0);
+  </script>
+
   {* <script src="{$theme_dst_path}/assets/dst/js/es5/jquery.slim.js"></script>*}
 
   {*<script src="{root_url}/assets/src/node_modules/jquery_lazyscript/jquery.lazyscript.min.js"></script>

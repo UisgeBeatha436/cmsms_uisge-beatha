@@ -58,10 +58,10 @@
     <!-- Preconnect for external assets -->
     <link rel="preconnect" href="//static.uisge-beatha.eu">
     <link rel="preconnect" href="//www.google-analytics.com" crossorigin>
-    <link rel="preload" href="{$theme_relative_url}/webfont/Roboto-Light.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <!--link rel="preload" href="{$theme_relative_url}/webfont/Roboto-Light.woff2" as="font" type="font/woff2" crossorigin="anonymous">
     <link rel="preload" href="{$theme_relative_url}/webfont/Roboto-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
     <link rel="preload" href="{$theme_relative_url}/webfont/Roboto-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-    <link rel="preload" href="{$theme_relative_url}/webfont/Roboto-Medium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="{$theme_relative_url}/webfont/Roboto-Medium.woff2" as="font" type="font/woff2" crossorigin="anonymous"-->
     <meta name="copyright" content="Copyright © Gregor de Graaf, All Rights Reserved">
     {$last_modified = $last_modified|default:"{modified_date format='%e-%m-%Y'}" scope=global}
     {$page_modified = $page_modified|default:"{modified_date format='%e-%m-%Y'}" scope=global}
@@ -124,11 +124,6 @@
     {if isset($page_js_header) && $page_js_header != ''}
       {$page_js_header}
     {/if}
-
-    {block name='js_header'}
-      {include|strip file="{#theme_resource#}generic_js_google_tag_manager.tpl"}
-      {include|strip file="{#theme_resource#}generic_js_header.tpl"}
-    {/block}
 
     {* Define social links *}
     {assign var="feed" value='/rssfeed.rss' scope=global}
@@ -271,8 +266,6 @@
               } );
             }
           }
-
-
           // commonjs
           if( typeof exports !== "undefined" ){
             exports.loadCSS = loadCSS;
@@ -288,28 +281,13 @@
     <!-- cgjs_render on the next line -->
     <!-- {cgjs_render} -->
     {* https://stackoverflow.com/questions/3221561/eliminate-flash-of-unstyled-content *}
-    {jsmin}
-      <script type="text/javascript">
-        var elm=document.getElementsByTagName("html")[0];
-        elm.style.display="none";
-        document.addEventListener("DOMContentLoaded",function(event) { elm.style.display="block"; });
-      </script>
-      <script>
-        var mst_width="100%";var mst_height="450px";var mst_border="0";var mst_map_style="terrain";var mst_mmsi="244770624";var mst_show_track="";var mst_show_info="";var mst_fleet="";var mst_lat="";var mst_lng="";var mst_zoom="";var mst_show_names="0";var mst_scroll_wheel="true";var mst_show_menu="true";
-        function loadMap() {
-        var element = document.createElement("script");
-        element.setAttribute("id", "myshiptrackingscript");
-        element.setAttribute("async", "");
-        element.setAttribute("defer", "");
-        element.src = "https://www.myshiptracking.com/js/widgetApi.js";
-        document.getElementById("mapContent").appendChild(element );
-        }      
-          window.onload = loadMap
-        console.log('MyShipTracking loaded')
-      </script>
-    {/jsmin}
+    {include|strip file="{#theme_resource#}AIS_location.tpl"}
+    {block name='js_header'}
+      {include|strip file="{#theme_resource#}generic_js_google_tag_manager.tpl"}
+      {include|strip file="{#theme_resource#}generic_js_header.tpl"}
+    {/block}
     {if $page_alias == 'logboekpagina' OR $page_alias == 'fotoalbums' OR $page_alias == 'afkomst-naam' OR $page_alias == 'dehler-36-jv'}
-    <script src="https://static.uisge-beatha.eu/_Javascripts/floatbox_813/floatbox/floatbox.js"></script>
+      <script src="https://static.uisge-beatha.eu/_Javascripts/floatbox_813/floatbox/floatbox.js"></script>
     {/if}
   </head>
 {/minify_html_block}

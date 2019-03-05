@@ -6,7 +6,7 @@
     <nav class="breadcrumb">
       <ol class="breadcrumb d-inline-flex pl-0 pt-0">
         {if isset($starttext)}
-          <li class="text-info mt-1">{$starttext}:&nbsp;</li>
+          <li class="indigo-text darken-4 mt-1">{$starttext}:&nbsp;</li>
         {/if}
         {foreach $nodelist as $node}
           {if $node->current}{/if}
@@ -18,11 +18,11 @@
               <a class="black-text" href="{$node->url}" title="{$node->menutext}">{$node->menutext}</a>
             </li>
           {else}
-              <li class="breadcrumb-item">
-                <a class="black-text" href="{$node->url}" title="{$node->menutext}">
-                  {$node->menutext}
-                </a>
-              </li>
+            <li class="breadcrumb-item">
+              <a class="black-text" href="{$node->url}" title="{$node->menutext}">
+                {$node->menutext}
+              </a>
+            </li>
           {/if}
         {/foreach}
       </ol>

@@ -73,7 +73,7 @@
                     {* https://svg-edit.github.io/svgedit/releases/latest/editor/svg-editor.html Logo_Dehler_UisgeBeatha.png *}
                   {/if}
                   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-expanded="false" aria-label="Toggle navigation" aria-controls="navigation"> {*aria-controls="navigation-index"*}
-                      <span class="navbar-toggler-icon"></span>
+                      <span class="navbar-toggler-icon">{svg use="hamburger"}</span>
                   </button>
                 {*</div>*}
                 <div class="collapse navbar-collapse" id="navigation"  > {* data-color="orange" data-nav-image="{CGSmartImage src="{uploads_url}/images/cms/Dehler-logo.png" alt="{$sitename}" title="{$sitename}" noresponsive='1' notag=1 noembed={$noembed}}" *}
@@ -123,7 +123,7 @@
               <div class="row">
                   <!--Left column-->
                   <div class="col-md-3">
-                    <p>Op dit moment {visitors}.</p> {* Deze pagina is { HitCounter } keer bekeken.  *}
+                    <p class="indigo-text darken-4">Op dit moment {visitors}.</p> {* Deze pagina is { HitCounter } keer bekeken.  *}
                     {cge_cache_block key='YoutubeFooter' expires=2400}
                       <div class="embed-responsive embed-responsive-16by9">
                         <iframe title="YoutubeFooter" class="embed-responsive-item lozad" src="https://www.youtube.com/embed/rY0Rd0C3OQ0"></iframe>

@@ -18,7 +18,7 @@ Gives:
 {assign var="text" value={$gcb_params.text}}
 
 {if !isset($key)}
-    <a class="floatbox" href="//www.scribd.com/embeds/{$id}/content?start_page=1&amp;view_mode=scroll&amp;show_recommendations=true">{$text}</a>
+    <a class="indigo-text darken-4floatbox" href="//www.scribd.com/embeds/{$id}/content?start_page=1&amp;view_mode=scroll&amp;show_recommendations=true">{$text}</a>
 {else}
-    <a class="floatbox" href="//www.scribd.com/embeds/{$id}/content?start_page=1&amp;view_mode=scroll&amp;access_key=key-{$key}&amp;show_recommendations=true">{$text}</a>
+    <a class="indigo-text darken-4floatbox" href="//www.scribd.com/embeds/{$id}/content?start_page=1&amp;view_mode=scroll&amp;access_key=key-{$key}&amp;show_recommendations=true">{$text}</a>
 {/if}

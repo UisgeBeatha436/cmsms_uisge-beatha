@@ -83,21 +83,23 @@
   {* lazy load *}
 
   {* noptimize  |  https://gulshankumar.net/setup-lazy-loading-google-adsense-ad-units/ *}
-  {jsmin}
-    <script>
-      function downloadJSAtOnload() {
-      var element = document.createElement("script");
-      element.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js";
-      document.body.appendChild(element);
-      }
-      if (window.addEventListener)
-        window.addEventListener("load", downloadJSAtOnload, false);
-      else if (window.attachEvent)
-        window.attachEvent("onload", downloadJSAtOnload);
-      else window.onload = downloadJSAtOnload;
-      console.log('Google Ads loaded at onload');
-    </script>
+  {if isset($showAds)}
+    {jsmin}
+      <script>
+        function downloadJSAtOnload() {
+        var element = document.createElement("script");
+        element.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js";
+        document.body.appendChild(element);
+        }
+        if (window.addEventListener)
+          window.addEventListener("load", downloadJSAtOnload, false);
+        else if (window.attachEvent)
+          window.attachEvent("onload", downloadJSAtOnload);
+        else window.onload = downloadJSAtOnload;
+          console.log('Google Ads loaded at onload');
+      </script>
     {/jsmin}
+  {/if}
   {* vanilla scroll 2 top *}
 
   {* Blockquote *}

@@ -11,10 +11,10 @@ https://www.uisge-beatha.eu/uploads/images/Gallery/Winter1617/Kajuitramen
 {assign var="alt_id" value=str_replace(' ','_',"{$alt}")}
 {assign var="x" value=314}
 {assign var="first_photo" value="uploads/images/Gallery/{$gcb_params.album}/{$gcb_params.foto}.jpg"}
-<section class="my-5">
+<section class="text-center my-5">
     <div class="row">
         <div class="col-12">
-            <h4 class="h4-responsive title text-center">{svg use="camera"}&nbsp;Meer foto's in het album</h4>
+            <h3 class="h3-responsive font-weight-bold">{svg use="camera"}&nbsp;Meer foto's in het album</h3>
         </div>
     </div>
     <p> {* view source code shows a missing p-tag *}

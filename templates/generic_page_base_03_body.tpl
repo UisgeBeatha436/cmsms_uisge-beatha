@@ -3,7 +3,7 @@
 {strip}
 <body class="{page_attr key='extra1'}">
   <a name="top"></a>
-  {* include svg/shape.svg once *}
+	{* include svg/shape.svg once *}
   {* svgdata inline=1 assetsbase=1 file='svg/shape.svg' tpl="{#theme_resource#}txt_svg.tpl"*}
   
   <!-- /area: 3 of 3 -->
@@ -62,8 +62,8 @@
                   {* requires popper.js  rel="tooltip" *}
                   {if $page_alias == 'hanse_311'}
                     <a class="navbar-brand lozad" href="{root_url}" rel="noreferrer" title="{$sitename} | Design based on Now_UI-Kit. Coded by Gregor" data-placement="bottom" target="_blank">
-                      <img id="header_logo" class="logo"  src="{uploads_url}/images/cms/Logo_Hanse_UisgeBeatha.svg" alt="{$sitename}" title="{$sitename}">
-                      {*<img id="header_logo" class="logo"  alt="{$sitename}" src="{CGSmartImage src="{uploads_url}/images/cms/Logo_Hanse_UisgeBeatha.svg" alt="{$sitename}" title="{$sitename}" noresponsive='1' notag=1 noembed={$noembed}}">*}
+                      <img id="header_logo" class="logo"  src="{uploads_url}/images/cms/Logo_Hanse_UisgeBeatha.png" alt="{$sitename}" title="{$sitename}">
+                      {*<img id="header_logo" class="logo"  alt="{$sitename}" src="{CGSmartImage src="{uploads_url}/images/cms/Logo_Hanse_UisgeBeatha.png" alt="{$sitename}" title="{$sitename}" noresponsive='1' notag=1 noembed={$noembed}}">*}
                     </a>
                   {else}
                     <a class="navbar-brand lozad" href="{root_url}" rel="noreferrer" title="{$sitename} | Design based on Now_UI-Kit. Coded by Gregor" data-placement="bottom" target="_blank">
@@ -124,18 +124,19 @@
                   <!--Left column-->
                   <div class="col-md-3">
                     <p class="indigo-text darken-4">Op dit moment {visitors}.</p> {* Deze pagina is { HitCounter } keer bekeken.  *}
-                    {cge_cache_block key='YoutubeFooter' expires=2400}
+                    {cge_cache_block key='YoutubeFooter' expires="3600"}
                       <div class="embed-responsive embed-responsive-16by9">
                         <iframe title="YoutubeFooter" class="embed-responsive-item lozad" src="https://www.youtube.com/embed/rY0Rd0C3OQ0"></iframe>
                       </div>
                     {/cge_cache_block}
+                    <hr>
                     {include|strip file='cms_template:Ads_Google'}
                   </div>
                   <!--/.Left column-->
                   <hr class="w-100 clearfix d-md-none">
                   <!--Center column-->
                   <div class="col-md-5">
-                    <h3 class="h3-responsive font-weight-bold text-center">Waar bevindt Uisge Beatha zich?</h3>
+                    <h3 class="h3-responsive font-weight-bold text-center indigo-text">Waar bevindt Uisge Beatha zich?</h3>
                     {cgsi_convert}
                       {cge_cache_block key='ais' expires='3600'}
                         <div id="mapContent"></div>
@@ -146,7 +147,7 @@
                   <hr class="w-100 clearfix d-md-none">
                   <!--Right column-->
                   <div class="col-md-3">
-                    <h3 class="h3-responsive font-weight-bold text-center">Nieuwtjes ontvangen?</h3>
+                    <h3 class="h3-responsive font-weight-bold text-center indigo-text">Nieuwtjes ontvangen?</h3>
                     <section class="form-elegant">
                       {CGBetterForms form="mailingForm"}
                     </section>
@@ -169,13 +170,13 @@
             </div>
           </div>
           
-              <!--Copyright-->
-              <div class="footer-copyright py-3 text-center font-small indigo darken-3">
-                  <div class="container-fluid">
-                    &copy; {custom_copyright} Uisge Beatha - Made with <a href="https://www.cmsmadesimple.org/">CMS Made Simple</a>
-                  </div>
+          <!--Copyright-->
+          <div class="footer-copyright py-3 text-center font-small indigo darken-3">
+              <div class="container-fluid">
+                &copy; {custom_copyright} Uisge Beatha - Made with <a href="https://www.cmsmadesimple.org/">CMS Made Simple</a>
               </div>
-              <!--/.Copyright-->
+          </div>
+          <!--/.Copyright-->
             
         </footer>
         {*capture}

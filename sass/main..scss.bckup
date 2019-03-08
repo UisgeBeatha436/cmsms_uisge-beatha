@@ -1,0 +1,1007 @@
+
+/* #########################################################################
+* # main
+* ######################################################################### */
+
+@charset 'UTF-8';
+
+/* $color-font: #ff0000;
+$color-bg: silver;
+
+  body::before {
+  width: 100%;
+  content: 'add your styles to assets/themes/YOUR_THEME/sass/main.scss';
+  font-size: 2em;
+  color: $color-font;
+  text-align: center;
+  background-color: $color-bg;
+} */
+/* custom stylsheets */
+
+// @import 'tools/typo-font-face'; // 04mrch19 
+@import './bootstrap/scss/bootstrap';
+@import './bootstrap/scss/reboot';
+@import './mdbootstrap-pro/mdb';
+
+/* @import './now-ui-kit-pro/assets/scss/now-ui-kit'; */
+// @import './now-ui-kit/assets/scss/now-ui-kit';
+// @import './_custom.scss'; // 21jan19 added after mail Arnoud (after test, menu bar does change in color
+// @import './@fancyapps/fancybox/src/css/core.css';
+// @import './lightgallery.js/src/sass/lightgallery';
+
+
+// To convert CSS into SCSS http://css2sass.herokuapp.com/
+:root {
+
+  // Default Font Size
+  //
+  // This is the default font size as set by Bootstrap V4 in /_reboot.scss
+  $font-size-base: 1rem;
+
+  // Type Scales
+  //
+  // Create a map of pre-defined typographic scales as found on
+  // type-scale.com. These scales can be passed to the mixin that
+  // creates the font sizes by using their key from the key: value
+  // pairs.
+  //
+  // After the map of scales, two variables are defined.
+  // $heading-type-scale-base and $display-type-scale-base, these
+  // variables hold the initial scales that are used from a 0 width
+  // viewport or browser and upward. These variables accept a key 
+  // from the $type-scales map or can be passed a unitless value.
+  // 
+  // By default Bootstraps .display-4 font size is 1rem larger than
+  // the h1.  
+  $type-scales: (
+    minor-second: 1.067,
+    major-second: 1.125,
+    minor-third: 1.2,
+    major-third: 1.25,
+    perfect-fourth: 1.333,
+    augmented-fourth: 1.414,
+    perfect-fifth: 1.5,
+    golden-ratio: 1.618
+  );
+
+  $heading-type-scale-base: minor-third;
+  $display-type-scale-base: minor-third;
+
+  // Function That Checks For A Valid Type Scale Value
+  //
+  // It is important that you are not restricted to only
+  // the values in the map as the may not be suitable for
+  // your design.
+  //
+  // For this reason, the function below will check if
+  // the value passed to the mixin is one of the values
+  // set in the $type-scales map or it must be a unitless
+  // value to create the type scale.
+  @function check-type-scale-value($scale) {
+    // Check $scale against the values in $type-scales.
+    @if map-has-key($type-scales, $scale) {
+      // If the value of $scale is defined in
+      // $type-scales, return the value of $scale.
+      @return map-get($type-scales, $scale);
+      // If the value of $scale is not defined in the 
+      // $type-scales map, check if the value is a number
+      // and that the number is a unitless value.
+    } @else if type-of($scale) == number and unitless($scale) {
+      // If the value of $scale is a unitless number,
+      // return the number.
+      @return $scale;
+      // Lastly, should the value passed to $scale be neither
+      // found in the $type-scales map nor a unitless number,
+      // throw a Sass error to explain the issue.
+    } @else {
+      // Throw a Sass error if the $scale value is
+      // neither found in the $type-scales map nor
+      // a unitless number.
+      @error 'Sorry, `#{$scale}` is not a unitless number value or a pre-defined key in the $type-scales map.';
+    }
+}
+  // Mixins That Create Font Sizes
+  //
+  // Below are two mixin's that do very similar things.
+  // They both take a type scale value either from the $type-scales
+  // map or a custom unitless number.
+  //
+  // From there it uses the checkTypeScaleValue() function to 
+  // evaluate the $scale value and then create the font sizes.
+  @mixin create-heading-type-scale($scale) {
+    // Check the $scale value and store in a variable to be 
+    // used when calculating the font sizes.
+    $the-heading-type-scale: check-type-scale-value($scale);
+    // Starting from h6, multiply each previous value by the scale
+    // to get the next font size
+    $font-size-h6: $font-size-base;
+    $font-size-h5: $font-size-h6 * $the-heading-type-scale;
+    $font-size-h4: $font-size-h5 * $the-heading-type-scale;
+    $font-size-h3: $font-size-h4 * $the-heading-type-scale;
+    $font-size-h2: $font-size-h3 * $the-heading-type-scale;
+    $font-size-h1: $font-size-h2 * $the-heading-type-scale;
+    // $font-size-display-base is made global to allow for accessing the 
+    // varibale in the next mixin.
+    $font-size-display-base: $font-size-h1 !global;
+
+    // Add the created font sizes to the elements and classes
+    h1,
+    .h1 { font-size: $font-size-h1;
+    }
+
+    h2,
+    .h2 { font-size: $font-size-h2;
+    }
+
+    h3,
+    .h3 { font-size: $font-size-h3;
+    }
+
+    h4,
+    .h4 { font-size: $font-size-h4;
+    }
+
+    h5,
+    .h5 { font-size: $font-size-h5;
+    }
+
+    h6,
+    .h6 { font-size: $font-size-h6;
+    }
+}
+  @mixin create-display-type-scale($scale) {
+    // Store default type scale in a variable for calculations
+    $the-display-type-scale: check-type-scale-value($scale);
+
+    // Create variables to reference the previous font size
+    $font-size-display-4: $font-size-display-base + $font-size-base;
+    $font-size-display-3: $font-size-display-4 * $the-display-type-scale;
+    $font-size-display-2: $font-size-display-3 * $the-display-type-scale;
+    $font-size-display-1: $font-size-display-2 * $the-display-type-scale;
+
+    // Add the created font sizes to the elements and classes
+    .display-4 { font-size: $font-size-display-4;}
+    .display-3 { font-size: $font-size-display-3;}
+    .display-2 { font-size: $font-size-display-2;}
+    .display-1 { font-size: $font-size-display-1;}
+  }
+
+  // Create the base heading and display font sizes to be used
+  // from 0px width viewports and up.
+  // These can be adjusted through the use of media queries
+  // by simply using the mixin again at your desired breakpoint
+  // Set the root font size in px on the html element to 14px,
+  // so that it is 2px lower that the aprox default for browsers.
+  // Then the font size is bumped up 2px at the md and then lg
+  // breakpoints.
+  html {
+    font-size: 14px;
+    @media (min-width: 768px) {
+      font-size: 16px;
+    }
+    @media (min-width: 992px) {
+      font-size: 18px;
+    }
+  }
+
+  // Create the heading font sizes
+  @include create-heading-type-scale($heading-type-scale-base);
+
+  // Create the display font sizes
+  @include create-display-type-scale($display-type-scale-base);
+
+  // At the Bootstrap md breakpoint, adjust the heading dont sizes.
+  @media (min-width: 768px) {
+    @include create-heading-type-scale(minor-third);
+
+
+    /* ----------- define color variables -----------*/
+    --fill-color-facebook: #3b5998;
+    --fill-color-twitter: #4da7de;
+    --fill-color-pinterest: #b51205;
+    --fill-color-linkedin: #3371b7;
+    --fill-color-google-plus: #c93725;
+    --fill-color-rss: #f26109;
+    --fill-color-boat: #1a1a3f;
+    --fill-color-boat-light: #5f8bb2;
+    --Font-Size: 20px;
+  }
+
+  $bgdefault: #1a1a3f;
+  @mixin bg-gradient { // ()
+    transition: all .5s;
+    // background: rgb(187, 194, 194);
+    background: linear-gradient(90deg, rgba(187, 194, 194, 1) 0%, rgba(1, 72, 136, 1) 35%, rgba(26, 26, 63, 1) 100%);
+  }
+
+  .bg-gradient {
+    @include bg-gradient;
+  }
+
+  element {
+    position: relative;
+    min-height: 100%;
+    top: 0;
+  }
+
+  $bghighlight: #5f8bb2;
+  $coldefault: #ecf0f1;
+  $colhighlight: #ffbbbc;
+  $dropdown: false;
+
+  .navbar a:not(.btn):not(.dropdown-item) {
+    color: #fffaf0; // floralwhite --> make text a bit brighter when on the transparent navbar
+    font-size: 1.1rem;
+}
+
+  /* .navbar {
+    @include bg-gradient();
+    .navbar-brand {
+    color: $coldefault;
+    &:hover, &:focus {
+      color: $colhighlight; }}
+    .navbar-text {
+    color: $coldefault; 
+    a {
+      color: $colhighlight;
+      &:hover, &:focus {
+      color: $colhighlight; }}}
+    .navbar-nav {
+    .nav-link {
+      color: $coldefault;
+      border-radius: .25rem;
+      margin: 0 .25em;
+      &:not(.disabled) {
+      &:hover, &:focus {
+    color: $colhighlight; }}}
+    @if ($dropdown) {
+      .dropdown-menu {
+      background-color: $bgDefault;
+      border-color: $$;
+      .dropdown-item {
+    color: $coldefault;
+    &:hover, &:focus, &.active {
+       color: $colhighlight;
+       background-color: $bghighlight; }}
+      .dropdown-divider {
+    border-top-color: $bghighlight; }}}
+    .nav-item.active, .nav-item.show {
+      .nav-link, .nav-link:hover, .nav-link:focus {
+      color: $colhighlight;
+      background-color: $bghighlight; }}}
+    .navbar-toggle {
+    border-color: $bghighlight;
+    &:hover, &:focus {
+      background-color: $bghighlight; }
+    .navbar-toggler-icon {
+      color: $coldefault; }}
+    .navbar-collapse,
+    .navbar-form {
+    border-color: $coldefault; }
+    .navbar-link {
+    color: $coldefault;
+    &:hover {
+      color: $colhighlight; }}}
+  @media (max-width: 575px) {
+    .navbar-expend-sm .navbar-nav .show .dropdown-menu {
+    .dropdown-item {
+      color: $coldefault;
+      &:hover, &:focus {
+      color: $colhighlight; }}
+    .dropdown-item.active {
+      color: $colhighlight;
+      background-color: $bghighlight; }}}
+  @media (max-width: 767px) {
+    .navbar-expend-md .navbar-nav .show .dropdown-menu {
+    .dropdown-item {
+      color: $coldefault;
+      &:hover, &:focus {
+      color: $colhighlight; }}
+    .dropdown-item.active {
+      color: $colhighlight;
+      background-color: $bghighlight; }}}
+  @media (max-width: 991px) {
+    .navbar-expend-lg .navbar-nav .show .dropdown-menu {
+    .dropdown-item {
+      color: $coldefault;
+      &:hover, &:focus {
+      color: $colhighlight; }}
+    .dropdown-item.active {
+      color: $colhighlight;
+      background-color: $bghighlight; }}}
+  @media (max-width: 1199px) {
+    .navbar-expend-xl .navbar-nav .show .dropdown-menu {
+    .dropdown-item {
+      color: $coldefault;
+      &:hover, &:focus {
+      color: $colhighlight; }}
+    .dropdown-item.active {
+      color: $colhighlight;
+      background-color: $bghighlight; }}}
+  .navbar-expend .navbar-nav .show .dropdown-menu {
+    .dropdown-item {
+    color: $coldefault;
+    &:hover, &:focus {
+      color: $colhighlight; }}
+    .dropdown-item.active {
+    color: $colhighlight;
+    background-color: $bghighlight; }}
+*/
+
+  /*.navbar-custom {
+    background-color: #013E75;
+  }*/
+
+  @media only screen and (max-width: 480px) {
+    /* For mobile phones: */
+    #header_logo {
+      transition: all .5s;
+      }
+
+    .largeLogo {
+      width: 130px;
+      max-height: 8vh;
+    }
+
+    .smallLogo  {
+      width: 6.125rem;
+      height: 4vh;
+    }
+  }
+
+  @media only screen and (min-width: 720px) {
+    /* For larger phones and screens: */
+    #header_logo {
+      transition: all .5s;
+    }
+
+    .largeLogo {
+      width: 260px;
+      max-height: 18vh;
+    }
+
+    .smallLogo  {
+      width: 12.125rem;
+      height: 6vh;
+    }
+  }
+
+  /*------------------- define footer color  ------------------*/
+  [data-background-color='grijs'] {
+    background-color: #bbc2c2;
+  }
+
+  [data-footer-background-color='blue_gradient'] {
+    // background: rgb(26, 26, 63);
+    background: linear-gradient(90deg, rgba(26, 26, 63, 1) 0%, rgba(1, 72, 136, 1) 45%, rgba(187, 194, 194, 1) 100%);
+    color: #fff; /* make sure text of main menu in footer has white letters */
+  }
+
+  a.footer-brand {
+    color: #fff;
+    text-decoration: none;
+  }
+
+  /*------------------- icon alignment and color -------------- */
+  .btn i {
+    &.fas, &.far {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-12px, -12px);
+      line-height: 1.5rem;
+      width: 23px;
+    }
+  }
+
+  .icons {
+    i, svg {
+      color: #1a1a3f;
+    }
+  }
+
+  .fas,
+  .fa,
+  .far {
+    color: #1a1a3f;
+  }
+
+  /* .navbar-custom .navbar-brand, .navbar-custom .navbar-text {
+    color: #5f8bb2;
+  }
+
+  .navbar a:not(.btn):not(.dropdown-item) {
+    color: #013E75;
+  } */
+
+  [data-background-color='boat_color'] {
+    background-color: #013e75;
+  }
+
+  /* ----------- back to the top button ------------- */
+  .scrollTop {
+    position: fixed;
+    right: 3%;
+    bottom: 10px;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    text-align: center;
+    background-color: var(--fill-color-boat);
+    padding: .25rem;
+    opacity: .5;
+    transition: .4s ease-in-out 0s; // all
+  }
+
+  .scrollTop a {
+    font-size: 18px;
+    color: rgb(153, 6, 6);
+  }
+
+  /* ----------- define float ------------- = part of MDBootstrap *
+  .float-center {
+      text-align: center;
+  } */
+
+  /* ----------- define margin for jumbotron -----------* /
+  .mt-md-8 {
+    margin-top: 8rem !important;
+  } */
+  /* ----------- End margin for jumbotron -----------*/
+  /* ----------- GPS Track styling ----------- */
+  .gps-track li {
+    margin-left: 30px;
+  }
+
+  /* -----------End GPS Track ----------- */
+
+  /* ----------- define text color navbar --------- * /
+  .navbar.bg-white:not(.navbar-transparent) a:not(.dropdown-item), .dropdown-menu .dropdown-item {
+    color: var(--fill-color-boat);
+  } */
+
+  /* ---------- list items horizontal -----------*/
+  .list-group-horizontal {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: separate;
+    &>.list-group-item {
+      border: 1px solid #808080;
+      display: table-cell;
+      float: none;
+      text-align: center;
+      width: 1%;
+      border-radius: 0;
+
+      &:first-child {
+        border-bottom-left-radius: 3px;
+      }
+
+      &:last-child {
+        border-bottom-right-radius: 3px;
+      }
+    }
+  }
+
+  /* ----------- to align text vertical on home page ----------- */
+  // svg {
+  // 	width: 100%; height: 100%;
+  // 	pointer-events: none; /* so that you can resize the element */
+  // }
+  // text {
+  // 	text-anchor: middle;
+  // 	pointer-events: auto; /* Cancel the svg’s pointer-events */
+  // 	fill: currentColor;
+  // 	font-size: 4vw;  /* vw makes the size responsive */
+  // 	color:white;
+  // }
+
+  /* -------------- Layout, custom social buttons ------------ */
+  /* .wrapper {
+    margin: 0;
+  }
+
+  .social-share {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin-top: -5px;
+  }
+
+  / * .social-share {
+      line-height: 10px;  [[ * align the social buttons * ]]
+      margin-bottom: 10px;
+  } * /
+
+  .social-share > div {
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    padding-right: 10px;
+    / * background-color: white; * /
+  }
+
+  / * .social-share .btn-facebook {
+  } * /
+  
+  .social-share .btn-twitter {
+    padding-top: 4px;
+  }
+
+  .social-share .btn-googleplus {
+    margin-top: 4px;
+  }
+
+  .social-share .btn-pinterest {
+    margin-top: 0;
+  } */
+
+  // SCSS
+  .wrapper {
+    margin: 0;
+  }
+
+  .social-share {
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin-top: -5px;
+
+    > div {
+      justify-content: space-around;
+      align-items: center;
+      flex-wrap: wrap;
+      padding-right: 10px;
+      /* background-color: white; */
+    }
+
+    .btn-twitter {
+      padding-top: 4px;
+    }
+
+    .btn-googleplus {
+      margin-top: 4px;
+    }
+
+    .btn-pinterest {
+      margin-top: 0;
+    }
+  }
+
+  /* .social-share {
+      line-height: 10px;  [[ * align the social buttons * ]]
+      margin-bottom: 10px;
+  } */
+  
+  /* .social-share .btn-facebook {
+  } */
+
+  /* ---------- OVERRIDE GOOGLE TRANSLATE WIDGET CSS BEGIN ---------- */
+  .goog-te-menu-frame {
+    max-width: 100% !important; //or whatever width you want
+  }
+
+  .goog-te-menu2 { //the element that contains the table of options
+    max-width: 100% !important;
+    overflow: scroll !important;
+    box-sizing: border-box !important; //fixes a padding issue
+    height: auto !important; //gets rid of vertical scroll caused by box-sizing
+  }
+
+  div#google_translate_element div.goog-te-gadget-simple {
+    border: none;
+    background-color: transparent;
+    // background-color: #17548d; // #e3e3ff
+  }
+
+  div#google_translate_element div.goog-te-gadget-simple a.goog-te-menu-value:hover {
+    text-decoration: none;
+  }
+
+  div#google_translate_element div.goog-te-gadget-simple a.goog-te-menu-value span {
+    color: #ffebcd;
+  }
+
+  div#google_translate_element div.goog-te-gadget-simple a.goog-te-menu-value span:hover {
+    color: #fff;
+  }
+
+  .goog-te-gadget-icon {
+    display: none !important;
+    // background: url('url for the icon') 0 0 no-repeat !important;
+  }
+
+  // Remove the down arrow
+  // when dropdown open
+  div#google_translate_element div.goog-te-gadget-simple a.goog-te-menu-value span[style='color: rgb(213, 213, 213);'] {
+    display: none;
+  }
+
+  // after clicked/touched
+  div#google_translate_element div.goog-te-gadget-simple a.goog-te-menu-value span[style='color: rgb(118, 118, 118);'] {
+    display: none;
+  }
+
+  // on page load (not yet touched or clicked)
+  div#google_translate_element div.goog-te-gadget-simple a.goog-te-menu-value span[style='color: rgb(155, 155, 155);'] {
+    display: none;
+  }
+
+  // Remove span with left border line | (next to the arrow) in Chrome & Firefox
+  div#google_translate_element div.goog-te-gadget-simple a.goog-te-menu-value span[style='border-left: 1px solid rgb(187, 187, 187);'] {
+    display: none;
+  }
+
+  // Remove span with left border line | (next to the arrow) in Edge & IE11
+  div#google_translate_element div.goog-te-gadget-simple a.goog-te-menu-value span[style='border-left-color: rgb(187, 187, 187); border-left-width: 1px; border-left-style: solid;'] {
+    display: none;
+  }
+
+  // HIDE the google translate toolbar
+  .goog-te-banner-frame.skiptranslate {
+    display: none !important;
+  }
+
+  body {
+    top: 0 !important;
+  }
+}
+/* ------------- OVERRIDE GOOGLE TRANSLATE WIDGET CSS END ---------------- */
+
+/* .goog-te-gadget-simple {
+  background-color: rgba(255,255,255,.20)!important;
+  border: 1px solid var(--fill-color-boat-light) !important; */
+  /* border-left: 1px solid #d5d5d5; */
+  /* border-top: 1px solid #9b9b9b; */
+  /* border-bottom: 1px solid #e8e8e8; */
+  /* border-right: 1px solid #d5d5d5; */
+/*	margin-right: 15px;
+} */
+
+
+/* 
+** Style for the banner
+*/
+.cookie {
+  // background-color: rgb(39, 137, 152);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  padding: 5px;
+  font-family: 'Open sans', sans-serif;
+  font-weight: 600;
+  font-size: 12px;
+}
+
+// .button-info,
+// .button-ok {
+//   position: relative;
+//   display: inline-block;
+//   padding: 2px 5px 2px 5px;
+//   margin: 2px;
+//   background-color: rgba(247, 247, 247, .6);
+//   font-family: 'Open sans', sans-serif;
+//   font-weight: 800;
+// }
+// .button-info:hover,
+// .button-ok:hover {
+//   transition: background-color .2s ease-in-out;
+//   background-color: rgba(247, 247, 247, 1);
+// }
+// .button-info {}
+// .button-ok {}
+// .button-info a,
+// .button-ok a {
+//   text-decoration: none;
+//   color: #222222;
+// }
+
+
+#cookies-eu-banner {
+  // background: #444;
+  position: fixed;
+  z-index: 1040;
+  // color: #fff;
+  // padding: 6px;
+  // font-size: 13px;
+  // text-align: center;
+}
+// #cookies-eu-more,
+// #cookies-eu-accept,
+// #cookies-eu-reject {
+//   text-decoration: none;
+//   background: #222;
+//   color: #fff;
+//   border: 1px solid #000;
+//   cursor: pointer;
+//   padding: 4px 7px;
+//   margin: 2px 0;
+//   font-size: 13px;
+//   font-weight: bold;
+//   transition: background .07s, color .07s, border-color .07s;
+// }
+// #cookies-eu-more:hover,
+// #cookies-eu-more:focus,
+// #cookies-eu-accept:hover,
+// #cookies-eu-accept:focus {
+//   background: #fff;
+//   color: #222;
+// }
+// #cookies-eu-more {
+//   margin-left: 7px;
+// }
+
+// #cookies-eu-reject {
+//   background: none;
+//   font-weight: normal;
+//   color: #ccc;
+//   cursor: pointer;
+//   padding: 4px 7px;
+//   margin: 2px 0;
+//   border: 1px solid #666;
+// }
+// #cookies-eu-reject:hover,
+// #cookies-eu-reject:focus {
+//   border-color: #fff;
+//   background: #222;
+//   color: #fff;
+// }
+
+// svg {
+  // fill: white;
+  // position: relative;
+	// margin-left: 26%;
+	// margin-top: 15%;
+// }
+// .btn-facebook svg {
+//   width: 1em;
+//   margin-top: 8%;
+// }
+// .btn-twitter svg {
+//   margin-top: 8%;
+//   width: 2.0em;
+//   height: 2em;
+// }
+// .btn-google svg {
+//   margin-top: 6%;
+//   margin-left: 8%;
+// }
+// .btn-pinterest svg {
+//   margin-left: 18%;
+//   margin-top: 10%;
+// }
+// .btn-rss svg {
+//   margin-left: 15%;
+//   margin-top: 9%;
+// }
+.icon {
+  /* display: inline-block;
+  width: 1em;
+  height: 90%;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor; */
+  text-align: center;
+  justify-content: center;
+  vertical-align: text-top;
+  width: 2.8rem;
+  height: 2.5rem;
+}
+
+/* .social-buttons .icon-rss,
+.social-buttons .icon-pinterest,
+.social-buttons .icon-facebook,
+.social-buttons .icon-twitter,
+.social-buttons .icon-gplus {
+  fill: #fff;
+  width: 1rem;
+  height: 1.5rem;
+} */
+
+// SCSS
+.social-buttons {
+  .icon-rss,
+  .icon-pinterest,
+  .icon-facebook,
+  .icon-twitter,
+  .icon-gplus {
+    fill: #fff;
+    width: 1rem;
+    height: 1.5rem;
+  }
+}
+
+/* .social-buttons .icon-gplus,
+.social-buttons .icon-facebook {
+  width: 1.6rem;
+}
+
+.social-buttons .icon-twitter {
+  width: 1.3rem;
+} */
+
+// SCSS
+.social-buttons {
+  .icon-gplus,
+  .icon-facebook {
+    width: 1.6rem;
+  }
+  .icon-twitter {
+    width: 1.3rem;
+  }
+}
+
+/*.icon-facebook {
+  fill: #fff;
+  width: 1em;
+}
+.btn-fb .icon.icon-facebook {
+  font-size: 1.6rem;
+  margin-top: 5px;
+  margin-left: .5rem;
+}
+.btn-tw .icon.icon-twitter {
+  font-size: 2rem;
+  margin-top: 5px;
+}
+.btn-gplus .icon.icon-gplus {
+  font-size: 2rem;
+  margin-top: 5px;
+}
+.btn-gplus .icon.icon-gplus-1 {
+  font-size: 2rem;
+  margin-top: 5px;
+}
+.btn-pin .icon.icon-pinterest {
+  font-size: 2rem;
+  margin-top: .313rem;
+  margin-left: 6p;
+}
+.btn-pin .icon.icon-pinterest-1 {
+  font-size: 2rem;
+  margin-top: .1rem;
+  margin-left: .35rem;
+} 
+.btn-email .icon.icon-mail {
+	font-size: 1.7rem;
+	margin-top: .3rem;
+}
+.btn-rss .icon.icon-rss {
+  font-size: 2rem;
+  margin-top: 5px;
+  margin-left: 0;
+}*/
+
+// SCSS
+/* .icon.icon-mail {
+  width: 2.1rem;
+  margin-top: .01rem;
+}
+
+.icon.icon-facebook {
+  margin-top: .2rem;
+  margin-right: .1rem;
+}
+
+.icon.icon-pinterest-1,
+.icon.icon-facebook,
+.icon.icon-twitter,
+.icon.icon-gplus-1,
+.icon.icon-mail {
+  fill: #fff;
+}
+
+.icon.icon-hour-glass,
+.icon.icon-calendar,
+.icon.icon-calendar1,
+.icon.icon-archive,
+.icon.icon-keyboard .icon.icon-tags,
+.icon.incon-chat,
+.icon.icon-left-hand,
+.icon.icon-right-hand,
+.icon.icon-share2,
+.icon.icon-camera {
+  fill: var(--fill-color-boat);
+}
+
+.icon.icon-hour-glass,
+.icon.question,
+.icon.icon-calendar,
+.icon.icon-calendar1,
+.icon.icon-archive,
+.icon.icon-keyboard,
+.icon.icon-left-hand,
+.icon.icon-right-hand {
+  height: 1rem;
+}
+
+.icon.icon-camera,
+.icon.icon-tags,
+.icon.icon-share2,
+.icon.icon-chat {
+  height: 2rem;
+}
+
+.icon.icon-search {
+  font-size: 2rem;
+  fill: #faebd7;
+  margin-bottom: .3rem;
+} */
+
+.icon {
+  &.icon-mail {
+    width: 2.1rem;
+    margin-top: .01rem;
+  }
+
+  &.icon-facebook {
+    margin-top: .2rem;
+    margin-right: .1rem;
+  }
+
+  &.icon-pinterest-1,
+  &.icon-facebook,
+  &.icon-twitter,
+  &.icon-gplus-1,
+  &.icon-mail {
+    fill: #fff;
+  }
+
+  &.icon-hour-glass,
+  &.icon-calendar,
+  &.icon-calendar1,
+  &.icon-archive,
+  &.icon-keyboard .icon.icon-tags,
+  &.incon-chat,
+  &.icon-left-hand,
+  &.icon-right-hand,
+  &.icon-share2,
+  &.icon-camera {
+    fill: var(--fill-color-boat);
+  }
+
+  &.icon-hour-glass,
+  &.question,
+  &.icon-calendar,
+  &.icon-calendar1,
+  &.icon-archive,
+  &.icon-keyboard,
+  &.icon-left-hand,
+  &.icon-right-hand {
+    height: 1rem;
+  }
+
+  &.icon-camera,
+  &.icon-tags,
+  &.icon-share2,
+  &.icon-chat {
+    height: 2rem;
+  }
+
+  &.icon-search {
+    font-size: 2rem;
+    fill: #faebd7;
+    margin-bottom: .3rem;
+  }
+}
+
+.scrollTop .icon.icon-up-hand {
+  fill: #faebd7;
+  font-size: 2rem;
+}
+
+/* ---------------- End ICON Styling ---------------- */
+
+#google_ad {
+  min-height: 1px;
+}
+
+//
+// EOF
+//

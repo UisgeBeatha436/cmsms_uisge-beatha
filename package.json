@@ -1,14 +1,18 @@
 {
   "name": "cmsms_uisge-beatha",
   "version": "1.0.0",
-  "description": "FrontendStudio/cmsms_themes",
+  "description": "Uisge Beatha CMSMS Theme",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "install": "napa"
+  },
+  "napa": {
+    "mdbootstrap-pro": "https://static.uisge-beatha.eu/MDB-Gulp-Pro_4.7.4.zip"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/FrontEndStudio/cmsms_themes"
+    "url": "https://github.com/UisgeBeatha436/cmsms_uisge-beatha"
   },
   "keywords": [
     "cmsms",
@@ -17,26 +21,19 @@
     "css",
     "js"
   ],
-  "author": "Arnoud van Susteren",
+  "author": "Gregor",
   "license": "GPL-3.0",
   "dependencies": {
-    "@fancyapps/fancybox": "^3.5.6",
     "bootstrap": "^4.3.1",
     "cookies-eu-banner": "^1.2.14",
     "dyscrollupjs": "^2.0.0",
     "jquery": "^3.3.1",
-    "lg-fullscreen.js": "^1.0.0",
-    "lg-hash.js": "^1.0.0",
-    "lg-pager.js": "^1.0.0",
-    "lg-share.js": "^1.2.2",
-    "lg-thumbnail.js": "^1.1.0",
-    "lg-zoom.js": "^1.0.1",
-    "lightgallery.js": "^1.1.2",
     "lozad": "^1.9.0",
-    "mdbootstrap-pro": "file:node_modules/mdbootstrap-pro/jq-pro-master.tar.gz",
     "now-ui-kit": "^1.1.0",
     "popper.js": "^1.14.7",
     "rellax": "^1.8.0"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "napa": "^3.0.0"
+  }
 }

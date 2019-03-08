@@ -4,9 +4,9 @@
 	{$page_js_footer = '' scope='global'}
 	{$theme_absolute_url = "{root_url}/assets{#theme_dst_path#}" scope='global'}
 	{$theme_relative_url = "./assets{#theme_dst_path#}" scope='global'}
-	{$environment = "localhost" scope=global} {* localhost | develop.uisge-beatha.eu | uisge-beatha.eu = used to set if some scripts either or not need to run *}
-	{assign var=noembed value=0 scope='global'}
-	{assign var=showAds value=0 scope='global'}
+	{$environment = "localhost" scope='global'} {* localhost | develop.uisge-beatha.eu | uisge-beatha.eu = used to set if some scripts either or not need to run *}
+	{$noembed = 1 scope='global'}
+	{$showAds = 1 scope='global'}
 	{process_pagedata}
 
 	{block name='open_content'}

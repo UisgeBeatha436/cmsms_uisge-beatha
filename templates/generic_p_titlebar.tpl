@@ -1,32 +1,31 @@
 {strip}
   {*<div class="page-header page-header-small">*}
-
-    {if $page_alias == 'hanse_311'} 
-      {assign var='header_image' value={CGSmartImage src="{uploads_url}/images/cms/UisgeBeatha.jpg" filter_crop2size="4500,1500,bc" alt="Hanse 311 - Uisge Beatha" noembed={$noembed} notag=1}}
-      {assign var='alt' value='Hanse 311 - Uisge Beatha'}
+    {if $page_alias == 'hanse_311'}
+      {$header_image = {CGSmartImage src="{uploads_url}/images/cms/UisgeBeatha.jpg" filter_crop2size="4500,1500,bc" alt="Hanse 311 - Uisge Beatha" noembed={$noembed} notag=1}}
+      {$alt = 'Hanse 311 - Uisge Beatha'}
     {elseif $page_alias == 'fotoalbums'}
-      {assign var='header_image' value={CGSmartImage src="{uploads_url}/images/cms/Honfleur - 21.jpg" filter_crop2size="4500,1700,bc" alt="{$sitename} - Honfleur - Uisge Beatha" noembed={$noembed} notag=1}}
-      {assign var='alt' value='{$sitename} - Honfleur - Uisge Beatha'}
+      {$header_image = {CGSmartImage src="{uploads_url}/images/cms/Honfleur - 21.jpg" filter_crop2size="4500,1700,bc" alt="{$sitename} - Honfleur - Uisge Beatha" noembed={$noembed} notag=1}}
+      {$alt = '{$sitename} - Honfleur - Uisge Beatha'}
     {elseif $page_alias == 'logboek_artikelen'}
-      {assign var='header_image' value={CGSmartImage src="{uploads_url}/images/cms/Beachy Head.jpg" filter_crop2size="4500,1350,bc" alt="{$sitename} - Beachy Head - Uisge Beatha" noembed={$noembed} notag=1}}
-      {assign var='alt' value='{$sitename} - Beachy Head - Uisge Beatha'}
+      {$header_image = {CGSmartImage src="{uploads_url}/images/cms/Beachy Head.jpg" filter_crop2size="4500,1350,bc" alt="{$sitename} - Beachy Head - Uisge Beatha" noembed={$noembed} notag=1}}
+      {$alt = '{$sitename} - Beachy Head - Uisge Beatha'}
     {elseif $page_alias == 'downloads'}
-      {assign var='header_image' value={CGSmartImage src="{uploads_url}/images/cms/Breskens.jpg" filter_crop2size="4500,950,bc" alt="{$sitename} - Breskens - Uisge Beatha" noembed={$noembed} notag=1}}
-      {assign var='alt' value='{$sitename} - Breskens - Uisge Beatha'}
+      {$header_image = {CGSmartImage src="{uploads_url}/images/cms/Breskens.jpg" filter_crop2size="4500,950,bc" alt="{$sitename} - Breskens - Uisge Beatha" noembed={$noembed} notag=1}}
+      {$alt = '{$sitename} - Breskens - Uisge Beatha'}
     {elseif $page_alias == 'gastenboek'}
-      {assign var='header_image' value={CGSmartImage src="{uploads_url}/images/cms/40MijlvanBru-27.jpg" filter_crop2size="4500,700,bc" alt="{$sitename} - 40 Mijlvan Bru - Uisge Beatha" noembed={$noembed} notag=1}}
-      {assign var='alt' value='{$sitename} - 40 Mijlvan Bru - Uisge Beatha'}
+      {$header_image = {CGSmartImage src="{uploads_url}/images/cms/40MijlvanBru-27.jpg" filter_crop2size="4500,700,bc" alt="{$sitename} - 40 Mijlvan Bru - Uisge Beatha" noembed={$noembed} notag=1}}
+      {$alt = '{$sitename} - 40 Mijlvan Bru - Uisge Beatha'}
     {elseif $page_alias == 'gps-tracks'}
-      {assign var='header_image' value={CGSmartImage src="{uploads_url}/images/cms/Week aug17 - 10.jpg" filter_crop2size="4500,1200,bc" alt="{$sitename} - Breskens - Uisge Beatha" noembed={$noembed} notag=1}}
-      {assign var='alt' value='{$sitename} - Breskens - Uisge Beatha'}
+      {$header_image = {CGSmartImage src="{uploads_url}/images/cms/Week aug17 - 10.jpg" filter_crop2size="4500,1200,bc" alt="{$sitename} - Breskens - Uisge Beatha" noembed={$noembed} notag=1}}
+      {$alt = '{$sitename} - Breskens - Uisge Beatha'}
     {else}
-      {assign var='header_image' value={CGSmartImage src="{uploads_url}/images/cms/40MijlvanBru-02.jpg" alt="Dehler 36 JV - Uisge Beatha" noembed={$noembed} notag=1}}
-      {assign var='alt' value='Dehler 36 JV - Uisge Beatha'}
+      {$header_image = {CGSmartImage src="{uploads_url}/images/cms/40MijlvanBru-02.jpg" alt="Dehler 36 JV - Uisge Beatha" noembed={$noembed} notag=1}}
+      {$alt = 'Dehler 36 JV - Uisge Beatha'}
     {/if}
     {$_description={description}}
 
     <!-- Intro Section -->
-    <div class="view jarallax rellax" data-rellax-speed="1" style="background-image: url('{$header_image}'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
+    <div class="view jarallax rellax lozad" data-rellax-speed="1" data-background-image='{$header_image}' style="background-image: url('{$header_image}'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
       <div class="mask rgba-stylish-slight">
         <div class="container h-100 d-flex justify-content-center align-items-center">
             <div class="row pt-5 mt-3">

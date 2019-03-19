@@ -15,388 +15,389 @@
 // To convert CSS into SCSS http://css2sass.herokuapp.com/
 :root {
 
-    /* ----------- define color variables -----------*/
-    --fill-color-facebook: #3b5998;
-    --fill-color-twitter: #4da7de;
-    --fill-color-pinterest: #b51205;
-    --fill-color-linkedin: #3371b7;
-    --fill-color-google-plus: #c93725;
-    --fill-color-rss: #f26109;
-    --fill-color-boat: #1a1a3f;
-    --fill-color-boat-light: #5f8bb2;
-    --Font-Size: 20px;
-  }
-
-  $bgdefault: #1a1a3f;
-  @mixin bg-gradient { // ()
-    transition: all .5s;
-    // background: rgb(187, 194, 194);
-    background: linear-gradient(90deg, rgba(187, 194, 194, 1) 0%, rgba(1, 72, 136, 1) 35%, rgba(26, 26, 63, 1) 100%);
-  }
-
-  .bg-gradient {
-    @include bg-gradient;
-  }
-
-  element {
-    position: relative;
-    min-height: 100%;
-    top: 0;
-  }
-
-  $bghighlight: #5f8bb2;
-  $coldefault: #ecf0f1;
-  $colhighlight: #ffbbbc;
+  /* ----------- define color variables -----------*/
+  $facebook-color: #3b5998;
+  $twitter-color: #4da7de;
+  $pinterest-color: #b51205;
+  $linkedin-color: #3371b7;
+  $googleplus-color: #c93725;
+  $rss-color: #f26109;
+  $boat-color: #1a1a3f;
+  $boat-light-color: #5f8bb2;
+  $bghighlight-color: #5f8bb2;
+  $coldefault-color: #ecf0f1;
+  $colhighlight-color: #ffbbbc;
+  
+  --fill-color-facebook: $facebook-color;
+  --fill-color-twitter: $twitter-color;
+  --fill-color-pinterest: $pinterest-color;
+  --fill-color-linkedin: $linkedin-color;
+  --fill-color-google-plus: $googleplus-color;
+  --fill-color-rss: $rss-color;
+  --fill-color-boat: $boat-color;
+  --fill-color-boat-light: $boat-light-color;
+  --bghighlight: $bghighlight-color;
+  --coldefault: $coldefault-color;
+  --colhighlight: $colhighlight-color;
   $dropdown: false;
+  --Font-Size: 20px;
 
-  .navbar a:not(.btn):not(.dropdown-item) {
-    color: #fffaf0; // floralwhite --> make text a bit brighter when on the transparent navbar
-    font-size: 1.1rem;
 }
 
-  @media only screen and (max-width: 480px) {
-    /* For mobile phones: */
-    #header_logo {
-      transition: all .5s;
-      }
+$bgdefault: #1a1a3f;
+@mixin bg-gradient { // ()
+  transition: .5s; // all
+  // background: rgb(187, 194, 194);
+  background: linear-gradient(90deg, rgba(187, 194, 194, 1) 0%, rgba(1, 72, 136, 1) 35%, rgba(26, 26, 63, 1) 100%);
+}
 
-    .largeLogo {
-      width: 130px;
-      max-height: 8vh;
+.bg-gradient {
+  @include bg-gradient;
+}
+
+element {
+  position: relative;
+  min-height: 100%;
+  top: 0;
+}
+
+.navbar a:not(.btn):not(.dropdown-item) {
+  color: #fffaf0; // floralwhite --> make text a bit brighter when on the transparent navbar
+  font-size: 1.1rem;
+}
+
+@media only screen and (max-width: 480px) {
+  /* For mobile phones: */
+  #header_logo {
+    transition: all .5s;
     }
 
-    .smallLogo  {
-      width: 6.125rem;
-      height: 4vh;
-    }
+  .largeLogo {
+    width: 130px;
+    max-height: 8vh;
   }
 
-  @media only screen and (min-width: 720px) {
-    /* For larger phones and screens: */
-    #header_logo {
-      transition: all .5s;
-    }
+  .smallLogo  {
+    width: 6.125rem;
+    height: 4vh;
+  }
+}
 
-    .largeLogo {
-      width: 260px;
-      max-height: 18vh;
-    }
-
-    .smallLogo  {
-      width: 12.125rem;
-      height: 6vh;
-    }
+@media only screen and (min-width: 720px) {
+  /* For larger phones and screens: */
+  #header_logo {
+    transition: .5s; /* all */
   }
 
-  /*------------------- define footer color  ------------------*/
-  [data-background-color='grijs'] {
-    background-color: #bbc2c2;
+  .largeLogo {
+    width: 260px;
+    max-height: 18vh;
   }
 
-  [data-footer-background-color='blue_gradient'] {
-    // background: rgb(26, 26, 63);
-    background: linear-gradient(90deg, rgba(26, 26, 63, 1) 0%, rgba(1, 72, 136, 1) 45%, rgba(187, 194, 194, 1) 100%);
-    color: #fff; /* make sure text of main menu in footer has white letters */
+  .smallLogo  {
+    width: 12.125rem;
+    height: 6vh;
   }
+}
 
-  a.footer-brand {
-    color: #fff;
-    text-decoration: none;
+/*------------------- define footer color  ------------------*/
+[data-background-color='grijs'] {
+  background-color: #bbc2c2;
+}
+
+[data-footer-background-color='blue_gradient'] {
+  // background: rgb(26, 26, 63);
+  background: linear-gradient(90deg, rgba(26, 26, 63, 1) 0%, rgba(1, 72, 136, 1) 45%, rgba(187, 194, 194, 1) 100%);
+  color: #fff; /* make sure text of main menu in footer has white letters */
+}
+
+a.footer-brand {
+  color: #fff;
+  text-decoration: none;
+}
+
+/*------------------- icon alignment and color -------------- */
+.btn i {
+  &.fas, &.far {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-12px, -12px);
+    line-height: 1.5rem;
+    width: 23px;
   }
+}
 
-  /*------------------- icon alignment and color -------------- */
-  .btn i {
-    &.fas, &.far {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-12px, -12px);
-      line-height: 1.5rem;
-      width: 23px;
-    }
-  }
-
-  .icons {
-    i, svg {
-      color: #1a1a3f;
-    }
-  }
-
-  .fas,
-  .fa,
-  .far {
-    color: #1a1a3f;
-  }
-
-  [data-background-color='boat_color'] {
-    background-color: #013e75;
-  }
-
-  /* ----------- back to the top button ------------- */
-  .scrollTop {
-    position: fixed;
-    right: 3%;
-    bottom: 10px;
-    height: 40px;
-    width: 40px;
-    border-radius: 50%;
-    text-align: center;
-    background-color: var(--fill-color-boat);
-    padding: .25rem;
-    opacity: .5;
-    transition: .4s ease-in-out 0s; // all
-  }
-
-  .scrollTop a {
-    font-size: 18px;
-    color: rgb(153, 6, 6);
-  }
-
-  /* ----------- GPS Track styling ----------- */
-  .gps-track li {
-    margin-left: 30px;
-  }
-
-  /* -----------End GPS Track ----------- */
-
-  /* ----------- define text color navbar --------- * /
-  .navbar.bg-white:not(.navbar-transparent) a:not(.dropdown-item), .dropdown-menu .dropdown-item {
+.icons {
+  i, svg {
     color: var(--fill-color-boat);
-  } */
+  }
+}
 
-  /* ---------- list items horizontal -----------*/
-  .list-group-horizontal {
-    display: table;
-    width: 100%;
-    table-layout: fixed;
-    border-collapse: separate;
-    &>.list-group-item {
-      border: 1px solid #808080;
-      display: table-cell;
-      float: none;
-      text-align: center;
-      width: 1%;
-      border-radius: 0;
+.fas,
+.fa,
+.far {
+  color: var(--fill-color-boat);
+}
 
-      &:first-child {
-        border-bottom-left-radius: 3px;
-      }
+[data-background-color='boat-color'] {
+  background-color: #013e75;
+}
 
-      &:last-child {
-        border-bottom-right-radius: 3px;
-      }
+//colors
+$white: #fff;
+$boat-color: #1a1a3f;
+
+//@extend-elements
+//original selectors
+//.icon-books svg, .icon-pencil svg, .icon-hour-glass svg, .icon-tools svg, .icon-keyboard svg
+%extend-1 {
+  fill: $boat-color;
+  margin-left: 1em;
+  //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+  transform: scale(.7);
+}
+
+//original selectors
+//.icon-camera svg, .icon-share2 svg, .icon-pen svg
+%extend-2 {
+  fill: $boat-color;
+  height: 1.7em;
+  width: 2em;
+}
+
+//original selectors
+//.icon-hand-o-left svg, .icon-hand-o-right svg
+%extend-3 {
+  fill: $boat-color;
+  height: 3em;
+  width: 5em;
+}
+
+svg {
+  margin-top: 0.5em;
+  padding: 0;
+  fill: $white;
+  width: 2.5em;
+  height: 2.5em;
+}
+
+.icon-price-tags svg,
+.icon-price-tag svg {
+  fill: $boat-color;
+}
+
+.icon-mail svg {
+  margin-left: 0.2em;
+  margin-top: 0.6em;
+}
+
+.icon-books svg,
+.icon-pencil svg,
+.icon-hour-glass svg,
+.icon-tools svg,
+.icon-keyboard svg, {
+  @extend %extend-1;
+}
+
+.icon-camera svg,
+.icon-share2 svg,
+.icon-pen svg {
+  @extend %extend-2;
+}
+
+.icon-hand-o-left svg,
+.icon-hand-o-right svg {
+  @extend %extend-3;
+}
+
+.icon-sailing-boat-water svg {
+  fill: $boat-color;
+  width: 1em;
+  height: 2em;
+}
+
+/* ----------- back to the top button ------------- */
+.scrolltop {
+  position: fixed;
+  right: 3%;
+  bottom: 10px;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  text-align: center;
+  background-color: var(--fill-color-boat);
+  padding: .25rem;
+  opacity: .5;
+  transition: .4s ease-in-out 0s; // all
+}
+
+.scrolltop a {
+  font-size: 18px;
+  color: rgb(153, 6, 6);
+}
+
+/* ----------- GPS Track styling ----------- */
+.gps-track li {
+  margin-left: 30px;
+}
+
+/* -----------End GPS Track ----------- */
+
+/* ----------- define text color navbar --------- * /
+.navbar.bg-white:not(.navbar-transparent) a:not(.dropdown-item), .dropdown-menu .dropdown-item {
+  color: var(--fill-color-boat);
+} */
+
+/* ---------- list items horizontal -----------*/
+.list-group-horizontal {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: separate;
+
+  &>.list-group-item {
+    border: 1px solid #808080;
+    display: table-cell;
+    float: none;
+    text-align: center;
+    width: 1%;
+    border-radius: 0;
+
+    &:first-child {
+      border-bottom-left-radius: 3px;
+    }
+
+    &:last-child {
+      border-bottom-right-radius: 3px;
     }
   }
+}
 
-  // SCSS
-  .wrapper {
-    margin: 0;
-  }
+// SCSS
+.wrapper {
+  margin: 0;
+}
 
-  .social-share {
+.social-share {
 
-    display: flex;
-    flex-direction: row;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  margin-top: -5px;
+
+  > div {
+    justify-content: space-around;
+    align-items: center;
     flex-wrap: wrap;
-    justify-content: flex-start;
-    margin-top: -5px;
+    padding-right: 10px;
+    /* background-color: white; */
+  }
 
-    > div {
-      justify-content: space-around;
-      align-items: center;
-      flex-wrap: wrap;
-      padding-right: 10px;
-      /* background-color: white; */
+  .btn-twitter {
+    padding-top: 4px;
+  }
+
+  .btn-googleplus {
+    margin-top: 4px;
+  }
+
+  .btn-pinterest {
+    margin-top: 0;
+  }
+}
+
+/* ---------- OVERRIDE GOOGLE TRANSLATE WIDGET CSS BEGIN ---------- */
+
+.goog-te-menu-frame {
+  max-width: 100%;
+  // 10mrch19 !important; //or whatever width you want
+}
+
+.goog-te-menu2 {
+  //the element that contains the table of options
+  max-width: 100%;
+  // 10mrch19 !important;
+  overflow: scroll;
+  // 10mrch19 !important;
+  box-sizing: border-box;
+  // 10mrch19 !important; //fixes a padding issue
+  height: auto;
+  // 10mrch19 !important; //gets rid of vertical scroll caused by box-sizing
+}
+
+div#google_translate_element div.goog-te-gadget-simple {
+  border: 0;
+  // none;
+  background-color: transparent;
+  // background-color: #17548d; // #e3e3ff
+
+  a.goog-te-menu-value {
+    &:hover {
+      text-decoration: none;
     }
 
-    .btn-twitter {
-      padding-top: 4px;
-    }
-
-    .btn-googleplus {
-      margin-top: 4px;
-    }
-
-    .btn-pinterest {
-      margin-top: 0;
+    span {
+      color: #ffebcd;
+      &:hover {
+        color: #fff;
+      }
     }
   }
+}
 
-  /* ---------- OVERRIDE GOOGLE TRANSLATE WIDGET CSS BEGIN ---------- */
-  .goog-te-menu-frame {
-    max-width: 100% !important; //or whatever width you want
-  }
+.goog-te-gadget-icon {
+  display: none !important;
+  // background: url('url for the icon') 0 0 no-repeat !important;
+}
 
-  .goog-te-menu2 { //the element that contains the table of options
-    max-width: 100% !important;
-    overflow: scroll !important;
-    box-sizing: border-box !important; //fixes a padding issue
-    height: auto !important; //gets rid of vertical scroll caused by box-sizing
-  }
+// Remove the down arrow
+// when dropdown open
 
-  div#google_translate_element div.goog-te-gadget-simple {
-    border: none;
-    background-color: transparent;
-    // background-color: #17548d; // #e3e3ff
-  }
-
-  div#google_translate_element div.goog-te-gadget-simple a.goog-te-menu-value:hover {
-    text-decoration: none;
-  }
-
-  div#google_translate_element div.goog-te-gadget-simple a.goog-te-menu-value span {
-    color: #ffebcd;
-  }
-
-  div#google_translate_element div.goog-te-gadget-simple a.goog-te-menu-value span:hover {
-    color: #fff;
-  }
-
-  .goog-te-gadget-icon {
-    display: none !important;
-    // background: url('url for the icon') 0 0 no-repeat !important;
-  }
-
-  // Remove the down arrow
-  // when dropdown open
-  div#google_translate_element div.goog-te-gadget-simple a.goog-te-menu-value span[style='color: rgb(213, 213, 213);'] {
+div#google_translate_element div.goog-te-gadget-simple a.goog-te-menu-value span {
+  &[style='color: rgb(213, 213, 213);'],
+  &[style='color: rgb(118, 118, 118);'],
+  &[style='color: rgb(155, 155, 155);'],
+  &[style='border-left: 1px solid rgb(187, 187, 187);'],
+  &[style='border-left-color: rgb(187, 187, 187); border-left-width: 1px; border-left-style: solid;'] {
     display: none;
   }
+}
 
-  // after clicked/touched
-  div#google_translate_element div.goog-te-gadget-simple a.goog-te-menu-value span[style='color: rgb(118, 118, 118);'] {
-    display: none;
-  }
+// after clicked/touched
 
-  // on page load (not yet touched or clicked)
-  div#google_translate_element div.goog-te-gadget-simple a.goog-te-menu-value span[style='color: rgb(155, 155, 155);'] {
-    display: none;
-  }
+// on page load (not yet touched or clicked)
 
-  // Remove span with left border line | (next to the arrow) in Chrome & Firefox
-  div#google_translate_element div.goog-te-gadget-simple a.goog-te-menu-value span[style='border-left: 1px solid rgb(187, 187, 187);'] {
-    display: none;
-  }
+// Remove span with left border line | (next to the arrow) in Chrome & Firefox
 
-  // Remove span with left border line | (next to the arrow) in Edge & IE11
-  div#google_translate_element div.goog-te-gadget-simple a.goog-te-menu-value span[style='border-left-color: rgb(187, 187, 187); border-left-width: 1px; border-left-style: solid;'] {
-    display: none;
-  }
+// Remove span with left border line | (next to the arrow) in Edge & IE11
 
-  // HIDE the google translate toolbar
-  .goog-te-banner-frame.skiptranslate {
-    display: none !important;
-  }
+// HIDE the google translate toolbar
 
-  body {
-    top: 0 !important;
-  }
+.goog-te-banner-frame.skiptranslate {
+  display: none !important;
+}
+
+body {
+  top: 0 !important;
+}
 
 /* ------------- OVERRIDE GOOGLE TRANSLATE WIDGET CSS END ---------------- */
 
-/* 
-** Style for the cookie banner
-*/
-.cookie {
-  // background-color: rgb(39, 137, 152);
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  width: 100%;
-  padding: 5px;
-  font-family: 'Open sans', sans-serif;
-  font-weight: 600;
-  font-size: 12px;
-}
-
-// .button-info,
-// .button-ok {
-//   position: relative;
-//   display: inline-block;
-//   padding: 2px 5px 2px 5px;
-//   margin: 2px;
-//   background-color: rgba(247, 247, 247, .6);
-//   font-family: 'Open sans', sans-serif;
-//   font-weight: 800;
-// }
-// .button-info:hover,
-// .button-ok:hover {
-//   transition: background-color .2s ease-in-out;
-//   background-color: rgba(247, 247, 247, 1);
-// }
-// .button-info {}
-// .button-ok {}
-// .button-info a,
-// .button-ok a {
-//   text-decoration: none;
-//   color: #222222;
-// }
-
-
-#cookies-eu-banner {
-  // background: #444;
-  position: fixed;
-  z-index: 1040;
-  // color: #fff;
-  // padding: 6px;
-  // font-size: 13px;
-  // text-align: center;
-}
-// #cookies-eu-more,
-// #cookies-eu-accept,
-// #cookies-eu-reject {
-//   text-decoration: none;
-//   background: #222;
-//   color: #fff;
-//   border: 1px solid #000;
-//   cursor: pointer;
-//   padding: 4px 7px;
-//   margin: 2px 0;
-//   font-size: 13px;
-//   font-weight: bold;
-//   transition: background .07s, color .07s, border-color .07s;
-// }
-// #cookies-eu-more:hover,
-// #cookies-eu-more:focus,
-// #cookies-eu-accept:hover,
-// #cookies-eu-accept:focus {
-//   background: #fff;
-//   color: #222;
-// }
-// #cookies-eu-more {
-//   margin-left: 7px;
-// }
-
-// #cookies-eu-reject {
-//   background: none;
-//   font-weight: normal;
-//   color: #ccc;
-//   cursor: pointer;
-//   padding: 4px 7px;
-//   margin: 2px 0;
-//   border: 1px solid #666;
-// }
-// #cookies-eu-reject:hover,
-// #cookies-eu-reject:focus {
-//   border-color: #fff;
-//   background: #222;
-//   color: #fff;
-// }
-
-.icon {
-  /* display: inline-block;
+/* .icon {
+  / * display: inline-block;
   width: 1em;
   height: 90%;
   stroke-width: 0;
   stroke: currentColor;
-  fill: currentColor; */
+  fill: currentColor; * /
   text-align: center;
   justify-content: center;
   vertical-align: text-top;
   width: 2.8rem;
   height: 2.5rem;
-}
+} */
 
 /* .social-buttons .icon-rss,
 .social-buttons .icon-pinterest,
@@ -419,20 +420,37 @@
     width: 1rem;
     height: 1.5rem;
   }
-}
 
-// SCSS
-.social-buttons {
   .icon-gplus,
   .icon-facebook {
     width: 1.6rem;
   }
+
   .icon-twitter {
     width: 1.3rem;
   }
+
 }
 
+// SCSS
+/*.social-buttons {
+  .icon-gplus,
+  .icon-facebook {
+    width: 1.6rem;
+  }
+
+  .icon-twitter {
+    width: 1.3rem;
+  }
+}*/
+
 .icon {
+  text-align: center;
+  justify-content: center;
+  vertical-align: text-top;
+  width: 2.8rem;
+  height: 2.5rem;
+
   &.icon-mail {
     width: 2.1rem;
     margin-top: .01rem;
@@ -470,8 +488,8 @@
   &.icon-calendar1,
   &.icon-archive,
   &.icon-keyboard,
-  &.icon-left-hand,
-  &.icon-right-hand {
+  &.icon-point-left,
+  &.icon-point-right {
     height: 1rem;
   }
 
@@ -489,8 +507,9 @@
   }
 }
 
-.scrollTop .icon.icon-up-hand {
-  fill: #faebd7;
+.scrolltop .icon.icon-up-hand {
+  // fill: #faebd7;
+  fill: var(--fill-color-boat);
   font-size: 2rem;
 }
 

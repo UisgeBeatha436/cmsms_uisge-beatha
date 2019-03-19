@@ -59,17 +59,17 @@
     <link rel="dns-prefetch" href="//fonts.googleapis.com" -->
     <link rel="dns-prefetch" href="//www.google-analytics.com">
     <!-- Preconnect for external assets -->
-    <link rel="preconnect" href="//static.uisge-beatha.eu">
+    <link rel="preconnect" href="//statisch.uisge-beatha.eu">
     <link rel="preconnect" href="//www.google-analytics.com" crossorigin="anonymous">
     {*<link rel="preload" href="{$theme_relative_url}/webfont/Roboto-Light.woff2" as="font" type="font/woff2" crossorigin="anonymous">
     <link rel="preload" href="{$theme_relative_url}/webfont/Roboto-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
     <link rel="preload" href="{$theme_relative_url}/webfont/Roboto-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
     <link rel="preload" href="{$theme_relative_url}/webfont/Roboto-Medium.woff2" as="font" type="font/woff2" crossorigin="anonymous">*}
     <meta name="copyright" content="Copyright © Gregor de Graaf, All Rights Reserved">
-    {$last_modified = $last_modified|default:"{modified_date format='%e-%m-%Y'}" scope=global}
-    {$page_modified = $page_modified|default:"{modified_date format='%e-%m-%Y'}" scope=global}
-    {$page_image = $page_image|default:"{uploads_url}/images/cms/Uisge-Beatha_Main_Image.jpg" scope=global}
-    {$page_title = $page_title|default:"{title}" scope=global}
+    {$last_modified = $last_modified|default:"{modified_date format='%e-%m-%Y'}" scope='global'}
+    {$page_modified = $page_modified|default:"{modified_date format='%e-%m-%Y'}" scope='global'}
+    {$page_image = $page_image|default:"{uploads_url}/images/cms/Uisge-Beatha_Main_Image.jpg" scope='global'}
+    {$page_title = $page_title|default:"{title}" scope='global'}
     <meta name="google-site-verification" content="ZELEPW5SSIsv1PqdZrX91yXfEsjCNmJEHG50F7vVri4" />
     {* 23may18 Verificatie Daisycon *}
     <meta name="baf0efcf61df286" content="3453aede4510b730471f07b6ca7bd7c2" />
@@ -107,7 +107,7 @@
       {assign var='description_global' value=$page_description}
     {/if}
     <meta name="description" content="{$description_global}">
-    {$_full_title = "{title} - {$sitename}"}
+    {$_full_title = "{if isset($page_title)}{$page_title} | {/if}{title} - {$sitename}"}
     {$_full_title = "{$_full_title|cms_escape:htmlall|truncate:80}" scope='global'}
     <title>{$_full_title|cms_escape:htmlall|truncate:80}</title>
 

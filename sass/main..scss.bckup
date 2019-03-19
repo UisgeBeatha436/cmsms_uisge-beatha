@@ -419,7 +419,7 @@ $color-bg: silver;
   }
 
   /* ----------- back to the top button ------------- */
-  .scrollTop {
+  .scrolltop {
     position: fixed;
     right: 3%;
     bottom: 10px;
@@ -433,7 +433,7 @@ $color-bg: silver;
     transition: .4s ease-in-out 0s; // all
   }
 
-  .scrollTop a {
+  .scrolltop a {
     font-size: 18px;
     color: rgb(153, 6, 6);
   }
@@ -991,7 +991,7 @@ $color-bg: silver;
   }
 }
 
-.scrollTop .icon.icon-up-hand {
+.scrolltop .icon.icon-up-hand {
   fill: #faebd7;
   font-size: 2rem;
 }

@@ -5,12 +5,12 @@
 		$page_alias == 'fotoalbums' OR 
 		$page_alias == 'afkomst-naam' OR 
 		$page_alias == 'dehler-36-jv'}
-    <!-- link rel="stylesheet" href="https://static.uisge-beatha.eu/_Javascripts/floatbox_811/floatbox.css" -->
+    <!-- link rel="stylesheet" href="https://static.uisge-beatha.eu/uploads/_Javascripts/floatbox_811/floatbox.css" -->
    
 		<script>
 			var cb = function() {
 			var l = document.createElement('link'); l.rel = 'stylesheet';
-			l.href = 'https://static.uisge-beatha.eu/_Javascripts/floatbox_823/floatbox/floatbox.css';
+			l.href = 'https://statisch.uisge-beatha.eu/uploads/_Javascripts/floatbox_823/floatbox/floatbox.css';
 			var h = document.getElementsByTagName('head')[0]; h.parentNode.insertBefore(l, h);
 			};
 			var raf = requestAnimationFrame || mozRequestAnimationFrame ||
@@ -18,5 +18,7 @@
 			if (raf) raf(cb);
 			else window.addEventListener('load', cb);
 		</script>
-		<script defer src="https://static.uisge-beatha.eu/_Javascripts/floatbox_823/floatbox_merged.js"></script>
+		{jsmin}
+			<script defer src="{$static_url}/uploads/_Javascripts/floatbox_823/floatbox_merged.js" type="text/javascript"></script>
+		{/jsmin}
 {/if}

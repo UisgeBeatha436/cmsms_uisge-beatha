@@ -40,8 +40,14 @@
     {
       "outputFileName": "scripts.js",
       "dependencies": [
-        "node_modules/cookies-eu-banner/dist/cookies-eu-banner.js",
         "node_modules/scripts/*.js"
+      ]
+    },
+
+    {
+      "outputFileName": "cookies-eu-banner.js",
+      "dependencies": [
+        "node_modules/cookies-eu-banner/src/cookies-eu-banner.js"
       ]
     },
     {

@@ -1,6 +1,10 @@
 {strip}
 {* <form>
-    <button type="button"class="btn btn-primary"onclick="history.back()">{svg use="hand-o-left"} terug</button>
+    <button type="button"class="btn btn-primary"onclick="history.back()">
+        <span class="icon-hand-o-left">
+            <svg><use xlink:href="{$theme_relative_url}/svg/shape.svg#hand-o-left"/></svg>
+        </span>{ *svg use="left-hand"* }&nbsp;terug
+    </button>
 </form> *}
 <p><a class="badge badge-info" href="https://sailboatdata.com/sailboat/dehler-36">Article from Sail Boat data</a></p>
 {global_content name='shareSocialMediabuttons' text="Deel op "}
@@ -391,7 +395,10 @@
         <!-- Button trigger modal -->
         <h2 class="title">Sailboat Calculations
             <sup><a style="font-size:14px" data-toggle="modal" data-target="#calculations_help">
-                    {svg icon="question"}
+                {*svg icon="question"*}
+                <span class="icon-question">
+                    <svg><use xlink:href="{$theme_relative_url}/svg/shape.svg#question"/></svg>
+                </span>
                 </a>
             </sup>
         </h2>
@@ -508,7 +515,10 @@
         <!-- Button trigger modal -->
         <h2 class="title">Rig and Sail Particulars
             <sup><a style="font-size:14px" data-toggle="modal" data-target="#rigging_help">
-                    {svg icon="question"}
+                    {*svg icon="question"*}
+                    <span class="icon-question">
+                        <svg><use xlink:href="{$theme_relative_url}/svg/shape.svg#question"/></svg>
+                    </span>
                 </a>
             </sup>
         </h2>

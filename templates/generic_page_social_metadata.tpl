@@ -5,6 +5,7 @@
 {else}
    {assign var='metadescription' value=$page_description}
 {/if}
+
 {if isset($page_image)}
   {assign var=twitter_image value=$page_image}
   {assign var=og_image value=$page_image}

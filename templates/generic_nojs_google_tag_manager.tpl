@@ -7,8 +7,8 @@
      develop: GTM-W56XLX5
      - Remove comments
   *}
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M95RWP"
-  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id={$google_code_global}"
+  height="0" width="0" style="display:none;visibility:hidden" title="googletagmanager"></iframe></noscript>
 {else}
   <!-- generic_nojs_google_tag_manager is turned off for: ({$smarty.server.SERVER_NAME|lower}) -->
 {/if}

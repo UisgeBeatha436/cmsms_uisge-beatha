@@ -4,8 +4,8 @@
 *}
 {strip}
 {if $smarty.server.SERVER_NAME|lower eq {$environment}}
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M95RWP"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id={$google_code_global}"
+    height="0" width="0" style="display:none;visibility:hidden" title="googletagmanager"></iframe></noscript>
     {if !(isset($created_date))}
         {$created_date = "{$last_modified}"}
     {/if}

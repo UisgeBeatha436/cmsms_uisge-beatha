@@ -4,14 +4,27 @@
 <body class="{page_attr key='extra1'}">
   <a name="top"></a>
 	{* include svg/shape.svg once *}
-  {* svgdata inline=1 assetsbase=1 file='svg/shape.svg' tpl="{#theme_resource#}txt_svg.tpl"*}
-  
+  {svgdata inline=1 assetsbase=1 file='svg/shape.svg' tpl="{#theme_resource#}txt_svg.tpl"}
   <!-- /area: 3 of 3 -->
-    <!-- Search Modal -->
+    {* -- Cookie EU Banner -- *}
+    <div class="row alert alert-info text-center fixed-bottom" role="alert" id="cookies-eu-banner" style="display: none;">
+      <div class="col-12 ml-auto mr-auto">
+        <p>By continuing your visit to this site, you accept the use of cookies by Google Analytics to make visits statistics.</p>
+      </div>
+      <div class="col-md-12 col-sm-10">
+        <div class="text-center">
+          <a class="btn btn-info pull-center btn-round" href="./read-more.html" id="cookies-eu-more">Meer info</a> {*value="button"*}
+          <button type="button" class="btn btn-succes btn-round pull-center" id="cookies-eu-accept">Accepteren</button>
+          <button type="button" class="btn btn-warning btn-round pull-center" id="cookies-eu-reject">Afwijzen</button>
+        </div>
+      </div>
+    </div> 
+    <!--/div-->
+    {* -- Search Modal -- *}
     <div id="modalSearch" class="modal fade" tabindex="-1" role="dialog" aria-label="modalSearchTitle"  aria-hidden="true"> {* originaly was aria-labelledby (replaced all occurrences) *}
       <div class="modal-dialog modal-dialog-center" role="document">
         {* Modal content / modal needs to be on a different place than the section it's been called from *}
-        <div class="modal-content" style="background: var(--fill-color-boat-light);">
+        <div class="modal-content" style="background-color: #5f8bb2;">
           <div class="modal-header">
             <h4 class="modal-title text-white">Zoek binnen Uisge Beatha</h4>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -31,22 +44,7 @@
         </div>
       </div>
     </div>
-    <div class="container">
-      {*<div class="row alert alert-info text-center fixed-bottom" role="alert" id="cookies-eu-banner" style="display: none;">
-        <div class="col-12 ml-auto mr-auto">
-          <p>By continuing your visit to this site, you accept the use of cookies by Google Analytics to make visits statistics.</p>
-        </div>
-        <div class="col-12">
-          <div class="text-center">
-            <a class="btn btn-info pull-center btn-round" href="./read-more.html" id="cookies-eu-more">Meer info</a> { *value="button"* }
-            <button type="button" class="btn btn-succes btn-round pull-center" id="cookies-eu-accept">Accepteren</button>
-            <button type="button" class="btn btn-warning btn-round pull-center" id="cookies-eu-reject">Afwijzen</button>
-          </div>
-        </div>
-      </div>*}
-    </div>
-    
-    {include file="{#theme_resource#}generic_nojs_google_tag_manager.tpl"}
+    {*include file="{#theme_resource#}generic_nojs_google_tag_manager.tpl"*}
     {minify_html_block collapse_whitespace='1' collapse_json_lt='0'}
       {block name='body_header'}
         <header data-visible="on" id="js_header">
@@ -86,7 +84,12 @@
                       </div>
                     {/if}
                     <div class="form-group col-sm-3">
-                      <a href="#modalSearch" data-toggle="modal" data-target="#modalSearch" role="button" aria-disabled="true">{svg use="search"}</a>  
+                      <a href="#modalSearch" data-toggle="modal" data-target="#modalSearch" role="button" aria-disabled="true">
+                      {*svg use="search"*}
+                        <span class="icon-search">
+                            <svg><use xlink:href="{$theme_relative_url}/svg/shape.svg#search"/></svg>
+                        </span>
+                      </a>
                     </div>
                   </form>
                 </div>
@@ -197,17 +200,40 @@
         {/capture*}
       {/block}
       <!--/.Footer -->
-
-      {block name='js_footer'}
-        {include file="{#theme_resource#}generic_js_footer.tpl"}
-        {include file="{#theme_resource#}generic_js_google_analytics.tpl"}
-        {include file="{#theme_resource#}generic_js_footer_google_tag_manager.tpl"}
-      {/block}
+      {include file="{#theme_resource#}generic_js_footer.tpl"}
       {if isset($page_js_footer) && $page_js_footer != ''}
         {$page_js_footer}
       {/if}
-      
-      {include|strip file='cms_template:svgIcons'}
+      {*include|strip file='cms_template:svgIcons'*}
+      <script>
+        new CookiesEuBanner(function(){
+        // Your code to launch when user accept cookies
+        {literal}
+          // GA Analytics
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+            ga('create', 'UA-3361592-1', 'auto');
+            ga('send', 'pageview');
+          // Google Tagmanager
+          (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','{/literal}{$google_code_global}{literal}');
+            // prod: GTM-M95RWP
+            // develop: GTM-W56XLX5
+        {/literal}
+        console.log('Cookies accepted and loaded.');
+        }, true);
+      </script>
+      {*if isset($smarty.cookies.hasConsent)*}
+        {block name='js_footer'}
+          {*include file="{#theme_resource#}generic_js_google_analytics.tpl" code is part of the cookie acceptance above *}
+          {include file="{#theme_resource#}generic_js_footer_google_tag_manager.tpl"}
+        {/block}
+      {*/if*}
     {/minify_html_block}
 </body>
 <!-- tmpl: body:end -->

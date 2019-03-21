@@ -104,10 +104,10 @@
       <!-- {capture name='meta_description' assign='description_global'}{$page_title} | {$page_description}{/capture} -->
       {assign var='description_global' value="{$page_title} | {if !empty($page_description)}{$page_description}{else}{description}{/if}" scope='global'}
     {else}
-      {assign var='description_global' value=$page_description}
+      {assign var='description_global' value="{$page_description} | Logboek met zeilverhalen en bootonderhoud"}
     {/if}
     <meta name="description" content="{$description_global}">
-    {$_full_title = "{if isset($page_title)}{$page_title} | {/if}{title} - {$sitename}"}
+    {$_full_title = "{if isset($page_title)}{$page_title} | {/if}{title} - {$sitename} - Dehler 36 JV"}
     {$_full_title = "{$_full_title|cms_escape:htmlall|truncate:80}" scope='global'}
     <title>{$_full_title|cms_escape:htmlall|truncate:80}</title>
 
@@ -162,128 +162,126 @@
     {/if*}
   {/minify_html_block}
   {strip}
-  {capture assign='_main'}
-    <link rel="preload" href="{$theme_relative_url}/css/main.css{if $_unique_css_id != 1}?fes{$_unique_css_id}{/if}" as="style" onload="this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="{$theme_relative_url}/css/main.css{if $_unique_css_id != 1}?fes{$_unique_css_id}{/if}"></noscript>
-  {/capture}
-  {$_main}
-    <!--link rel="preload" href="{$theme_relative_url}/css/main.css?fes{$_unique_css_id}" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="{$theme_relative_url}/css/main.css?fes{$_unique_css_id}"></noscript-->
+    {capture assign='_main'}
+      <link rel="preload" href="{$theme_relative_url}/css/main.css{if $_unique_css_id != 1}?fes{$_unique_css_id}{/if}" as="style" onload="this.rel='stylesheet'">
+      <noscript><link rel="stylesheet" href="{$theme_relative_url}/css/main.css{if $_unique_css_id != 1}?fes{$_unique_css_id}{/if}"></noscript>
+    {/capture}
+    {$_main}
   {/strip}
     {jsmin}
-    <script>
-        /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
-        /* This file is meant as a standalone workflow for
-        - testing support for link[rel=preload]
-        - enabling async CSS loading in browsers that do not support rel=preload
-        - applying rel preload css once loaded, whether supported or not.
-        */
-        (function( w ){
-          "use strict";
-          // rel=preload support test
-          if( !w.loadCSS ){
-            w.loadCSS = function(){};
-          }
-          // define on the loadCSS obj
-          var rp = loadCSS.relpreload = {};
-          // rel=preload feature support test
-          // runs once and returns a function for compat purposes
-          rp.support = (function(){
-            var ret;
-            try {
-              ret = w.document.createElement( "link" ).relList.supports( "preload" );
-            } catch (e) {
-              ret = false;
+      <script>
+          /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+          /* This file is meant as a standalone workflow for
+          - testing support for link[rel=preload]
+          - enabling async CSS loading in browsers that do not support rel=preload
+          - applying rel preload css once loaded, whether supported or not.
+          */
+          (function( w ){
+            "use strict";
+            // rel=preload support test
+            if( !w.loadCSS ){
+              w.loadCSS = function(){};
             }
-            return function(){
-              return ret;
-            };
-          })();
+            // define on the loadCSS obj
+            var rp = loadCSS.relpreload = {};
+            // rel=preload feature support test
+            // runs once and returns a function for compat purposes
+            rp.support = (function(){
+              var ret;
+              try {
+                ret = w.document.createElement( "link" ).relList.supports( "preload" );
+              } catch (e) {
+                ret = false;
+              }
+              return function(){
+                return ret;
+              };
+            })();
 
-          // if preload isn't supported, get an asynchronous load by using a non-matching media attribute
-          // then change that media back to its intended value on load
-          rp.bindMediaToggle = function( link ){
-            // remember existing media attr for ultimate state, or default to 'all'
-            var finalMedia = link.media || "all";
+            // if preload isn't supported, get an asynchronous load by using a non-matching media attribute
+            // then change that media back to its intended value on load
+            rp.bindMediaToggle = function( link ){
+              // remember existing media attr for ultimate state, or default to 'all'
+              var finalMedia = link.media || "all";
 
-            function enableStylesheet(){
-              // unbind listeners
+              function enableStylesheet(){
+                // unbind listeners
+                if( link.addEventListener ){
+                  link.removeEventListener( "load", enableStylesheet );
+                } else if( link.attachEvent ){
+                  link.detachEvent( "onload", enableStylesheet );
+                }
+                link.setAttribute( "onload", null ); 
+                link.media = finalMedia;
+              }
+
+              // bind load handlers to enable media
               if( link.addEventListener ){
-                link.removeEventListener( "load", enableStylesheet );
+                link.addEventListener( "load", enableStylesheet );
               } else if( link.attachEvent ){
-                link.detachEvent( "onload", enableStylesheet );
+                link.attachEvent( "onload", enableStylesheet );
               }
-              link.setAttribute( "onload", null ); 
-              link.media = finalMedia;
-            }
 
-            // bind load handlers to enable media
-            if( link.addEventListener ){
-              link.addEventListener( "load", enableStylesheet );
-            } else if( link.attachEvent ){
-              link.attachEvent( "onload", enableStylesheet );
-            }
+              // Set rel and non-applicable media type to start an async request
+              // note: timeout allows this to happen async to let rendering continue in IE
+              setTimeout(function(){
+                link.rel = "stylesheet";
+                link.media = "only x";
+              });
+              // also enable media after 3 seconds,
+              // which will catch very old browsers (android 2.x, old firefox) that don't support onload on link
+              setTimeout( enableStylesheet, 3000 );
+            };
 
-            // Set rel and non-applicable media type to start an async request
-            // note: timeout allows this to happen async to let rendering continue in IE
-            setTimeout(function(){
-              link.rel = "stylesheet";
-              link.media = "only x";
-            });
-            // also enable media after 3 seconds,
-            // which will catch very old browsers (android 2.x, old firefox) that don't support onload on link
-            setTimeout( enableStylesheet, 3000 );
-          };
+            // loop through link elements in DOM
+            rp.poly = function(){
+              // double check this to prevent external calls from running
+              if( rp.support() ){
+                return;
+              }
+              var links = w.document.getElementsByTagName( "link" );
+              for( var i = 0; i < links.length; i++ ){
+                var link = links[ i ];
+                // qualify links to those with rel=preload and as=style attrs
+                if( link.rel === "preload" && link.getAttribute( "as" ) === "style" && !link.getAttribute( "data-loadcss" ) ){
+                  // prevent rerunning on link
+                  link.setAttribute( "data-loadcss", true );
+                  // bind listeners to toggle media back
+                  rp.bindMediaToggle( link );
+                }
+              }
+            };
 
-          // loop through link elements in DOM
-          rp.poly = function(){
-            // double check this to prevent external calls from running
-            if( rp.support() ){
-              return;
-            }
-            var links = w.document.getElementsByTagName( "link" );
-            for( var i = 0; i < links.length; i++ ){
-              var link = links[ i ];
-              // qualify links to those with rel=preload and as=style attrs
-              if( link.rel === "preload" && link.getAttribute( "as" ) === "style" && !link.getAttribute( "data-loadcss" ) ){
-                // prevent rerunning on link
-                link.setAttribute( "data-loadcss", true );
-                // bind listeners to toggle media back
-                rp.bindMediaToggle( link );
+            // if unsupported, run the polyfill
+            if( !rp.support() ){
+              // run once at least
+              rp.poly();
+
+              // rerun poly on an interval until onload
+              var run = w.setInterval( rp.poly, 500 );
+              if( w.addEventListener ){
+                w.addEventListener( "load", function(){
+                  rp.poly();
+                  w.clearInterval( run );
+                } );
+              } else if( w.attachEvent ){
+                w.attachEvent( "onload", function(){
+                  rp.poly();
+                  w.clearInterval( run );
+                } );
               }
             }
-          };
-
-          // if unsupported, run the polyfill
-          if( !rp.support() ){
-            // run once at least
-            rp.poly();
-
-            // rerun poly on an interval until onload
-            var run = w.setInterval( rp.poly, 500 );
-            if( w.addEventListener ){
-              w.addEventListener( "load", function(){
-                rp.poly();
-                w.clearInterval( run );
-              } );
-            } else if( w.attachEvent ){
-              w.attachEvent( "onload", function(){
-                rp.poly();
-                w.clearInterval( run );
-              } );
+            // commonjs
+            if( typeof exports !== "undefined" ){
+              exports.loadCSS = loadCSS;
             }
-          }
-          // commonjs
-          if( typeof exports !== "undefined" ){
-            exports.loadCSS = loadCSS;
-          }
-          else {
-            w.loadCSS = loadCSS;
-          }
-        }( typeof global !== "undefined" ? global : this ) );
-    </script>
+            else {
+              w.loadCSS = loadCSS;
+            }
+          }( typeof global !== "undefined" ? global : this ) );
+      </script>
     {/jsmin}
-  {minify_html_block collapse_whitespace='1' enabled=$minify_html_enabled}
+    {minify_html_block collapse_whitespace='1' enabled=$minify_html_enabled}
     {browser_lang accepted='nl' assign='browser_lang' scope=global} {* used for Google Translate to check if translation is needed. Doesn't work too well because in NL it gives en... *}
     <!-- cgjs_render on the next line -->
     <!-- {cgjs_render} -->
@@ -293,6 +291,65 @@
       {include|strip file="{#theme_resource#}generic_js_google_tag_manager.tpl"}
       {include|strip file="{#theme_resource#}generic_js_header.tpl"}
     {/block}
+    {strip}
+      <style>
+        .youtube-player {
+            position: relative;
+            padding-bottom: 56.23%;
+            /* Use 75% for 4:3 videos */
+            height: 0;
+            overflow: hidden;
+            max-width: 100%;
+            background: #000;
+            margin: 5px;
+        }
+        
+        .youtube-player iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 100;
+            background: transparent;
+        }
+        
+        .youtube-player img {
+            bottom: 0;
+            display: block;
+            left: 0;
+            margin: auto;
+            max-width: 100%;
+            width: 100%;
+            position: absolute;
+            right: 0;
+            top: 0;
+            border: none;
+            height: auto;
+            cursor: pointer;
+            -webkit-transition: .4s all;
+            -moz-transition: .4s all;
+            transition: .4s all;
+        }
+        
+        .youtube-player img:hover {
+            -webkit-filter: brightness(75%);
+        }
+        
+        .youtube-player .play {
+            height: 72px;
+            width: 72px;
+            left: 50%;
+            top: 50%;
+            margin-left: -36px;
+            margin-top: -36px;
+            position: absolute;
+            background: url("//i.imgur.com/TxzC70f.png") no-repeat; // shows the play-button
+            cursor: pointer;
+        }
+
+      </style>
+    {/strip}
   </head>
 {/minify_html_block}
 {strip}

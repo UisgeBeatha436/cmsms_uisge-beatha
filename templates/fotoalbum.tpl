@@ -5,12 +5,12 @@ https://www.uisge-beatha.eu/uploads/images/Gallery/Winter1617/Kajuitramen
 {* 11jun18 for testing purposes Google adsense activated *}
 {include file='cms_template:Advertentie'}
 <div style="clear:both"></div> {* make sure heading is aligned to the left *}
-{assign var='album_no_spaces' value=str_replace(' ', ' ', "{uploads_url}/images/Gallery/{$gcb_params.album}")}
+{assign var='album_no_spaces' value=str_replace(' ', ' ', "uploads/images/Gallery/{$gcb_params.album}")}
 {assign var="tmp_alt" value={$gcb_params.album}|strpos:"/"}
 {assign var="alt" value="{$gcb_params.album|substr:{$tmp_alt+1}}"}
 {assign var="alt_id" value=str_replace(' ','_',"{$alt}")}
 {assign var="x" value=314}
-{assign var="first_photo" value="{uploads_url}/images/Gallery/{$gcb_params.album}/{$gcb_params.foto}.jpg"}
+{assign var="first_photo" value="uploads/images/Gallery/{$gcb_params.album}/{$gcb_params.foto}.jpg"}
 <section class="text-center my-5">
     <div class="row">
         <div class="col-12">
@@ -26,15 +26,15 @@ https://www.uisge-beatha.eu/uploads/images/Gallery/Winter1617/Kajuitramen
     </div>
     <p> {* view source code shows a missing p-tag *}
     {*uploads url: {uploads_url}<br/>
-    album_no_spaces: {$album_no_spaces}<br/>
+    album_no_spaces: {$album_no_spaces}<br/>*}
     {assign var='files' value="{$album_no_spaces}/*.jpg"|glob}
-    {$files|@print_r}<br/>*}
+    {*$files|@print_r}<br/>*}
     {if count($files)}
         <div id="div_{$alt_id}-{$x}" class="floatbox" data-fb-options="doSlideshow:`true` group:`cgblog` caption:`{$alt}` header:`#socialmediashare1-20` type:`image`">
-            {*<a id="{$alt_id}-{$x}" data-rel="fotoalbum" title="{$alt}" href="{$first_photo|cms_escape:'urlpathinfo'}">{CGSmartImage src="{$first_photo}" width="250" alt="Uisge Beatha, Zeilen, {$alt}" title="{$alt}" notag=0 noembed={$noembed} noresponsive=1}</a>*}
-            <a id="{$alt_id}-{$x}" data-rel="fotoalbum" title="{$alt}" href="{$first_photo|cms_escape:'urlpathinfo'}">
+            <a id="{$alt_id}-{$x}" data-rel="fotoalbum" title="{$alt}" href="{$first_photo|cms_escape:'urlpathinfo'}">{CGSmartImage src="{$first_photo}" width="250" alt="Uisge Beatha, Zeilen, {$alt}" title="{$alt}" notag=0 noembed={$noembed} noresponsive=1}</a>
+            {*<a id="{$alt_id}-{$x}" data-rel="fotoalbum" title="{$alt}" href="{$first_photo|cms_escape:'urlpathinfo'}">
                 <img src="{$first_photo}">
-            </a>
+            </a>*}
             {foreach from=$files item='file'}
                 {if !$file|contains:"thumb_"}
                     {$x = {$x+1}}

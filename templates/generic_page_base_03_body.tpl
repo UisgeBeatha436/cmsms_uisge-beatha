@@ -4,6 +4,7 @@
 <body class="{page_attr key='extra1'}">
   <a name="top"></a>
 	{* include svg/shape.svg once *}
+  {minify_html_block collapse_whitespace='1' collapse_json_lt='0'}
   {svgdata inline=1 assetsbase=1 file='svg/shape.svg' tpl="{#theme_resource#}txt_svg.tpl"}
   <!-- /area: 3 of 3 -->
     {* -- Cookie EU Banner -- *}
@@ -11,6 +12,7 @@
       <div class="col-12 ml-auto mr-auto">
         <p>By continuing your visit to this site, you accept the use of cookies by Google Analytics to make visits statistics.</p>
       </div>
+      <svg><use xlink:href="#facebook"/></svg>
       <div class="col-md-12 col-sm-10">
         <div class="text-center">
           <a class="btn btn-info pull-center btn-round" href="./read-more.html" id="cookies-eu-more">Meer info</a> {*value="button"*}
@@ -45,7 +47,7 @@
       </div>
     </div>
     {*include file="{#theme_resource#}generic_nojs_google_tag_manager.tpl"*}
-    {minify_html_block collapse_whitespace='1' collapse_json_lt='0'}
+    
       {block name='body_header'}
         <header data-visible="on" id="js_header">
           {*<div class="header-content">
@@ -127,10 +129,14 @@
                   <!--Left column-->
                   <div class="col-md-3">
                     <p class="indigo-text darken-4">Op dit moment {visitors}.</p> {* Deze pagina is { HitCounter } keer bekeken.  *}
-                    {cge_cache_block key='YoutubeFooter' expires="3600"}
+                    {*cge_cache_block key='YoutubeFooter' expires="3600"}
                       <div class="embed-responsive embed-responsive-16by9">
                         <iframe title="YoutubeFooter" class="embed-responsive-item lozad" src="https://www.youtube.com/embed/rY0Rd0C3OQ0"></iframe>
                       </div>
+                    {/cge_cache_block*}
+                    <svg><use xlink:href="#shape-facebook"/></svg>
+                    {cge_cache_block key='YoutubeFooter' expires="3600"}
+                      <div class="youtube-player" data-id="rY0Rd0C3OQ0"></div>
                     {/cge_cache_block}
                     <hr>
                     {include|strip file='cms_template:Ads_Google'}

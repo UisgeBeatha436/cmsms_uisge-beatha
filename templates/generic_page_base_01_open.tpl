@@ -1,4 +1,4 @@
-<!-- area: 1 of 3 -->
+{* <!-- area: 1 of 3 --> *}
 {strip}
 	{$page_js_header = '' scope='global'}
 	{$page_js_footer = '' scope='global'}

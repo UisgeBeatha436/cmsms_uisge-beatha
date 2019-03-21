@@ -48,7 +48,7 @@
 <link rel="apple-touch-icon" sizes="120x120" href="{CGSmartImage src="{$theme_relative_url}/favicons/apple-touch-icon-120x120.png" noresponsive=1 notag=1 force_ext=1 noembed={$noembed} filter_resizetofit='120,120,#ff000,126'}">
 <link rel="apple-touch-icon" sizes="144x144" href="{CGSmartImage src="{$theme_relative_url}/favicons/apple-touch-icon-144x144.png" noresponsive=1 notag=1 force_ext=1 noembed={$noembed} filter_resizetofit='144,144,#ff000,126'}">
 <link rel="apple-touch-icon" sizes="152x152" href="{CGSmartImage src="{$theme_relative_url}/favicons/apple-touch-icon-152x152.png" noresponsive=1 notag=1 force_ext=1 noembed={$noembed} filter_resizetofit='152,152,#ff000,126'}">
-<link rel="apple-touch-icon" sizes="167x167" href="{CGSmartImage src="{$theme_relative_url}/favicons/apple-touch-icon.png" noresponsive=1 notag=1 force_ext=1 nnoembed={$noembed} filter_resizetofit='167,167,#ff000,126'}">
+<link rel="apple-touch-icon" sizes="167x167" href="{CGSmartImage src="{$theme_relative_url}/favicons/apple-touch-icon.png" noresponsive=1 notag=1 force_ext=1 noembed={$noembed} filter_resizetofit='167,167,#ff000,126'}">
 <link rel="apple-touch-icon" sizes="180x180" href="{CGSmartImage src="{$theme_relative_url}/favicons/apple-touch-icon-180x180.png" noresponsive=1 notag=1 force_ext=1 noembed={$noembed} filter_resizetofit='180,180,#ff000,126'}">
 {*<link rel="mask-icon" href="{CGSmartImage src="{$theme_relative_url}/favicons/safari-pinned-tab.svg" force_ext=1 noresponsive=1 notag=1 noembed={$noembed}}" color="#ffffff"> *}
 <link rel="mask-icon" href="{$theme_relative_url}/favicons/safari-pinned-tab.svg" color="#ffffff">

@@ -79,9 +79,12 @@
  * The $breakpoints_cfg are hardcoded this might change overtime.
  * Source sets for retina images (x2) are not implemented yet
  *
+ *
+ * Current foto-udt:
+ * {foto file="Gallery/Winter1819/Klapschroef/Klapschroef-01.jpg" title="Old one" side="right" width="150"}
+ * default folder to start from is ./uploads/images
  */
-
-if(!is_object(cmsms())) exit;
+// if(!is_object(cmsms())) exit;
 
 ###############################################################################
 # globals
@@ -92,38 +95,39 @@ $filter = false;
 
 $dir =  $config['uploads_path'];
 $pathinfo = pathinfo($dir);
-$dir = str_replace($pathinfo['basename'], '', $dir);
+$dir = str_replace($pathinfo['basename'], '', $dir); // basename is the filename of the image
 $absolute_url = str_replace($pathinfo['basename'], '', $config['uploads_url']);
-
 $smartimage = cms_utils::get_module('CGSmartImage');
 
 if (! $smartimage) {
     return;
 }
 
+# Globals custom
+#
+// $images_folder = 'images';
+// $src = isset($params['file']) ? $params['file'] : isset($params['src']) ? $params['src'] : '';
+
 ###############################################################################
 # configuration
 ###############################################################################
 
 $breakpoints_cfg = array(
-  'at-xs'   => '(max-width: 19.9em)',
-  'at-s'    => '(min-width: 20em) and (max-width: 29.9em)',
-  'at-m'    => '(min-width: 30em) and (max-width: 44.9em)',
-  'at-l'    => '(min-width: 45em) and (max-width: 59.9em)',
-  'at-xl'   => '(min-width: 60em) and (max-width: 71.9em)',
-  'at-xxl'  => '(min-width: 72em)',
-  'at-max'  => '',
+  'xs'   => '(max-width: 575px)',
+  'sm'   => '(min-width: 576px) and (max-width: 767px)',
+  'md'   => '(min-width: 768px) and (max-width: 991px)',
+  'lg'   => '(min-width: 992px) and (max-width: 1199px)',
+  'xl'   => 'min-width: 1200px',
 );
 
 $filters_cfg = array(
-  'at-xs'   => '255,0,0',
-  'at-s'    => '0,255,0',
-  'at-m'    => '0,0,255',
-  'at-l'    => '0,255,255',
-  'at-xl'   => '255,0,255',
-  'at-xxl'  => '255,255,0',
-  'at-max'  => '33,33,33',
+  'xs'  => '255,0,0',
+  'sm'   => '0,255,0',
+  'md'   => '0,0,255',
+  'lg'   => '255,255,0',
+  'xl'   => '255,0,255',
 );
+
 
 ###############################################################################
 # params
@@ -145,7 +149,18 @@ if (isset($params['loop']) && is_numeric($params['loop']) ) {
 	$loop = false;
 }
 
+# check if Gallery is the start of the file path
+// if ( isset($params['file']) ) {
+// 	if ( substr($params['file'],7) == 'Gallery') { // find if 'Gallery' is a start for the folder
+// 		$src = $images_folder . '/' . $src;
+//   }
+// }
+
 $src = isset($params['src']) ? ltrim($params['src'], '/') : '';
+if ($debug) {
+	print "SRC folder: " . $src . "\n";
+}
+
 
 if ( !empty($params['breakpoints']) ) {
   $breakpoints = preg_replace("/[^a-z,-]/", "", $params['breakpoints']);

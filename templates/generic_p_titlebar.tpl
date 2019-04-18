@@ -33,10 +33,12 @@
                 <div class="text-center">
                   <h1 class="display-4 text-white mb-2 rellax mb-5" data-rellax-speed="-1">
                     {if $_description != '' || $global_description != ''}
-                      {if $global_description != ''}
+                      {if isset({description})}
+                        {description}
+                      {elseif isset($global_description)}
                         {$global_description}
                       {else}
-                        {description}
+                        Uisge Beatha
                       {/if}
                     {else}
                       Uisge Beatha 

@@ -1,9 +1,13 @@
 {strip}
-{assign var=page_description value={description} scope='global'}
-{if $page_description|count_words < '6'}
-   {capture name='meta_description' assign='metadescription'}{$page_title} | {$page_description}{/capture}
+{*assign var=page_description value={description}*}
+{if isset($description_global)}
+  {capture name='meta_description' assign='metadescription'}{$description_global}{/capture}
 {else}
-   {assign var='metadescription' value=$page_description}
+  {if $page_description|count_words < '6'}
+    {capture name='meta_description' assign='metadescription'}{$page_title} | {$page_description}{/capture}
+  {else}
+    {assign var='metadescription' value=$page_description}
+  {/if}
 {/if}
 
 {if isset($page_image)}
@@ -20,8 +24,12 @@
   <meta property="og:title" content="{$page_title}"> {* was title *}
 {if isset($canonical_global)} {* was canonical_real_global *}
   <meta property="og:url" content="{$canonical_global}">
+  <meta property="ia:rules_url" content="{$canonical_global}">
+  <meta property="ia:markup_url" content="{$canonical_global}">
 {elseif isset($content_obj)}
   <meta property="og:url" content="{$content_obj->GetURL()}">
+  <meta property="ia:rules_url" content="{$content_obj->GetURL()}">
+  <meta property="ia:markup_url" content="{$content_obj->GetURL()}">
 {/if}
   <meta property="og:site_name" content="{$sitename}">
 {if isset($og_type)}

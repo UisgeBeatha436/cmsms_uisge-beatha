@@ -13,54 +13,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {metadata showbase='true'}
     <!-- Amazon S3 -->
-    <link rel="preload" href="//s3.amazonaws.com">
+    <link rel="preconnect" href="//s3.amazonaws.com">
     <!-- Google CDN -->
-    <link rel="preload" href="//ajax.googleapis.com">
+    <link rel="preconnect" href="//ajax.googleapis.com">
     <!-- Microsoft CDN -->
-    <link rel="preload" href="//ajax.microsoft.com">
-    <link rel="preload" href="//ajax.aspnetcdn.com">
+    <link rel="preconnect" href="//ajax.microsoft.com">
+    <link rel="preconnect" href="//ajax.aspnetcdn.com">
     <!-- CDN JS -->
-    <link rel="preload" href="//cdnjs.cloudflare.com">
+    <link rel="preconnect" href="//cdnjs.cloudflare.com">
     <!-- Bootstrap CDN -->
-    <link rel="preload" href="//netdna.bootstrapcdn.com">
+    <link rel="preconnect" href="//netdna.bootstrapcdn.com">
     <!-- Google Tag Manager -->
-    <link rel="preload" href="//www.googletagmanager.com">
-    <!-- Google (Analytics) -->
-    <link rel="preload" href="//www.google-analytics.com">
+    <link rel="preconnect" href="//www.googletagmanager.com">
+    <!-- Google (Analytics & Translate & Adsense) -->
+    <link rel="preconnect" href="//www.google-analytics.com">
     {*<link rel="preconnect" href="https://apis.google.com" crossorigin="anonymous">
     <link rel="preconnect" href="https://translate.googleapis.com" crossorigin="anonymous">
     <link rel="preconnect" href="https://accounts.google.com" crossorigin="anonymous">
     <link rel="preconnect" href="https://adservice.google.nl" crossorigin="anonymous">
     <link rel="preconnect" href="https://pagead2.googlesyndication.com">
-    <link rel="preconnect" href="https://pagead2.googlesyndication.com">
     <link rel="preconnect" href="https://adservice.google.com">
     <link rel="preconnect" href="https://www.gstatic.com" crossorigin="anonymous">*}
+    <link rel="preconnect" href="https://apis.google.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="preconnect" href="https://www.google-analytics.com" crossorigin="anonymous">
     <!-- Google Fonts -->
-    <link rel="preload" href="//fonts.googleapis.com">
+    <link rel="preconnect" href="//fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://ajax.googleapis.com">
     <!-- Facebook -->
-    <link rel="preload" href="//connect.facebook.net">
-    <link rel="preload" href="//connect.facebook.com">
-    <link rel="preload" href="https://staticxx.facebook.com">
+    <link rel="preconnect" href="//connect.facebook.net">
+    <link rel="preconnect" href="//connect.facebook.com">
+    <link rel="preconnect" href="https://staticxx.facebook.com">
     <link rel="preconnect" href="https://connect.facebook.com">
     <link rel="preconnect" href="https://connect.facebook.net">
     <link rel="preconnect" href="https://staticxx.facebook.com">
-    <!-- Google+ -->
-    <link rel="preload" href="//apis.google.com">
-    {*<link rel="preconnect" href="https://apis.google.com">*}
     <!-- Linkedin -->
-    <link rel="preload" href="//platform.linkedin.com">
-    <link rel="preconnect" href="//platform.linkedin.com">
+    <link rel="preconnect" href="https://platform.linkedin.com">
     <!-- Twitter -->
-    <link rel="preload" href="//platform.twitter.com">
-    {*<link rel="preconnect" href="//platform.twitter.com">*}
+    <link rel="preconnect" href="https://platform.twitter.com">
     <!-- Prefetch DNS for external assets 
-    <link rel="dns-prefetch" href="//fonts.googleapis.com" -->
-    <link rel="dns-prefetch" href="//www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com" -->
     <!-- Preconnect for external assets -->
     <link rel="preconnect" href="//statisch.uisge-beatha.eu">
-    <link rel="preconnect" href="//www.google-analytics.com" crossorigin="anonymous">
     {*<link rel="preload" href="{$theme_relative_url}/webfont/Roboto-Light.woff2" as="font" type="font/woff2" crossorigin="anonymous">
     <link rel="preload" href="{$theme_relative_url}/webfont/Roboto-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
     <link rel="preload" href="{$theme_relative_url}/webfont/Roboto-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">

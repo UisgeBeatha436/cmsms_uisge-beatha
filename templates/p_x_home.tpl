@@ -8,7 +8,7 @@
 {/block}
 
 {block name='body_content'}
-    {assign var='parallax_img' value={CGSmartImage src="{uploads_url}/images/cms/40MijlvanBru-02.jpg" alt='{$sitename} | Dehler 36 JV' noembed={$noembed} notag=1}}
+    {assign var='parallax_img' value={CGSmartImage src="{uploads_url}/images/cms/40MijlvanBru-02.jpg" alt='{$sitename} | Dehler 36 JV' force_ext='1' noembed={$noembed} notag=1}}
     <a id="a-content"></a>
     <div class="wrapper">
         <div data-speed="100" class="view">

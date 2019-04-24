@@ -8,7 +8,7 @@
                 <source {if $params_in['custom_01'] eq 'off'}data-srcset{else}srcset{/if}="{$item.output}"{if $item.media != ''} media="{$item.media}"{/if}>
                 {if $smarty.foreach.loop.last}
                     {* <!--[if IE 9]></video><![endif]--> *}
-                    {$foto_file = $item.src|pathinfo: 2} {* get filename *}
+                    {$foto_file = $item.src|pathinfo: 2}
                     {$foto_file = str_replace(' ', '_', $foto_file)}
                     {$foto_file = str_replace('-', '_', $foto_file)}
                     <div id="div_{$foto_file|substr:0:-4}" {if $item.class !=''} class="floatbox {$item.class}"{/if} data-fb-options="group:cgblog-123 caption:`{$item.title}` type:image">

@@ -169,7 +169,7 @@
                     <!--/.Center column-->
                     <hr class="w-100 clearfix d-md-none">
                     <!--Right column-->
-                    <div class="col-md-3">
+                    <div class="col-md-4">
                       <h3 class="h3-responsive font-weight-bold text-center indigo-text">Nieuwtjes ontvangen?</h3>
                       <section class="form-elegant">
                         {CGBetterForms form="mailingForm"}

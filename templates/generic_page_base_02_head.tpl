@@ -52,7 +52,7 @@
     <link rel="preconnect" href="https://platform.linkedin.com">
     <!-- Twitter -->
     <link rel="preconnect" href="https://platform.twitter.com">
-    <!-- Prefetch DNS for external assets 
+    <!-- Prefetch DNS for external assets
     <link rel="dns-prefetch" href="https://fonts.googleapis.com" -->
     <!-- Preconnect for external assets -->
     <link rel="preconnect" href="//statisch.uisge-beatha.eu">
@@ -82,7 +82,7 @@
     <!-- meta name="keywords" content="{search action="keywords" count="20"}" -->
     <meta name="MobileOptimized" content="320">
     <meta name="owner" content="Gregor de Graaf">
-    <meta name="publisher" content="Gregor de Graaf">
+    <meta property="publisher" content="Gregor de Graaf">
     {if isset($boat_date)}
       {if $boat_date|date_format:'YYYY-MM-DD' > '2016-03-10'}
         {$sitename = "{sitename}"} <!-- Dehler title -->
@@ -206,7 +206,7 @@
                 } else if( link.attachEvent ){
                   link.detachEvent( "onload", enableStylesheet );
                 }
-                link.setAttribute( "onload", null ); 
+                link.setAttribute( "onload", null );
                 link.media = finalMedia;
               }
 
@@ -298,7 +298,7 @@
             background: #000;
             margin: 5px;
         }
-        
+
         .youtube-player iframe {
             position: absolute;
             top: 0;
@@ -308,7 +308,7 @@
             z-index: 100;
             background: transparent;
         }
-        
+
         .youtube-player img {
             bottom: 0;
             display: block;
@@ -326,11 +326,11 @@
             -moz-transition: .4s all;
             transition: .4s all;
         }
-        
+
         .youtube-player img:hover {
             -webkit-filter: brightness(75%);
         }
-        
+
         .youtube-player .play {
             height: 72px;
             width: 72px;

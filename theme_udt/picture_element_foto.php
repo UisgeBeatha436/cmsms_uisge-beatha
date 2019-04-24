@@ -90,10 +90,13 @@
 # globals
 ###############################################################################
 
-$debug = false;
-$filter = false;
+$debug = true;
+$filter = true;
 
 $dir =  $config['uploads_path'];
+if ($debug) {
+  echo 'Dir = ' . $dir . "\n";
+}
 $pathinfo = pathinfo($dir);
 $dir = str_replace($pathinfo['basename'], '', $dir); // basename is the filename of the image
 $absolute_url = str_replace($pathinfo['basename'], '', $config['uploads_url']);
@@ -120,6 +123,15 @@ $breakpoints_cfg = array(
   'xl'   => 'min-width: 1200px',
 );
 
+$scales = '300, 195, 190, 188, 150';
+// $scales_cfg = array(
+//   '150'   =>  '150',
+//   '222'   =>  '222',
+//   '116'   =>  '116',
+//   '124'   =>  '124',
+//   '200'  =>  '200',
+// );
+
 $filters_cfg = array(
   'xs'  => '255,0,0',
   'sm'   => '0,255,0',
@@ -128,12 +140,11 @@ $filters_cfg = array(
   'xl'   => '255,0,255',
 );
 
+$resource = 'cms_template:generic_picture_element_foto';
 
 ###############################################################################
 # params
 ###############################################################################
-
-$side = isset($params['side']) ? $params['side'] : 'left';
 
 if ( isset($params['quality']) ) {
   if (in_array($params['quality'], range(0, 100), true)) {
@@ -158,7 +169,8 @@ if (isset($params['loop']) && is_numeric($params['loop']) ) {
 //   }
 // }
 
-$src = isset($params['src']) ? ltrim($params['src'], '/') : '';
+$src = isset($params['file']) ? $config['uploads_url'] . '/images/' . $params['file'] : '';
+// $src = isset($params['src']) ? ltrim($params['src'], '/') : '';
 if ($debug) {
 	print "SRC folder: " . $src . "\n";
 }
@@ -176,7 +188,13 @@ if ( !empty($params['scales']) ) {
   $scales = preg_replace("/[^0-9,]/", "", $params['scales']);
   $scales = trim(preg_replace('/[\s+]/', "", $scales));
   $scales = preg_split("/,/", $scales);
-} else {
+} else if ( isset($scales)) {
+  // $scales = array_keys($scales_cfg);
+  $scales = preg_replace("/[^0-9,]/", "", $scales);
+  $scales = trim(preg_replace('/[\s+]/', "", $scales));
+  $scales = preg_split("/,/", $scales);
+}
+  else {
   $scales = array();
 }
 
@@ -188,11 +206,24 @@ if ( count($scales) != count($breakpoints) ) {
 
 $title = isset($params['title']) ? $params['title'] : '';
 $style = isset($params['style']) ? $params['style'] : '';
-$class = isset($params['class']) ? $params['class'] : '';
-$custom_01 = isset($params['custom_01']) ? $params['custom_01'] : '';
+$class = isset($params['class']) ? $params['class'] : 'lozad img-fluid';
+if ( isset($params['side'])) {
+  if ($debug) {
+    echo 'Side: ' . $params['side'] . "\n";
+  }
+  if ($params['side'] == 'right') {
+    $class = $class . ' ' . 'float-right ml-2';
+  } else {
+    $class = $class . ' ' .'float-left mr-2';
+  }
+}
+$custom_01 = isset($params['custom_01']) ? $params['custom_01'] : 'off';
 $custom_02 = isset($params['custom_02']) ? $params['custom_02'] : '';
 $custom_03 = isset($params['custom_03']) ? $params['custom_03'] : '';
-$alt = isset($params['alt']) ? $params['alt'] : '';
+// $alt = isset($params['alt']) ? $params['alt'] : '';
+// condition to add to $alt = isset($params['alt']) ? $params['alt'].', '."Uisge Beatha, Zeilen, Watersport" : "Uisge Beatha, Zeilen, Watersport";
+$alt = isset($params['title']) ? $params['title'].', '."Uisge Beatha, Zeilen, Watersport" : "Uisge Beatha, Zeilen, Watersport";
+
 
 if ( !empty($params['assign']) ) {
   $assign = preg_replace("/[^a-z_]/", "", $params['assign']);
@@ -202,13 +233,21 @@ if ( !empty($params['assign']) ) {
 
 if ($debug) {
   print "<pre>\n";
+  print "dir:\n";
+  print_r($dir);
+  print "\n";
+  print "absolute_url:\n";
+  print_r($absolute_url);
+  print "\n";
   print "breakpoints:\n";
   print_r($breakpoints);
   print "scales:\n";
   print_r($scales);
   print "alt:\n";
   print_r($alt);
-  print "assign:|$assign|\n";
+  print "\n";
+  print "assign:";
+  print_r($assign);
   print "</pre>\n";
 }
 
@@ -226,6 +265,7 @@ $params_in['norotate'] = '1';
 $params_in['force_ext'] = '1';
 $params_in['noresponsive'] = '1';
 
+$params_in['side'] = $side;
 $params_in['title'] = $title;
 $params_in['style'] = $style;
 $params_in['class'] = $class;
@@ -276,10 +316,21 @@ if ($debug) {
 
 if ( isset($params['tpl']) ) {
   $resource = trim($params['tpl']);
-
   if ($debug) {
     print "<pre>\n";
     print "recoure:$resource\n";
+    print "</pre>\n";
+  }
+
+  $tpl_ob = $smarty->CreateTemplate($resource,null,null);
+  $tpl_ob->assign('params_in', $params_in);
+  $tpl_ob->assign($assign, $output);
+  $tpl_ob->display();
+
+} else if ( isset($resource)) {
+  if ($debug) {
+    print "<pre>\n";
+    print "recoure: $resource\n";
     print "</pre>\n";
   }
 

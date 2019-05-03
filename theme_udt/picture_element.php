@@ -133,7 +133,7 @@ $filters_cfg = array(
 # params
 ###############################################################################
 
-$side = isset($params['side']) ? $params['side'] : 'left';
+$side = isset($params['side']) ? $params['side'] : 'right';
 
 if ( isset($params['quality']) ) {
   if (in_array($params['quality'], range(0, 100), true)) {

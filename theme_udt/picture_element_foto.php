@@ -90,8 +90,8 @@
 # globals
 ###############################################################################
 
-$debug = true;
-$filter = true;
+$debug = false;
+$filter = false;
 
 $dir =  $config['uploads_path'];
 if ($debug) {
@@ -120,10 +120,10 @@ $breakpoints_cfg = array(
   'sm'   => '(min-width: 576px) and (max-width: 767px)',
   'md'   => '(min-width: 768px) and (max-width: 991px)',
   'lg'   => '(min-width: 992px) and (max-width: 1199px)',
-  'xl'   => 'min-width: 1200px',
+  'xl'   => 'min-width: 1200px'
 );
 
-$scales = '300, 195, 190, 188, 150';
+$scales='200, 195, 190, 188, 220';
 // $scales_cfg = array(
 //   '150'   =>  '150',
 //   '222'   =>  '222',

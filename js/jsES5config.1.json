@@ -1,0 +1,78 @@
+{
+  "files": [
+    {
+      "outputFileName": "jquery.js",
+      "dependencies": [
+        "node_modules/jquery/dist/jquery.js"
+      ]
+    },
+    {
+      "outputFileName": "uisge-beatha.js",
+      "dependencies": [
+        "node_modules/bootstrap/dist/js/bootstrap.js",
+        "node_modules/mdbootstrap-pro/js/mdb.js"
+      ]
+    },
+    {
+      "outputFileName": "parallax.js",
+      "dependencies": [
+        "node_modules/rellax/rellax.js"
+      ]
+    },
+    {
+      "outputFileName": "lozad.js",
+      "dependencies": [
+        "node_modules/lozad/dist/lozad.min.js"
+      ]
+    },
+    {
+      "outputFileName": "defer.js",
+      "dependencies": [
+        "node_modules/social/defer.js"
+      ]
+    },
+    {
+      "outputFileName": "plugins.js",
+      "dependencies": [
+        "es5/footer/plugins/*.js"
+      ]
+    },
+    {
+      "outputFileName": "scripts.js",
+      "dependencies": [
+        "node_modules/scripts/*.js"
+      ]
+    },
+
+    {
+      "outputFileName": "cookies-eu-banner.js",
+      "dependencies": [
+        "node_modules/cookies-eu-banner/src/cookies-eu-banner.js"
+      ]
+    },
+    {
+      "outputFileName": "footerSettings.js",
+      "dependencies": [
+        "node_modules/scripts/footerScripts/footerSettings.js"
+      ]
+    },
+    {
+      "outputFileName": "dyscrollup.js",
+      "dependencies": [
+        "node_modules/dyscrollupjs/src/js/dyscrollup.js"
+      ]
+    },
+    {
+      "outputFileName": "datatables.js",
+      "dependencies": [
+        "node_modules/mdbootstrap-pro/js/addons/datatables.js"
+      ]
+    },
+    {
+      "outputFileName": "vendor.js",
+      "dependencies": [
+        "es5/footer/vendor/*.js"
+      ]
+    }
+  ]
+}

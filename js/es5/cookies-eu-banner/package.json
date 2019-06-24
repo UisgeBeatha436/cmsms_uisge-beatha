@@ -1,0 +1,69 @@
+{
+  "_args": [
+    [
+      "cookies-eu-banner@1.2.14",
+      "/Users/gjdegraaf/Sites/assets/src"
+    ]
+  ],
+  "_from": "cookies-eu-banner@1.2.14",
+  "_id": "cookies-eu-banner@1.2.14",
+  "_inBundle": false,
+  "_integrity": "sha1-BXIFUozgfKiFrW24DgdLemDzEM0=",
+  "_location": "/cookies-eu-banner",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "cookies-eu-banner@1.2.14",
+    "name": "cookies-eu-banner",
+    "escapedName": "cookies-eu-banner",
+    "rawSpec": "1.2.14",
+    "saveSpec": null,
+    "fetchSpec": "1.2.14"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/cookies-eu-banner/-/cookies-eu-banner-1.2.14.tgz",
+  "_spec": "1.2.14",
+  "_where": "/Users/gjdegraaf/Sites/assets/src",
+  "author": {
+    "name": "Alex-D",
+    "email": "contact@alex-d.fr",
+    "url": "http://alex-d.fr"
+  },
+  "bugs": {
+    "url": "https://github.com/Alex-D/cookies-eu-banner/issues"
+  },
+  "description": "Manage display of banner to accept/reject cookies from tracking services like Google Analytics",
+  "devDependencies": {
+    "del": "2.0.2",
+    "gulp": "3.9.1",
+    "gulp-concat": "2.6.1",
+    "gulp-header": "1.8.9",
+    "gulp-jshint": "1.11.2",
+    "gulp-livereload": "3.8.1",
+    "gulp-load-plugins": "1.5.0",
+    "gulp-newer": "1.0.0",
+    "gulp-rename": "1.2.2",
+    "gulp-size": "2.1.0",
+    "gulp-uglify": "1.4.2",
+    "jshint-stylish": "2.2.1",
+    "vinyl-paths": "2.0.0"
+  },
+  "homepage": "http://alex-d.github.io/Cookies-EU-banner/",
+  "license": "MIT",
+  "main": "dist/cookies-eu-banner.js",
+  "name": "cookies-eu-banner",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Alex-D/cookies-eu-banner.git"
+  },
+  "scripts": {
+    "build": "npm install && gulp build",
+    "start": "gulp",
+    "test": "gulp test"
+  },
+  "title": "Cookies EU banner",
+  "version": "1.2.14"
+}

@@ -7,8 +7,8 @@
         {/if}
         <source {if $params_in['custom_01'] eq 'off'}data-srcset{else}srcset{/if}="{$item.output}"{if $item.media != ''} media="{$item.media}"{/if}>
         {if $smarty.foreach.loop.last}
-        {* <!--[if IE 9]></video><![endif]--> *}
-        <img{if $item.style !=''} style="{$item.style}"{/if}{if $item.class !=''} class="{$item.class}"{/if} {if $params_in['custom_01'] eq 'off'}data-src{else}src{/if}="{$item.output}" alt="{$item.alt}">
+            {* <!--[if IE 9]></video><![endif]--> *}
+            <img{if $item.style !=''} style="{$item.style}"{/if}{if $item.class !=''} class="{$item.class}"{/if} {if $params_in['custom_01'] eq 'off'}data-src{else}src{/if}="{$item.output}" alt="{$item.alt}">
         {/if}
     {/foreach}
     </picture>

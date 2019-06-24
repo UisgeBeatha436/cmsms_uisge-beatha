@@ -207,7 +207,7 @@ if ( count($scales) != count($breakpoints) ) {
 $title = isset($params['title']) ? $params['title'] : '';
 $style = isset($params['style']) ? $params['style'] : '';
 $class = isset($params['class']) ? $params['class'] : 'lozad img-fluid';
-if ( isset($params['side'])) {
+if ( isset($params['side']) && $params['side'] != '') {
   if ($debug) {
     echo 'Side: ' . $params['side'] . "\n";
   }
@@ -265,7 +265,7 @@ $params_in['norotate'] = '1';
 $params_in['force_ext'] = '1';
 $params_in['noresponsive'] = '1';
 
-$params_in['side'] = $side;
+// $params_in['side'] = $side;
 $params_in['title'] = $title;
 $params_in['style'] = $style;
 $params_in['class'] = $class;

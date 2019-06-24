@@ -15,8 +15,10 @@
                         <a id="a_{$foto_file|substr:0:-4}" data-rel="foto_blog" class="floatbox" href="{$item.src}" aria-label="Photo">
                             <img{if $item.style !=''} style="{$item.style}"{/if}{if $item.class !=''} class="{$item.class} rounded z-depth-1"{/if} {if $params_in['custom_01'] eq 'off'}data-src{else}src{/if}="{$item.output}" alt="{$item.alt}">
                         </a>
-                        <p class="text-wrap" style="width: 10rem;"><mark>{$item.title}</mark><br/>
-                        <small>(klik voor grote foto)</small></p>
+                        {*<p class="text-wrap" style="width: 10rem;"><mark>{$item.title}</mark><br/>*}
+                        <figcaption class="figure-caption ml-2"><mark>{$item.title}</mark><br/> {* ml-x needs to equal to the ml set in $item.class *}
+                            <small>(klik voor grote foto)</small>
+                        </figcaption>
                     </div>
                 {/if}
             {/foreach}

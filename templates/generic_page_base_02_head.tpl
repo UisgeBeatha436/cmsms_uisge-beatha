@@ -1,31 +1,31 @@
-<!-- area: 2 of 3 -->
-<!-- /area: 3 of 3 -->
+{* area: 2 of 3 *}
+{* /area: 3 of 3 *}
   {if "{#minifyHTML#}" == 'on'}
     {$minify_html_enabled=true}
   {else}
     {$minify_html_enabled=false}
   {/if}
 {/strip}
-{minify_html_block collapse_whitespace='1' enabled=$minify_html_enabled}
-  <head>
+<head>
+  {minify_html_block enabled='1' collapse_whitespace='1' enabled=$minify_html_enabled}
   	<meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {metadata showbase='true'}
-    <!-- Amazon S3 -->
+    {* Amazon S3 *}
     <link rel="preconnect" href="//s3.amazonaws.com">
-    <!-- Google CDN -->
+    {* Google CDN *}
     <link rel="preconnect" href="//ajax.googleapis.com">
-    <!-- Microsoft CDN -->
+    {* Microsoft CDN *}
     <link rel="preconnect" href="//ajax.microsoft.com">
     <link rel="preconnect" href="//ajax.aspnetcdn.com">
-    <!-- CDN JS -->
+    {* CDN JS *}
     <link rel="preconnect" href="//cdnjs.cloudflare.com">
-    <!-- Bootstrap CDN -->
+    {* Bootstrap CDN *}
     <link rel="preconnect" href="//netdna.bootstrapcdn.com">
-    <!-- Google Tag Manager -->
+    {* Google Tag Manager *}
     <link rel="preconnect" href="//www.googletagmanager.com">
-    <!-- Google (Analytics & Translate & Adsense) -->
+    {* Google (Analytics & Translate & Adsense) *}
     <link rel="preconnect" href="//www.google-analytics.com">
     {*<link rel="preconnect" href="https://apis.google.com" crossorigin="anonymous">
     <link rel="preconnect" href="https://translate.googleapis.com" crossorigin="anonymous">
@@ -37,24 +37,24 @@
     <link rel="preconnect" href="https://apis.google.com">
     <link rel="dns-prefetch" href="https://www.google-analytics.com">
     <link rel="preconnect" href="https://www.google-analytics.com" crossorigin="anonymous">
-    <!-- Google Fonts -->
+    {* Google Fonts *}
     <link rel="preconnect" href="//fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://ajax.googleapis.com">
-    <!-- Facebook -->
+    {* Facebook *}
     <link rel="preconnect" href="//connect.facebook.net">
     <link rel="preconnect" href="//connect.facebook.com">
     <link rel="preconnect" href="https://staticxx.facebook.com">
     <link rel="preconnect" href="https://connect.facebook.com">
     <link rel="preconnect" href="https://connect.facebook.net">
     <link rel="preconnect" href="https://staticxx.facebook.com">
-    <!-- Linkedin -->
+    {* Linkedin *}
     <link rel="preconnect" href="https://platform.linkedin.com">
-    <!-- Twitter -->
+    {* Twitter *}
     <link rel="preconnect" href="https://platform.twitter.com">
-    <!-- Prefetch DNS for external assets
-    <link rel="dns-prefetch" href="https://fonts.googleapis.com" -->
-    <!-- Preconnect for external assets -->
+    {* Prefetch DNS for external assets
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com" *}
+    {* Preconnect for external assets *}
     <link rel="preconnect" href="//statisch.uisge-beatha.eu">
     {*<link rel="preload" href="{$theme_relative_url}/webfont/Roboto-Light.woff2" as="font" type="font/woff2" crossorigin="anonymous">
     <link rel="preload" href="{$theme_relative_url}/webfont/Roboto-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
@@ -75,31 +75,31 @@
     {/if}
     <meta name="HandheldFriendly" content="true">
     {if isset($taglist)}
-      {autometa key_add="{$taglist} Dehler 36 JV" key_density=3 description=0}
+      {autometa key_add="{$taglist}, Dehler 36 JV, Zeilen, Varen, Zeilboot" key_density=3 description=0}
     {else}
-      {autometa key_add="Dehler 36 JV, saildrive 130s, volvo penta, md2030, lewmar, zeilen, urenteller" key_density=3 description=0}
+      {autometa key_add="Dehler 36 JV, saildrive 130s, volvo penta, md2030, lewmar, zeilen, urenteller, varen, zeilboot" key_density=3 description=0}
     {/if}
-    <!-- meta name="keywords" content="{search action="keywords" count="20"}" -->
+    {* meta name="keywords" content="{search action="keywords" count="20"}" *}
     <meta name="MobileOptimized" content="320">
     <meta name="owner" content="Gregor de Graaf">
     <meta property="publisher" content="Gregor de Graaf">
     {if isset($boat_date)}
       {if $boat_date|date_format:'YYYY-MM-DD' > '2016-03-10'}
-        {$sitename = "{sitename}"} <!-- Dehler title -->
+        {$sitename = "{sitename}"} {* Dehler title *}
       {else}
-        {assign var=sitename value='Uisge Beatha | De Hanse 311, mijn vorige boot'} <!-- Hanse title -->
+        {assign var=sitename value='Uisge Beatha | De Hanse 311, mijn vorige boot'} {* Hanse title *}
       {/if}
     {else}
       {$sitename = {sitename}}
     {/if}
     {if isset($content_obj->TitleAttribute()) && $content_obj->TitleAttribute() == ''}
-      <!-- {$description_global = "{$content_obj->TitleAttribute()|strip_tags:false|strip|truncate:300:'':false:false|regex_replace:"/^[\s]*(.*?)[\s]*$/":"$1"}" scope = 'global'} -->
+      {* {$description_global = "{$content_obj->TitleAttribute()|strip_tags:false|strip|truncate:300:'':false:false|regex_replace:"/^[\s]*(.*?)[\s]*$/":"$1"}" scope = 'global'} *}
       {$description_global = "{$content_obj->TitleAttribute()|strip_tags:false|strip|truncate:300}" scope = 'global'}
-    {elseif $page_description|count_words < '6'}
-      <!-- {capture name='meta_description' assign='description_global'}{$page_title} | {$page_description}{/capture} -->
-      {assign var='description_global' value="{$page_title} | {if !empty($page_description)}{$page_description}{else}{description}{/if}" scope='global'}
+    {elseif isset($page_description) && $page_description|count_words < '6'}
+      {* {capture name='meta_description' assign='description_global'}{$page_title} | {$page_description}{/capture} *}
+      {assign var='description_global' value="{$page_title} | {if isset($page_description)}{$page_description}{else}{description}{/if}" scope='global'}
     {else}
-      {assign var='description_global' value="{$page_description} | Logboek met zeilverhalen en bootonderhoud"}
+      {assign var='description_global' value="{if isset($page_description) && $page_description !=''}{$page_description}  | Logboek met zeilverhalen en bootonderhoud{/if}"}
     {/if}
     <meta name="description" content="{$description_global}">
     {$_full_title = "{if isset($page_title)}{$page_title} | {/if}{title} - {$sitename} - Dehler 36 JV"}
@@ -156,130 +156,128 @@
       < !-- Lightgallery css not loaded -->
     {/if*}
   {/minify_html_block}
-  {strip}
-    {capture assign='_main'}
-      <link rel="preload" href="{$theme_relative_url}/css/main.css{if $_unique_css_id != 1}?fes{$_unique_css_id}{/if}" as="style" onload="this.rel='stylesheet'">
-      <noscript><link rel="stylesheet" href="{$theme_relative_url}/css/main.css{if $_unique_css_id != 1}?fes{$_unique_css_id}{/if}"></noscript>
-    {/capture}
-    {$_main}
-  {/strip}
-    {jsmin}
-      <script>
-          /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
-          /* This file is meant as a standalone workflow for
-          - testing support for link[rel=preload]
-          - enabling async CSS loading in browsers that do not support rel=preload
-          - applying rel preload css once loaded, whether supported or not.
-          */
-          (function( w ){
-            "use strict";
-            // rel=preload support test
-            if( !w.loadCSS ){
-              w.loadCSS = function(){};
+  {capture assign='_main'}
+    <link rel="preload" href="{$theme_relative_url}/css/main.css{if $_unique_css_id != 1}?fes{$_unique_css_id}{/if}" as="style" onload="this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="{$theme_relative_url}/css/main.css{if $_unique_css_id != 1}?fes{$_unique_css_id}{/if}"></noscript>
+  {/capture}
+  {$_main|strip}
+  {jsmin}
+    <script>
+      /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+      /* This file is meant as a standalone workflow for
+      - testing support for link[rel=preload]
+      - enabling async CSS loading in browsers that do not support rel=preload
+      - applying rel preload css once loaded, whether supported or not.
+      */
+      (function( w ){
+        "use strict";
+        // rel=preload support test
+        if( !w.loadCSS ){
+          w.loadCSS = function(){};
+        }
+        // define on the loadCSS obj
+        var rp = loadCSS.relpreload = {};
+        // rel=preload feature support test
+        // runs once and returns a function for compat purposes
+        rp.support = (function(){
+          var ret;
+          try {
+            ret = w.document.createElement( "link" ).relList.supports( "preload" );
+          } catch (e) {
+            ret = false;
+          }
+          return function(){
+            return ret;
+          };
+        })();
+
+        // if preload isn't supported, get an asynchronous load by using a non-matching media attribute
+        // then change that media back to its intended value on load
+        rp.bindMediaToggle = function( link ){
+          // remember existing media attr for ultimate state, or default to 'all'
+          var finalMedia = link.media || "all";
+
+          function enableStylesheet(){
+            // unbind listeners
+            if( link.addEventListener ){
+              link.removeEventListener( "load", enableStylesheet );
+            } else if( link.attachEvent ){
+              link.detachEvent( "onload", enableStylesheet );
             }
-            // define on the loadCSS obj
-            var rp = loadCSS.relpreload = {};
-            // rel=preload feature support test
-            // runs once and returns a function for compat purposes
-            rp.support = (function(){
-              var ret;
-              try {
-                ret = w.document.createElement( "link" ).relList.supports( "preload" );
-              } catch (e) {
-                ret = false;
-              }
-              return function(){
-                return ret;
-              };
-            })();
+            link.setAttribute( "onload", null );
+            link.media = finalMedia;
+          }
 
-            // if preload isn't supported, get an asynchronous load by using a non-matching media attribute
-            // then change that media back to its intended value on load
-            rp.bindMediaToggle = function( link ){
-              // remember existing media attr for ultimate state, or default to 'all'
-              var finalMedia = link.media || "all";
+          // bind load handlers to enable media
+          if( link.addEventListener ){
+            link.addEventListener( "load", enableStylesheet );
+          } else if( link.attachEvent ){
+            link.attachEvent( "onload", enableStylesheet );
+          }
 
-              function enableStylesheet(){
-                // unbind listeners
-                if( link.addEventListener ){
-                  link.removeEventListener( "load", enableStylesheet );
-                } else if( link.attachEvent ){
-                  link.detachEvent( "onload", enableStylesheet );
-                }
-                link.setAttribute( "onload", null );
-                link.media = finalMedia;
-              }
+          // Set rel and non-applicable media type to start an async request
+          // note: timeout allows this to happen async to let rendering continue in IE
+          setTimeout(function(){
+            link.rel = "stylesheet";
+            link.media = "only x";
+          });
+          // also enable media after 3 seconds,
+          // which will catch very old browsers (android 2.x, old firefox) that don't support onload on link
+          setTimeout( enableStylesheet, 3000 );
+        };
 
-              // bind load handlers to enable media
-              if( link.addEventListener ){
-                link.addEventListener( "load", enableStylesheet );
-              } else if( link.attachEvent ){
-                link.attachEvent( "onload", enableStylesheet );
-              }
+        // loop through link elements in DOM
+        rp.poly = function(){
+          // double check this to prevent external calls from running
+          if( rp.support() ){
+            return;
+          }
+          var links = w.document.getElementsByTagName( "link" );
+          for( var i = 0; i < links.length; i++ ){
+            var link = links[ i ];
+            // qualify links to those with rel=preload and as=style attrs
+            if( link.rel === "preload" && link.getAttribute( "as" ) === "style" && !link.getAttribute( "data-loadcss" ) ){
+              // prevent rerunning on link
+              link.setAttribute( "data-loadcss", true );
+              // bind listeners to toggle media back
+              rp.bindMediaToggle( link );
+            }
+          }
+        };
 
-              // Set rel and non-applicable media type to start an async request
-              // note: timeout allows this to happen async to let rendering continue in IE
-              setTimeout(function(){
-                link.rel = "stylesheet";
-                link.media = "only x";
-              });
-              // also enable media after 3 seconds,
-              // which will catch very old browsers (android 2.x, old firefox) that don't support onload on link
-              setTimeout( enableStylesheet, 3000 );
-            };
+        // if unsupported, run the polyfill
+        if( !rp.support() ){
+          // run once at least
+          rp.poly();
 
-            // loop through link elements in DOM
-            rp.poly = function(){
-              // double check this to prevent external calls from running
-              if( rp.support() ){
-                return;
-              }
-              var links = w.document.getElementsByTagName( "link" );
-              for( var i = 0; i < links.length; i++ ){
-                var link = links[ i ];
-                // qualify links to those with rel=preload and as=style attrs
-                if( link.rel === "preload" && link.getAttribute( "as" ) === "style" && !link.getAttribute( "data-loadcss" ) ){
-                  // prevent rerunning on link
-                  link.setAttribute( "data-loadcss", true );
-                  // bind listeners to toggle media back
-                  rp.bindMediaToggle( link );
-                }
-              }
-            };
-
-            // if unsupported, run the polyfill
-            if( !rp.support() ){
-              // run once at least
+          // rerun poly on an interval until onload
+          var run = w.setInterval( rp.poly, 500 );
+          if( w.addEventListener ){
+            w.addEventListener( "load", function(){
               rp.poly();
-
-              // rerun poly on an interval until onload
-              var run = w.setInterval( rp.poly, 500 );
-              if( w.addEventListener ){
-                w.addEventListener( "load", function(){
-                  rp.poly();
-                  w.clearInterval( run );
-                } );
-              } else if( w.attachEvent ){
-                w.attachEvent( "onload", function(){
-                  rp.poly();
-                  w.clearInterval( run );
-                } );
-              }
-            }
-            // commonjs
-            if( typeof exports !== "undefined" ){
-              exports.loadCSS = loadCSS;
-            }
-            else {
-              w.loadCSS = loadCSS;
-            }
-          }( typeof global !== "undefined" ? global : this ) );
-      </script>
-    {/jsmin}
-    {minify_html_block collapse_whitespace='1' enabled=$minify_html_enabled}
+              w.clearInterval( run );
+            } );
+          } else if( w.attachEvent ){
+            w.attachEvent( "onload", function(){
+              rp.poly();
+              w.clearInterval( run );
+            } );
+          }
+        }
+        // commonjs
+        if( typeof exports !== "undefined" ){
+          exports.loadCSS = loadCSS;
+        }
+        else {
+          w.loadCSS = loadCSS;
+        }
+      }( typeof global !== "undefined" ? global : this ) );
+    </script>
+  {/jsmin}
+  {minify_html_block enabled='1' collapse_whitespace='1' enabled=$minify_html_enabled}
     {browser_lang accepted='nl' assign='browser_lang' scope=global} {* used for Google Translate to check if translation is needed. Doesn't work too well because in NL it gives en... *}
-    <!-- cgjs_render on the next line -->
-    <!-- {cgjs_render} -->
+    {* cgjs_render on the next line
+      {cgjs_render} *}
     {* https://stackoverflow.com/questions/3221561/eliminate-flash-of-unstyled-content *}
     {include|strip file="{#theme_resource#}AIS_location.tpl"}
     {block name='js_header'}
@@ -345,7 +343,6 @@
 
       </style>
     {/strip}
-  </head>
-{/minify_html_block}
-{strip}
-<!-- tmpl: head:end -->
+  {/minify_html_block}
+</head>
+{* tmpl: head:end *}

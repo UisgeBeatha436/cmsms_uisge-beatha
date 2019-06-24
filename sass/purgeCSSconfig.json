@@ -1,0 +1,51 @@
+{
+  "content": [
+    "CMS_PATH.templates",
+    "CMS_PATH.module_custom",
+    "CMS_PATH.cms_modules",
+    "CMS_PATH.externalizer",
+    "SRC_PATH.js",
+    "SRC_PATH.templates"
+  ],
+  "whitelist": [
+    "html",
+    "body",
+    "disabled",
+    "show",
+    "dropup",
+    "dropright",
+    "dropleft",
+    "dropdown-",
+    "position-static",
+    "collapse",
+    "collapsing",
+    "collapsed",
+    "large-logo",
+    "small-logo",
+    "header_logo",
+    "dropdown-select",
+    "dropdown-content",
+    "select-dropdown",
+    "mdb-select",
+    "md-form",
+    "colorful-select",
+    "dropdown-select",
+    "dropdown-content",
+    "form-control",
+    "select-dropdown",
+    "select-wrapper",
+    "tab-pane",
+    "tab-content",
+    "tab-space"
+  ],
+  "whitelistPatterns": ["^js_"],
+  "whitelistPatternsChildren": [],
+  "rejected": "not implemented",
+  "keyframes": true,
+  "fontFace": true,
+  "extensions": [
+    "tpl",
+    "vue",
+    "html"
+  ]
+}

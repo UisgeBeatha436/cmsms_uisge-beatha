@@ -1,0 +1,62 @@
+{
+  "_args": [
+    [
+      "dyscrollupjs@2.0.0",
+      "/Users/gjdegraaf/Sites/assets/src"
+    ]
+  ],
+  "_from": "dyscrollupjs@2.0.0",
+  "_id": "dyscrollupjs@2.0.0",
+  "_inBundle": false,
+  "_integrity": "sha512-UXJCjW8k1WQVcGvFuRwu4ClXN+E82JfpojKiO7lWJc3KlbgBlkRcSXH6uvZeVr/15YlHrCiouyBQ5nekY86IJg==",
+  "_location": "/dyscrollupjs",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "dyscrollupjs@2.0.0",
+    "name": "dyscrollupjs",
+    "escapedName": "dyscrollupjs",
+    "rawSpec": "2.0.0",
+    "saveSpec": null,
+    "fetchSpec": "2.0.0"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/dyscrollupjs/-/dyscrollupjs-2.0.0.tgz",
+  "_spec": "2.0.0",
+  "_where": "/Users/gjdegraaf/Sites/assets/src",
+  "author": {
+    "name": "Yusuf Shakeel"
+  },
+  "bugs": {
+    "url": "https://github.com/yusufshakeel/dyScrollUpJS/issues"
+  },
+  "description": "dyScrollUpJS is a small JavaScript plugin that you can use in your website and blog to create \"Scroll-to-top\" button.",
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-cssmin": "^2.2.1",
+    "grunt-contrib-uglify": "^3.2.1"
+  },
+  "homepage": "https://github.com/yusufshakeel/dyScrollUpJS#readme",
+  "keywords": [
+    "javascript",
+    "plugin",
+    "scroll-to-top",
+    "navigate"
+  ],
+  "license": "MIT",
+  "main": "Gruntfile.js",
+  "name": "dyscrollupjs",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yusufshakeel/dyScrollUpJS.git"
+  },
+  "scripts": {
+    "all": "npm run build",
+    "build": "tsc && grunt",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "2.0.0"
+}

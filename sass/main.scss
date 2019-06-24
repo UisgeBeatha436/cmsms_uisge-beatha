@@ -7,10 +7,10 @@
 
 /* custom stylsheets */
 
-// @import 'tools/typo-font-face'; // 04mrch19 
+// @import 'tools/typo-font-face'; // 04mrch19
 @import './bootstrap/scss/bootstrap';
 @import './bootstrap/scss/reboot';
-@import './mdbootstrap-pro/mdb';
+@import './mdbootstrap-pro/scss/mdb';
 
 // To convert CSS into SCSS http://css2sass.herokuapp.com/
 :root {
@@ -27,7 +27,8 @@
   $bghighlight-color: #5f8bb2;
   $coldefault-color: #ecf0f1;
   $colhighlight-color: #ffbbbc;
-  
+  $white: #fff;
+
   --fill-color-facebook: $facebook-color;
   --fill-color-twitter: $twitter-color;
   --fill-color-pinterest: $pinterest-color;
@@ -39,17 +40,25 @@
   --bghighlight: $bghighlight-color;
   --coldefault: $coldefault-color;
   --colhighlight: $colhighlight-color;
+  --fill-color-white: $white;
   $dropdown: false;
   --Font-Size: 20px;
-
 }
 
+$colorfloralwhite: #fffaf0;
+$boat-color: #1a1a3f;
+$colorborderlistgroup: #808080;
+$color-google-menu: #ffebcd;
+$colorgrijs: #bbc2c2;
 $bgdefault: #1a1a3f;
+
 @mixin bg-gradient { // ()
   transition: .5s; // all
   // background: rgb(187, 194, 194);
   background: linear-gradient(90deg, rgba(187, 194, 194, 1) 0%, rgba(1, 72, 136, 1) 35%, rgba(26, 26, 63, 1) 100%);
 }
+
+/*! purgecss start ignore */
 
 .bg-gradient {
   @include bg-gradient;
@@ -62,22 +71,22 @@ element {
 }
 
 .navbar a:not(.btn):not(.dropdown-item) {
-  color: #fffaf0; // floralwhite --> make text a bit brighter when on the transparent navbar
+  color: $colorfloralwhite; // floralwhite --> make text a bit brighter when on the transparent navbar
   font-size: 1.1rem;
 }
 
 @media only screen and (max-width: 480px) {
   /* For mobile phones: */
   #header_logo {
-    transition: all .5s;
+    transition: .5s; // all
     }
 
-  .largeLogo {
+  .large-logo {
     width: 130px;
     max-height: 8vh;
   }
 
-  .smallLogo  {
+  .small-logo  {
     width: 6.125rem;
     height: 4vh;
   }
@@ -86,39 +95,42 @@ element {
 @media only screen and (min-width: 720px) {
   /* For larger phones and screens: */
   #header_logo {
-    transition: .5s; /* all */
+    transition: .5s; // all
   }
 
-  .largeLogo {
+  .large-logo {
     width: 260px;
     max-height: 18vh;
   }
 
-  .smallLogo  {
+  .small-logo  {
     width: 12.125rem;
     height: 6vh;
   }
 }
 
+/*! purgecss end ignore */
+
 /*------------------- define footer color  ------------------*/
 [data-background-color='grijs'] {
-  background-color: #bbc2c2;
+  background-color: $colorgrijs;
 }
 
 [data-footer-background-color='blue_gradient'] {
   // background: rgb(26, 26, 63);
   background: linear-gradient(90deg, rgba(26, 26, 63, 1) 0%, rgba(1, 72, 136, 1) 45%, rgba(187, 194, 194, 1) 100%);
-  color: #fff; /* make sure text of main menu in footer has white letters */
+  color: $white; /* make sure text of main menu in footer has white letters */
 }
 
 a.footer-brand {
-  color: #fff;
+  color: $white;
   text-decoration: none;
 }
 
 /*------------------- icon alignment and color -------------- */
 .btn i {
-  &.fas, &.far {
+  &.fas,
+  &.far {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -129,7 +141,8 @@ a.footer-brand {
 }
 
 .icons {
-  i, svg {
+  i,
+  svg {
     color: var(--fill-color-boat);
   }
 }
@@ -161,10 +174,6 @@ a.footer-brand {
 //   }
 // }
 
-//colors
-$white: #fff;
-$boat-color: #1a1a3f;
-
 //@extend-elements
 //original selectors
 //.icon-books svg, .icon-pencil svg, .icon-hour-glass svg, .icon-tools svg, .icon-keyboard svg
@@ -192,7 +201,7 @@ $boat-color: #1a1a3f;
 }
 
 svg {
-  margin-top: 0.5em;
+  margin-top: .5em;
   padding: 0;
   fill: $white;
   width: 2.5em;
@@ -205,15 +214,15 @@ svg {
 }
 
 .icon-mail svg {
-  margin-left: 0.2em;
-  margin-top: 0.6em;
+  margin-left: .2em;
+  margin-top: .6em;
 }
 
 .icon-books svg,
 .icon-pencil svg,
 .icon-hour-glass svg,
 .icon-tools svg,
-.icon-keyboard svg, {
+.icon-keyboard svg {
   @extend %extend-1;
 }
 
@@ -233,7 +242,6 @@ svg {
   width: 1em;
   height: 2em;
 }
-
 
 /* ----------- back to the top button ------------- */
 .scrolltop {
@@ -275,7 +283,7 @@ svg {
   border-collapse: separate;
 
   &>.list-group-item {
-    border: 1px solid #808080;
+    border: 1px solid $colorborderlistgroup;
     display: table-cell;
     float: none;
     text-align: center;
@@ -328,6 +336,8 @@ svg {
 
 /* ---------- OVERRIDE GOOGLE TRANSLATE WIDGET CSS BEGIN ---------- */
 
+/*! purgecss start ignore */
+
 .goog-te-menu-frame {
   max-width: 100%;
   // 10mrch19 !important; //or whatever width you want
@@ -352,14 +362,24 @@ div#google_translate_element div.goog-te-gadget-simple {
   // background-color: #17548d; // #e3e3ff
 
   a.goog-te-menu-value {
+
     &:hover {
       text-decoration: none;
     }
 
     span {
-      color: #ffebcd;
+      color: $color-google-menu;
+
+      &[style='color: rgb(213, 213, 213);'],
+      &[style='color: rgb(118, 118, 118);'],
+      &[style='color: rgb(155, 155, 155);'],
+      &[style='border-left: 1px solid rgb(187, 187, 187);'],
+      &[style='border-left-color: rgb(187, 187, 187); border-left-width: 1px; border-left-style: solid;'] {
+        display: none;
+      }
+
       &:hover {
-        color: #fff;
+        color: $white;
       }
     }
   }
@@ -373,15 +393,15 @@ div#google_translate_element div.goog-te-gadget-simple {
 // Remove the down arrow
 // when dropdown open
 
-div#google_translate_element div.goog-te-gadget-simple a.goog-te-menu-value span {
-  &[style='color: rgb(213, 213, 213);'],
-  &[style='color: rgb(118, 118, 118);'],
-  &[style='color: rgb(155, 155, 155);'],
-  &[style='border-left: 1px solid rgb(187, 187, 187);'],
-  &[style='border-left-color: rgb(187, 187, 187); border-left-width: 1px; border-left-style: solid;'] {
-    display: none;
-  }
-}
+// div#google_translate_element div.goog-te-gadget-simple a.goog-te-menu-value span {
+//   &[style='color: rgb(213, 213, 213);'],
+//   &[style='color: rgb(118, 118, 118);'],
+//   &[style='color: rgb(155, 155, 155);'],
+//   &[style='border-left: 1px solid rgb(187, 187, 187);'],
+//   &[style='border-left-color: rgb(187, 187, 187); border-left-width: 1px; border-left-style: solid;'] {
+//     display: none;
+//   }
+// }
 
 // after clicked/touched
 
@@ -400,6 +420,8 @@ div#google_translate_element div.goog-te-gadget-simple a.goog-te-menu-value span
 body {
   top: 0 !important;
 }
+
+/*! purgecss end ignore */
 
 /* ------------- OVERRIDE GOOGLE TRANSLATE WIDGET CSS END ---------------- */
 
@@ -434,7 +456,7 @@ body {
   .icon-facebook,
   .icon-twitter,
   .icon-gplus {
-    fill: #fff;
+    fill: $white;
     width: 1rem;
     height: 1.5rem;
   }
@@ -484,7 +506,7 @@ body {
   &.icon-twitter,
   &.icon-gplus-1,
   &.icon-mail {
-    fill: #fff;
+    fill: var(--fill-color-white);
   }
 
   &.icon-hour-glass,
@@ -537,6 +559,20 @@ body {
   min-height: 1px;
 }
 
+/* ------------ Start Table sort styling ------------- */
+table.dataTable thead .sorting:after,
+table.dataTable thead .sorting:before,
+table.dataTable thead .sorting_asc:after,
+table.dataTable thead .sorting_asc:before,
+table.dataTable thead .sorting_asc_disabled:after,
+table.dataTable thead .sorting_asc_disabled:before,
+table.dataTable thead .sorting_desc:after,
+table.dataTable thead .sorting_desc:before,
+table.dataTable thead .sorting_desc_disabled:after,
+table.dataTable thead .sorting_desc_disabled:before {
+bottom: .5em;
+}
+/* ------------ End Table sort styling ------------- */
 //
 // EOF
 //

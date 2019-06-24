@@ -1,4 +1,4 @@
-{* uploads_url} https://www.uisge-beatha.eu/uploads 
+{* uploads_url} https://www.uisge-beatha.eu/uploads
 https://www.uisge-beatha.eu/uploads/images/Gallery/Winter1617/Kajuitramen
 {global_content name='fotoalbum' album="Winter1617/Kajuitramen" foto="Kajuitramen - 01"}
 *}
@@ -30,9 +30,9 @@ https://www.uisge-beatha.eu/uploads/images/Gallery/Winter1617/Kajuitramen
         {assign var='files' value="{$album_no_spaces}/*.jpg"|glob}
         {*$files|@print_r}<br/>*}
         {if count($files)}
-            <div id="div_{$alt_id}-{$x}" class="floatbox" data-fb-options="doSlideshow:`true` group:`cgblog` caption:`{$alt}` header:`#socialmediashare1-20` type:`image`">
-                <a id="{$alt_id}-{$x}" data-rel="fotoalbum" title="{$alt}" href="{$first_photo|cms_escape:'urlpathinfo'}">{CGSmartImage src="{$first_photo}" width="250" alt="Uisge Beatha, Zeilen, {$alt}" title="{$alt}" notag=0 noembed={$noembed} noresponsive=1}</a>
-                {*<a id="{$alt_id}-{$x}" data-rel="fotoalbum" title="{$alt}" href="{$first_photo|cms_escape:'urlpathinfo'}">
+            <div id="div_{$alt_id|replace:'/':'_'}-{$x}" class="floatbox" data-fb-options="doSlideshow:`true` group:`cgblog` caption:`href` header:`#socialmediashare1-20` type:`image`">
+                <a id="{$alt_id|replace:'/':'_'}-{$x}" data-rel="fotoalbum" title="{$alt|replace:'/':' '}" href="{$first_photo|cms_escape:'urlpathinfo'}">{CGSmartImage src="{$first_photo}" width="250" alt="Uisge Beatha, Zeilen, {$alt}" title="{$alt}" notag=0 noembed={$noembed} noresponsive=1}</a>
+                {*<a id="{$alt_id}-{$x}" data-rel="fotoalbum" title="{$alt|replace:'/':' '}" href="{$first_photo|cms_escape:'urlpathinfo'}">
                     <img src="{$first_photo}">
                 </a>*}
                 {foreach from=$files item='file'}
@@ -40,9 +40,9 @@ https://www.uisge-beatha.eu/uploads/images/Gallery/Winter1617/Kajuitramen
                         {$x = {$x+1}}
                         {assign var='fotos' value="{static_url}/{$file|cms_escape:'urlpathinfo'}"}
                         {* <a id="{$alt_id}-{$x}" data-rel="fotoalbum" title="{$alt}" href="{CGSmartImage src={$file} alt="Uisge Beatha, Zeilen, {$alt}" title="{$alt}" noresponsive=1 notag=1 noembed={$noembed}}"></a> *}
-                        <a id="a_{$alt_id}-{$x}" data-rel="fotoalbum" class="lozad" title="{$alt}" href="{CGSmartImage src={$file} alt="Uisge Beatha, Zeilen, {$alt}" title="{$alt}" noresponsive=1 notag=1 noembed={$noembed}}"></a>
+                        <a id="a_{$alt_id|replace:'/':'_'}-{$x}" data-rel="fotoalbum" class="lozad" title="{$alt|replace:'/':' '}" href="{CGSmartImage src={$file} alt="Uisge Beatha, Zeilen, {$alt}" title="{$alt|replace:'/':' '}" noresponsive=1 notag=1 noembed={$noembed}}"></a>
                         {* <a id="{$alt_id}-{$x}" data-rel="fotoalbum" title="{$alt}" href="{$file|cms_escape:'urlpathinfo'}">
-                            <img class="lozad img-fluid" data-src="{CGSmartImage src="{$fotos}" noresponsive='1' alt='{$alt}' title="Uisge Beatha, Zeilen, {$alt}" notag=1 noembed={$noembed}}"/> 
+                            <img class="lozad img-fluid" data-src="{CGSmartImage src="{$fotos}" noresponsive='1' alt='{$alt}' title="Uisge Beatha, Zeilen, {$alt}" notag=1 noembed={$noembed}}"/>
                         </a> *}
                         {* href="{$file|cms_escape:'urlpathinfo'} *}
                     {/if}

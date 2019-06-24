@@ -1,5 +1,6 @@
 {strip}
   {*<div class="page-header page-header-small">*}
+    {$noembed=0}
     {if $page_alias == 'hanse_311'}
       {$header_image = {CGSmartImage src="{uploads_url}/images/cms/UisgeBeatha.jpg" filter_crop2size="4500,1500,bc" alt="Hanse 311 - Uisge Beatha" noembed={$noembed} notag=1}}
       {$alt = 'Hanse 311 - Uisge Beatha'}
@@ -32,7 +33,7 @@
               <div class="col-md-12 mb-3">
                 <div class="text-center">
                   <h1 class="display-4 text-white mb-2 rellax mb-5" data-rellax-speed="-1">
-                    {if $_description != '' || $global_description != ''}
+                    {if isset($_description) || isset($global_description)}
                       {if isset({description})}
                         {description}
                       {elseif isset($global_description)}
@@ -41,7 +42,7 @@
                         Uisge Beatha
                       {/if}
                     {else}
-                      Uisge Beatha 
+                      Uisge Beatha
                     {/if}
                   </h1>
                   {*<nav aria-label="breadcrumb">

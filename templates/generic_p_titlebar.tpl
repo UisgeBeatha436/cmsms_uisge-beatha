@@ -32,7 +32,7 @@
             <div class="row pt-5 mt-3">
               <div class="col-md-12 mb-3">
                 <div class="text-center">
-                  <h1 class="display-4 text-white mb-2 rellax mb-5" data-rellax-speed="-1">
+                  <h1 class="title h1 my-4 text-white mb-2 rellax mb-5" data-rellax-speed="-1">
                     {if isset($_description) || isset($global_description)}
                       {if isset({description})}
                         {description}
@@ -43,6 +43,10 @@
                       {/if}
                     {else}
                       Uisge Beatha
+                    {/if}
+                    {if isset($page_title)}
+                      <br/>
+                      <em>{$page_title}</em>
                     {/if}
                   </h1>
                   {*<nav aria-label="breadcrumb">

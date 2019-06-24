@@ -32,9 +32,7 @@
     "mdbootstrap-pro": "git+https://oauth2:h7pmjdeoKjcRpg6RMkn_@git.mdbootstrap.com/mdb/jquery/jq-pro.git",
     "now-ui-kit": "^1.1.0",
     "popper.js": "^1.14.7",
-    "rellax": "^1.9.1",
-    "defer": "^1.0.0",
-    "uisge-beatha": "^1.0.0"
+    "rellax": "^1.9.1"
   },
   "devDependencies": {
     "napa": "^3.0.0"

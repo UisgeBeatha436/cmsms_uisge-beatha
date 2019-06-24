@@ -16,56 +16,49 @@
     {
       "outputFileName": "parallax.js",
       "dependencies": [
-        "node_modules/rellax/rellax.js"
+        "js/es5/rellax/rellax.js"
       ]
     },
     {
       "outputFileName": "lozad.js",
       "dependencies": [
-        "node_modules/lozad/dist/lozad.min.js"
+        "js/es5/lozad/dist/lozad.js"
       ]
     },
     {
       "outputFileName": "defer.js",
       "dependencies": [
-        "node_modules/social/defer.js"
-      ]
-    },
-    {
-      "outputFileName": "plugins.js",
-      "dependencies": [
-        "es5/footer/plugins/*.js"
+        "js/es5/social/defer.js"
       ]
     },
     {
       "outputFileName": "scripts.js",
       "dependencies": [
-        "node_modules/scripts/*.js"
+        "js/es5/scripts/*.js"
       ]
     },
-
     {
       "outputFileName": "cookies-eu-banner.js",
       "dependencies": [
-        "node_modules/cookies-eu-banner/src/cookies-eu-banner.js"
+        "js/es5/cookies-eu-banner/src/cookies-eu-banner.js"
       ]
     },
     {
       "outputFileName": "footerSettings.js",
       "dependencies": [
-        "node_modules/scripts/footerScripts/footerSettings.js"
+        "js/es5/scripts/footerScripts/footerSettings.js"
       ]
     },
     {
       "outputFileName": "dyscrollup.js",
       "dependencies": [
-        "node_modules/dyscrollupjs/src/js/dyscrollup.js"
+        "js/es5/dyscrollupjs/src/js/dyscrollup.js"
       ]
     },
     {
-      "outputFileName": "vendor.js",
+      "outputFileName": "datatables.js",
       "dependencies": [
-        "es5/footer/vendor/*.js"
+        "node_modules/mdbootstrap-pro/js/addons/datatables.js"
       ]
     }
   ]

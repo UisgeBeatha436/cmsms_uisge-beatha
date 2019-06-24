@@ -8,7 +8,7 @@
     "install": "napa"
   },
   "napa": {
-    "mdbootstrap-pro": "https://static.uisge-beatha.eu/MDB-Gulp-Pro_4.7.4.zip"
+    "mdbootstrap-pro": "https://static.uisge-beatha.eu/jq-pro-4.8.2.zip"
   },
   "repository": {
     "type": "git",
@@ -29,9 +29,12 @@
     "dyscrollupjs": "^2.0.0",
     "jquery": "^3.4.0",
     "lozad": "^1.9.0",
+    "mdbootstrap-pro": "git+https://oauth2:h7pmjdeoKjcRpg6RMkn_@git.mdbootstrap.com/mdb/jquery/jq-pro.git",
     "now-ui-kit": "^1.1.0",
     "popper.js": "^1.14.7",
-    "rellax": "^1.9.1"
+    "rellax": "^1.9.1",
+    "defer": "^1.0.0",
+    "uisge-beatha": "^1.0.0"
   },
   "devDependencies": {
     "napa": "^3.0.0"
